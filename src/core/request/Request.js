@@ -4,22 +4,22 @@
 import { _axios } from "../global/Function";
 
 export const getall = async (set, table) => {
-    let all = await _axios(`http://localhost:3001/getall/${table}`, 'get');
+    let all = await _axios(`https://kcic-inventory-api.herokuapp.com/getall/${table}`, 'get');
     set(all);
 }
 
 export const count = async (set, table) => {
-    let count = await _axios(`http://localhost:3001/count/${table}`, 'get');
+    let count = await _axios(`https://kcic-inventory-api.herokuapp.com/count/${table}`, 'get');
     set(count[0].count);
 }
 
 export const save = async (id, data, type, table) => {
-    let save = await _axios(`http://localhost:3001/${type}/${table}/${id}`, 'post', data);
+    let save = await _axios(`https://kcic-inventory-api.herokuapp.com/${type}/${table}/${id}`, 'post', data);
     if(save === 'success') window.location.href = `/${table === 'assigned_asset' ? 'assets/assign' : table}`;
 }
 
 export const get = async (id, table, set, setValues) => {
-    let data = await _axios(`http://localhost:3001/get/${table}/${id}`, 'get');
+    let data = await _axios(`https://kcic-inventory-api.herokuapp.com/get/${table}/${id}`, 'get');
     setValues(data);
     
     for(let count = 0; count < Object.keys(data[0]).length; count++) {
@@ -30,6 +30,6 @@ export const get = async (id, table, set, setValues) => {
 }
 
 export const sum = async(set, table, col) => {
-    let sum = await _axios(`http://localhost:3001/sum/${table}/${col}`, 'get');
+    let sum = await _axios(`https://kcic-inventory-api.herokuapp.com/sum/${table}/${col}`, 'get');
     set(sum);
 }
