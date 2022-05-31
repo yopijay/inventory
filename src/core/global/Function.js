@@ -48,7 +48,7 @@ export const formatValue = (type, value) => {
 }
 
 export const options = async (table, cols) => {
-    return await _axios(`http://localhost:3001/option/${table}/${cols}`, 'get');
+    return await _axios(`https://kcic-inventory-api.herokuapp.com/option/${table}/${cols}`, 'get');
 }
 
 export const getDefaultValue = async (name, values) => {
