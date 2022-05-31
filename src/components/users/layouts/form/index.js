@@ -38,7 +38,7 @@ const Index = (props) => {
                     </form>
                 </Box>
                 <Box width= "100%" marginTop= "10px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">
-                    <Link to= "/brand" style= {{ textDecoration: 'none' }}>
+                    <Link to= "/users" style= {{ textDecoration: 'none' }}>
                         <Box padding= "8px 15px 6px 15px" color= "#ffffff" bgcolor= "#e74c3c" 
                             borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center" 
                             style= {{ fontSize: '98%' }}>CANCEL</Box>

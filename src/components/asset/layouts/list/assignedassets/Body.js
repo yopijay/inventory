@@ -54,7 +54,7 @@ const Body = (props) => {
                                             <Grid item md= { 1 }>
                                                 <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center" spacing= { 1 }>
                                                     <Grid item md= { 5 }>
-                                                        <Link to= "/assignassets/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('update'); setId(assts.id); } }>
+                                                        <Link to= "/assign/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('update'); setId(assts.id); } }>
                                                             <Box padding= "10px 0" color= "#ffffff" bgcolor= "#3498db" 
                                                                 borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                                 <ModeEditOutlineIcon style= {{ fontSize: '110%' }} />
@@ -62,7 +62,7 @@ const Body = (props) => {
                                                         </Link>
                                                     </Grid>
                                                     <Grid item md= { 5 }>
-                                                        <Link to= "/assignassets/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('view'); setId(assts.id); } }>
+                                                        <Link to= "/assign/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('view'); setId(assts.id); } }>
                                                             <Box padding= "10px 0" color= "#ffffff" bgcolor= "#3498db" 
                                                                 borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                                 <VisibilityIcon style=  {{ fontSize: '110%' }} />
