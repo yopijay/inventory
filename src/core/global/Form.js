@@ -1,17 +1,16 @@
 // Libraries
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Box, Grid } from '@mui/material';
 
 // Core
 import Ctrl from '../global/controls/Controls';
-import { formatValue, getDefaultValue } from './Function';
 import { options } from '../request/Request';
 
 const Form = (props) => {
-    const { json, register, setValue, errors, getValues } = props;
-    const [ chck, setChck ] = useState(getValues().status !== undefined ? getValues().status > 0 ? true : false : true);
-
-    console.log();
+    const { json, register, errors, getValues } = props;
+    const [ chck, setChck ] = useState();
+    // eslint-disable-next-line
+    const [ opt, setOpt ] = useState();
     
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" spacing= { 1 }>
@@ -28,7 +27,6 @@ const Form = (props) => {
                                                 <Ctrl.Checkbox { ...(field.props) } 
                                                     checked= { getValues().status !== undefined ? getValues().status > 0 ? true : false : true }
                                                     register= { register(field.props.name, {
-                                                        value: chck,
                                                         onChange: () => setChck(!chck)
                                                     }) } />
                                             </Box>
@@ -38,8 +36,10 @@ const Form = (props) => {
                                         field.type === 'select' ? (
                                             <Box border= "solid 1px #9E9E9E" borderRadius= "5px">
                                                 <Ctrl.Select { ...(field.props) } 
-                                                    defaultValue= "1"
-                                                    register= { register(field.props.name, {}) } options= { async() => await options((field.props.name).split('_')[0], ['id', 'name']) } />
+                                                    value= { getValues()[field.props.name] !== undefined? getValues()[field.props.name] : "1" }
+                                                    register= { register(field.props.name, {
+                                                        onChange: (e) => setOpt(e.target.value)
+                                                    }) } options= { async() => await options((field.props.name).split('_')[0], ['id', 'name']) } />
                                             </Box>
                                         ) : (
                                             <Ctrl.TextField { ...(field.props) } register= { register(field.props.name, {}) } />

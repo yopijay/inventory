@@ -23,7 +23,7 @@ export const save = async (id, data, type, table) => {
 
 export const get = async (id, table, set, setValues) => {
     let data = await _axios(`${Env[env].url}/get/${table}/${id}`, 'get');
-    setValues(data[0]);
+    setValues(data);
     
     for(let count = 0; count < Object.keys(data[0]).length; count++) {
         let _name = Object.keys(data[0])[count];

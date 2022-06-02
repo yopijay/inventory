@@ -34,7 +34,7 @@ const Index = (props) => {
                 <Ctrl.Typography text= { `${type !== undefined ? type.toUpperCase() : ''} CATEGORY`} style= {{ color: '#2c3e50', fontWeight: 'bold', fontSize: '150%' }} />
                 <Box width= "100%" marginTop= "20px">
                     <form autoComplete= "off">
-                        <Form json= { CategoryJson } register= { register } setValue= { setValue } errors= { errors } getValues= { getValues } />
+                        <Form json= { CategoryJson } register= { register } setValue= { setValue } errors= { errors } getValues= { getValues } values= { values } />
                     </form>
                 </Box>
                 <Box width= "100%" marginTop= "10px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">
