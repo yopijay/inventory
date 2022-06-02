@@ -9,6 +9,9 @@ import { options } from '../request/Request';
 
 const Form = (props) => {
     const { json, register, setValue, errors, getValues } = props;
+    const [ chck, setChck ] = useState(getValues().status !== undefined ? getValues().status > 0 ? true : false : true);
+
+    console.log();
     
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" spacing= { 1 }>
@@ -23,8 +26,11 @@ const Form = (props) => {
                                         <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                                             <Box>
                                                 <Ctrl.Checkbox { ...(field.props) } 
-                                                    defaultChecked= { true }
-                                                    register= { register(field.props.name, {}) } />
+                                                    checked= { getValues().status !== undefined ? getValues().status > 0 ? true : false : true }
+                                                    register= { register(field.props.name, {
+                                                        value: chck,
+                                                        onChange: () => setChck(!chck)
+                                                    }) } />
                                             </Box>
                                             <Box><Ctrl.Typography className= { `f-${ field.labelSize }` } text= { field.props.placeholder } /></Box>
                                         </Box>
