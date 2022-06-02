@@ -12,9 +12,11 @@
             "radius": "5px",
             "padding": "12px 15px 8px 15px",
             "fullWidth": true,
-            "inputsize": "15px",
             "size": "small"
-        }
+        },
+        "color": "#2c3e50",
+        "labelSize": 15,
+        "type": "textfield"
     },
     {
         "label": "Description",
@@ -31,31 +33,26 @@
             "fullWidth": true,
             "inputsize": "15px",
             "size": "small"
-        }
+        },
+        "color": "#2c3e50",
+        "labelSize": 15,
+        "type": "textfield"
     },
     {
         "label": "Status",
         "grid": {
-            "md": 6
+            "md": 12
         },
-        "child": [
-            { 
-                "type": "checkbox", 
-                "grid": { "xs": 12 }, 
-                "props": {
-                    "name": "status", 
-                    "placeholder": "Active", 
-                    "border": "solid 1px #9E9E9E",
-                    "radius": "5px",
-                    "padding": "12px 15px 8px 15px",
-                    "inputsize": "15px",
-                    "size": "small",
-                    "color": "#FFFFFF",
-                    "defaultChecked": true
-                }
-            }
-        ],
-        "inputsize": "15px",
-        "props": {}
+        "child": [],
+        "props": {
+            "name": "status", 
+            "border": "",
+            "radius": "5px",
+            "padding": "12px 15px 8px 15px",
+            "size": "small",
+            "placeholder": "Active"
+        },
+        "labelSize": 15,
+        "type": "checkbox"
     }
 ]

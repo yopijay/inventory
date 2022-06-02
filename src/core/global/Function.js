@@ -47,11 +47,12 @@ export const formatValue = (type, value) => {
     return mask.substring(0, lastReplacedIndex + 1);
 }
 
-export const options = async (table, cols) => {
-    return await _axios(`https://kcic-inventory-api.herokuapp.com/option/${table}/${cols}`, 'get');
+export const options = async (table, cols, set) => {
+    const option = await _axios(`https://kcic-inventory-api.herokuapp.com/option/${table}/${cols}`, 'get');
+    set(option);
 }
 
-export const getDefaultValue = async (name, values) => {
+export const getDefaultValue = (name, values, set) => {
     return {
         value: name === 'bmonth' ? new Date().getMonth() + 1 : 
                 name === 'bday' ? new Date().getDate() : 
@@ -64,10 +65,10 @@ export const getDefaultValue = async (name, values) => {
         options: name === 'bmonth' ? months() : 
                     name === 'bday' ? days(parseInt((values === undefined ? new Date().getMonth() + 1 : values.birthMonth), 10), (values === undefined ? new Date().getFullYear() : values.byear)) : 
                     name === 'byear' ? years() : 
-                    name === 'category_id' ? await options('category', ['id', 'name']) :
-                    name === 'brand_id' ? await options('brand', ['id', 'name']) :
-                    name === 'asset_id' ? await options('assets', ['id', 'name']) :
-                    name === 'user_id' ? await options('users', ['id', "CONCAT(lname, ', ', fname, ' ', mname) AS name"]) :
+                    name === 'category_id' ? options('category', ['id', 'name'], set) :
+                    name === 'brand_id' ? options('brand', ['id', 'name'], set) :
+                    name === 'asset_id' ? options('assets', ['id', 'name'], set) :
+                    name === 'user_id' ? options('users', ['id', "CONCAT(lname, ', ', fname, ' ', mname) AS name"], set) :
                     name === 'position' ? 'Zxc' : ''
     };
 }
