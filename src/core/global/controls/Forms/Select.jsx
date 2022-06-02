@@ -1,9 +1,17 @@
 // Libraires
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { TextField, MenuItem, Avatar, Box } from '@mui/material';
 
 const Select = ( props ) => {
     const { name, value, options, size, bgcolor, padding, radius, fullWidth, register, hasIcon = false, variant, ...other } = props;
+    const [ option, setOption ] = useState();
+
+    useEffect(() => {
+        async function load() {
+            setOption(await options());
+        }
+        load();
+    }, []);
 
     return (
         <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">
@@ -17,7 +25,7 @@ const Select = ( props ) => {
                     InputProps= {{ disableUnderline: true }} 
                     value= { value } { ...other }>
                     {
-                        (options !== undefined ? options : []).map((item, pos) => {
+                        (option !== undefined ? option : []).map((item, pos) => {
                             return (
                                 <MenuItem key= { pos } value= { item.id }>
                                     <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">

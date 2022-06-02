@@ -4,7 +4,7 @@
 import { _axios } from "../global/Function";
 import Env from '../global/constants/Env.json';
 
-let env = 'prod';
+let env = 'local';
 
 export const getall = async (set, table) => {
     let all = await _axios(`${Env[env].url}/getall/${table}`, 'get');
@@ -17,7 +17,7 @@ export const count = async (set, table) => {
 }
 
 export const save = async (id, data, type, table) => {
-    let save = await _axios(`${Env[env].url}/${type}/${table}/${id}`, 'post', data);
+    let save = await _axios(`${Env[env].url}/${type}/${table}${id !== undefined ? `/${id}` : ''}`, 'post', data);
     if(save === 'success') window.location.href = `/${table === 'assigned_asset' ? 'assets/assign' : table}`;
 }
 
@@ -34,4 +34,9 @@ export const get = async (id, table, set, setValues) => {
 export const sum = async(set, table, col) => {
     let sum = await _axios(`${Env[env].url}/sum/${table}/${col}`, 'get');
     set(sum);
+}
+
+export const options = async(table, cols) => {
+    let option = await _axios(`${Env[env].url}/option/${table}/${cols}`, 'get');
+    return option;
 }

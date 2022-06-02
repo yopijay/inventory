@@ -19,7 +19,7 @@ import { get, save } from '../../../../core/request/Request';
 const Index = (props) => {
     let { type, id } = props;
     const [ values, setValues ] = useState();
-    const { register, handleSubmit, formState: { errors }, setValue } = useForm({
+    const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm({
         resolver: yupResolver(Brand())
     });
 
@@ -34,7 +34,7 @@ const Index = (props) => {
                 <Ctrl.Typography text= { `${type !== undefined ? type.toUpperCase() : ''} BRAND`} style= {{ color: '#2c3e50', fontWeight: 'bold', fontSize: '150%' }} />
                 <Box width= "100%" marginTop= "20px">
                     <form autoComplete= "off">
-                        <Form json= { BrandJson } register= { register } setValue= { setValue } errors= { errors } setValues= { setValues } values= { values } />
+                        <Form json= { BrandJson } register= { register } setValue= { setValue } errors= { errors } getValues= { getValues } />
                     </form>
                 </Box>
                 <Box width= "100%" marginTop= "10px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">
@@ -46,7 +46,7 @@ const Index = (props) => {
                     { type !== 'view' ? (
                         <Box marginLeft= "10px"><Ctrl.Button disableRipple= { true } 
                         style= {{ fontSize: '120%', textTransform: 'none', fontWeight: 'bolder', padding: '6px 50px', backgroundColor: '#3498db' }} 
-                        event= { handleSubmit(data => /*save(id, data, type, 'brand')*/ console.log(data) ) } text= { <Ctrl.Typography text= "SAVE" color= "#ffffff" /> } /></Box> 
+                        event= { handleSubmit(data => save(id, data, type, 'brand') /*console.log(getValues())*/ ) } text= { <Ctrl.Typography text= "SAVE" color= "#ffffff" /> } /></Box> 
                     ) : '' }
                 </Box>
             </Grid>

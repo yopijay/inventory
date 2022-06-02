@@ -5,15 +5,10 @@ import { Box, Grid } from '@mui/material';
 // Core
 import Ctrl from '../global/controls/Controls';
 import { formatValue, getDefaultValue } from './Function';
+import { options } from '../request/Request';
 
 const Form = (props) => {
-    const { json, register, setValue, errors, setValues, values } = props;
-    const [ options, setOptions ] = useState();
-
-    useEffect(() => {
-        getDefaultValue('category_id', 'category_id', setOptions);
-
-    }, []);
+    const { json, register, setValue, errors, getValues } = props;
     
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" spacing= { 1 }>
@@ -38,7 +33,7 @@ const Form = (props) => {
                                             <Box border= "solid 1px #9E9E9E" borderRadius= "5px">
                                                 <Ctrl.Select { ...(field.props) } 
                                                     defaultValue= "1"
-                                                    register= { register(field.props.name, {}) } options= { options } />
+                                                    register= { register(field.props.name, {}) } options= { async() => await options((field.props.name).split('_')[0], ['id', 'name']) } />
                                             </Box>
                                         ) : (
                                             <Ctrl.TextField { ...(field.props) } register= { register(field.props.name, {}) } />
