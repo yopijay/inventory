@@ -1,5 +1,6 @@
 // Libraries
 import axios from 'axios';
+import { options } from '../request/Request';
 
 // Constants
 import { days, months, years } from "./constants/Date";
@@ -52,10 +53,12 @@ export const getDefaultValue = async (name, values) => {
         value: name === 'bmonth' ? new Date().getMonth() + 1 : 
                 name === 'bday' ? new Date().getDate() : 
                 name === 'byear' ? new Date().getFullYear() :
+                name === 'category_id' ? "1" :
                 name === 'position' ? 'Admin' : '',
         options: name === 'bmonth' ? months() : 
                     name === 'bday' ? days(parseInt((values === undefined ? new Date().getMonth() + 1 : values.birthMonth), 10), (values === undefined ? new Date().getFullYear() : values.byear)) : 
                     name === 'byear' ? years() : 
+                    name === 'category_id' ? await options(name.split('_')[0], ['id', 'name']) :
                     name === 'position' ? 'Zxc' : ''
     };
 }
