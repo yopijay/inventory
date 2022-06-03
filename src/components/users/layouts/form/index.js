@@ -11,7 +11,7 @@ import Form from '../../../../core/global/Form';
 import { Users } from '../../../../core/global/validation/Users';
 
 // Constants
-import UsersJson from '../../../../core/global/constants/Users.json';
+import { Users as Fields } from '../../../../core/global/constants/Users';
 
 // Request
 import { get, save } from '../../../../core/request/Request';
@@ -29,12 +29,12 @@ const Index = (props) => {
 
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center">
-            <Grid item md= { 1 } />
-            <Grid item md= { 10 } style= {{ borderRadius: '8px', border: 'solid 1px #ecf0f1', padding: '30px 25px' }}>
+            <Grid item xs= { 1 } />
+            <Grid item xs= { 10 } style= {{ borderRadius: '8px', border: 'solid 1px #ecf0f1', padding: '30px 25px' }}>
                 <Ctrl.Typography text= { `${type !== undefined ? type.toUpperCase() : ''} USER`} style= {{ color: '#2c3e50', fontWeight: 'bold', fontSize: '150%' }} />
                 <Box width= "100%" marginTop= "20px">
                     <form autoComplete= "off">
-                        <Form json= { UsersJson } register= { register } setValue= { setValue } errors= { errors } getValues= { getValues } values= { values } />
+                        <Form fields= { Fields } register= { register } setValue= { setValue } errors= { errors } getValues= { getValues } values= { values } />
                     </form>
                 </Box>
                 <Box width= "100%" marginTop= "10px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">

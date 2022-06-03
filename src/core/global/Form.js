@@ -19,53 +19,32 @@ const Form = (props) => {
                         <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                             <Box marginBottom= "5px"><Ctrl.Typography text= { fields()[field].label } className= { `f-${ fields()[field].labelSize }` } color= { fields()[field].color } /></Box>
                             {
-                                (fields()[field].child).length === 0 ? (
-                                    fields()[field].type === 'checkbox' ? ( 
-                                        <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
-                                            <Box>
-                                                <Ctrl.Checkbox { ...(fields()[field].props) } 
-                                                    checked= { getValues()[field] !== undefined ? getValues()[field] > 0 ? true : false : true }
-                                                    register= { register(field, {
-                                                        onChange: () => setChck(!chck)
-                                                    }) } />
-                                            </Box>
-                                            <Box><Ctrl.Typography className= { `f-${ fields()[field].labelSize }` } text= { fields()[field].props.placeholder } /></Box>
+                                fields()[field].type === 'checkbox' ? ( 
+                                    <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+                                        <Box>
+                                            <Ctrl.Checkbox { ...(fields()[field].props) } 
+                                                checked= { getValues()[field] !== undefined ? getValues()[field] > 0 ? true : false : true }
+                                                register= { register(field, {
+                                                    onChange: () => setChck(!chck)
+                                                }) } />
+                                        </Box>
+                                        <Box><Ctrl.Typography className= { `f-${ fields()[field].labelSize }` } text= { fields()[field].props.placeholder } /></Box>
+                                    </Box>
+                                ) : (
+                                    fields()[field].type === 'select' ? (
+                                        <Box border= "solid 1px #9E9E9E" borderRadius= "5px">
+                                            <Ctrl.Select { ...(fields()[field].props) } 
+                                                value= { getValues()[field] !== undefined ? getValues()[field] : 
+                                                                field === 'bmonth' ? new Date().getMonth() + 1 :
+                                                                field === 'bday' ? new Date().getDate() :
+                                                                field === 'byear' ? new Date().getFullYear() : '1' }
+                                                register= { register(field, {
+                                                    onChange: (e) => setOpt(e.target.value)
+                                                }) } options= { fields()[field].option } />
                                         </Box>
                                     ) : (
-                                        fields()[field].type === 'select' ? (
-                                            <Box border= "solid 1px #9E9E9E" borderRadius= "5px">
-                                                <Ctrl.Select { ...(fields()[field].props) } 
-                                                    value= { getValues()[field] !== undefined ? getValues()[field] : "1" }
-                                                    register= { register(field, {
-                                                        onChange: (e) => setOpt(e.target.value)
-                                                    }) } options= { fields()[field].option } />
-                                            </Box>
-                                        ) : (
-                                            <Ctrl.TextField { ...(fields()[field].props) } register= { register(field, {}) } />
-                                        )
+                                        <Ctrl.TextField { ...(fields()[field].props) } register= { register(field, {}) } />
                                     )
-                                ) : (
-                                    <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center" spacing= { 2 }>
-                                    {/* {
-                                        (fields()[field].child).map((item, index) => (
-                                            <Grid item key= { index } { ...(item.grid) }>
-                                            {
-                                                item.type === 'select' ? (
-                                                    <Box border= "solid 1px #9E9E9E" borderRadius= "5px">
-                                                        <Ctrl.Select { ...(item.props) } 
-                                                            value= { getValues()[item.props.name] !== undefined ? getValues()[item.props.name] : "" }
-                                                            register= { register(item.props.name, {
-                                                                onChange: (e) => setOpt(e.target.value)
-                                                            }) } options= { async() => (await getDefaultValue(item.props.name, item.props.name)).options } />
-                                                    </Box>
-                                                ) : ( 
-                                                    <Ctrl.TextField { ...(item.props) } register= { register(item.props.name, {}) } />    
-                                                )
-                                            }
-                                            </Grid>
-                                        ))   
-                                    } */}
-                                    </Grid>
                                 )
                             }
                             <Box padding= "0 10px" marginTop= "5px">

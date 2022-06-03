@@ -5,7 +5,7 @@ import { TextField, MenuItem, Avatar, Box } from '@mui/material';
 const Select = ( props ) => {
     const { name, value, options, size, bgcolor, padding, radius, fullWidth, register, hasIcon = false, variant, ...other } = props;
     const [ option, setOption ] = useState();
-
+    
     useEffect(() => {
         async function data() {
             setOption(await options);

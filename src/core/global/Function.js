@@ -48,7 +48,7 @@ export const formatValue = (type, value) => {
     return mask.substring(0, lastReplacedIndex + 1);
 }
 
-export const getDefaultValue = async (name, values) => {
+export const getDefaultValue = (name, values) => {
     return {
         value: name === 'bmonth' ? new Date().getMonth() + 1 : 
                 name === 'bday' ? new Date().getDate() : 
@@ -60,7 +60,7 @@ export const getDefaultValue = async (name, values) => {
                     name === 'bday' ? days(parseInt((values === undefined ? new Date().getMonth() + 1 : values.birthMonth), 10), (values === undefined ? new Date().getFullYear() : values.byear)) : 
                     name === 'byear' ? years() : 
                     name === 'category_id' ? options(name.split('_')[0], ['id', 'name']).then(result => { return result }) :
-                    name === 'brand_id' ? await options(name.split('_')[0], ['id', 'name']) :
+                    name === 'brand_id' ? options(name.split('_')[0], ['id', 'name']) :
                     name === 'position' ? 'Zxc' : ''
     };
 }
