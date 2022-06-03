@@ -54,11 +54,13 @@ export const getDefaultValue = async (name, values) => {
                 name === 'bday' ? new Date().getDate() : 
                 name === 'byear' ? new Date().getFullYear() :
                 name === 'category_id' ? "1" :
+                name === 'brand_id' ? "1" :
                 name === 'position' ? 'Admin' : '',
         options: name === 'bmonth' ? months() : 
                     name === 'bday' ? days(parseInt((values === undefined ? new Date().getMonth() + 1 : values.birthMonth), 10), (values === undefined ? new Date().getFullYear() : values.byear)) : 
                     name === 'byear' ? years() : 
-                    name === 'category_id' ? await options(name.split('_')[0], ['id', 'name']) :
+                    name === 'category_id' ? options(name.split('_')[0], ['id', 'name']).then(result => { return result }) :
+                    name === 'brand_id' ? await options(name.split('_')[0], ['id', 'name']) :
                     name === 'position' ? 'Zxc' : ''
     };
 }

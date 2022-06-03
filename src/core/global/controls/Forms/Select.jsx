@@ -7,10 +7,11 @@ const Select = ( props ) => {
     const [ option, setOption ] = useState();
 
     useEffect(() => {
-        async function load() {
-            setOption(await options());
+        async function data() {
+            setOption(await options);
         }
-        load();
+
+        data();
     }, []);
 
     return (

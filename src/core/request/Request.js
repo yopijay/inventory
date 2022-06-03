@@ -4,7 +4,7 @@
 import { _axios } from "../global/Function";
 import Env from '../global/constants/Env.json';
 
-let env = 'prod';
+let env = 'local';
 
 export const getall = async (set, table) => {
     let all = await _axios(`${Env[env].url}/getall/${table}`, 'get');
@@ -37,6 +37,9 @@ export const sum = async(set, table, col) => {
 }
 
 export const options = async(table, cols) => {
-    let option = await _axios(`${Env[env].url}/option/${table}/${cols}`, 'get');
-    return option;
+    return await _axios(`${Env[env].url}/option/${table}/${cols}`, 'get');
+}
+
+export const optionsPer = async(table, cols, id) => {
+    return await _axios(`${Env[env].url}/option/per/${table}/${cols}/${id}`, 'get');
 }
