@@ -1,7 +1,7 @@
-// Request
-import { options } from '../../request/Request';
+// Core
+import { options, optionsPer } from "../../request/Request";
 
-export const Brand = () => ({
+export const Assets = (category_id) => ({
     category_id: {
         label: '*Category',
         grid: {
@@ -15,7 +15,24 @@ export const Brand = () => ({
         },
         child: [],
         type: 'select',
-        option: [ 'category', ['id', 'name'] ]
+        option: options('category', ['id', 'name']),
+        dependant: 'brand_id'
+    },
+    brand_id: {
+        label: '*Brand',
+        grid: {
+            xs: 12
+        },
+        props: {
+            name: "brand_id", 
+            size: "small",
+            padding: "12px 15px 8px 15px",
+            color: "#FFFFFF"
+        },
+        child: [],
+        type: 'select',
+        option: optionsPer('category', ['id', 'name'], category_id),
+        dependent: 'category_id'
     },
     name: {
         label: '*Name',
@@ -36,13 +53,13 @@ export const Brand = () => ({
         labelSize: 15,
         type: 'textfield'
     },
-    description: {
-        label: 'Description',
+    quantity: {
+        label: '*Quantity',
         grid: {
             md: 12
         },
         props: {
-            name: 'description',
+            name: 'quantity',
             border: 'solid 1px #bdc3c7',
             radius: '5px',
             padding: '12px 15px 8px 15px',

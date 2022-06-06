@@ -2,18 +2,20 @@
 import React, { useEffect, useState } from 'react';
 import { TextField, MenuItem, Avatar, Box } from '@mui/material';
 
+import { options as items } from '../../../request/Request';
+
 const Select = ( props ) => {
     const { name, value, options, size, bgcolor, padding, radius, fullWidth, register, hasIcon = false, variant, ...other } = props;
     const [ option, setOption ] = useState();
     
     useEffect(() => {
         async function data() {
-            setOption(await options);
+            await items(options[0], options[1], setOption)
         }
-
+        
         data();
     }, []);
-
+    
     return (
         <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">
             <Box width= "100%" bgcolor= { bgcolor || '' } borderRadius= { radius || '0' } padding= { padding || '0' }>

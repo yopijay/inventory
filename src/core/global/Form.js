@@ -5,12 +5,15 @@ import { Box, Grid } from '@mui/material';
 // Core
 import Ctrl from '../global/controls/Controls';
 
+// Request
+import { options } from '../request/Request';
+
 const Form = (props) => {
-    const { fields, register, errors, getValues } = props;
+    const { fields, register, errors, getValues, values, setValues } = props;
     const [ chck, setChck ] = useState();
     // eslint-disable-next-line
     const [ opt, setOpt ] = useState();
-    
+
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" spacing= { 1 }>
             {
@@ -33,13 +36,14 @@ const Form = (props) => {
                                 ) : (
                                     fields()[field].type === 'select' ? (
                                         <Box border= "solid 1px #9E9E9E" borderRadius= "5px">
+                                            { console.log() }
                                             <Ctrl.Select { ...(fields()[field].props) } 
                                                 value= { getValues()[field] !== undefined ? getValues()[field] : 
                                                                 field === 'bmonth' ? new Date().getMonth() + 1 :
                                                                 field === 'bday' ? new Date().getDate() :
                                                                 field === 'byear' ? new Date().getFullYear() : '1' }
                                                 register= { register(field, {
-                                                    onChange: (e) => setOpt(e.target.value)
+                                                    onChange: e => { setOpt(e.target.value) }
                                                 }) } options= { fields()[field].option } />
                                         </Box>
                                     ) : (

@@ -36,10 +36,11 @@ export const sum = async(set, table, col) => {
     set(sum);
 }
 
-export const options = async(table, cols) => {
-    return await _axios(`${Env[env].url}/option/${table}/${cols}`, 'get');
+export const options = async(table, cols, set) => {
+    let options = await _axios(`${Env[env].url}/option/${table}/${cols}`, 'get');
+    set(options);
 }
 
 export const optionsPer = async(table, cols, id) => {
-    return await _axios(`${Env[env].url}/option/per/${table}/${cols}/${id}`, 'get');
+    return await _axios(`${Env[env].url}/option/per/${table}/${cols}/${id !== undefined ? id.toString() : '1'}`, 'get');
 }
