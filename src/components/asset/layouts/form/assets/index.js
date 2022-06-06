@@ -21,6 +21,7 @@ const Index = (props) => {
     const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm({
         resolver: yupResolver(Asset())
     });
+    // eslint-disable-next-line
     const [ values, setValues ] = useState(getValues());
 
     useEffect(() => {
@@ -35,7 +36,7 @@ const Index = (props) => {
                 <Ctrl.Typography text= { `${type !== undefined ? type.toUpperCase() : ''} ASSET`} style= {{ color: '#2c3e50', fontWeight: 'bold', fontSize: '150%' }} />
                 <Box width= "100%" marginTop= "20px">
                     <form autoComplete= "off">
-                        <Form register= { register } errors= { errors } />
+                        <Form register= { register } errors= { errors } getValues= { getValues } />
                     </form>
                 </Box>
                 <Box width= "100%" marginTop= "10px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">
@@ -47,7 +48,7 @@ const Index = (props) => {
                     { type !== 'view' ? (
                         <Box marginLeft= "10px"><Ctrl.Button disableRipple= { true } 
                         style= {{ fontSize: '120%', textTransform: 'none', fontWeight: 'bolder', padding: '6px 50px', backgroundColor: '#3498db' }} 
-                        event= { handleSubmit(data => /*save(id, data, type, 'assets')*/ console.log(data) ) } text= { <Ctrl.Typography text= "SAVE" color= "#ffffff" /> } /></Box> 
+                        event= { handleSubmit(data => save(id, data, type, 'assets') ) } text= { <Ctrl.Typography text= "SAVE" color= "#ffffff" /> } /></Box> 
                     ) : '' }
                 </Box>
             </Grid>

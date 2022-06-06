@@ -1,7 +1,7 @@
 // Request
 import { options } from '../../request/Request';
 
-export const Brand = () => ({
+export const Brand = async(setValues) => ({
     category_id: {
         label: '*Category',
         grid: {
@@ -15,7 +15,7 @@ export const Brand = () => ({
         },
         child: [],
         type: 'select',
-        option: [ 'category', ['id', 'name'] ]
+        option: await options('category', ['id', 'name'], setValues)
     },
     name: {
         label: '*Name',

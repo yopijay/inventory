@@ -1,20 +1,9 @@
 // Libraires
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { TextField, MenuItem, Avatar, Box } from '@mui/material';
-
-import { options as items } from '../../../request/Request';
 
 const Select = ( props ) => {
     const { name, value, options, size, bgcolor, padding, radius, fullWidth, register, hasIcon = false, variant, ...other } = props;
-    const [ option, setOption ] = useState();
-    
-    useEffect(() => {
-        async function data() {
-            await items(options[0], options[1], setOption)
-        }
-        
-        data();
-    }, []);
     
     return (
         <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">
@@ -27,8 +16,13 @@ const Select = ( props ) => {
                     name= { name } { ...register } 
                     InputProps= {{ disableUnderline: true }} 
                     value= { value } { ...other }>
+                        <MenuItem value= "" disabled>
+                            <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+                                <Box marginLeft= "5px">-- Select { name.split('_')[0] } --</Box>
+                            </Box>
+                        </MenuItem>
                     {
-                        (option !== undefined ? option : []).map((item, pos) => {
+                        (options).map((item, pos) => {
                             return (
                                 <MenuItem key= { pos } value= { item.id }>
                                     <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">

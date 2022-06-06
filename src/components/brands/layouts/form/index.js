@@ -7,14 +7,13 @@ import { Link } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../core/global/controls/Controls';
-import Form from '../../../../core/global/Form';
 import { Brand } from '../../../../core/global/validation/Brand';
-
-// Constants
-import { Brand as Fields } from '../../../../core/global/constants/Brand';
 
 // Request
 import { get, save } from '../../../../core/request/Request';
+
+// Layouts
+import Form from './Form';
 
 const Index = (props) => {
     let { type, id } = props;
@@ -35,7 +34,7 @@ const Index = (props) => {
                 <Ctrl.Typography text= { `${type !== undefined ? type.toUpperCase() : ''} BRAND`} style= {{ color: '#2c3e50', fontWeight: 'bold', fontSize: '150%' }} />
                 <Box width= "100%" marginTop= "20px">
                     <form autoComplete= "off">
-                        <Form fields= { Fields } register= { register } setValue= { setValue } errors= { errors } getValues= { getValues } />
+                        <Form register= { register } errors= { errors } getValues= { getValues } />
                     </form>
                 </Box>
                 <Box width= "100%" marginTop= "10px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">
@@ -47,7 +46,7 @@ const Index = (props) => {
                     { type !== 'view' ? (
                         <Box marginLeft= "10px"><Ctrl.Button disableRipple= { true } 
                         style= {{ fontSize: '120%', textTransform: 'none', fontWeight: 'bolder', padding: '6px 50px', backgroundColor: '#3498db' }} 
-                        event= { handleSubmit(data => save(id, data, type, 'brand') /*console.log(getValues())*/ ) } text= { <Ctrl.Typography text= "SAVE" color= "#ffffff" /> } /></Box> 
+                        event= { handleSubmit(data => save(id, data, type, 'brand') ) } text= { <Ctrl.Typography text= "SAVE" color= "#ffffff" /> } /></Box> 
                     ) : '' }
                 </Box>
             </Grid>

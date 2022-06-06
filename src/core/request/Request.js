@@ -41,6 +41,7 @@ export const options = async(table, cols, set) => {
     set(options);
 }
 
-export const optionsPer = async(table, cols, id) => {
-    return await _axios(`${Env[env].url}/option/per/${table}/${cols}/${id !== undefined ? id.toString() : '1'}`, 'get');
+export const optionsPer = async(table, cols, set, id = null) => {
+    let options = await _axios(`${Env[env].url}/option/per/${table}/${cols}/${id !== undefined ? id : '1'}`, 'get');
+    set(options);
 }
