@@ -3,7 +3,7 @@ import React from 'react';
 import { TextField as MuiTextField, Box } from '@mui/material';
 
 const TextField = ( props ) => {
-    const { name, label, value, event, size, labelsize, inputsize, color, variant, fullWidth, error, bgcolor, radius, border, padding, startadornment, register, ...other } = props;
+    const { name, label, value, size, variant, fullWidth, bgcolor, radius, border, padding, startadornment, register, ...other } = props;
 
     return(
         <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">

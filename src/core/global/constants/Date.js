@@ -29,9 +29,10 @@ export const years = () => {
     let _year = [];
     let _curYear = new Date().getFullYear();
 
-    for(let year = _curYear - 130; year <=  _curYear; year++) {
+    for(let year = _curYear - 122; year <=  _curYear; year++) {
         _year.push({ id: year.toString(), name: year });
     }
 
-    return _year;
+    _year.sort()
+    return _year.reverse();
 }

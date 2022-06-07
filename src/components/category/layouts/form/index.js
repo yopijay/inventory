@@ -11,15 +11,16 @@ import Form from '../../../../core/global/Form';
 import { Category } from '../../../../core/global/validation/Category';
 
 // Constants
-import CategoryJson from '../../../../core/global/constants/Category.json';
+import { Category as Fields } from '../../../../core/global/constants/Category';
 
 // Request
 import { get, save } from '../../../../core/request/Request';
 
 const Index = (props) => {
     let { type, id } = props;
+    // eslint-disable-next-line
     const [ values, setValues ] = useState();
-    const { register, handleSubmit, formState: { errors }, setValue } = useForm({
+    const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm({
         resolver: yupResolver(Category())
     });
 
@@ -34,7 +35,7 @@ const Index = (props) => {
                 <Ctrl.Typography text= { `${type !== undefined ? type.toUpperCase() : ''} CATEGORY`} style= {{ color: '#2c3e50', fontWeight: 'bold', fontSize: '150%' }} />
                 <Box width= "100%" marginTop= "20px">
                     <form autoComplete= "off">
-                        <Form json= { CategoryJson } register= { register } setValue= { setValue } errors= { errors } setValues= { setValues } values= { values } />
+                        <Form fields= { Fields } register= { register } setValue= { setValue } errors= { errors } getValues= { getValues } />
                     </form>
                 </Box>
                 <Box width= "100%" marginTop= "10px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">

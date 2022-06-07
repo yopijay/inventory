@@ -17,7 +17,7 @@ export const count = async (set, table) => {
 }
 
 export const save = async (id, data, type, table) => {
-    let save = await _axios(`${Env[env].url}/${type}/${table}/${id}`, 'post', data);
+    let save = await _axios(`${Env[env].url}/${type}/${table}${id !== undefined ? `/${id}` : ''}`, 'post', data);
     if(save === 'success') window.location.href = `/${table === 'assigned_asset' ? 'assets/assign' : table}`;
 }
 
@@ -28,11 +28,20 @@ export const get = async (id, table, set, setValues) => {
     for(let count = 0; count < Object.keys(data[0]).length; count++) {
         let _name = Object.keys(data[0])[count];
         set(_name, data[0][_name]);
-        if(_name === 'status') set('status', data[0]['status'] === 1 ? true : false);
     }
 }
 
 export const sum = async(set, table, col) => {
     let sum = await _axios(`${Env[env].url}/sum/${table}/${col}`, 'get');
     set(sum);
+}
+
+export const options = async(table, cols, set) => {
+    let options = await _axios(`${Env[env].url}/option/${table}/${cols}`, 'get');
+    set(options);
+}
+
+export const optionsPer = async(table, cols, set, id = null) => {
+    let options = await _axios(`${Env[env].url}/option/per/${table}/${cols}/${id !== undefined ? id : '1'}`, 'get');
+    set(options);
 }

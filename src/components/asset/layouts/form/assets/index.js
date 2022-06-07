@@ -7,26 +7,28 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 // Core
 import Ctrl from '../../../../../core/global/controls/Controls';
-import Form from '../../../../../core/global/Form';
 import { Asset } from '../../../../../core/global/validation/Asset';
 
-// Constants
-import AssetsJson from '../../../../../core/global/constants/Assets.json';
+// Layouts
+import Form from './Form';
 
 // Request
 import { get, save } from '../../../../../core/request/Request';
 
 const Index = (props) => {
     let { type, id } = props;
-    const [ values, setValues ] = useState();
-    const { register, handleSubmit, formState: { errors }, setValue } = useForm({
+    // eslint-disable-next-line
+    const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm({
         resolver: yupResolver(Asset())
     });
+    // eslint-disable-next-line
+    const [ values, setValues ] = useState(getValues());
 
     useEffect(() => {
+        // Fields(watch('category_id'));
         if(id !== undefined) get(id, 'assets', setValue, setValues);
     }, []);
-
+    
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center">
             <Grid item md= { 1 } />
@@ -34,7 +36,7 @@ const Index = (props) => {
                 <Ctrl.Typography text= { `${type !== undefined ? type.toUpperCase() : ''} ASSET`} style= {{ color: '#2c3e50', fontWeight: 'bold', fontSize: '150%' }} />
                 <Box width= "100%" marginTop= "20px">
                     <form autoComplete= "off">
-                        <Form json= { AssetsJson } register= { register } setValue= { setValue } errors= { errors } setValues= { setValues } values= { values } />
+                        <Form register= { register } errors= { errors } getValues= { getValues } />
                     </form>
                 </Box>
                 <Box width= "100%" marginTop= "10px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">
