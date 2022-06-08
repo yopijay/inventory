@@ -17,7 +17,6 @@ import { get, save } from '../../../../../core/request/Request';
 
 const Index = (props) => {
     let { type, id } = props;
-    // eslint-disable-next-line
     const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm({
         resolver: yupResolver(Asset())
     });
@@ -25,7 +24,6 @@ const Index = (props) => {
     const [ values, setValues ] = useState(getValues());
 
     useEffect(() => {
-        // Fields(watch('category_id'));
         if(id !== undefined) get(id, 'assets', setValue, setValues);
     }, []);
     

@@ -24,7 +24,7 @@ const Body = (props) => {
                                     <Grid item key= { index }>
                                         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center" spacing= { 2 }>
                                             <Grid item md= { 1 }>
-                                                <Ctrl.Typography text= { user.id } color= "#34495e" 
+                                                <Ctrl.Typography text= { user.series_no } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%', textAlign: 'center' }} />
                                             </Grid>
                                             <Grid item md= { 4 }>
