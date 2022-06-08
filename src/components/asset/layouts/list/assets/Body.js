@@ -48,7 +48,12 @@ const Body = (props) => {
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
                                             <Grid item md= { 2 }>
-                                                <Ctrl.Typography text= { assts.date_created } color= "#34495e" 
+                                                <Ctrl.Typography 
+                                                    text= { `${ new Date(assts.date_created).toLocaleString('default', { month: 'long' }) }
+                                                                ${ new Date(assts.date_created).getDate() }, ${ new Date(assts.date_created).getFullYear() } 
+                                                                ${ new Date(assts.date_created).getHours() % 12 }:${ new Date(assts.date_created).getMinutes() }
+                                                                ${ new Date(assts.date_created).getHours() >= 12 ? 'PM' : 'AM' }` }  
+                                                    color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
                                             <Grid item md= { 1 }>
