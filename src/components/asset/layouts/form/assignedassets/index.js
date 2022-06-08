@@ -7,21 +7,21 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 // Core
 import Ctrl from '../../../../../core/global/controls/Controls';
-import Form from '../../../../../core/global/Form';
 import { AssignAssets } from '../../../../../core/global/validation/AssignAssets';
-
-// Constants
-import AssignAssetsJson from '../../../../../core/global/constants/AssignAssets.json';
 
 // Request
 import { get, save } from '../../../../../core/request/Request';
 
+// Layouts
+import Form from './Form';
+
 const Index = (props) => {
     let { type, id } = props;
-    const [ values, setValues ] = useState();
-    const { register, handleSubmit, formState: { errors }, setValue } = useForm({
+    const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm({
         resolver: yupResolver(AssignAssets())
     });
+    // eslint-disable-next-line
+    const [ values, setValues ] = useState();
 
     useEffect(() => {
         if(id !== undefined) get(id, 'assets', setValue, setValues);
@@ -34,7 +34,7 @@ const Index = (props) => {
                 <Ctrl.Typography text= { `${type !== undefined ? type.toUpperCase() : ''} ASSIGN ASSET`} style= {{ color: '#2c3e50', fontWeight: 'bold', fontSize: '150%' }} />
                 <Box width= "100%" marginTop= "20px">
                     <form autoComplete= "off">
-                        <Form json= { AssignAssetsJson } register= { register } setValue= { setValue } errors= { errors } setValues= { setValues } values= { values } />
+                        <Form register= { register } errors= { errors } getValues= { getValues } />
                     </form>
                 </Box>
                 <Box width= "100%" marginTop= "10px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">

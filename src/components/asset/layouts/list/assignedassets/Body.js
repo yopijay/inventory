@@ -24,7 +24,7 @@ const Body = (props) => {
                                     <Grid item key= { index }>
                                         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center" spacing= { 2 }>
                                             <Grid item md= { 1 }>
-                                                <Ctrl.Typography text= { assts.id } color= "#34495e" 
+                                                <Ctrl.Typography text= { assts.series_no } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%', textAlign: 'center' }} />
                                             </Grid>
                                             <Grid item md= { 2 }>
@@ -36,7 +36,7 @@ const Body = (props) => {
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
                                             <Grid item md= { 3 }>
-                                                <Ctrl.Typography text= { `${assts.lname}, ${assts.fname} ${assts.mname}` } color= "#34495e" 
+                                                <Ctrl.Typography text= { assts.user_fullname } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
                                             <Grid item md= { 1 }>
@@ -59,7 +59,7 @@ const Body = (props) => {
                                             <Grid item md= { 1 }>
                                                 <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center" spacing= { 1 }>
                                                     <Grid item md= { 5 }>
-                                                        <Link to= "/assign/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('update'); setId(assts.id); } }>
+                                                        <Link to= "/assets/assign/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('update'); setId(assts.id); } }>
                                                             <Box padding= "10px 0" color= "#ffffff" bgcolor= "#3498db" 
                                                                 borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                                 <ModeEditOutlineIcon style= {{ fontSize: '110%' }} />
@@ -67,7 +67,7 @@ const Body = (props) => {
                                                         </Link>
                                                     </Grid>
                                                     <Grid item md= { 5 }>
-                                                        <Link to= "/assign/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('view'); setId(assts.id); } }>
+                                                        <Link to= "/assets/assign/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('view'); setId(assts.id); } }>
                                                             <Box padding= "10px 0" color= "#ffffff" bgcolor= "#3498db" 
                                                                 borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                                 <VisibilityIcon style=  {{ fontSize: '110%' }} />

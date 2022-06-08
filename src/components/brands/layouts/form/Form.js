@@ -12,6 +12,8 @@ import { options } from '../../../../core/request/Request';
 const Form = (props) => {
     const { register, errors, getValues } = props;
     const [ categories, setCategories ] = useState();
+    // eslint-disable-next-line
+    const [ categoryId, setCategoryId ] = useState();
 
     useEffect(() => {
         options('category', ['id', 'name'], setCategories);
@@ -26,7 +28,7 @@ const Form = (props) => {
                         <Ctrl.Select name= "category_id" size= "small" padding= "12px 15px 8px 15px" 
                             value= { getValues().category_id !== undefined ? getValues().category_id : '1' }
                             register= { register('category_id', {
-                                onChange: e => console.log(e)
+                                onChange: e => setCategoryId(e.target.value)
                             }) } options= { categories !== undefined ? categories : [] } />
                     </Box>
                     <Box padding= "0 10px" marginTop= "5px">
