@@ -4,7 +4,7 @@
 import { _axios } from "../global/Function";
 import Env from '../global/constants/Env.json';
 
-let env = 'local';
+let env = 'prod';
 
 export const getall = async (set, table) => {
     let all = await _axios(`${Env[env].url}/getall/${table}`, 'get');
