@@ -10,6 +10,7 @@ import Ctrl from '../../core/global/controls/Controls';
 import Category from './layouts/Category';
 import Brand from './layouts/Brand';
 import Users from './layouts/Users';
+import Assets from './layouts/Assets';
 
 const Index = () => {
     return (
@@ -37,6 +38,12 @@ const Index = () => {
                                         bgcolor= "#3498db" borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">USERS</Box>
                                 </Link>
                             </Grid>
+                            <Grid item md= { 2 }>
+                                <Link to= "/reports/assets" style= {{ textDecoration: 'none' }}>
+                                    <Box padding= "10px 0" color= "#ffffff" 
+                                        bgcolor= "#3498db" borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">ASSETS</Box>
+                                </Link>
+                            </Grid>
                         </Grid>
                     </Grid>
                     <Grid item>
@@ -44,6 +51,7 @@ const Index = () => {
                             <Route exact path= "/category" element= { <Category /> } />
                             <Route exact path= "/brand" element= { <Brand /> } />
                             <Route exact path= "/users" element= { <Users /> } />
+                            <Route exact path= "/assets" element= { <Assets /> } />
                         </Routes>
                     </Grid>
                 </Grid>

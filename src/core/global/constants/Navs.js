@@ -9,6 +9,7 @@ import Assets from '../../../components/asset';
 import Categories from '../../../components/category';
 import Reports from '../../../components/report';
 import Logs from '../../../components/logs';
+import Testing from '../../../components/testing';
 
 export const Navs = () => (
     [
@@ -46,6 +47,11 @@ export const Navs = () => (
             name: 'Logs',
             path: '/logs',
             component: <Logs />
+        },
+        {
+            name: 'Testings',
+            path: '/testings',
+            component: <Testing />
         }
     ]
 );

@@ -9,7 +9,7 @@ const Body = (props) => {
     const { data } = props;
 
     return (
-        <Box>
+        <Box sx= {{ overflowY: 'scroll', height: '700px' }}>
             { 
                 (data !== undefined) ? 
                     data.length !== 0 ? (

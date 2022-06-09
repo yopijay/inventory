@@ -3,9 +3,9 @@ import React from 'react';
 import { Box } from '@mui/material';
 
 // Layouts
-import List from './list/brand';
+import List from './list/asset';
 
-const Brand = () => {
+const Asset = () => {
     return (
         <Box padding= "10px 15px" display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
             <List />
@@ -13,4 +13,4 @@ const Brand = () => {
     );
 }
 
-export default Brand;
+export default Asset;
