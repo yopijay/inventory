@@ -8,6 +8,7 @@ import Users from '../../../components/users';
 import Assets from '../../../components/asset';
 import Categories from '../../../components/category';
 import Reports from '../../../components/report';
+import Logs from '../../../components/logs';
 
 export const Navs = () => (
     [
@@ -40,6 +41,11 @@ export const Navs = () => (
             name: 'Reports',
             path: '/reports',
             component: <Reports />
+        },
+        {
+            name: 'Logs',
+            path: '/logs',
+            component: <Logs />
         }
     ]
 );
