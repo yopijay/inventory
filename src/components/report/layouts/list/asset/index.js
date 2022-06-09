@@ -10,7 +10,7 @@ import Body from './Body';
 import { reports } from '../../../../../core/request/Request';
 
 // Core
-import Export from '../../../../../core/global/Export';
+// import Export from '../../../../../core/global/Export';
 
 const Index = () => {
     const [ report, setReport ] = useState();

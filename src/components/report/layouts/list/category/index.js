@@ -1,9 +1,10 @@
 // Libraries
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Box, Grid } from '@mui/material';
 
 // Core
 import Export from '../../../../../core/global/Export';
+import Print from '../../../../../core/global/Print';
 
 // Layouts
 import Header from './Header';
@@ -14,6 +15,7 @@ import { reports } from '../../../../../core/request/Request';
 
 const Index = () => {
     const [ report, setReport ] = useState();
+    const _print = useRef();
 
     useEffect(() => {
         reports(setReport, 'category');
@@ -21,16 +23,26 @@ const Index = () => {
 
     return (
         <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" marginTop= "40px">
-            <Box marginBottom= "40px">
-                <Export element= {
+            <Box marginBottom= "40px" display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+                <Box marginRight= "20px">
+                    <Export element= {
                         <button 
                             style= {{ backgroundColor: '#00b894', border: 'none', padding: '9px 15px', color: '#ffffff', fontSize: '110%', fontFamily: 'Gilroy Light', borderRadius: '5px' }}>Export to Excel</button>
                     } 
                     filename= "Category"
                     data= { report }
                     column= { report !== undefined ? Object.keys(report[0]) : [] } />
+                </Box>
+                <Box>
+                    <Print
+                        name= "Category"
+                        element={<button style= {{ backgroundColor: '#00b894', 
+                        border: 'none', padding: '9px 15px', color: '#ffffff', fontSize: '110%', fontFamily: 'Gilroy Light', borderRadius: '5px' }}>PRINT</button>}
+                        content={() => _print.current}
+                    />
+                </Box>
             </Box>
-            <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 3 }>
+            <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 3 } ref= { _print }>
                 <Grid item><Header /></Grid>
                 <Grid item><Body data= { report } /></Grid>
             </Grid>

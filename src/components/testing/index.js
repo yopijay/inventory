@@ -2,6 +2,7 @@ import React from "react";
 import ExcelFile from "react-data-export/dist/ExcelPlugin/components/ExcelFile";
 import ExcelColumn from "react-data-export/dist/ExcelPlugin/elements/ExcelColumn";
 import ExcelSheet from "react-data-export/dist/ExcelPlugin/elements/ExcelSheet";
+// import ReactToPrint from "react-to-print";
 // import ReactExport, { } from "react-data-export";
 
 // const ExcelFile = ReactExport.ExcelFile;
@@ -49,7 +50,19 @@ const dataSet2 = [
 ];
 
 const Index = () => {
+    // const componentRef = useRef();
     return (
+        // <div>
+        //     <ReactToPrint
+        //         trigger={() => {
+        //         // NOTE: could just as easily return <SomeComponent />. Do NOT pass an `onClick` prop
+        //         // to the root node of the returned component as it will be overwritten.
+        //         return <a href="#">Print this out!</a>;
+        //         }}
+        //         content={() => componentRef.current}
+        //     />
+        //     <div ref={componentRef} />
+        // </div>
         <ExcelFile element={<button>Download Data</button>} filename= "TESTING">
             <ExcelSheet data={dataSet1} name="Employees">
                 <ExcelColumn label="Name" value="name"/>
