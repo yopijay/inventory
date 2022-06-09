@@ -13,9 +13,9 @@ const Index = () => {
     const [ report, setReport ] = useState();
 
     useEffect(() => {
-        reports(setReport, 'brand');
+        reports(setReport, 'users');
     }, []);
-    
+
     return (
         <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" marginTop= "40px">
             <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 3 }>

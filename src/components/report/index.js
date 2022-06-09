@@ -9,6 +9,7 @@ import Ctrl from '../../core/global/controls/Controls';
 // Layouts
 import Category from './layouts/Category';
 import Brand from './layouts/Brand';
+import Users from './layouts/Users';
 
 const Index = () => {
     return (
@@ -42,7 +43,7 @@ const Index = () => {
                         <Routes>
                             <Route exact path= "/category" element= { <Category /> } />
                             <Route exact path= "/brand" element= { <Brand /> } />
-                            <Route exact path= "/users" element= "USERS" />
+                            <Route exact path= "/users" element= { <Users /> } />
                         </Routes>
                     </Grid>
                 </Grid>
