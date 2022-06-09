@@ -12,7 +12,7 @@ const Export = (props) => {
         <ExcelSheet data={ data !== undefined ? data : [] } name= { filename }>
             {
                 column.map((cols, index) => (
-                    <ExcelColumn label= { `${cols}` } value= { `${cols}` } key= { index } />
+                    <ExcelColumn label= { `${cols.replace('_', ' ').charAt(0).toUpperCase() + cols.replace('_', ' ').slice(1)}` } value= { `${cols}` } key= { index } />
                 ))
             }
         </ExcelSheet>
