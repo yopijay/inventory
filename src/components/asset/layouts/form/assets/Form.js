@@ -10,6 +10,8 @@ const Form = (props) => {
     const { register, errors, getValues } = props;
     const [ categories, setCategories ] = useState();
     const [ brands, setBrands ] = useState();
+    // eslint-disable-next-line
+    const [ opt, setOpt ] = useState();
 
     useEffect(() => {
         options('category', ['id', 'name'], setCategories);
@@ -38,8 +40,10 @@ const Form = (props) => {
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Brand" className= "f-15" color= "#2c3e50" /></Box>
                     <Box border= "solid 1px #9E9E9E" borderRadius= "5px">
                         <Ctrl.Select name= "brand_id" size= "small" padding= "12px 15px 8px 15px" 
-                            defaultValue= ""
-                            register= { register('brand_id', {}) } options= { brands !== undefined ? brands : [] } />
+                            value= { getValues().brand_id !== undefined ? getValues().brand_id : '' }
+                            register= { register('brand_id', {
+                                onChange: e => setOpt(e.target.value)
+                            }) } options= { brands !== undefined ? brands : [] } />
                     </Box>
                     <Box padding= "0 10px" marginTop= "5px">
                         <Ctrl.Typography className= "f-14" text= { errors.brand_id === undefined ? '' : errors.brand_id.message } color= "red" />

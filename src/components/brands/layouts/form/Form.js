@@ -14,6 +14,7 @@ const Form = (props) => {
     const [ categories, setCategories ] = useState();
     // eslint-disable-next-line
     const [ categoryId, setCategoryId ] = useState();
+    const [ chck, setChck ] = useState();
 
     useEffect(() => {
         options('category', ['id', 'name'], setCategories);
@@ -60,8 +61,10 @@ const Form = (props) => {
                     <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                         <Box>
                             <Ctrl.Checkbox name= "status" radius= "5px" padding= "12px 15px 8px 15px" size= "small"
-                                defaultChecked= { true }
-                                register= { register('status', {}) } />
+                                checked= { getValues().status !== undefined ? getValues().status > 0 ? true : false : true }
+                                register= { register('status', {
+                                    onChange: () => setChck(!chck)
+                                }) } />
                         </Box>
                         <Box><Ctrl.Typography className= "f-15" text= "Active" /></Box>
                     </Box>

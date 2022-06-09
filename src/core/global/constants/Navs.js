@@ -7,6 +7,7 @@ import Brands from '../../../components/brands';
 import Users from '../../../components/users';
 import Assets from '../../../components/asset';
 import Categories from '../../../components/category';
+import Reports from '../../../components/report';
 
 export const Navs = () => (
     [
@@ -34,6 +35,11 @@ export const Navs = () => (
             name: 'Assets',
             path: '/assets',
             component: <Assets />
+        },
+        {
+            name: 'Reports',
+            path: '/reports',
+            component: <Reports />
         }
     ]
 );
