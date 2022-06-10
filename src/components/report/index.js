@@ -11,6 +11,7 @@ import Category from './layouts/Category';
 import Brand from './layouts/Brand';
 import Users from './layouts/Users';
 import Assets from './layouts/Assets';
+import AssignedAsset from './layouts/AssignedAssets';
 
 const Index = () => {
     return (
@@ -44,6 +45,12 @@ const Index = () => {
                                         bgcolor= "#3498db" borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">ASSETS</Box>
                                 </Link>
                             </Grid>
+                            <Grid item md= { 2 }>
+                                <Link to= "/reports/assigned-asset" style= {{ textDecoration: 'none' }}>
+                                    <Box padding= "10px 0" color= "#ffffff" 
+                                        bgcolor= "#3498db" borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">ASSIGNED ASSETS</Box>
+                                </Link>
+                            </Grid>
                         </Grid>
                     </Grid>
                     <Grid item>
@@ -52,6 +59,7 @@ const Index = () => {
                             <Route exact path= "/brand" element= { <Brand /> } />
                             <Route exact path= "/users" element= { <Users /> } />
                             <Route exact path= "/assets" element= { <Assets /> } />
+                            <Route exact path= "/assigned-asset" element= { <AssignedAsset /> } />
                         </Routes>
                     </Grid>
                 </Grid>
