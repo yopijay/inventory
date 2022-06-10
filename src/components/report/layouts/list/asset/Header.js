@@ -15,7 +15,7 @@ const Header = () => {
                 <Ctrl.Typography text= "Asset" color= "#34495e" style= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
             </Grid>
             <Grid item md= { 1 }>
-                <Ctrl.Typography text= "Quantity" color= "#34495e" style= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
+                <Ctrl.Typography text= "Total Asset" color= "#34495e" style= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
             </Grid>
             <Grid item md= { 1 }>
                 <Ctrl.Typography text= "No. of Assigned asset" color= "#34495e" style= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />

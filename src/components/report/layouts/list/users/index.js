@@ -24,7 +24,7 @@ const Index = () => {
     return (
         <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" marginTop= "40px">
             <Box marginBottom= "40px" display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
-                <Box marginRight= "20px">
+                <Box>
                     <Export element= {
                             <button 
                                 style= {{ backgroundColor: '#00b894', border: 'none', padding: '9px 15px', color: '#ffffff', fontSize: '110%', fontFamily: 'Gilroy Light', borderRadius: '5px' }}>Export to Excel</button>
@@ -33,7 +33,7 @@ const Index = () => {
                         data= { report }
                         column= { report !== undefined ? Object.keys(report[0]) : [] } />
                 </Box>
-                <Box>
+                <Box  margin= "0 20px">
                     <Print
                         name= "Users"
                         element={<button style= {{ backgroundColor: '#00b894', 
