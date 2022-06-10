@@ -12,6 +12,7 @@ import { reports } from '../../../../../core/request/Request';
 // Core
 import Export from '../../../../../core/global/Export';
 import Print from '../../../../../core/global/Print';
+import PDF from '../../../../../core/global/PDF';
 
 const Index = () => {
     const [ report, setReport ] = useState();
@@ -41,6 +42,7 @@ const Index = () => {
                         content={() => _print.current}
                     />
                 </Box>
+                <Box><PDF name= "Category" content= { report } /></Box>
             </Box>
             <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 3 } ref= { _print }>
                 <Grid item><Header /></Grid>

@@ -42,9 +42,7 @@ const Index = () => {
                         content={() => _print.current}
                     />
                 </Box>
-                <Box>
-                    <PDF name= "Category" content= { report } />
-                </Box>
+                <Box><PDF name= "Category" content= { report } /></Box>
             </Box>
             <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 3 } ref= { _print }>
                 <Grid item><Header /></Grid>
