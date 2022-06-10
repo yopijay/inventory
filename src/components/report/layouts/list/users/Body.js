@@ -39,7 +39,7 @@ const Body = (props) => {
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
                                             <Grid item md= { 1 }>
-                                                <Ctrl.Typography text= { user.total } color= "#34495e" 
+                                                <Ctrl.Typography text= { user.total_asset } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} textAlign= "center" />
                                             </Grid>
                                             <Grid item md= { 1 }>
