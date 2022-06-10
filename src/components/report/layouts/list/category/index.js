@@ -5,6 +5,7 @@ import { Box, Grid } from '@mui/material';
 // Core
 import Export from '../../../../../core/global/Export';
 import Print from '../../../../../core/global/Print';
+import PDF from '../../../../../core/global/PDF';
 
 // Layouts
 import Header from './Header';
@@ -40,6 +41,9 @@ const Index = () => {
                         border: 'none', padding: '9px 15px', color: '#ffffff', fontSize: '110%', fontFamily: 'Gilroy Light', borderRadius: '5px' }}>PRINT</button>}
                         content={() => _print.current}
                     />
+                </Box>
+                <Box>
+                    <PDF name= "Category" content= { report } />
                 </Box>
             </Box>
             <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 3 } ref= { _print }>
