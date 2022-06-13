@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Grid } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../core/global/controls/Controls';
@@ -16,21 +16,21 @@ import { Category as Fields } from '../../../../core/global/constants/Category';
 // Request
 import { get, save } from '../../../../core/request/Request';
 
-const Index = (props) => {
-    let { type, id } = props;
+const Index = () => {
+    const { type, id } = useParams();
     // eslint-disable-next-line
     const [ values, setValues ] = useState();
     const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm({
         resolver: yupResolver(Category())
     });
-
+    
     useEffect(() => {
         if(id !== undefined) get(id, 'category', setValue, setValues);
     }, []);
     
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center">
-            <Grid item md= { 12 } style= {{ borderRadius: '8px', border: 'solid 1px #ecf0f1', padding: '30px 25px' }}>
+            <Grid item md= { 12 } style= {{ borderRadius: '8px', border: 'solid 1px #ecf0f1', padding: '30px 25px', backgroundColor: '#ffffff' }}>
                 <Ctrl.Typography text= { `${type !== undefined ? type.toUpperCase() : ''} CATEGORY`} style= {{ color: '#2c3e50', fontWeight: 'bold', fontSize: '150%' }} />
                 <Box width= "100%" marginTop= "20px">
                     <form autoComplete= "off">

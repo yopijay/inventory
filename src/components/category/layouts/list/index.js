@@ -14,8 +14,7 @@ import { getall } from '../../../../core/request/Request';
 import Header from './Header';
 import Body from './Body';
 
-const Index = (props) => {
-    let { setType, setId } = props;
+const Index = () => {
     let [ category, setCategory ] = useState();
 
     useEffect(() => {
@@ -27,7 +26,7 @@ const Index = (props) => {
             <Grid item>
                 <Grid container direction= "row"  justifyContent= "flex-end" alignItems= "center">
                     <Grid item xs= { 2 }>
-                        <Link to= "/maintenance/category/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('new'); setId(undefined); } }>
+                        <Link to= "/maintenance/category/form/new" style= {{ textDecoration: 'none' }}>
                             <Box padding= "10px 0" color= "#ffffff" bgcolor= "#2980b9" 
                                 borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">NEW CATEGORY</Box>
                         </Link>
@@ -56,7 +55,7 @@ const Index = (props) => {
                         </Box>
                     </Grid>
                     <Grid item><Header /></Grid>
-                    <Grid item><Body data= { category } setType= { setType } setId= { setId } /></Grid>
+                    <Grid item><Body data= { category } /></Grid>
                 </Grid>
             </Grid>
         </Grid>

@@ -11,7 +11,7 @@ import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
 const Body = (props) => {
-    const { data, setType, setId } = props;
+    const { data } = props;
 
     return (
         <Box>
@@ -50,16 +50,16 @@ const Body = (props) => {
                                             </Grid>
                                             <Grid item md= { 2 }>
                                                 <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
-                                                    <Box sx= {{ margin: '0 5px' }}>
-                                                        <Link to= "/maintenance/category/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('update'); setId(ctgry.id); } }>
+                                                    <Box sx= {{ margin: '5px' }}>
+                                                        <Link to= { `/maintenance/category/form/update/${ctgry.id}` } style= {{ textDecoration: 'none' }}>
                                                             <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#3498db" 
                                                                 borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                                 <ModeEditOutlineIcon style= {{ fontSize: '110%' }} />
                                                             </Box>
                                                         </Link>
                                                     </Box>
-                                                    <Box sx= {{ margin: '0 5px' }}>
-                                                        <Link to= "/maintenance/category/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('view'); setId(ctgry.id); } }>
+                                                    <Box sx= {{ margin: '5px' }}>
+                                                        <Link to= { `/maintenance/category/form/view/${ctgry.id}` } style= {{ textDecoration: 'none' }}>
                                                             <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#3498db" 
                                                                 borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                                 <VisibilityIcon style= {{ fontSize: '110%' }} />
