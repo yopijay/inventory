@@ -5,7 +5,9 @@ import { AppBar, Container, Grid } from '@mui/material';
 // Layouts
 import Brand from './layouts/Brand';
 
-const Index = () => {
+const Index = (props) => {
+    const { drawerToggle, isMobile } = props;
+
     return (
         <AppBar position= "fixed"
             sx= {{ 
@@ -20,7 +22,7 @@ const Index = () => {
             <Container>
                 <Grid container direction= "row" justifyContent= "space-between" alignItems= "center">
                     <Grid item xs= { 12 } sm= { 4 } md= { 5 }>
-                        <Brand />
+                        <Brand drawerToggle= { drawerToggle } isMobile= { isMobile } />
                     </Grid>
                 </Grid>
             </Container>

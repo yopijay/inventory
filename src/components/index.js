@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, Container, Toolbar } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
@@ -10,15 +10,27 @@ import Sidebar from './global/sidebar';
 // Constants
 import { Layouts } from '../core/global/constants/Navs';
 
-const Index = () => {
+const Index = (props) => {
+    const { window } = props;
+    const [ isMobile, setIsMobile ] = useState({ left: false });
+
+    const drawerToggle = (open) => (event) => {
+        if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+            return;
+        }
+
+        setIsMobile({ isMobile, left: open });
+    }
+
+    const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
         <Box sx= {{ backgroundColor: '#f5f6fa', display: 'flex', width: '100%', height: '100vh', overflow: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
-            <Navbar />
+            <Navbar drawerToggle= { drawerToggle } isMobile= { isMobile } />
             <Box sx= {{ display: 'flex', width: '100%' }}>
                 <Container>
                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
-                        <Sidebar />
+                        <Sidebar isMobile= { isMobile } container= { container } drawerToggle= { drawerToggle } />
                         <Box sx= {{ flexGrow: '1', overflow: 'hidden'  }}>
                             <Toolbar />
                             <Routes>
