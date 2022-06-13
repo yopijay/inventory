@@ -2,7 +2,7 @@ export const Category = () => ({
     name: {
         label: '*Name',
         grid: {
-            md: 12
+            xs: 12
         },
         props: {
             name: 'name',
@@ -21,7 +21,7 @@ export const Category = () => ({
     description: {
         label: 'Description',
         grid: {
-            md: 12
+            xs: 12
         },
         props: {
             name: 'description',
@@ -40,7 +40,7 @@ export const Category = () => ({
     status: {
         label: 'Status',
         grid: {
-            md: 12
+            xs: 12
         },
         props: {
             name: 'status',
@@ -51,6 +51,7 @@ export const Category = () => ({
             placeholder: 'Active'
         },
         child: [],
+        color: '#2c3e50',
         labelSize: 15,
         type: 'checkbox'
     }

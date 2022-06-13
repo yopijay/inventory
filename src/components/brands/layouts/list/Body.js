@@ -11,7 +11,7 @@ import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
 const Body = (props) => {
-    const { data, setType, setId } = props;
+    const { data } = props;
 
     return (
         <Box>
@@ -23,7 +23,7 @@ const Body = (props) => {
                                 data.map((brand, index) => (
                                     <Grid item key= { index }>
                                         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center" spacing= { 2 }>
-                                            <Grid item md= { 1 }>
+                                            <Grid item md= { 2 }>
                                                 <Ctrl.Typography text= { brand.series_no } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%', textAlign: 'center' }} />
                                             </Grid>
@@ -31,7 +31,7 @@ const Body = (props) => {
                                                 <Ctrl.Typography text= { brand.name } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
-                                            <Grid item md= { 4 }>
+                                            <Grid item md= { 2 }>
                                                 <Ctrl.Typography text= { brand.description } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
@@ -52,25 +52,25 @@ const Body = (props) => {
                                                     color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
-                                            <Grid item md= { 1 }>
-                                                <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center" spacing= { 1 }>
-                                                    <Grid item md= { 5 }>
-                                                        <Link to= "/brand/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('update'); setId(brand.id); } }>
-                                                            <Box padding= "10px 0" color= "#ffffff" bgcolor= "#3498db" 
+                                            <Grid item md= { 2 }>
+                                                <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                                                    <Box sx= {{ margin: '5px' }}>
+                                                        <Link to= { `/maintenance/brand/form/update/${brand.id}` } style= {{ textDecoration: 'none' }}>
+                                                            <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#3498db" 
                                                                 borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                                 <ModeEditOutlineIcon style= {{ fontSize: '110%' }} />
                                                             </Box>
                                                         </Link>
-                                                    </Grid>
-                                                    <Grid item md= { 5 }>
-                                                        <Link to= "/brand/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('view'); setId(brand.id); } }>
-                                                            <Box padding= "10px 0" color= "#ffffff" bgcolor= "#3498db" 
+                                                    </Box>
+                                                    <Box sx= {{ margin: '5px' }}>
+                                                        <Link to= { `/maintenance/brand/form/view/${brand.id}` } style= {{ textDecoration: 'none' }}>
+                                                            <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#3498db" 
                                                                 borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
-                                                                <VisibilityIcon style=  {{ fontSize: '110%' }} />
+                                                                <VisibilityIcon style= {{ fontSize: '110%' }} />
                                                             </Box>
                                                         </Link>
-                                                    </Grid>
-                                                </Grid>
+                                                    </Box>
+                                                </Box>
                                             </Grid>
                                         </Grid>
                                     </Grid>

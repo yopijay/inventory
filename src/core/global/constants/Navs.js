@@ -7,33 +7,82 @@ import Brands from '../../../components/brands';
 import Users from '../../../components/users';
 import Assets from '../../../components/asset';
 import Categories from '../../../components/category';
+import Reports from '../../../components/report';
+// import Logs from '../../../components/logs';
+// import Testing from '../../../components/testing';
 
 export const Navs = () => (
     [
         {
-            name: 'Dashboard',
+            name: 'Home',
+            path: '/',
+            subNav: []
+        },
+        {
+            name: 'Maintenance',
+            path: '',
+            subNav: [
+                {
+                    name: 'Categories',
+                    path: '/maintenance/category',
+                },
+                {
+                    name: 'Brands',
+                    path: '/maintenance/brand',
+                },
+                {
+                    name: 'Users',
+                    path: '/maintenance/users',
+                },
+                {
+                    name: 'Assets',
+                    path: '/maintenance/assets',
+                }
+            ]
+        },
+        {
+            name: 'Issuance',
+            path: '',
+            subNav: [
+                {
+                    name: 'Assign Assets',
+                    path: '/issuance/assets/asign',
+                }
+            ]
+        },
+        {
+            name: 'Reports',
+            path: '/reports',
+            subNav: []
+        },
+    ]
+);
+
+export const Layouts = () => (
+    [
+        {
             path: '/',
             component: <Dashboard />
         },
         {
-            name: 'Category',
-            path: '/category',
+            path: '/maintenance/category',
             component: <Categories />
         },
         {
-            name: 'Brands',
-            path: '/brand',
+            path: '/maintenance/brand',
             component: <Brands />
         },
         {
-            name: 'Users',
-            path: '/users',
+            path: '/maintenance/users',
             component: <Users />
         },
         {
-            name: 'Assets',
-            path: '/assets',
+            path: '/maintenance/assets',
             component: <Assets />
+        },
+        {
+            path: '/reports',
+            component: <Reports />
         }
     ]
-);
+)

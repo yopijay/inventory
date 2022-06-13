@@ -1,13 +1,18 @@
 // Libraries
 import React from 'react';
-import { Typography as MuiTypography } from '@mui/material';
-// import { makeStyles } from '@mui/styles';
+import { Box } from '@mui/material';
+import { styled } from '@mui/styles';
 
 const Typography = ( props ) => {
-    const { text, variant, event, ...other } = props;
+    const { text, fontFamily= 'Gilroy Light', color= '#dfe6e9', ...other } = props;
+
+    const Text = styled(Box)({
+        fontFamily: fontFamily,
+        color: color
+    });
 
     return (
-        <MuiTypography variant= { variant } onClick= { event } { ...other }>{ text }</MuiTypography>
+        <Text { ...other }>{ text }</Text>
     );
 }
 

@@ -4,11 +4,16 @@
 import { _axios } from "../global/Function";
 import Env from '../global/constants/Env.json';
 
-let env = 'prod';
+let env = 'local';
 
 export const getall = async (set, table) => {
     let all = await _axios(`${Env[env].url}/getall/${table}`, 'get');
     set(all);
+}
+
+export const reports = async (set, table) => {
+    let reports = await _axios(`${Env[env].url}/report/${table}`, 'get');
+    set(reports);
 }
 
 export const count = async (set, table) => {

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Box, Grid } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../core/global/controls/Controls';
@@ -15,8 +15,8 @@ import { get, save } from '../../../../core/request/Request';
 // Layouts
 import Form from './Form';
 
-const Index = (props) => {
-    let { type, id } = props;
+const Index = () => {
+    let { type, id } = useParams();
     // eslint-disable-next-line
     const [ values, setValues ] = useState();
     const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm({
@@ -29,8 +29,7 @@ const Index = (props) => {
     
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center">
-            <Grid item md= { 1 } />
-            <Grid item md= { 6 } style= {{ borderRadius: '8px', border: 'solid 1px #ecf0f1', padding: '30px 25px' }}>
+            <Grid item md= { 12 } style= {{ borderRadius: '8px', border: 'solid 1px #ecf0f1', padding: '30px 25px', backgroundColor: '#ffffff' }}>
                 <Ctrl.Typography text= { `${type !== undefined ? type.toUpperCase() : ''} BRAND`} style= {{ color: '#2c3e50', fontWeight: 'bold', fontSize: '150%' }} />
                 <Box width= "100%" marginTop= "20px">
                     <form autoComplete= "off">
@@ -38,7 +37,7 @@ const Index = (props) => {
                     </form>
                 </Box>
                 <Box width= "100%" marginTop= "10px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">
-                    <Link to= "/brand" style= {{ textDecoration: 'none' }}>
+                    <Link to= "/maintenance/brand" style= {{ textDecoration: 'none' }}>
                         <Box padding= "8px 15px 6px 15px" color= "#ffffff" bgcolor= "#e74c3c" 
                             borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center" 
                             style= {{ fontSize: '98%' }}>CANCEL</Box>

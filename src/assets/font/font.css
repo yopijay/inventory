@@ -30,3 +30,10 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Boldstrom';
+    src: url('Boldstrom\ D.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}

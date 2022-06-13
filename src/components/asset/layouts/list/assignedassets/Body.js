@@ -41,7 +41,7 @@ const Body = (props) => {
                                             </Grid>
                                             <Grid item md= { 1 }>
                                                 <Ctrl.Typography text= { assts.quantity } color= "#34495e" 
-                                                    style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
+                                                    style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} textAlign= "center" />
                                             </Grid>
                                             <Grid item md= { 1 }>
                                                 <Ctrl.Typography text= { assts.status === 1 ? 'Active' : 'Inactive' } color= "#34495e" 
