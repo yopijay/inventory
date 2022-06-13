@@ -30,8 +30,7 @@ const Index = (props) => {
     
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center">
-            <Grid item md= { 1 } />
-            <Grid item md= { 6 } style= {{ borderRadius: '8px', border: 'solid 1px #ecf0f1', padding: '30px 25px' }}>
+            <Grid item md= { 12 } style= {{ borderRadius: '8px', border: 'solid 1px #ecf0f1', padding: '30px 25px' }}>
                 <Ctrl.Typography text= { `${type !== undefined ? type.toUpperCase() : ''} CATEGORY`} style= {{ color: '#2c3e50', fontWeight: 'bold', fontSize: '150%' }} />
                 <Box width= "100%" marginTop= "20px">
                     <form autoComplete= "off">
@@ -39,7 +38,7 @@ const Index = (props) => {
                     </form>
                 </Box>
                 <Box width= "100%" marginTop= "10px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">
-                    <Link to= "/category" style= {{ textDecoration: 'none' }}>
+                    <Link to= "/maintenance/category" style= {{ textDecoration: 'none' }}>
                         <Box padding= "8px 15px 6px 15px" color= "#ffffff" bgcolor= "#e74c3c" 
                             borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center" 
                             style= {{ fontSize: '98%' }}>CANCEL</Box>

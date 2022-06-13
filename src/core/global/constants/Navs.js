@@ -8,50 +8,81 @@ import Users from '../../../components/users';
 import Assets from '../../../components/asset';
 import Categories from '../../../components/category';
 import Reports from '../../../components/report';
-import Logs from '../../../components/logs';
-import Testing from '../../../components/testing';
+// import Logs from '../../../components/logs';
+// import Testing from '../../../components/testing';
 
 export const Navs = () => (
     [
         {
-            name: 'Dashboard',
+            name: 'Home',
             path: '/',
-            component: <Dashboard />
+            subNav: []
         },
         {
-            name: 'Category',
-            path: '/category',
-            component: <Categories />
+            name: 'Maintenance',
+            path: '',
+            subNav: [
+                {
+                    name: 'Categories',
+                    path: '/maintenance/category',
+                },
+                {
+                    name: 'Brands',
+                    path: '/maintenance/brand',
+                },
+                {
+                    name: 'Users',
+                    path: '/maintenance/users',
+                },
+                {
+                    name: 'Assets',
+                    path: '/maintenance/assets',
+                }
+            ]
         },
         {
-            name: 'Brands',
-            path: '/brand',
-            component: <Brands />
-        },
-        {
-            name: 'Users',
-            path: '/users',
-            component: <Users />
-        },
-        {
-            name: 'Assets',
-            path: '/assets',
-            component: <Assets />
+            name: 'Issuance',
+            path: '',
+            subNav: [
+                {
+                    name: 'Assign Assets',
+                    path: '/issuance/assets/asign',
+                }
+            ]
         },
         {
             name: 'Reports',
             path: '/reports',
-            component: <Reports />
+            subNav: []
         },
-        {
-            name: 'Logs',
-            path: '/logs',
-            component: <Logs />
-        },
-        {
-            name: 'Testings',
-            path: '/testings',
-            component: <Testing />
-        }
     ]
 );
+
+export const Layouts = () => (
+    [
+        {
+            path: '/',
+            component: <Dashboard />
+        },
+        {
+            path: '/maintenance/category',
+            component: <Categories />
+        },
+        {
+            path: '/maintenance/brand',
+            component: <Brands />
+        },
+        {
+            path: '/maintenance/users',
+            component: <Users />
+        },
+        {
+            path: '/maintenance/assets',
+            component: <Assets />
+        },
+        {
+            path: '/reports',
+            component: <Reports />
+        }
+    ]
+)

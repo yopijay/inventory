@@ -15,14 +15,12 @@ const Index = () => {
     let [ id, setId ] = useState();
 
     return (
-        <Box padding= "10px 30px">
+        <Box sx= {{ padding: '20px'}}>
             <Ctrl.Typography color= "#2c3e50" text= "CATEGORIES" style= {{ fontSize: '200%', fontWeight: 'bold' }} />
-            <Box marginTop= "20px">
-                <Routes>
-                    <Route exact path= "/" element= { <List setType= { setType } setId = { setId } /> } />
-                    <Route exact path= "/form" element= { <Box marginTop= "50px"><Form type= { type } id= { id } /></Box> } />
-                </Routes>
-            </Box>
+            <Routes>
+                <Route exact path= "/" element= { <List setType= { setType } setId = { setId } /> } />
+                <Route exact path= "/form" element= { <Box marginTop= "50px"><Form type= { type } id= { id } /></Box> } />
+            </Routes>
         </Box>
     );
 }

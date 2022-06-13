@@ -23,7 +23,7 @@ const Body = (props) => {
                                 data.map((ctgry, index) => (
                                     <Grid item key= { index }>
                                         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center" spacing= { 2 }>
-                                            <Grid item md= { 1 }>
+                                            <Grid item md= { 2 }>
                                                 <Ctrl.Typography text= { ctgry.series_no } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%', textAlign: 'center' }} />
                                             </Grid>
@@ -31,7 +31,7 @@ const Body = (props) => {
                                                 <Ctrl.Typography text= { ctgry.name } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
-                                            <Grid item md= { 5 }>
+                                            <Grid item md= { 3 }>
                                                 <Ctrl.Typography text= { ctgry.description } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
@@ -48,25 +48,25 @@ const Body = (props) => {
                                                     color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
-                                            <Grid item md= { 1 }>
-                                                <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center" spacing= { 1 }>
-                                                    <Grid item md= { 5 }>
-                                                        <Link to= "/category/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('update'); setId(ctgry.id); } }>
-                                                            <Box padding= "10px 0" color= "#ffffff" bgcolor= "#3498db" 
+                                            <Grid item md= { 2 }>
+                                                <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                                                    <Box sx= {{ margin: '0 5px' }}>
+                                                        <Link to= "/maintenance/category/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('update'); setId(ctgry.id); } }>
+                                                            <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#3498db" 
                                                                 borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                                 <ModeEditOutlineIcon style= {{ fontSize: '110%' }} />
                                                             </Box>
                                                         </Link>
-                                                    </Grid>
-                                                    <Grid item md= { 5 }>
-                                                        <Link to= "/category/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('view'); setId(ctgry.id); } }>
-                                                            <Box padding= "10px 0" color= "#ffffff" bgcolor= "#3498db" 
+                                                    </Box>
+                                                    <Box sx= {{ margin: '0 5px' }}>
+                                                        <Link to= "/maintenance/category/form" style= {{ textDecoration: 'none' }} onClick= { () => { setType('view'); setId(ctgry.id); } }>
+                                                            <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#3498db" 
                                                                 borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                                 <VisibilityIcon style= {{ fontSize: '110%' }} />
                                                             </Box>
                                                         </Link>
-                                                    </Grid>
-                                                </Grid>
+                                                    </Box>
+                                                </Box>
                                             </Grid>
                                         </Grid>
                                     </Grid>
