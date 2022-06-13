@@ -31,7 +31,6 @@ const PDF = (props) => {
 
         for (let count = 0; count < keys.length; count++) {
             headers[keys[count]] = keys[count].replace('_', ' ').charAt(0).toUpperCase() + keys[count].replace('_', ' ').slice(1)
-            // headers.push([`${keys[count].replace('_', ' ').charAt(0).toUpperCase() + keys[count].replace('_', ' ').slice(1)}`]);
         }
         
         for (let count = 0; count < rows.length; count++) {
