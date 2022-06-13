@@ -46,7 +46,7 @@ const Index = (props) => {
                                         display: { xs: 'none', md: 'block' } }}>
                         <Grid container direction= "column" justifyContent= "space-between" alignItems= "stretch" style= {{ height: '100%' }}>
                             <Grid item>
-                                <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
+                                <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" height= "650px" sx= {{ overflowY: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
                                     <Profile />
                                     <Nav />
                                 </Box>
