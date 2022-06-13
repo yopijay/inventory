@@ -10,7 +10,7 @@ const Profile = () => {
 
     return (
         <Box>
-            <Toolbar sx= {{ display: { sm: 'none', md: 'block' } }} />
+            <Toolbar sx= {{ display: { xs: 'none', md: 'block' } }} />
             <Box sx= {{ overflow: 'hidden', borderRadius: { xs: 0, md: '6px' },  width: '100%', height: '130px', margin: { md: '20px 0 0 0' },
                                 '@media(max-width: 770px)': { marginTop: '60px' } }}>
                 <img src= { Cover } alt= "cover" width= "100%" height= "100%" />

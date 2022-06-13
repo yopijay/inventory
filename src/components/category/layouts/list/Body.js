@@ -18,28 +18,28 @@ const Body = (props) => {
             { 
                 (data !== undefined) ? 
                     data.length !== 0 ? (
-                        <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 2 }>
+                        <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 2 } sx= {{ padding: '10px 15px' }}>
                             {
                                 data.map((ctgry, index) => (
                                     <Grid item key= { index }>
                                         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center" spacing= { 2 }>
-                                            <Grid item md= { 2 }>
+                                            <Grid item sm= { 3 } md= { 2 } lg= { 2 } sx= {{ display: { xs: 'none', sm: 'block' } }}>
                                                 <Ctrl.Typography text= { ctgry.series_no } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%', textAlign: 'center' }} />
                                             </Grid>
-                                            <Grid item md= { 2 }>
+                                            <Grid item xs= { 8 } sm= { 6 } md= { 4 } lg= { 3 }>
                                                 <Ctrl.Typography text= { ctgry.name } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
-                                            <Grid item md= { 3 }>
+                                            <Grid item md= { 3 } lg= { 2 } sx= {{ display: { xs: 'none', md: 'block' } }}>
                                                 <Ctrl.Typography text= { ctgry.description } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
-                                            <Grid item md= { 1 }>
+                                            <Grid item sm= { 1 } md= { 1 } lg= { 1 } sx= {{ display: { xs: 'none', sm: 'block' }, textAlign: 'center' }}>
                                                 <Ctrl.Typography text= { ctgry.status === 1 ? 'Active' : 'Inactive' } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
-                                            <Grid item md= { 2 }>
+                                            <Grid item lg= { 2 } sx= {{ display: { xs: 'none', lg: 'block' } }}>
                                                 <Ctrl.Typography 
                                                     text= { `${ new Date(ctgry.date_created).toLocaleString('default', { month: 'long' }) }
                                                                 ${ new Date(ctgry.date_created).getDate() }, ${ new Date(ctgry.date_created).getFullYear() } 
@@ -48,8 +48,8 @@ const Body = (props) => {
                                                     color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
-                                            <Grid item md= { 2 }>
-                                                <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                                            <Grid item xs= { 4 } sm= { 2 } md= { 2 } lg= { 2 }>
+                                                <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                                     <Box sx= {{ margin: '5px' }}>
                                                         <Link to= { `/maintenance/category/form/update/${ctgry.id}` } style= {{ textDecoration: 'none' }}>
                                                             <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#3498db" 

@@ -17,7 +17,7 @@ const Form = (props) => {
                 (Object.keys(fields())).map((field, index) => (
                     <Grid item key= { index } { ...(fields()[field].grid) }>
                         <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
-                            <Box marginBottom= "5px"><Ctrl.Typography text= { fields()[field].label } className= { `f-${ fields()[field].labelSize }` } color= { fields()[field].color } /></Box>
+                            <Box marginBottom= "5px"><Ctrl.Typography text= { fields()[field].label } color= { fields()[field].color } /></Box>
                             {
                                 fields()[field].type === 'checkbox' ? ( 
                                     <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
@@ -28,7 +28,7 @@ const Form = (props) => {
                                                     onChange: () => setChck(!chck)
                                                 }) } />
                                         </Box>
-                                        <Box><Ctrl.Typography className= { `f-${ fields()[field].labelSize }` } text= { fields()[field].props.placeholder } /></Box>
+                                        <Box><Ctrl.Typography color= "#2c3e50" text= { fields()[field].props.placeholder } /></Box>
                                     </Box>
                                 ) : (
                                     fields()[field].type === 'select' ? (

@@ -20,7 +20,7 @@ const Index = (props) => {
     return (
         <Box sx= {{ width: { md: 240 }, flexShrink: { sm: 0 }, height: '100vh' }}>
             {
-                screen <= 768 ? (
+                screen <= 900 ? (
                     <SwipeableDrawer anchor= "left" onOpen= { drawerToggle(true) } variant= "temporary" container= { container } open= { isMobile.left } onClose= { drawerToggle(false) } 
                         ModalProps= {{ keepMounted: true }}
                         sx= {{ display: { xs: 'block', md: 'none' }, '& .MuiDrawer-paper': { boxSizing: 'border-box', width: 240, background: 'rgba(255, 255, 255, 0.9)', backdropFilter: 'blur(10px)',  } }}>
