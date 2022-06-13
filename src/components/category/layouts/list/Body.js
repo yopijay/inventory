@@ -27,7 +27,7 @@ const Body = (props) => {
                                                 <Ctrl.Typography text= { ctgry.series_no } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%', textAlign: 'center' }} />
                                             </Grid>
-                                            <Grid item xs= { 8 } sm= { 6 } md= { 4 } lg= { 3 }>
+                                            <Grid item xs= { 8 } sm= { 5 } md= { 3 } lg= { 3 }>
                                                 <Ctrl.Typography text= { ctgry.name } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
@@ -35,7 +35,7 @@ const Body = (props) => {
                                                 <Ctrl.Typography text= { ctgry.description } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
-                                            <Grid item sm= { 1 } md= { 1 } lg= { 1 } sx= {{ display: { xs: 'none', sm: 'block' }, textAlign: 'center' }}>
+                                            <Grid item sm= { 2 } md= { 2 } lg= { 1 } sx= {{ display: { xs: 'none', sm: 'block' }, textAlign: 'center' }}>
                                                 <Ctrl.Typography text= { ctgry.status === 1 ? 'Active' : 'Inactive' } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>

@@ -24,36 +24,34 @@ const Index = () => {
     return (
         <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 1 }>
             <Grid item>
-                <Grid container direction= "row"  justifyContent= "flex-end" alignItems= "center">
-                    <Grid item xs= { 2 }>
+                <Grid container direction= "row"  justifyContent= "flex-end" alignItems= "center" spacing= { 1 }>
+                    <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
                         <Link to= "/maintenance/brand/form/new" style= {{ textDecoration: 'none' }}>
-                            <Box padding= "10px 0" color= "#ffffff" bgcolor= "#2980b9" 
-                                borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">NEW BRAND</Box>
+                            <Box display= "flex" flexDirection= "column" justifyContent= "center" alignItems= "center">
+                                <Ctrl.Typography color= "#ffffff" text= "NEW BRAND" 
+                                    sx= {{ padding: { xs: '10px 12px', sm: '7px 10px', md: '10px 0', backgroundColor: '#2980b9',
+                                                fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }, margin: { xs: '20px 0 0 0', sm: 0 } }} />
+                            </Box>
                         </Link>
+                    </Grid>
+                    <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
+                        <Box sx= {{ backgroundColor: '#00b894', textAlign: 'center', padding: { xs: '10px 12px', sm: '7px 12px', md: '10px 15px' }, borderRadius: '5px' }}>
+                            <Export element= {
+                                    <button 
+                                        style= {{ backgroundColor: 'transparent', border: 'none', fontFamily: 'Gilroy Light', margin: 0, padding: 0 }}>
+                                        <Ctrl.Typography color= "#ffffff" text= "EXPORT TO EXCEL" sx= {{ fontSize: { xs: '120%', sm: '110%', md: '120%' } }} />
+                                    </button>
+                                } 
+                                filename= "Brands List"
+                                data= { brands }
+                                column= { brands !== undefined ? Object.keys(brands[0]) : [] } />
+                        </Box>
                     </Grid>
                 </Grid>
             </Grid>
             <Grid item>
-                <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 1 }>
-                    <Grid item>
-                        <Box display= "flex" flexDirection= "row" justifyContent= "space-between" alignItems= "center">
-                            <Box width= "450px" padding= "0 20px 0 0">
-                                <Ctrl.TextField name= "search" border= "solid 1px #bdc3c7" radius= "30px" padding= "8px 15px 4px 15px" size= "small" placeholder= "Search..." />
-                            </Box>
-                            <Box padding= "0 0 0 20px">
-                                <Box sx= {{ width: 'width%', backgroundColor: '#00b894', textAlign: 'center', padding: '8px 15px', borderRadius: '5px' }}>
-                                    <Export element= {
-                                            <button 
-                                                style= {{ backgroundColor: 'transparent', border: 'none',
-                                                                color: '#ffffff', fontSize: '110%', fontFamily: 'Gilroy Light' }}>Export to Excel</button>
-                                        } 
-                                        filename= "Brand List"
-                                        data= { brands }
-                                        column= { brands !== undefined ? Object.keys(brands[0]) : [] } />
-                                </Box>
-                            </Box>
-                        </Box>
-                    </Grid>
+                <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 1 } sx= {{ marginTop: { xs: 0, sm: '-25px', md: '-30px' } }}>
+                    <Grid item><Ctrl.TextField name= "search" border= "solid 1px #bdc3c7" radius= "30px" padding= "8px 15px 4px 15px" size= "small" placeholder= "Search..." /></Grid>
                     <Grid item><Header /></Grid>
                     <Grid item><Body data= { brands } /></Grid>
                 </Grid>

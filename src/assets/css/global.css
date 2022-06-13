@@ -715,6 +715,7 @@
     margin: 0 !important;
 }
 
-.css-1iji0d4, .css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root {
+.css-sh22l5-MuiButtonBase-root-MuiAccordionSummary-root,
+.MuiButtonBase-root .MuiAccordionSummary-root .Mui-expanded .MuiAccordionSummary-gutters .css-1iji0d4 {
     min-height: auto !important;
 }
