@@ -1,5 +1,5 @@
 // Libraries
-import React, { useState } from 'react';
+import React from 'react';
 import { Box } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
@@ -11,18 +11,16 @@ import List from './layouts/list';
 import Form from './layouts/form';
 
 const Index = () => {
-    let [ type, setType ] = useState();
-    let [ id, setId ] = useState();
 
     return (
-        <Box padding= "10px 30px">
-            <Ctrl.Typography color= "#2c3e50" text= "USERS" style= {{ fontSize: '200%', fontWeight: 'bold' }} />
-            <Box marginTop= "20px">
-                <Routes>
-                    <Route exact path= "/" element= { <List setType= { setType } setId = { setId } /> } />
-                    <Route exact path= "/form" element = { <Box marginTop= "50px"><Form type= { type } id= { id } /></Box>} />
-                </Routes>
-            </Box>
+        <Box sx= {{ padding: { xs: 0, md: '20px' } }}>
+            <Ctrl.Typography color= "#2c3e50" text= "USERS" sx= {{ fontSize: { xs: '150%', sm: '180%', md: '200%' }, fontWeight: 'bold', 
+                                                                                                    marginTop: { xs: '20px', md: 0} }} />
+            <Routes>
+                <Route exact path= "/" element= { <List /> } />
+                <Route exact path= "/form/:type" element = { <Box marginTop= "50px"><Form /></Box> } />
+                <Route exact path= "/form/:type/:id" element = { <Box marginTop= "50px"><Form /></Box> } />
+            </Routes>
         </Box>
     );
 }
