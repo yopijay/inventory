@@ -6,7 +6,7 @@ import { Box } from '@mui/material';
 import Ctrl from '../../core/global/controls/Controls';
 
 // Layouts
-import Summary from './layouts/summary/'
+// import Summary from './layouts/summary/'
 
 const Index = () => {
 

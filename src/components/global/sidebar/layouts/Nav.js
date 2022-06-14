@@ -30,7 +30,7 @@ const Nav = () => {
                                         {
                                             (nav.subNav).map((sub, index) => (
                                                 <Link to= { sub.path } style= {{ textDecoration: 'none', color: '#000000' }} key= { index }>
-                                                    <Box sx= {{ width: '100%', margin: '5px 0', color: '#2f3640', fontSize: '108%', margin: '12px 0', paddingLeft: { xs: '20px', md: 0 },
+                                                    <Box sx= {{ width: '100%', color: '#2f3640', fontSize: '108%', margin: '12px 0', paddingLeft: { xs: '20px', md: 0 },
                                                                         '&:hover': { color: '#40739e', transition: 'all 0.2s ease-in-out' } }}>{ sub.name }</Box>
                                                 </Link>
                                             ))

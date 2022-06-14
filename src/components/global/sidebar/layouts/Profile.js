@@ -1,6 +1,6 @@
 // Libraries
 import React from 'react';
-import { Avatar, Box, Grid, Toolbar } from '@mui/material';
+import { Avatar, Box, Toolbar } from '@mui/material';
 
 // Asset
 import Cover from '../../../../assets/images/cover.jpg';
