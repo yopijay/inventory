@@ -1,5 +1,5 @@
 // Libraries
-import React, { useState } from 'react';
+import React from 'react';
 import { Box } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
@@ -8,16 +8,13 @@ import List from './list/assets';
 import Form from './form/assets';
 
 const Assets = () => {
-let [ type, setType ] = useState();
-let [ id, setId ] = useState();
 
     return (
-        <Box padding= "10px 30px">
-            <Routes>
-                <Route exact path= "/" element= { <List setType= { setType } setId= { setId } /> } />
-                <Route exact path= "/form" element= { <Box marginTop= "50px"><Form type= { type } id= { id } /></Box> } />
-            </Routes>
-        </Box>
+        <Routes>
+            <Route exact path= "/" element= { <List /> } />
+            <Route exact path= "/form/:type" element= { <Box marginTop= "50px"><Form /></Box> } />
+            <Route exact path= "/form/:type/:id" element= { <Box marginTop= "50px"><Form /></Box> } />
+        </Routes>
     );
 }
 
