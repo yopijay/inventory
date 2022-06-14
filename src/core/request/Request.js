@@ -27,7 +27,7 @@ export const save = async (id, data, type, table) => {
     if(save === 'success') window.location.href = `/${table === 'assigned_asset' ? 'assets/assign' : table}`;
 }
 
-export const get = async (id, table, set, setValues) => {
+export const get = async (id, table, set, setValues, loader) => {
     let data = await _axios(`${Env[env].url}/get/${table}/${id}`, 'get');
     setValues(data);
     
@@ -35,6 +35,8 @@ export const get = async (id, table, set, setValues) => {
         let _name = Object.keys(data[0])[count];
         set(_name, data[0][_name]);
     }
+
+    loader(false);
 }
 
 export const sum = async(set, table, col) => {
@@ -42,12 +44,16 @@ export const sum = async(set, table, col) => {
     set(sum);
 }
 
-export const options = async(table, cols, set) => {
+export const options = async(table, cols, set, loader) => {
     let options = await _axios(`${Env[env].url}/option/${table}/${cols}`, 'get');
     set(options);
+
+    loader(false);
 }
 
-export const optionsPer = async(table, cols, set, id = null) => {
+export const optionsPer = async(table, cols, set, id = null, loader) => {
     let options = await _axios(`${Env[env].url}/option/per/${table}/${cols}/${id !== undefined ? id : '1'}`, 'get');
     set(options);
+
+    loader(false);
 }

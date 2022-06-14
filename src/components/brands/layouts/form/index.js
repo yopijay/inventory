@@ -15,27 +15,39 @@ import { get, save } from '../../../../core/request/Request';
 // Layouts
 import Form from './Form';
 
+// Loader
+import { SnakeLoader } from '../../../../core/loader/Loader';
+
 const Index = () => {
     let { type, id } = useParams();
     // eslint-disable-next-line
     const [ values, setValues ] = useState();
+    const [ isLoad, setIsLoad ] = useState(true);
     const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm({
         resolver: yupResolver(Brand())
     });
 
     useEffect(() => {
-        if(id !== undefined) get(id, 'brand', setValue, setValues);
+        if(id !== undefined) get(id, 'brand', setValue, setValues, setIsLoad);
     }, []);
     
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center">
             <Grid item md= { 12 } style= {{ borderRadius: '8px', border: 'solid 1px #ecf0f1', padding: '30px 25px', backgroundColor: '#ffffff' }}>
                 <Ctrl.Typography text= { `${type !== undefined ? type.toUpperCase() : ''} BRAND`} style= {{ color: '#2c3e50', fontWeight: 'bold', fontSize: '150%' }} />
-                <Box width= "100%" marginTop= "20px">
-                    <form autoComplete= "off">
-                        <Form register= { register } errors= { errors } getValues= { getValues } />
-                    </form>
-                </Box>
+                {
+                    !isLoad ? (
+                        <Box width= "100%" marginTop= "20px">
+                            <form autoComplete= "off">
+                                <Form register= { register } errors= { errors } getValues= { getValues } disabled= { type === 'view' } />
+                            </form>
+                        </Box>
+                    ) : (
+                        <Grid container direction= "row" justifyContent= "center" alignItems= "center">
+                            <Grid item sx= {{ marginTop: '10px' }}><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></Grid>
+                        </Grid>
+                    )
+                }
                 <Box width= "100%" marginTop= "10px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">
                     <Link to= "/maintenance/brand" style= {{ textDecoration: 'none' }}>
                         <Box padding= "8px 15px 6px 15px" color= "#ffffff" bgcolor= "#e74c3c" 
