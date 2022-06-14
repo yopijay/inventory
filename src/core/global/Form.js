@@ -24,7 +24,7 @@ const Form = (props) => {
                                         <Box>
                                             <Ctrl.Checkbox { ...(fields()[field].props) } 
                                                 disabled= { disabled }
-                                                checked= { getValues()[field] > 0 ? true : false }
+                                                checked= { getValues()[field] !== undefined ? getValues()[field] > 0 ? true : false : true }
                                                 register= { register(field, {
                                                     onChange: () => setChck(!chck)
                                                 }) } />

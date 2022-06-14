@@ -18,7 +18,7 @@ const Form = (props) => {
 
     useEffect(() => {
         options('category', ['id', 'name'], setCategories, setLoadCategory);
-        if(getValues().category_id !== undefined) optionsPer('brand', ['id', 'name'], setBrands, getValues().category_id, setLoadBrand);
+        optionsPer('brand', ['id', 'name'], setBrands, getValues().category_id !== undefined ? getValues().category_id : '1', setLoadBrand);
     }, []);
 
     return (
@@ -48,7 +48,8 @@ const Form = (props) => {
                         {
                             !loadBrand ? (
                                 <Ctrl.Select name= "brand_id" size= "small" padding= "12px 15px 8px 15px" 
-                                    disabled= { disabled } value= { getValues().brand_id } register= { register('brand_id', { onChange: e => setOpt(e.target.value) }) } options= { brands } />
+                                    disabled= { disabled } value= { getValues().brand_id !== undefined ? getValues().brand_id : '' } register= { register('brand_id', { onChange: e => setOpt(e.target.value) }) } 
+                                    options= { brands } />
                             ) : ( <Skeleton variant= "rectangular" width= "100%" height= "45px" sx= {{ backgroundColor: '#dfe6e9', borderRadius: '5px' }} /> )
                         }
                     </Box>
@@ -76,7 +77,8 @@ const Form = (props) => {
                     <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                         <Box>
                             <Ctrl.Checkbox name= "status" radius= "5px" padding= "12px 15px 8px 15px" size= "small"
-                                disabled= { disabled } checked= { getValues().status > 0 ? true : false } register= { register('status', { onChange: () => setChck(!chck) }) } />
+                                disabled= { disabled } checked= { getValues().status !== undefined ? getValues().status > 0 ? true : false : true } 
+                                register= { register('status', { onChange: () => setChck(!chck) }) } />
                         </Box>
                         <Box><Ctrl.Typography color= "#2c3e50" text= "Active" /></Box>
                     </Box>

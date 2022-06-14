@@ -20,7 +20,7 @@ import { SnakeLoader } from '../../../../../core/loader/Loader';
 
 const Index = () => {
     const { type, id } = useParams();
-    const [ isLoad, setIsLoad ] = useState(true);
+    const [ isLoad, setIsLoad ] = useState(type !== 'new');
     const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm({
         resolver: yupResolver(Asset())
     });

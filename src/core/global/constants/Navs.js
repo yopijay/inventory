@@ -7,6 +7,7 @@ import Brands from '../../../components/maintenance/brands';
 import Users from '../../../components/maintenance/users';
 import Assets from '../../../components/maintenance/asset';
 import Categories from '../../../components/maintenance/category';
+import IssuanceAsset from '../../../components/issuance/asset';
 // import Reports from '../../../components/report';
 // import Logs from '../../../components/logs';
 // import Testing from '../../../components/testing';
@@ -46,7 +47,7 @@ export const Navs = () => (
             subNav: [
                 {
                     name: 'Assign Assets',
-                    path: '/issuance/assets/asign',
+                    path: '/issuance/assets',
                 }
             ]
         },
@@ -96,6 +97,10 @@ export const Layouts = () => (
         {
             path: '/maintenance/assets',
             component: <Assets />
+        },
+        {
+            path: '/issuance/assets',
+            component: <IssuanceAsset />
         },
         {
             path: '/reports/category',

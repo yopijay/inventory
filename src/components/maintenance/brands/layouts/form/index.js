@@ -22,7 +22,7 @@ const Index = () => {
     let { type, id } = useParams();
     // eslint-disable-next-line
     const [ values, setValues ] = useState();
-    const [ isLoad, setIsLoad ] = useState(true);
+    const [ isLoad, setIsLoad ] = useState(type !== 'new');
     const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm({
         resolver: yupResolver(Brand())
     });

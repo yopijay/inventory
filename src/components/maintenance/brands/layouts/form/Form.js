@@ -31,7 +31,7 @@ const Form = (props) => {
                             !isLoad ? (
                                 <Ctrl.Select name= "category_id" size= "small" padding= "12px 15px 8px 15px" 
                                     disabled= { disabled }
-                                    value= { getValues().category_id }
+                                    value= { getValues().category_id !== undefined ? getValues().category_id : '' }
                                     register= { register('category_id', {
                                         onChange: e => setCategoryId(e.target.value)
                                     }) } options= { categories } />
@@ -71,7 +71,7 @@ const Form = (props) => {
                         <Box>
                             <Ctrl.Checkbox name= "status" radius= "5px" padding= "12px 15px 8px 15px" size= "small"
                                 disabled= { disabled }
-                                checked= { getValues().status > 0 ? true : false }
+                                checked= { getValues().status !== undefined ? getValues().status > 0 ? true : false : true }
                                 register= { register('status', {
                                     onChange: () => setChck(!chck)
                                 }) } />
