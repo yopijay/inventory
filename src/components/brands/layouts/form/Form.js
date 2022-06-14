@@ -66,7 +66,7 @@ const Form = (props) => {
                                     onChange: () => setChck(!chck)
                                 }) } />
                         </Box>
-                        <Box><Ctrl.Typography className= "f-15" text= "Active" /></Box>
+                        <Box><Ctrl.Typography color= "#2c3e50" text= "Active" /></Box>
                     </Box>
                     <Box padding= "0 10px" marginTop= "5px">
                         <Ctrl.Typography className= "f-14" text= { errors.status === undefined ? '' : errors.status.message } color= "red" />

@@ -44,8 +44,8 @@ const Index = () => {
                     </Link>
                     { type !== 'view' ? (
                         <Box marginLeft= "10px"><Ctrl.Button disableRipple= { true } 
-                        style= {{ fontSize: '120%', textTransform: 'none', fontWeight: 'bolder', padding: '6px 50px', backgroundColor: '#3498db' }} 
-                        event= { handleSubmit(data => save(id, data, type, 'brand') ) } text= { <Ctrl.Typography text= "SAVE" color= "#ffffff" /> } /></Box> 
+                            sx= {{ fontSize: '98%', textTransform: 'none', padding: '6px 50px', backgroundColor: '#3498db' }} 
+                            event= { handleSubmit(data => save(id, data, type, 'brand') ) } text= { <Ctrl.Typography text= "SAVE" color= "#ffffff" /> } /></Box> 
                     ) : '' }
                 </Box>
             </Grid>
