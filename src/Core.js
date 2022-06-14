@@ -1,15 +1,20 @@
 // Libraries
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
-import WebRoute from './core/router/Route';
+
+// Context
+import { NavProvider } from './core/context/NavContext';
 
 // Layouts
+import WebRoute from './core/router/Route';
 
 const Core = () => {
     return (
         <div>
             <Router>
-                <WebRoute />
+                <NavProvider>
+                    <WebRoute />
+                </NavProvider>
             </Router>
         </div>
     );
