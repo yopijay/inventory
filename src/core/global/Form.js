@@ -6,7 +6,7 @@ import { Box, Grid } from '@mui/material';
 import Ctrl from '../global/controls/Controls';
 
 const Form = (props) => {
-    const { fields, register, errors, getValues } = props;
+    const { fields, register, errors, getValues, disabled = false } = props;
     const [ chck, setChck ] = useState();
     // eslint-disable-next-line
     const [ opt, setOpt ] = useState();
@@ -23,6 +23,7 @@ const Form = (props) => {
                                     <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                                         <Box>
                                             <Ctrl.Checkbox { ...(fields()[field].props) } 
+                                                disabled= { disabled }
                                                 checked= { getValues()[field] !== undefined ? getValues()[field] > 0 ? true : false : true }
                                                 register= { register(field, {
                                                     onChange: () => setChck(!chck)
@@ -34,16 +35,16 @@ const Form = (props) => {
                                     fields()[field].type === 'select' ? (
                                         <Box border= "solid 1px #9E9E9E" borderRadius= "5px">
                                             <Ctrl.Select { ...(fields()[field].props) } 
-                                                value= { getValues()[field] !== undefined ? getValues()[field] : 
-                                                                field === 'bmonth' ? new Date().getMonth() + 1 :
+                                                disabled= { disabled }
+                                                value= { field === 'bmonth' ? new Date().getMonth() + 1 :
                                                                 field === 'bday' ? new Date().getDate() :
-                                                                field === 'byear' ? new Date().getFullYear() : '1' }
+                                                                field === 'byear' ? new Date().getFullYear() : getValues()[field] }
                                                 register= { register(field, {
                                                     onChange: e => { setOpt(e.target.value) }
                                                 }) } options= { fields()[field].option } />
                                         </Box>
                                     ) : (
-                                        <Ctrl.TextField { ...(fields()[field].props) } register= { register(field, {}) } />
+                                        <Ctrl.TextField { ...(fields()[field].props) } register= { register(field, {}) } disabled= { disabled } />
                                     )
                                 )
                             }

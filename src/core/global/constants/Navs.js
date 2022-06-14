@@ -3,11 +3,12 @@ import React from 'react';
 
 // Layouts
 import Dashboard from '../../../components/dashboard';
-import Brands from '../../../components/brands';
-import Users from '../../../components/users';
-import Assets from '../../../components/asset';
-import Categories from '../../../components/category';
-import Reports from '../../../components/report';
+import Brands from '../../../components/maintenance/brands';
+import Users from '../../../components/maintenance/users';
+import Assets from '../../../components/maintenance/asset';
+import Categories from '../../../components/maintenance/category';
+import IssuanceAsset from '../../../components/issuance/asset';
+// import Reports from '../../../components/report';
 // import Logs from '../../../components/logs';
 // import Testing from '../../../components/testing';
 
@@ -46,14 +47,31 @@ export const Navs = () => (
             subNav: [
                 {
                     name: 'Assign Assets',
-                    path: '/issuance/assets/asign',
+                    path: '/issuance/assets',
                 }
             ]
         },
         {
             name: 'Reports',
-            path: '/reports',
-            subNav: []
+            path: '',
+            subNav: [
+                {
+                    name: 'Categories',
+                    path: '/reports/category',
+                },
+                {
+                    name: 'Brands',
+                    path: '/reports/brand',
+                },
+                {
+                    name: 'Users',
+                    path: '/reports/users',
+                },
+                {
+                    name: 'Assets',
+                    path: '/reports/assets',
+                }
+            ]
         },
     ]
 );
@@ -81,8 +99,24 @@ export const Layouts = () => (
             component: <Assets />
         },
         {
-            path: '/reports',
-            component: <Reports />
+            path: '/issuance/assets',
+            component: <IssuanceAsset />
+        },
+        {
+            path: '/reports/category',
+            component: "category"
+        },
+        {
+            path: '/reports/brand',
+            component: "brand"
+        },
+        {
+            path: '/reports/users',
+            component: "users"
+        },
+        {
+            path: '/reports/assets',
+            component: "assets"
         }
     ]
 )

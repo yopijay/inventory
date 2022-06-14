@@ -4,7 +4,8 @@ export const Users = () => ({
     fname: {
         label: 'First name',
         grid: {
-            md: 4
+            xs: 12,
+            sm: 4
         },
         props: {
             name: 'fname',
@@ -23,7 +24,8 @@ export const Users = () => ({
     mname: {
         label: 'Middle name',
         grid: {
-            md: 4
+            xs: 12,
+            sm: 4
         },
         props: {
             name: 'mname',
@@ -42,7 +44,8 @@ export const Users = () => ({
     lname: {
         label: 'Last name',
         grid: {
-            md: 4
+            xs: 12,
+            sm: 4
         },
         props: {
             name: 'lname',
@@ -61,7 +64,8 @@ export const Users = () => ({
     bmonth: {
         label: '*Birth Month',
         grid: {
-            xs: 4
+            xs: 12,
+            sm: 4
         },
         props: {
             name: "bmonth", 
@@ -71,12 +75,14 @@ export const Users = () => ({
         },
         child: [],
         type: 'select',
+        color: '#2c3e50',
         option: months()
     },
     bday: {
         label: '*Birth Day',
         grid: {
-            xs: 4
+            xs: 12,
+            sm: 4
         },
         props: {
             name: "bday", 
@@ -86,12 +92,14 @@ export const Users = () => ({
         },
         child: [],
         type: 'select',
+        color: '#2c3e50',
         option: days()
     },
     byear: {
         label: '*Birth Year',
         grid: {
-            xs: 4
+            xs: 12,
+            sm: 4
         },
         props: {
             name: "byear", 
@@ -101,12 +109,13 @@ export const Users = () => ({
         },
         child: [],
         type: 'select',
+        color: '#2c3e50',
         option: years()
     },
     address: {
         label: 'Address',
         grid: {
-            md: 12
+            xs: 12
         },
         props: {
             name: 'address',
@@ -125,7 +134,7 @@ export const Users = () => ({
     status: {
         label: 'Status',
         grid: {
-            md: 12
+            xs: 12
         },
         props: {
             name: 'status',
@@ -136,6 +145,7 @@ export const Users = () => ({
             placeholder: 'Active'
         },
         child: [],
+        color: '#2c3e50',
         labelSize: 15,
         type: 'checkbox'
     }

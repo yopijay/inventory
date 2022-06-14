@@ -7,13 +7,14 @@ import Header from './Header';
 import Body from './Body';
 
 // Request
-import { reports } from '../../../../../core/request/Request';
+// import { reports } from '../../../../../core/request/Request';
 
 // Core
 import Export from '../../../../../core/global/Export';
 import Print from '../../../../../core/global/Print';
 
 const Index = () => {
+    // eslint-disable-next-line
     const [ report, setReport ] = useState();
     const _print = useRef();
 

@@ -1,14 +1,18 @@
 // Libraries
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box } from '@mui/material';
 
 // Core
 import Ctrl from '../../core/global/controls/Controls';
 
 // Layouts
-import Summary from './layouts/summary/'
+// import Summary from './layouts/summary/'
 
 const Index = () => {
+
+    useEffect(() => {
+        localStorage.setItem('nav', 'Home');
+    }, []);
 
     return (
         <Box sx= {{ padding: { xs: 0, md: '20px' } }}>
