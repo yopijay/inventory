@@ -35,15 +35,11 @@ const Body = (props) => {
                                                 <Ctrl.Typography text= { brand.name } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
-                                            <Grid item lg= { 2 } sx= {{ display: { xs: 'none', lg: 'block' } }}>
-                                                <Ctrl.Typography text= { brand.description } color= "#34495e" 
-                                                    style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-                                            </Grid>
-                                            <Grid item md= { 2 } lg= { 1 } sx= {{ display: { xs: 'none', md: 'block' }, textAlign: 'center' }}>
+                                            <Grid item md= { 2 } lg= { 2 } sx= {{ display: { xs: 'none', md: 'block' }, textAlign: 'center' }}>
                                                 <Ctrl.Typography text= { brand.status === 1 ? 'Active' : 'Inactive' } color= "#34495e" 
                                                     style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
                                             </Grid>
-                                            <Grid item lg= { 1 } sx= {{ display: { xs: 'none', lg: 'block' } }}>
+                                            <Grid item lg= { 2 } sx= {{ display: { xs: 'none', lg: 'block' } }}>
                                                 <Ctrl.Typography 
                                                     text= { `${ new Date(brand.date_created).toLocaleString('default', { month: 'long' }) }
                                                                 ${ new Date(brand.date_created).getDate() }, ${ new Date(brand.date_created).getFullYear() } 

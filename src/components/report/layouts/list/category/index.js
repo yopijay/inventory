@@ -14,6 +14,9 @@ import Body from './Body';
 // Request
 import { reports } from '../../../../../core/request/Request';
 
+// Assets
+import Logo from '../../../../../assets/images/profile.jpg';
+
 const Index = () => {
     const [ report, setReport ] = useState();
     const _print = useRef();
@@ -39,10 +42,10 @@ const Index = () => {
                         name= "Category"
                         element={<button style= {{ backgroundColor: '#00b894', 
                         border: 'none', padding: '9px 15px', color: '#ffffff', fontSize: '110%', fontFamily: 'Gilroy Light', borderRadius: '5px' }}>PRINT</button>}
-                        content={() => _print.current}
+                        content={ () => _print.current }
                     />
                 </Box>
-                <Box><PDF name= "Category" content= { report } /></Box>
+                <Box><PDF name= "Category" content= { report } logo= {{ img: Logo, w: 10, h: 10, type: 'JPEG' }} /></Box>
             </Box>
             <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 3 } ref= { _print }>
                 <Grid item><Header /></Grid>

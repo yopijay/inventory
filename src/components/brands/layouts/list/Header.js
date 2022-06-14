@@ -17,13 +17,10 @@ const Header = () => {
             <Grid item xs= { 8 } sm= { 4 } md= { 3 } lg= { 2 }>
                 <Ctrl.Typography text= "Name" color= "#34495e" sx= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
             </Grid>
-            <Grid item lg= { 2 } sx= {{ display: { xs: 'none', lg: 'block' } }}>
-                <Ctrl.Typography text= "Description" color= "#34495e" sx= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-            </Grid>
-            <Grid item md= { 2 } lg= { 1 } sx= {{ display: { xs: 'none', md: 'block' }, textAlign: 'center' }}>
+            <Grid item md= { 2 } lg= { 2 } sx= {{ display: { xs: 'none', md: 'block' }, textAlign: 'center' }}>
                 <Ctrl.Typography text= "Status" color= "#34495e" sx= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
             </Grid>
-            <Grid item lg= { 1 } sx= {{ display: { xs: 'none', lg: 'block' } }}>
+            <Grid item lg= { 2 } sx= {{ display: { xs: 'none', lg: 'block' } }}>
                 <Ctrl.Typography text= "Date Created" color= "#34495e" sx= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
             </Grid>
             <Grid item xs= { 4 } sm= { 2 } md= { 2 } lg= { 2 } sx= {{ textAlign: 'center' }}>
