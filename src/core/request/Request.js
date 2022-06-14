@@ -6,9 +6,10 @@ import Env from '../global/constants/Env.json';
 
 let env = 'local';
 
-export const getall = async (set, table) => {
+export const getall = async (set, table, loader) => {
     let all = await _axios(`${Env[env].url}/getall/${table}`, 'get');
     set(all);
+    loader(false);
 }
 
 export const reports = async (set, table) => {

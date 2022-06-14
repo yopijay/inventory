@@ -15,10 +15,11 @@ import Header from './Header';
 import Body from './Body';
 
 const List = () => {
-    let [ users, setUsers ] = useState();
+    const [ users, setUsers ] = useState();
+    const [ isLoad, setIsLoad ] = useState(true);
 
     useEffect(() => {
-        getall(setUsers, 'users');
+        getall(setUsers, 'users', setIsLoad);
     }, []);
     
     return (
@@ -53,7 +54,7 @@ const List = () => {
                 <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 1 } sx= {{ marginTop: { xs: 0, sm: '-25px', md: '-30px' } }}>
                     <Grid item><Ctrl.TextField name= "search" border= "solid 1px #bdc3c7" radius= "30px" padding= "8px 15px 4px 15px" size= "small" placeholder= "Search..." /></Grid>
                     <Grid item><Header /></Grid>
-                    <Grid item><Body data= { users } /></Grid>
+                    <Grid item><Body data= { users } isLoad= { isLoad } /></Grid>
                 </Grid>
             </Grid>
         </Grid>

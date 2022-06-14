@@ -10,13 +10,16 @@ import Ctrl from '../../../../../core/global/controls/Controls';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
+// Loader
+import { SnakeLoader } from '../../../../../core/loader/Loader';
+
 const Body = (props) => {
-    const { data, setType, setId } = props;
+    const { data, isLoad } = props;
 
     return (
         <Box>
             { 
-                (data !== undefined) ? 
+                (!isLoad) ? 
                     data.length !== 0 ? (
                         <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 2 }>
                             {
@@ -59,7 +62,7 @@ const Body = (props) => {
                                                         </Link>
                                                     </Box>
                                                     <Box sx= {{ margin: '5px' }}>
-                                                        <Link to= { `/maintenance/assets/form/view/${assts.id}` } style= {{ textDecoration: 'none' }} onClick= { () => { setType('view'); setId(assts.id); } }>
+                                                        <Link to= { `/maintenance/assets/form/view/${assts.id}` } style= {{ textDecoration: 'none' }}>
                                                             <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#3498db" 
                                                                 borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                                 <VisibilityIcon style= {{ fontSize: '110%' }} />
@@ -82,10 +85,8 @@ const Body = (props) => {
                         </Grid>
                     )
                 : (
-                    <Grid container direction= "row" justifyContent= "center" alignItems= "center" spacing= { 1 }>
-                        <Grid item>
-                            <Ctrl.Typography text= "No assets found!" color= "#bdc3c7" style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-                        </Grid>
+                    <Grid container direction= "row" justifyContent= "center" alignItems= "center">
+                        <Grid item sx= {{ marginTop: '10px' }}><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></Grid>
                     </Grid>
                 )
             }

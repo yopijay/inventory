@@ -10,13 +10,16 @@ import Ctrl from '../../../../core/global/controls/Controls';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
+// Loader
+import { SnakeLoader } from '../../../../core/loader/Loader';
+
 const Body = (props) => {
-    const { data } = props;
+    const { data, isLoad } = props;
 
     return (
         <Box>
             { 
-                (data !== undefined) ? 
+                (!isLoad) ? 
                     data.length !== 0 ? (
                         <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 2 } sx= {{ padding: '10px 15px' }}>
                             {
@@ -82,10 +85,8 @@ const Body = (props) => {
                         </Grid>
                     )
                  : (
-                    <Grid container direction= "row" justifyContent= "center" alignItems= "center" spacing= { 1 }>
-                        <Grid item>
-                            <Ctrl.Typography text= "No brand found!" color= "#bdc3c7" style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-                        </Grid>
+                    <Grid container direction= "row" justifyContent= "center" alignItems= "center">
+                        <Grid item sx= {{ marginTop: '10px' }}><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></Grid>
                     </Grid>
                 )
             }
