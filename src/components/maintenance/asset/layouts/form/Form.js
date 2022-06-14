@@ -3,8 +3,8 @@ import React, { useEffect, useState } from 'react';
 import { Box, Grid, Skeleton } from '@mui/material';
 
 // Core
-import Ctrl from '../../../../../../core/global/controls/Controls';
-import { options, optionsPer } from '../../../../../../core/request/Request';
+import Ctrl from '../../../../../core/global/controls/Controls';
+import { options, optionsPer } from '../../../../../core/request/Request';
 
 const Form = (props) => {
     const { register, errors, getValues, setValue, disabled } = props;

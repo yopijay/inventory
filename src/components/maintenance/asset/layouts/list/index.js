@@ -4,11 +4,11 @@ import { Box, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 // Core
-import Ctrl from '../../../../../../core/global/controls/Controls';
-import Export from '../../../../../../core/global/Export';
+import Ctrl from '../../../../../core/global/controls/Controls';
+import Export from '../../../../../core/global/Export';
 
 // Request
-import { getall } from '../../../../../../core/request/Request';
+import { getall } from '../../../../../core/request/Request';
 
 // Layout
 import Header from './Header';

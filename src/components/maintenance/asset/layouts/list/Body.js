@@ -4,14 +4,14 @@ import { Box, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 // Core
-import Ctrl from '../../../../../../core/global/controls/Controls';
+import Ctrl from '../../../../../core/global/controls/Controls';
 
 // Icons
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
 // Loader
-import { SnakeLoader } from '../../../../../../core/loader/Loader';
+import { SnakeLoader } from '../../../../../core/loader/Loader';
 
 const Body = (props) => {
     const { data, isLoad } = props;

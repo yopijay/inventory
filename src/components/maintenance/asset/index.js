@@ -7,8 +7,8 @@ import { Route, Routes } from 'react-router-dom';
 import Ctrl from '../../../core/global/controls/Controls';
 
 // Layouts
-import Assets from './layouts/Assets';
-import AssignAssets from './layouts/AssignAssets';
+import List from './layouts/list';
+import Form from './layouts/form';
 
 const Index = () => {
     return (
@@ -17,8 +17,9 @@ const Index = () => {
                                                                                                                 marginTop: { xs: '20px', md: 0} }} />
             
             <Routes>
-                <Route exact path= "/*" element= { <Assets /> } />
-                <Route exact path= "/issuance/*" element= { <AssignAssets /> } />
+                <Route exact path= "/" element= { <List /> } />
+                <Route exact path= "/form/:type" element= { <Box marginTop= "50px"><Form /></Box> } />
+                <Route exact path= "/form/:type/:id" element= { <Box marginTop= "50px"><Form /></Box> } />
             </Routes>
         </Box>
     );

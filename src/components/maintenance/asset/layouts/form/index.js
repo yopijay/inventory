@@ -6,17 +6,17 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 // Core
-import Ctrl from '../../../../../../core/global/controls/Controls';
-import { Asset } from '../../../../../../core/global/validation/Asset';
+import Ctrl from '../../../../../core/global/controls/Controls';
+import { Asset } from '../../../../../core/global/validation/Asset';
 
 // Layouts
 import Form from './Form';
 
 // Request
-import { get, save } from '../../../../../../core/request/Request';
+import { get, save } from '../../../../../core/request/Request';
 
 // Loader
-import { SnakeLoader } from '../../../../../../core/loader/Loader';
+import { SnakeLoader } from '../../../../../core/loader/Loader';
 
 const Index = () => {
     const { type, id } = useParams();
