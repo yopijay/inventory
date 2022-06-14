@@ -11,7 +11,6 @@ import { NavContext } from '../../../../core/context/NavContext';
 
 const Nav = () => {
     const [ isActive, setIsActive, expand, setExpand ] = useContext(NavContext);
-    console.log(expand);
 
     return (
         <Box sx= {{ overflowY: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>

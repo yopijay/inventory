@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Grid } from '@mui/material';
 import { Link, Route, Routes } from 'react-router-dom';
 
@@ -14,6 +14,11 @@ import Assets from './layouts/Assets';
 import AssignedAsset from './layouts/AssignedAssets';
 
 const Index = () => {
+
+    useEffect(() => {
+        localStorage.setItem('nav', 'Reports');
+    }, []);
+
     return (
         <Box padding= "10px 30px">
             <Ctrl.Typography color= "#2c3e50" text= "Reports" style= {{ fontSize: '200%', fontWeight: 'bold' }} />

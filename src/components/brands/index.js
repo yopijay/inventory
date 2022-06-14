@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
@@ -11,6 +11,10 @@ import List from './layouts/list';
 import Form from './layouts/form';
 
 const Index = () => {
+
+    useEffect(() => {
+        localStorage.setItem('nav', 'Brands');
+    }, []);
 
     return (
         <Box sx= {{ padding: { xs: 0, md: '20px' } }}>
