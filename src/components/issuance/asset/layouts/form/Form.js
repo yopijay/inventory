@@ -15,7 +15,9 @@ const Form = (props) => {
     const [ assets, setAssets ] = useState();
     const [ users, setUsers ] = useState();
     // eslint-disable-next-line
-    const [ opt, setOpt ] = useState();
+    const [ asst, setAsst ] = useState();
+    // eslint-disable-next-line
+    const [ usr, setUsr ] = useState();
     const [ categoryLoader, setCategoryLoader ] = useState(true);
     const [ usersLoader, setUsersLoader ] = useState(true);
     const [ brandLoader, setBrandLoader ] = useState(true);
@@ -77,7 +79,7 @@ const Form = (props) => {
                                 <Ctrl.Select name= "asset_id" size= "small" padding= "12px 15px 8px 15px" 
                                     value= { getValues().asset_id !== undefined ? getValues().asset_id : '' }
                                     register= { register('asset_id', {
-                                        onChange: e => setOpt(e.target.value)
+                                        onChange: e => setAsst(e.target.value)
                                     }) } options= { assets } />
                             ) : ( <Skeleton variant= "rectangular" width= "100%" height= "45px" sx= {{ backgroundColor: '#dfe6e9', borderRadius: '5px' }} /> )
                         }
@@ -96,7 +98,7 @@ const Form = (props) => {
                                 <Ctrl.Select name= "user_id" size= "small" padding= "12px 15px 8px 15px" 
                                     value= { getValues().user_id !== undefined ? getValues().user_id : '' }
                                     register= { register('user_id', {
-                                        onChange: e => setOpt(e.target.value)
+                                        onChange: e => setUsr(e.target.value)
                                     }) } options= { users } />
                             ) : ( <Skeleton variant= "rectangular" width= "100%" height= "45px" sx= {{ backgroundColor: '#dfe6e9', borderRadius: '5px' }} /> )
                         }
