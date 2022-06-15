@@ -20,7 +20,7 @@ import Form from './Form';
 
 const Index = () => {
     const { type, id } = useParams();
-    const [ isLoad, setIsLoad ] = useState(true);
+    const [ isLoad, setIsLoad ] = useState(type !== 'new');
     const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm({
         resolver: yupResolver(AssignAssets())
     });
@@ -39,7 +39,7 @@ const Index = () => {
                     !isLoad ? (
                         <Box width= "100%" marginTop= "20px">
                             <form autoComplete= "off">
-                                {/* <Form register= { register } errors= { errors } getValues= { getValues } /> */}
+                                <Form register= { register } errors= { errors } getValues= { getValues } setValue= { setValue } />
                             </form>
                         </Box>
                     ) : (

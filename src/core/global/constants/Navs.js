@@ -56,19 +56,19 @@ export const Navs = () => (
             path: '',
             subNav: [
                 {
-                    name: 'Categories',
+                    name: 'Categories Report',
                     path: '/reports/category',
                 },
                 {
-                    name: 'Brands',
+                    name: 'Brands Report',
                     path: '/reports/brand',
                 },
                 {
-                    name: 'Users',
+                    name: 'Users Report',
                     path: '/reports/users',
                 },
                 {
-                    name: 'Assets',
+                    name: 'Assets Report',
                     path: '/reports/assets',
                 }
             ]
