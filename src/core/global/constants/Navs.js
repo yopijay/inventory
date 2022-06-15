@@ -8,6 +8,7 @@ import Users from '../../../components/maintenance/users';
 import Assets from '../../../components/maintenance/asset';
 import Categories from '../../../components/maintenance/category';
 import IssuanceAsset from '../../../components/issuance/asset';
+import RCategory from '../../../components/report/layouts/list/category';
 // import Reports from '../../../components/report';
 // import Logs from '../../../components/logs';
 // import Testing from '../../../components/testing';
@@ -104,7 +105,7 @@ export const Layouts = () => (
         },
         {
             path: '/reports/category',
-            component: "category"
+            component: <RCategory />
         },
         {
             path: '/reports/brand',

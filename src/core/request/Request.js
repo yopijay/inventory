@@ -12,9 +12,10 @@ export const getall = async (set, table, loader) => {
     loader(false);
 }
 
-export const reports = async (set, table) => {
+export const reports = async (set, table, loader) => {
     let reports = await _axios(`${Env[env].url}/report/${table}`, 'get');
     set(reports);
+    loader(false);
 }
 
 export const count = async (set, table) => {
