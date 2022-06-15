@@ -25,7 +25,7 @@ const Nav = () => {
                                 </Link>
                             ) : (
                                 <Accordion style= {{ backgroundColor: 'transparent', border: 'none', boxShadow: 'none', margin: '10px 0' }} expanded= { expand === nav.name } 
-                                    onClick= { () => setExpand(nav.name) }>
+                                    onChange= { () => setExpand(nav.name) }>
                                     <AccordionSummary id= { `${nav.name}-header` } aria-controls= { `${nav.name}-content` } style= {{ padding: '0' }}>
                                         <Box sx= {{ width: '100%', color: `#${expand === nav.name ? '40739e' : '2f3640'}`, fontSize: '108%', display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', 
                                                             alignItems: 'center', paddingLeft: { xs: '15px', md: 0 },

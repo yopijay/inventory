@@ -9,6 +9,7 @@ import Assets from '../../../components/maintenance/asset';
 import Categories from '../../../components/maintenance/category';
 import IssuanceAsset from '../../../components/issuance/asset';
 import RCategory from '../../../components/report/layouts/list/category';
+import TestReport from '../../../components/maintenance/testreport';
 // import Reports from '../../../components/report';
 // import Logs from '../../../components/logs';
 // import Testing from '../../../components/testing';
@@ -39,6 +40,10 @@ export const Navs = () => (
                 {
                     name: 'Assets',
                     path: '/maintenance/assets',
+                },
+                {
+                    name: 'Test Report',
+                    path: '/maintenance/test-report',
                 }
             ]
         },
@@ -98,6 +103,10 @@ export const Layouts = () => (
         {
             path: '/maintenance/assets',
             component: <Assets />
+        },
+        {
+            path: '/maintenance/test-report',
+            component: <TestReport />
         },
         {
             path: '/issuance/assets',
