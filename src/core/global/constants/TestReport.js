@@ -1,12 +1,15 @@
 // Libraries
 import React from 'react';
 
+// Layouts
+import BasicInformation from '../../../components/maintenance/testreport/layouts/form/layouts/BasicInformation';
+
 export const Navs = () => (
     [
         {
             name: 'Basic Information',
             path: 'basic-information',
-            component: 'BASIC INFORMATION'
+            component: <BasicInformation />
         },
         {
             name: 'General Specification',

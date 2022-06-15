@@ -7,8 +7,8 @@ import { Route, Routes } from 'react-router-dom';
 import Ctrl from '../../../core/global/controls/Controls';
 
 // Layout
-import List from './list';
-import Form from './form';
+import List from './layouts/list';
+import Form from './layouts/form';
 
 const Index = () => {
     return (

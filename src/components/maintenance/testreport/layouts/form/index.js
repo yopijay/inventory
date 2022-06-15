@@ -4,13 +4,14 @@ import { Box, Grid } from '@mui/material';
 import { Link, Route, Routes, useParams } from 'react-router-dom';
 
 // Core
-import Ctrl from '../../../../core/global/controls/Controls';
+import Ctrl from '../../../../../core/global/controls/Controls';
 
 // Constants
-import { Navs } from '../../../../core/global/constants/TestReport';
+import { Navs } from '../../../../../core/global/constants/TestReport';
 
 const Index = () => {
     const { type } = useParams();
+    // eslint-disable-next-line
     const [ biActive, setBiActive ] = useState(localStorage.getItem('biActive') !== null ? localStorage.getItem('biActive') : false);
 
     return (
@@ -21,15 +22,15 @@ const Index = () => {
                     <Route exact path= "/" element= {
                         <Box>
                             <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" spacing= { 1 }>
-                                <Grid item xs= { 3 }></Grid>
-                                <Grid item xs= { 6 }>
+                                <Grid item xs= { 3 } sx= {{ display: { xs: 'none', md: 'block' } }}></Grid>
+                                <Grid item xs= { 12 } md= { 6 }>
                                     <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', marginTop: '30px' }}>
                                         {
                                             Navs().map((rprt, index) => (
                                                 <Box margin= "5px" key= { index }>
                                                     <Link to= { `/maintenance/test-report/form/${type}/${rprt.path}` } style= {{ textDecoration: 'none' }}>
                                                         <Box sx= {{ padding: '8px 15px 6px 15px', color: '#0984e3', border: "solid 1px #0984e3", borderRadius: '4px', display: "flex",
-                                                            flexDirection: 'row', justifyContent: 'center', alignItems: 'center', fontSize: '98%', textTransform: 'uppercase', 
+                                                            flexDirection: 'row', justifyContent: 'center', alignItems: 'center', fontSize: '98%', textAlign: 'center', textTransform: 'uppercase', 
                                                             '&: hover': { backgroundColor: '#0984e3', transition: 'all 0.3s ease-in-out', color: '#ffffff' }  }}>{ rprt.name }</Box>
                                                     </Link>
                                                 </Box>
@@ -44,14 +45,6 @@ const Index = () => {
                                         borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center" 
                                         style= {{ fontSize: '98%' }}>CANCEL</Box>
                                 </Link>
-                                { type !== 'view' ? (
-                                    <Box marginLeft= "10px">
-                                        <Box sx= {{ fontSize: '98%', padding: '6px 50px', color: '#ffffff', backgroundColor: '#3498db', borderRadius: '4px', display: 'flex', 
-                                                            flexDirection: 'row', justifyContent: 'center', alignItems: 'center', cursor: 'pointer' }} onClick= { console.log() }>
-                                            <Ctrl.Typography text= "SAVE" color= "#ffffff" />
-                                        </Box>
-                                    </Box>
-                                ) : '' }
                             </Box>
                         </Box>
                     } />
