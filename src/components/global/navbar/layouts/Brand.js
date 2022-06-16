@@ -2,25 +2,26 @@
 import React from 'react';
 import { Box, IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
-import { styled } from '@mui/styles';
+
+// Core
+import Ctrl from '../../../../core/global/controls/Controls';
 
 // Assets
 import MenuIcon from '@mui/icons-material/Menu';
 
 const Brand = (props) => {
     const { drawerToggle, isMobile } = props;
-    const Title = styled(Box)({
-        textTransform: 'uppercase',
-        fontFamily: 'Boldstrom',
-        color: '#353b48',
-        fontSize: '200%'
-    });
 
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
-            <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={ drawerToggle(!isMobile.left) } sx={{ display: { md: 'none' } }} ><MenuIcon style= {{ color: '#353b48' }} /></IconButton>
+            <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={ drawerToggle(!isMobile.left) } sx={{ display: { md: 'none' } }} >
+                <MenuIcon style= {{ color: '#353b48' }} />
+            </IconButton>
             <Link to= "/" style= {{ textDecoration: 'none' }}>
-                <Title><span style= {{ color: '#40739e' }}>In</span>ventory</Title>
+                <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                    <Ctrl.Typography text= "IN" color= "primary.main" sx= {{ fontFamily: 'Boldstrom', fontSize: { xs: '1.75rem', sm: '1.90rem', md: '2rem' }, transition: 'all 0.2s ease-in-out' }} />
+                    <Ctrl.Typography text= "VENTORY" color= "text.primary" sx= {{ fontFamily: 'Boldstrom', fontSize: { xs: '1.75rem', sm: '1.90rem', md: '2rem' }, transition: 'all 0.2s ease-in-out' }} />
+                </Box>
             </Link>
         </Box>
     );

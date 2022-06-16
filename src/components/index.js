@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import { Box, Container, Toolbar } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
+// Core
+import Ctrl from '../core/global/controls/Controls';
+
 // Layouts
 import Navbar from './global/navbar';
 import Sidebar from './global/sidebar';
@@ -25,7 +28,7 @@ const Index = (props) => {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx= {{ backgroundColor: '#f5f6fa', display: 'flex', width: '100%', height: '100vh', overflow: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
+        <Box sx= {{ backgroundColor: '#ffffff', display: 'flex', width: '100%', height: '100vh', overflow: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
             <Navbar drawerToggle= { drawerToggle } isMobile= { isMobile } />
             <Box sx= {{ display: 'flex', width: '100%' }}>
                 <Container>
@@ -35,9 +38,15 @@ const Index = (props) => {
                             <Toolbar />
                             <Routes>
                                 {
-                                    Layouts().map((component, index) => (
-                                        <Route exact path= { component.path + '/*' } key= { index } element= { component.component } />
-                                    ))
+                                    Layouts().map((component, index) => ( <Route exact path= { component.path + '/*' } key= { index } 
+                                        element= { 
+                                            <Box sx= {{ padding: { xs: 0, md: '20px' } }}>
+                                                <Ctrl.Typography text= { component.name }
+                                                                                        sx= {{ fontSize: { xs: '1.3rem', sm: '1.6rem', md: '1.8rem' }, fontWeight: 'bold', textTransform: 'uppercase', 
+                                                                                                    transition: 'all 0.2s ease-in-out' }} />
+                                                { component.component }
+                                            </Box>
+                                        } /> ))
                                 }
                             </Routes>
                         </Box>

@@ -36,11 +36,12 @@ const Form = (props) => {
                                         <Box border= "solid 1px #9E9E9E" borderRadius= "5px">
                                             <Ctrl.Select { ...(fields()[field].props) } 
                                                 disabled= { disabled }
-                                                value= { field === 'bmonth' ? new Date().getMonth() + 1 :
+                                                value= { getValues()[field] !== undefined ? getValues()[field] : 
+                                                                field === 'bmonth' ? new Date().getMonth() + 1 :
                                                                 field === 'bday' ? new Date().getDate() :
-                                                                field === 'byear' ? new Date().getFullYear() : getValues()[field] }
+                                                                field === 'byear' ? new Date().getFullYear() : '' }
                                                 register= { register(field, {
-                                                    onChange: e => { setOpt(e.target.value) }
+                                                    onChange: e => setOpt(e.target.value)
                                                 }) } options= { fields()[field].option } />
                                         </Box>
                                     ) : (

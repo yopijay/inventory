@@ -2,6 +2,9 @@
 import React from 'react';
 import { Avatar, Box, Toolbar } from '@mui/material';
 
+// Core
+import Ctrl from '../../../../core/global/controls/Controls';
+
 // Asset
 import Cover from '../../../../assets/images/cover.jpg';
 import DP from '../../../../assets/images/profile.jpg';
@@ -19,9 +22,10 @@ const Profile = () => {
                 <Avatar src= { DP } alt= "profile" sx= {{ width: '75px', height: '75px' }} />
             </Box>
             <Box sx= {{ margin: '20px 0 0 0', display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
-                <Box sx= {{ fontWeight: 'bold', color: '#2f3640', fontSize: '110%', paddingLeft: { xs: '15px', md: 0 } }}>Paul John Judan</Box>
-                <Box sx= {{ color: '#353b48', fontSize: '105%', paddingLeft: { xs: '15px', md: 0 } }}>IT Programmer</Box>
-                <Box sx= {{ color: '#353b48', fontSize: '105%', paddingLeft: { xs: '15px', md: 0 } }}>IT/MIS</Box>
+                <Ctrl.Typography text= "Paul John Judan" color= "text.secondary" 
+                    sx= {{ fontSize: { xs: '', sm: '', md: '1.05rem' }, fontWeight: 'bold', paddingLeft: { xs: '15px', md: 0 }, transition: 'all 0.2s ease-in-out' }} />
+                <Ctrl.Typography text= "IT Programmer" sx= {{ fontSize: { xs: '.95rem', sm: '1rem', md: '1.05rem' }, paddingLeft: { xs: '15px', md: 0 }, transition: 'all 0.2s ease-in-out' }} />
+                <Ctrl.Typography text= "IT/MIS"  sx= {{ fontSize: { xs: '.95rem', sm: '1rem', md: '1.05rem' }, paddingLeft: { xs: '15px', md: 0 }, transition: 'all 0.2s ease-in-out' }} />
             </Box>
             <Box sx= {{ width: '100%', height: '1px', backgroundColor: '#dcdde1', margin: '30px 0' }} />
         </Box>

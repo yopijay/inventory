@@ -1,7 +1,7 @@
 // Libraries
 import React from 'react';
 import { createRoot } from 'react-dom/client';
-import { createTheme, CssBaseline } from '@mui/material';
+import { CssBaseline } from '@mui/material';
 import { ThemeProvider } from '@emotion/react';
 
 // Assets
@@ -12,22 +12,8 @@ import './assets/css/scrollbar.css';
 // Layouts
 import Core from './Core';
 
-const pageTheme = createTheme({
-    typography: {
-        fontFamily: [
-            '-apple-system',
-            'Gilroy Light'
-        ]
-    },
-    palette: {
-        primary: {
-            main: '#DF7B09'
-        },
-        secondary: {
-            main: '#FFFFFF'
-        }
-    }
-});
+// Theme
+import { pageTheme } from './core/global/design/Theme';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
