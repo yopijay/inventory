@@ -85,46 +85,57 @@ export const Navs = () => (
 export const Layouts = () => (
     [
         {
+            name: 'Dashboard',
             path: '/',
             component: <Dashboard />
         },
         {
+            name: 'Maintenance',
             path: '/maintenance/category',
             component: <Categories />
         },
         {
+            name: 'Maintenance',
             path: '/maintenance/brand',
             component: <Brands />
         },
         {
+            name: 'Maintenance',
             path: '/maintenance/users',
             component: <Users />
         },
         {
+            name: 'Maintenance',
             path: '/maintenance/assets',
             component: <Assets />
         },
         {
+            name: 'Issuance',
             path: '/issuance/test-report',
             component: <TestReport />
         },
         {
+            name: 'Issuance',
             path: '/issuance/assets',
             component: <IssuanceAsset />
         },
         {
+            name: 'Reports',
             path: '/reports/category',
             component: <RCategory />
         },
         {
+            name: 'Reports',
             path: '/reports/brand',
             component: "brand"
         },
         {
+            name: 'Reports',
             path: '/reports/users',
             component: "users"
         },
         {
+            name: 'Reports',
             path: '/reports/assets',
             component: "assets"
         }

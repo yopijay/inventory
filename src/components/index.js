@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import { Box, Container, Toolbar } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
+// Core
+import Ctrl from '../core/global/controls/Controls';
+
 // Layouts
 import Navbar from './global/navbar';
 import Sidebar from './global/sidebar';
@@ -31,16 +34,22 @@ const Index = (props) => {
                 <Container>
                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
                         <Sidebar isMobile= { isMobile } container= { container } drawerToggle= { drawerToggle } />
-                        {/* <Box sx= {{ flexGrow: '1', overflow: 'hidden'  }}>
+                        <Box sx= {{ flexGrow: '1', overflow: 'hidden'  }}>
                             <Toolbar />
                             <Routes>
                                 {
-                                    Layouts().map((component, index) => (
-                                        <Route exact path= { component.path + '/*' } key= { index } element= { component.component } />
-                                    ))
+                                    Layouts().map((component, index) => ( <Route exact path= { component.path + '/*' } key= { index } 
+                                        element= { 
+                                            <Box sx= {{ padding: { xs: 0, md: '20px' } }}>
+                                                <Ctrl.Typography text= { component.name }
+                                                                                        sx= {{ fontSize: { xs: '1.3rem', sm: '1.6rem', md: '1.8rem' }, fontWeight: 'bold', textTransform: 'uppercase', 
+                                                                                                    transition: 'all 0.2s ease-in-out' }} />
+                                                { component.component }
+                                            </Box>
+                                        } /> ))
                                 }
                             </Routes>
-                        </Box> */}
+                        </Box>
                     </Box>
                 </Container>
             </Box>
