@@ -17,7 +17,7 @@ const Nav = () => {
     const [ isActive, setIsActive, expand, setExpand ] = useContext(NavContext);
 
     const Accordion = styled(MuiAccordion)(({
-        '& .css-1pvvkxv-MuiButtonBase-root-MuiAccordionSummary-root': {
+        '& .css-1pvvkxv-MuiButtonBase-root-MuiAccordionSummary-root, .css-1uaukoe': {
             padding: 0,
             minHeight: 0,
             boxShadow: 'none',
