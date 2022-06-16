@@ -21,7 +21,7 @@ const Nav = () => {
             padding: 0,
             minHeight: 0,
             boxShadow: 'none',
-            '& .css-1betqn-MuiAccordionSummary-content': {
+            '& .css-1betqn-MuiAccordionSummary-content, .css-1n11r91': {
                 fontSize: '1.05rem',
                 margin: '8px 0'
             }
