@@ -2,6 +2,7 @@
 import React from 'react';
 import { Box, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 // Core
 import Ctrl from '../../../../../core/global/controls/Controls';
@@ -10,16 +11,13 @@ import Ctrl from '../../../../../core/global/controls/Controls';
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
-// Loader
-import { SnakeLoader } from '../../../../../core/loader/Loader';
-
 const Body = (props) => {
-    const { data, isLoad } = props;
+    const { data } = props;
 
-    return (
-        <Box>
-            { 
-                !isLoad ? (
+    try {
+        return (
+            <Box>
+                { 
                     data.length !== 0 ? (
                         <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 2 } sx= {{ padding: '10px 15px' }}>
                             {
@@ -79,14 +77,16 @@ const Body = (props) => {
                             </Grid>
                         </Grid>
                     )
-                ) : (
-                    <Grid container direction= "row" justifyContent= "center" alignItems= "center">
-                        <Grid item sx= {{ marginTop: '10px' }}><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></Grid>
-                    </Grid>
-                )
-            }
-        </Box>
-    );
+                }
+            </Box>
+        );
+    } catch (error) {
+        return ( <Box>Something went wrong!!</Box> )
+    }
+}
+
+Body.propTypes = {
+    data: PropTypes.array.isRequired
 }
 
 export default Body;

@@ -2,6 +2,9 @@
 import React, { useEffect, useState } from 'react';
 import { Box, SwipeableDrawer } from '@mui/material';
 
+// Core
+import Ctrl from '../../../core/global/controls/Controls';
+
 // Layouts
 import Profile from './layouts/Profile';
 import Nav from './layouts/Nav';
@@ -30,9 +33,8 @@ const Index = (props) => {
                                     <Profile />
                                     <Nav />
                                 </Box>
-                                <Box sx= {{ overflow: 'hidden', backgroundColor: '#487eb0', padding: '8px 0',
-                                                    '&:hover': { backgroundColor: '#40739e', transition: 'all 0.3s ease-in-out' }, textAlign: 'center', color: '#f5f6fa' }}>
-                                    <Box sx= {{ textTransform: 'uppercase', cursor: 'pointer' }}>Logout</Box>
+                                <Box sx= {{ padding: '5px' }}>
+                                    <Ctrl.Button text= "Logout" variant= "contained" />
                                 </Box>
                             </Box>
                         </Box>
@@ -45,10 +47,7 @@ const Index = (props) => {
                                 <Profile />
                                 <Nav />
                             </Box>
-                            <Box sx= {{ overflow: 'hidden', borderRadius: '3px', backgroundColor: '#487eb0', padding: '8px 0',
-                                                '&:hover': { backgroundColor: '#40739e', transition: 'all 0.3s ease-in-out' }, textAlign: 'center', color: '#f5f6fa' }}>
-                                <Box sx= {{ textTransform: 'uppercase', cursor: 'pointer' }}>Logout</Box>
-                            </Box>
+                            <Ctrl.Button text= "Logout" variant= "contained" />
                         </Box>
                     </Box>
                 )

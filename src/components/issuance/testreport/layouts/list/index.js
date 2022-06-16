@@ -15,7 +15,7 @@ const Index = () => {
             <Grid item>
                 <Grid container direction= "row"  justifyContent= "flex-end" alignItems= "center" spacing= { 1 }>
                     <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
-                        <Link to= "/maintenance/test-report/form/new" style= {{ textDecoration: 'none' }}>
+                        <Link to= "/issuance/test-report/form/new" style= {{ textDecoration: 'none' }}>
                             <Box display= "flex" flexDirection= "column" justifyContent= "center" alignItems= "center">
                                 <Ctrl.Typography color= "#ffffff" text= "NEW TEST REPORT" 
                                     sx= {{ padding: { xs: '10px 12px', sm: '7px 10px', md: '10px 0', backgroundColor: '#2980b9',

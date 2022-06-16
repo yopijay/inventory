@@ -14,6 +14,9 @@ import { getall } from '../../../../../core/request/Request';
 import Header from './Header';
 import Body from './Body';
 
+// Loader
+import { SnakeLoader } from '../../../../../core/loader/Loader';
+
 const Index = () => {
     const [ category, setCategory ] = useState();
     const [ isLoad, setIsLoad ] = useState(true);
@@ -52,9 +55,19 @@ const Index = () => {
             </Grid>
             <Grid item>
                 <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 1 } sx= {{ marginTop: { xs: 0, sm: '-25px', md: '-30px' } }}>
-                    <Grid item><Ctrl.TextField name= "search" border= "solid 1px #bdc3c7" radius= "30px" padding= "8px 15px 4px 15px" size= "small" placeholder= "Search..." /></Grid>
+                    <Grid item sx= {{ marginTop: '-5px' }}><Ctrl.TextField name= "search" border= "solid 1px #bdc3c7" radius= "30px" padding= "8px 15px 4px 15px" size= "small" placeholder= "Search..." /></Grid>
                     <Grid item><Header /></Grid>
-                    <Grid item><Body data= { category } isLoad= { isLoad } /></Grid>
+                    <Grid item>
+                        {
+                            !isLoad ? (
+                                <Body data= { category } />
+                            ) : (
+                                <Grid container direction= "row" justifyContent= "center" alignItems= "center" sx= {{ marginBottom: '20px' }}>
+                                    <Grid item sx= {{ marginTop: '10px' }}><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></Grid>
+                                </Grid>
+                            )
+                        }
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>

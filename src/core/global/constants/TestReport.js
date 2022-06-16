@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Layouts
-import BasicInformation from '../../../components/maintenance/testreport/layouts/form/layouts/BasicInformation';
+import BasicInformation from '../../../components/issuance/testreport/layouts/form/layouts/BasicInformation';
 
 export const Navs = () => (
     [

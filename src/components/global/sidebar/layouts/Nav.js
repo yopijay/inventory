@@ -1,7 +1,11 @@
 // Libraries
 import React, { useContext } from 'react';
-import { Accordion, AccordionDetails, AccordionSummary, Box } from '@mui/material';
+import { Accordion as MuiAccordion, AccordionDetails, AccordionSummary, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { styled } from '@mui/styles';
+
+// Core
+import Ctrl from '../../../../core/global/controls/Controls';
 
 // Constants
 import { Navs } from '../../../../core/global/constants/Navs';
@@ -12,6 +16,18 @@ import { NavContext } from '../../../../core/context/NavContext';
 const Nav = () => {
     const [ isActive, setIsActive, expand, setExpand ] = useContext(NavContext);
 
+    const Accordion = styled(MuiAccordion)(({
+        '& .css-1pvvkxv-MuiButtonBase-root-MuiAccordionSummary-root': {
+            padding: 0,
+            minHeight: 0,
+            boxShadow: 'none',
+            '& .css-1betqn-MuiAccordionSummary-content': {
+                fontSize: '1.05rem',
+                margin: '8px 0'
+            }
+        }
+    }));
+
     return (
         <Box sx= {{ overflowY: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
             {
@@ -19,25 +35,26 @@ const Nav = () => {
                     <Box key= { index }>
                         {
                             nav.subNav.length === 0 ? (
-                                <Link to= { nav.path } style= {{ textDecoration: 'none', color: '#000000' }} onClick= { () => { setIsActive(nav.name); localStorage.setItem('nav', nav.name); setExpand(''); } }>
-                                    <Box sx= {{ width: '100%', color: `#${isActive === nav.name ? '40739e' : '2f3640'}`, fontSize: '108%', margin: '10px 0', paddingLeft: { xs: '15px', md: 0 },
-                                                        '&:hover': { color: '#40739e', transition: 'all 0.2s ease-in-out' } }}>{ nav.name }</Box>
+                                <Link to= { nav.path } style= {{ textDecoration: 'none' }} onClick= { () => { setIsActive(nav.name); localStorage.setItem('nav', nav.name); setExpand(''); } }>
+                                    <Ctrl.Typography text= { nav.name } color= { `${isActive === nav.name ? 'primary.main' : 'text.primary'}` }
+                                        sx= {{ fontSize: { xs: '.95rem', sm: '1rem', md: '1.05rem' }, paddingLeft: { xs: '15px', md: 0 }, margin: '8px 0', transition: 'all 0.2s ease-in-out',
+                                                    '&:hover': { color: 'primary.main', transition: 'all 0.2s ease-in-out' } }} />
                                 </Link>
                             ) : (
-                                <Accordion style= {{ backgroundColor: 'transparent', border: 'none', boxShadow: 'none', margin: '10px 0' }} expanded= { expand === nav.name } 
-                                    onChange= { () => setExpand(nav.name) }>
-                                    <AccordionSummary id= { `${nav.name}-header` } aria-controls= { `${nav.name}-content` } style= {{ padding: '0' }}>
-                                        <Box sx= {{ width: '100%', color: `#${expand === nav.name ? '40739e' : '2f3640'}`, fontSize: '108%', display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', 
-                                                            alignItems: 'center', paddingLeft: { xs: '15px', md: 0 },
-                                                            '&:hover': { color: '#40739e', transition: 'all 0.2s ease-in-out' } }}>{ nav.name }</Box>
+                                <Accordion disableGutters expanded= { expand === nav.name } onChange= { () => setExpand(nav.name) } sx= {{ boxShadow: 'none', backgroundColor: 'transparent' }}>
+                                    <AccordionSummary id= { `${nav.name}-header` } aria-controls= { `${nav.name}-content` }>
+                                        <Ctrl.Typography text= { nav.name } color= { `${expand === nav.name ? 'primary.main' : 'text.primary'}` }
+                                            sx= {{ fontSize: { xs: '.95rem', sm: '1rem', md: '1.05rem' }, paddingLeft: { xs: '15px', md: 0 }, transition: 'all 0.2s ease-in-out',
+                                                        '&:hover': { color: 'primary.main', transition: 'all 0.2s ease-in-out' } }} />
                                     </AccordionSummary>
-                                    <AccordionDetails style= {{ padding: '0 0 0 10px', margin: '0' }}>
+                                    <AccordionDetails sx= {{ padding: 0 }}>
                                         {
                                             (nav.subNav).map((sub, index) => (
-                                                <Link to= { sub.path } style= {{ textDecoration: 'none', color: '#000000' }} key= { index } 
+                                                <Link to= { sub.path } style= {{ textDecoration: 'none' }} key= { index } 
                                                     onClick= { () => { setIsActive(sub.name); ; localStorage.setItem('nav', sub.name) } }>
-                                                    <Box sx= {{ width: '100%', color: `#${isActive === sub.name ? '40739e' : '2f3640'}`, fontSize: '108%', margin: '12px 0', paddingLeft: { xs: '20px', md: 0 },
-                                                                        '&:hover': { color: '#40739e', transition: 'all 0.2s ease-in-out' } }}>{ sub.name }</Box>
+                                                    <Ctrl.Typography text= { sub.name } color= { `${isActive === sub.name ? 'primary.main' : 'text.primary'}` }
+                                                        sx= {{ fontSize: { xs: '.95rem', sm: '1rem', md: '1.05rem' }, paddingLeft: { xs: '25px', md: '10px' }, margin: '8px 0', transition: 'all 0.2s ease-in-out',
+                                                                    '&:hover': { color: 'primary.main', transition: 'all 0.2s ease-in-out' } }} />
                                                 </Link>
                                             ))
                                         }

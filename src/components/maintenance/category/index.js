@@ -18,8 +18,7 @@ const Index = () => {
 
     return (
         <Box sx= {{ padding: { xs: 0, md: '20px' } }}>
-            <Ctrl.Typography color= "#2c3e50" text= "CATEGORIES" sx= {{ fontSize: { xs: '150%', sm: '180%', md: '200%' }, fontWeight: 'bold', 
-                                                                                                                marginTop: { xs: '20px', md: 0} }} />
+            <Ctrl.Text>CATEGORIES</Ctrl.Text>
             <Routes>
                 <Route exact path= "/" element= { <List /> } />
                 <Route exact path= "/form/:type" element= { <Box marginTop= "50px"><Form /></Box> } />

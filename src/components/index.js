@@ -25,13 +25,13 @@ const Index = (props) => {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx= {{ backgroundColor: '#f5f6fa', display: 'flex', width: '100%', height: '100vh', overflow: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
+        <Box sx= {{ backgroundColor: '#ffffff', display: 'flex', width: '100%', height: '100vh', overflow: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
             <Navbar drawerToggle= { drawerToggle } isMobile= { isMobile } />
             <Box sx= {{ display: 'flex', width: '100%' }}>
                 <Container>
                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
                         <Sidebar isMobile= { isMobile } container= { container } drawerToggle= { drawerToggle } />
-                        <Box sx= {{ flexGrow: '1', overflow: 'hidden'  }}>
+                        {/* <Box sx= {{ flexGrow: '1', overflow: 'hidden'  }}>
                             <Toolbar />
                             <Routes>
                                 {
@@ -40,7 +40,7 @@ const Index = (props) => {
                                     ))
                                 }
                             </Routes>
-                        </Box>
+                        </Box> */}
                     </Box>
                 </Container>
             </Box>
