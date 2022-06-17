@@ -12,7 +12,7 @@ const Index = () => {
     }, []);
 
     return (
-            ""
+            <Box></Box>
     );
 }
 

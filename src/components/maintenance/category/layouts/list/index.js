@@ -56,7 +56,7 @@ const Index = () => {
                 </Grid>
             </Box>
             <Box sx= {{ padding: { xs: '0 14px', sm: '0' }, margin: '10px 0' }}>
-                <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '50px', width: { xs: '100%', md: '450px' }, padding: '0 20px' }}>
+                <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '50px', width: { xs: '100%', md: '450px' }, padding: '5px 20px' }}>
                     <Ctrl.TextField variant= "standard" fullWidth size= "large" InputProps= {{ disableUnderline: true }} placeholder= "Search..." />
                 </Box>
             </Box>

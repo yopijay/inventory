@@ -1,6 +1,6 @@
 // Libraries
 import React, { useState } from 'react';
-import { Box, Container, Paper, Toolbar } from '@mui/material';
+import { Box, Container, Toolbar } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
 // Core

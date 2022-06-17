@@ -1,10 +1,9 @@
 // Libraries
 import React from 'react';
-import { Box, Grid } from '@mui/material';
+import { Box, TableBody, TableCell, tableCellClasses, TableRow } from '@mui/material';
 import { Link } from 'react-router-dom';
-
-// Core
-import Ctrl from '../../../../../core/global/controls/Controls';
+import PropTypes from 'prop-types';
+import { styled } from '@mui/styles';
 
 // Icons
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
@@ -14,84 +13,60 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { SnakeLoader } from '../../../../../core/loader/Loader';
 
 const Body = (props) => {
-    const { data, isLoad } = props;
+    const { data } = props;
 
-    return (
-        <Box>
-            { 
-                (!isLoad) ? 
-                    data.length !== 0 ? (
-                        <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 2 } sx= {{ padding: '10px 15px' }}>
-                            {
-                                data.map((user, index) => (
-                                    <Grid item key= { index }>
-                                        <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center" spacing= { 2 }>
-                                            <Grid item sm= { 2 } md= { 2 } lg= { 2 } sx= {{ display: { xs: 'none', sm: 'block' } }}>
-                                                <Ctrl.Typography text= { user.series_no } color= "#34495e" 
-                                                    style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-                                            </Grid>
-                                            <Grid item xs= { 8 } sm= { 4 } md= { 3 } lg= { 3 }>
-                                                <Ctrl.Typography text= { `${user.lname}, ${user.fname} ${user.mname}` } color= "#34495e" 
-                                                    style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-                                            </Grid>
-                                            <Grid item sm= { 4 } md= { 3 } lg= { 2 } sx= {{ display: { xs: 'none', sm: 'block' } }}>
-                                                <Ctrl.Typography text= { user.description } color= "#34495e" 
-                                                    style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-                                            </Grid>
-                                            <Grid item md= { 2 } lg= { 1 } sx= {{ display: { xs: 'none', md: 'block' }, textAlign: 'center' }}>
-                                                <Ctrl.Typography text= { user.status === 1 ? 'Active' : 'Inactive' } color= "#34495e" 
-                                                    style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-                                            </Grid>
-                                            <Grid item lg= { 2 } sx= {{ display: { xs: 'none', lg: 'block' } }}>
-                                                <Ctrl.Typography 
-                                                    text= { `${ new Date(user.date_created).toLocaleString('default', { month: 'long' }) }
-                                                                ${ new Date(user.date_created).getDate() }, ${ new Date(user.date_created).getFullYear() } 
-                                                                ${ new Date(user.date_created).getHours() % 12 }:${ new Date(user.date_created).getMinutes() }
-                                                                ${ new Date(user.date_created).getHours() >= 12 ? 'PM' : 'AM' }` }  
-                                                    color= "#34495e" 
-                                                    style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-                                            </Grid>
-                                            <Grid item xs= { 4 } sm= { 2 } md= { 2 } lg= { 2 } sx= {{ textAlign: 'center' }}>
-                                                <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'center', alignItems: 'center' }}>
-                                                    <Box sx= {{ margin: '5px' }}>
-                                                        <Link to= { `/maintenance/users/form/update/${user.id}` } style= {{ textDecoration: 'none' }}>
-                                                            <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#3498db" 
-                                                                borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
-                                                                <ModeEditOutlineIcon style= {{ fontSize: '110%' }} />
-                                                            </Box>
-                                                        </Link>
-                                                    </Box>
-                                                    <Box sx= {{ margin: '5px' }}>
-                                                        <Link to= { `/maintenance/users/form/view/${user.id}` } style= {{ textDecoration: 'none' }}>
-                                                            <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#3498db" 
-                                                                borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
-                                                                <VisibilityIcon style= {{ fontSize: '110%' }} />
-                                                            </Box>
-                                                        </Link>
-                                                    </Box>
-                                                </Box>
-                                            </Grid>
-                                        </Grid>
-                                    </Grid>
-                                ))
-                            }
-                        </Grid>
-                    )
-                     : (
-                        <Grid container direction= "row" justifyContent= "center" alignItems= "center" spacing= { 1 }>
-                            <Grid item>
-                                <Ctrl.Typography text= "No user found!" color= "#bdc3c7" style= {{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-                            </Grid>
-                        </Grid>
-                    )
-                 : (
-                    <Grid container direction= "row" justifyContent= "center" alignItems= "center">
-                        <Grid item sx= {{ marginTop: '10px' }}><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></Grid>
-                    </Grid>
-                )
-            }
-        </Box>
-    );
+    const StyledTableCell = styled(TableCell)(({
+        [`&.${tableCellClasses.body}`]: {
+            fontSize: 14,
+        }
+    }));
+
+    try {
+        return (
+            <TableBody>
+                {
+                    data.map((rows, index) => (
+                        <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }} key= { index }>
+                            <StyledTableCell>{ rows.series_no }</StyledTableCell>
+                            <StyledTableCell>{ `${rows.lname}, ${rows.fname} ${rows.mname}` }</StyledTableCell>
+                            <StyledTableCell>{ rows.position_id }</StyledTableCell>
+                            <StyledTableCell align= "center">{ rows.status === 1 ? 'Active' : 'Inactive' }</StyledTableCell>
+                            <StyledTableCell align= "center">{ `${ new Date(rows.date_created).toLocaleString('default', { month: 'long' }) }
+                                                            ${ new Date(rows.date_created).getDate() }, ${ new Date(rows.date_created).getFullYear() } 
+                                                            ${ new Date(rows.date_created).getHours() % 12 }:${ new Date(rows.date_created).getMinutes() }
+                                                            ${ new Date(rows.date_created).getHours() >= 12 ? 'PM' : 'AM' }` } </StyledTableCell>
+                            <StyledTableCell align= "center">
+                                <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                                    <Box sx= {{ margin: '5px' }}>
+                                        <Link to= { `/maintenance/users/form/update/${rows.id}` } style= {{ textDecoration: 'none' }}>
+                                            <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#487eb0" 
+                                                borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
+                                                <ModeEditOutlineIcon style= {{ fontSize: '110%' }} />
+                                            </Box>
+                                        </Link>
+                                    </Box>
+                                    <Box sx= {{ margin: '5px' }}>
+                                        <Link to= { `/maintenance/users/form/view/${rows.id}` } style= {{ textDecoration: 'none' }}>
+                                            <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#487eb0" 
+                                                borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
+                                                <VisibilityIcon style= {{ fontSize: '110%' }} />
+                                            </Box>
+                                        </Link>
+                                    </Box>
+                                </Box>    
+                            </StyledTableCell>
+                        </TableRow>
+                    ))
+                }
+            </TableBody>
+        );
+    } catch (error) {
+        return ( <TableBody><TableRow><StyledTableCell><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></StyledTableCell></TableRow></TableBody> )
+    }
+}
+
+Body.propTypes = {
+    data: PropTypes.array.isRequired
 }
 
 export default Body;

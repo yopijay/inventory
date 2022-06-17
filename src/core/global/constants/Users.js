@@ -9,16 +9,7 @@ export const Users = () => ({
         },
         props: {
             name: 'fname',
-            border: 'solid 1px #bdc3c7',
-            radius: '5px',
-            padding: '12px 15px 8px 15px',
-            size: 'small',
-            fullWidth: true
         },
-        child: [],
-        format: 'text',
-        color: '#2c3e50',
-        labelSize: 15,
         type: 'textfield'
     },
     mname: {
@@ -29,16 +20,8 @@ export const Users = () => ({
         },
         props: {
             name: 'mname',
-            border: 'solid 1px #bdc3c7',
-            radius: '5px',
-            padding: '12px 15px 8px 15px',
-            size: 'small',
             fullWidth: true
         },
-        child: [],
-        format: 'text',
-        color: '#2c3e50',
-        labelSize: 15,
         type: 'textfield'
     },
     lname: {
@@ -49,16 +32,7 @@ export const Users = () => ({
         },
         props: {
             name: 'lname',
-            border: 'solid 1px #bdc3c7',
-            radius: '5px',
-            padding: '12px 15px 8px 15px',
-            size: 'small',
-            fullWidth: true
         },
-        child: [],
-        format: 'text',
-        color: '#2c3e50',
-        labelSize: 15,
         type: 'textfield'
     },
     bmonth: {
@@ -69,13 +43,8 @@ export const Users = () => ({
         },
         props: {
             name: "bmonth", 
-            size: "small",
-            padding: "12px 15px 8px 15px",
-            color: "#FFFFFF"
         },
-        child: [],
         type: 'select',
-        color: '#2c3e50',
         option: months()
     },
     bday: {
@@ -86,13 +55,8 @@ export const Users = () => ({
         },
         props: {
             name: "bday", 
-            size: "small",
-            padding: "12px 15px 8px 15px",
-            color: "#FFFFFF"
         },
-        child: [],
         type: 'select',
-        color: '#2c3e50',
         option: days()
     },
     byear: {
@@ -103,13 +67,8 @@ export const Users = () => ({
         },
         props: {
             name: "byear", 
-            size: "small",
-            padding: "12px 15px 8px 15px",
-            color: "#FFFFFF"
         },
-        child: [],
         type: 'select',
-        color: '#2c3e50',
         option: years()
     },
     address: {
@@ -119,16 +78,7 @@ export const Users = () => ({
         },
         props: {
             name: 'address',
-            border: 'solid 1px #bdc3c7',
-            radius: '5px',
-            padding: '12px 15px 8px 15px',
-            size: 'small',
-            fullWidth: true
         },
-        child: [],
-        format: 'text',
-        color: '#2c3e50',
-        labelSize: 15,
         type: 'textfield'
     },
     status: {
@@ -138,15 +88,8 @@ export const Users = () => ({
         },
         props: {
             name: 'status',
-            border: '',
-            radius: '5px',
-            padding: '12px 15px 8px 15px',
-            size: 'small',
             placeholder: 'Active'
         },
-        child: [],
-        color: '#2c3e50',
-        labelSize: 15,
         type: 'checkbox'
     }
 })
