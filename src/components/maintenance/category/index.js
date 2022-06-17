@@ -3,9 +3,6 @@ import React, { useEffect } from 'react';
 import { Box } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
-// Core
-import Ctrl from '../../../core/global/controls/Controls';
-
 // Layouts
 import List from './layouts/list';
 import Form from './layouts/form';

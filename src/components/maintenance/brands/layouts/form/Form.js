@@ -25,12 +25,15 @@ const Form = (props) => {
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" spacing= { 2 }>
             <Grid item xs= { 12 }>
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
-                    <Box marginBottom= "5px"><Ctrl.Typography text= "Category" className= "f-15" color= "#2c3e50" /></Box>
-                    <Box border= "solid 1px #9E9E9E" borderRadius= "5px">
+                    <Box marginBottom= "5px"><Ctrl.Typography text= "Category" color= "#2c3e50" /></Box>
+                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 5px' }}>
                         {
                             !isLoad ? (
-                                <Ctrl.Select name= "category_id" size= "small" padding= "12px 15px 8px 15px" 
+                                <Ctrl.Select name= "category_id"
                                     disabled= { disabled }
+                                    fullWidth
+                                    variant= "standard"
+                                    InputProps= {{ disableUnderline: true }}
                                     value= { getValues().category_id !== undefined ? getValues().category_id : '' }
                                     register= { register('category_id', {
                                         onChange: e => setCategoryId(e.target.value)
@@ -47,8 +50,10 @@ const Form = (props) => {
             </Grid>
             <Grid item xs= { 12 }>
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
-                    <Box marginBottom= "5px"><Ctrl.Typography text= "Name" className= "f-15" color= "#2c3e50" /></Box>
-                    <Ctrl.TextField name= "name" border= "solid 1px #bdc3c7" radius= "5px" padding= "12px 15px 8px 15px" size= "small" register= { register('name', {}) } disabled= { disabled } />
+                    <Box marginBottom= "5px"><Ctrl.Typography text= "Name" color= "#2c3e50" /></Box>
+                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
+                        <Ctrl.TextField name= "name" variant= "standard" fullWidth register= { register('name', {}) } disabled= { disabled } InputProps= {{ disableUnderline: true }} />
+                    </Box>
                     <Box padding= "0 10px" marginTop= "5px">
                         <Ctrl.Typography className= "f-14" text= { errors.name === undefined ? '' : errors.name.message } color= "red" />
                     </Box>
@@ -56,9 +61,10 @@ const Form = (props) => {
             </Grid>
             <Grid item xs= { 12 }>
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
-                    <Box marginBottom= "5px"><Ctrl.Typography text= "Description" className= "f-15" color= "#2c3e50" /></Box>
-                    <Ctrl.TextField name= "description" border= "solid 1px #bdc3c7" radius= "5px" padding= "12px 15px 8px 15px" size= "small" 
-                        disabled= { disabled } register= { register('description', {}) } />
+                    <Box marginBottom= "5px"><Ctrl.Typography text= "Description" color= "#2c3e50" /></Box>
+                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
+                        <Ctrl.TextField name= "description" variant= "standard" fullWidth disabled= { disabled } register= { register('description', {}) } InputProps= {{ disableUnderline: true }} />
+                    </Box>
                     <Box padding= "0 10px" marginTop= "5px">
                         <Ctrl.Typography className= "f-14" text= { errors.description === undefined ? '' : errors.description.message } color= "red" />
                     </Box>
@@ -66,7 +72,7 @@ const Form = (props) => {
             </Grid>
             <Grid item xs= { 12 }>
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
-                    <Box marginBottom= "5px"><Ctrl.Typography text= "Status" className= "f-15" color= "#2c3e50" /></Box>
+                    <Box marginBottom= "5px"><Ctrl.Typography text= "Status" color= "#2c3e50" /></Box>
                     <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                         <Box>
                             <Ctrl.Checkbox name= "status" radius= "5px" padding= "12px 15px 8px 15px" size= "small"

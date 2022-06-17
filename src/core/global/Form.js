@@ -34,15 +34,17 @@ const Form = (props) => {
                                 ) : (
                                     fields()[field].type === 'select' ? (
                                         <Box border= "solid 1px #9E9E9E" borderRadius= "5px">
-                                            {/* <Ctrl.Select { ...(fields()[field].props) } 
+                                            <Ctrl.Select { ...(fields()[field].props) } 
                                                 disabled= { disabled }
+                                                variant= "standard"
+                                                InputProps= {{ disableunderline: "true" }}
                                                 value= { getValues()[field] !== undefined ? getValues()[field] : 
                                                                 field === 'bmonth' ? new Date().getMonth() + 1 :
                                                                 field === 'bday' ? new Date().getDate() :
                                                                 field === 'byear' ? new Date().getFullYear() : '' }
                                                 register= { register(field, {
                                                     onChange: e => setOpt(e.target.value)
-                                                }) } options= { fields()[field].option } /> */}
+                                                }) } options= { fields()[field].option } />
                                         </Box>
                                     ) : (
                                         <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
