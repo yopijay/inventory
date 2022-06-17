@@ -60,7 +60,7 @@ const Form = (props) => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Asset name" color= "#2c3e50" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                        <Ctrl.TextField name= "name" variant= "standard" fullWidth disabled= { disabled } InputProps= {{ disableUnderline: true }}register= { register('name', {}) } />
+                        <Ctrl.TextField name= "name" variant= "standard" fullWidth disabled= { disabled } InputProps= {{ disableUnderline: true }} register= { register('name', {}) } />
                     </Box>
                     <Box padding= "0 10px" marginTop= "5px"><Ctrl.Typography className= "f-14" text= { errors.name === undefined ? '' : errors.name.message } color= "red" /></Box>
                 </Box>
