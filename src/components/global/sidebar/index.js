@@ -1,6 +1,6 @@
 // Libraries
 import React, { useEffect, useState } from 'react';
-import { Box, SwipeableDrawer, Toolbar } from '@mui/material';
+import { Box, SwipeableDrawer } from '@mui/material';
 
 // Core
 import Ctrl from '../../../core/global/controls/Controls';
