@@ -3,6 +3,8 @@ import React from 'react';
 
 // Layouts
 import BasicInformation from '../../../components/issuance/testreport/layouts/form/layouts/BasicInformation';
+import GeneralSpecification from '../../../components/issuance/testreport/layouts/form/layouts/GeneralSpecification';
+import Components from '../../../components/issuance/testreport/layouts/form/layouts/Components';
 
 export const Navs = () => (
     [
@@ -14,12 +16,12 @@ export const Navs = () => (
         {
             name: 'General Specification',
             path: 'general-specification',
-            component: 'GENERAL SPECIFICATION'
+            component: <GeneralSpecification />
         },
         {
             name: 'Component',
             path: 'component',
-            component: 'COMPONENTS'
+            component: <Components />
         },
         {
             name: 'Construction Inspection',
