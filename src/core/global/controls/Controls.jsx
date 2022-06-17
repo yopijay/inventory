@@ -4,7 +4,6 @@ import TextField from './Forms/TextField';
 import Select from './Forms/Select';
 import Checkbox from './Forms/Checkbox';
 import Button from './Buttons/Button';
-import BasicTable from './Table/BasicTable';
 // import DatePicker from './Forms/DatePicker';
 // import Radio from './Forms/Radio';
 // import Autocomplete from './Forms/Autocomplete';
@@ -21,7 +20,6 @@ const Controls = {
     Select,
     Checkbox,
     Button,
-    BasicTable
     // DatePicker,
     // Radio,
     // Autocomplete,

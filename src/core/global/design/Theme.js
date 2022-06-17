@@ -48,6 +48,9 @@ export const pageTheme = createTheme({
             dark: '#007400',
             contrastText: '#ecfae8'
         },
+        excel: {
+            main: '#1b8a0d'
+        },
         text: {
             primary: '#353b48',
             secondary: '#2f3640',

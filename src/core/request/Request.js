@@ -23,9 +23,9 @@ export const count = async (set, table) => {
     set(count[0].count);
 }
 
-export const save = async (id, data, type, table) => {
+export const save = async (id, data, type, table, redirect) => {
     let save = await _axios(`${Env[env].url}/${type}/${table}${id !== undefined ? `/${id}` : ''}`, 'post', data);
-    if(save === 'success') window.location.href = `/${table === 'assigned_asset' ? 'assets/assign' : table}`;
+    if(save === 'success') window.location.href = `${redirect}`;
 }
 
 export const get = async (id, table, set, setValues, loader) => {
