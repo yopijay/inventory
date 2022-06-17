@@ -29,11 +29,7 @@ const Form = (props) => {
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 5px' }}>
                         {
                             !isLoad ? (
-                                <Ctrl.Select name= "category_id"
-                                    disabled= { disabled }
-                                    fullWidth
-                                    variant= "standard"
-                                    InputProps= {{ disableUnderline: true }}
+                                <Ctrl.Select name= "category_id" disabled= { disabled } fullWidth variant= "standard" InputProps= {{ disableUnderline: true }}
                                     value= { getValues().category_id !== undefined ? getValues().category_id : '' }
                                     register= { register('category_id', {
                                         onChange: e => setCategoryId(e.target.value)
