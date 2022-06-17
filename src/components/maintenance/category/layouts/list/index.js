@@ -1,6 +1,6 @@
 // Libraries
 import React, { useEffect, useState } from 'react';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Paper, Table, TableContainer } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 // Core
@@ -14,9 +14,6 @@ import { getall } from '../../../../../core/request/Request';
 import Header from './Header';
 import Body from './Body';
 
-// Loader
-import { SnakeLoader } from '../../../../../core/loader/Loader';
-
 const Index = () => {
     const [ category, setCategory ] = useState();
     const [ isLoad, setIsLoad ] = useState(true);
@@ -26,51 +23,56 @@ const Index = () => {
     }, []);
     
     return (
-        <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 1 }>
-            <Grid item>
-                <Grid container direction= "row"  justifyContent= "flex-end" alignItems= "center" spacing= { 1 }>
-                    <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
-                        <Link to= "/maintenance/category/form/new" style= {{ textDecoration: 'none' }}>
-                            <Box display= "flex" flexDirection= "column" justifyContent= "center" alignItems= "center">
-                                <Ctrl.Typography color= "#ffffff" text= "NEW CATEGORY" 
-                                    sx= {{ padding: { xs: '10px 12px', sm: '7px 10px', md: '10px 0', backgroundColor: '#2980b9',
-                                                fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }, margin: { xs: '20px 0 0 0', sm: 0 } }} />
-                            </Box>
-                        </Link>
+        <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
+            <Box sx= {{ padding: { xs: '0 14px', sm: 0 } }}>
+                <Grid container direction= "row"  justifyContent= "space-between" alignItems= "center" spacing= { 1 }>
+                    <Grid item xs= { 12 } sm= { 2 }>
+                        <Ctrl.Typography text= "Category List" 
+                            sx= {{ fontSize: { xs: '1.2rem', md: '1.3rem' }, fontWeight: 'bold', transition: 'all 0.2s ease-in-out', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} />
                     </Grid>
-                    <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
-                        <Box sx= {{ backgroundColor: '#00b894', textAlign: 'center', padding: { xs: '10px 12px', sm: '7px 12px', md: '10px 15px' }, borderRadius: '5px' }}>
-                            <Export element= {
-                                    <button 
-                                        style= {{ backgroundColor: 'transparent', border: 'none', fontFamily: 'Gilroy Light', margin: 0, padding: 0 }}>
-                                        <Ctrl.Typography color= "#ffffff" text= "EXPORT TO EXCEL" sx= {{ fontSize: { xs: '120%', sm: '110%', md: '120%' } }} />
-                                    </button>
-                                } 
-                                filename= "Category List"
-                                data= { category }
-                                column= { category !== undefined ? Object.keys(category[0]) : [] } />
-                        </Box>
-                    </Grid>
-                </Grid>
-            </Grid>
-            <Grid item>
-                <Grid container direction= "column" justifyContent= "flex-start" alignItems= "stretch" spacing= { 1 } sx= {{ marginTop: { xs: 0, sm: '-25px', md: '-30px' } }}>
-                    <Grid item sx= {{ marginTop: '-5px' }}><Ctrl.TextField name= "search" border= "solid 1px #bdc3c7" radius= "30px" padding= "8px 15px 4px 15px" size= "small" placeholder= "Search..." /></Grid>
-                    <Grid item><Header /></Grid>
-                    <Grid item>
-                        {
-                            !isLoad ? (
-                                <Body data= { category } />
-                            ) : (
-                                <Grid container direction= "row" justifyContent= "center" alignItems= "center" sx= {{ marginBottom: '20px' }}>
-                                    <Grid item sx= {{ marginTop: '10px' }}><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></Grid>
-                                </Grid>
-                            )
-                        }
+                    <Grid item xs= { 12 } sm= { 10 }>
+                        <Grid container direction= "row" justifyContent= "flex-end" alignItems= "center" spacing= { 1 }>
+                            <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
+                                <Link to= "/maintenance/category/form/new" style= {{ textDecoration: 'none' }}>
+                                    <Ctrl.Button color= "primary" text= {
+                                        <Ctrl.Typography color= "#ffffff" text= "New Category" 
+                                            sx= {{ padding: { xs: '4px 0' },
+                                                        fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained" />
+                                </Link>
+                            </Grid>
+                            <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
+                                <Export element= {
+                                    <Ctrl.Button color= "excel" text= {
+                                        <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
+                                            sx= {{ padding: { xs: '4px 0' },
+                                                        fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained" />
+                                    } 
+                                    filename= "Category List"
+                                    data= { category }
+                                    column= { category !== undefined ? Object.keys(category[0]) : [] } />
+                            </Grid>
+                        </Grid>
                     </Grid>
                 </Grid>
-            </Grid>
-        </Grid>
+            </Box>
+            <Box sx= {{ padding: { xs: '0 14px', sm: '0' }, margin: '10px 0' }}>
+                <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '50px', width: { xs: '100%', md: '450px' }, padding: '0 20px' }}>
+                    <Ctrl.TextField variant= "standard" fullWidth size= "large" InputProps= {{ disableUnderline: true }} placeholder= "Search..." />
+                </Box>
+            </Box>
+            <Box sx= {{ padding: { xs: '0 14px', sm: '0' } }}>
+                <Box sx= {{ boxShadow: 2, borderRadius: '5px', overflow: 'hidden' }}>
+                    <Paper elevation= { 0 }>
+                        <TableContainer>
+                            <Table aria-label= "Category" size= "small" sx= {{ minWidth: 650 }} stickyHeader>
+                                <Header bgcolor= "primary.main" />
+                                <Body data= { !isLoad ? category : [] } />
+                            </Table>
+                        </TableContainer>
+                    </Paper>
+                </Box>
+            </Box>
+        </Box>
     );
 }
 

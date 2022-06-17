@@ -38,14 +38,14 @@ const Nav = () => {
                                 <Link to= { nav.path } style= {{ textDecoration: 'none' }} onClick= { () => { setIsActive(nav.name); localStorage.setItem('nav', nav.name); setExpand(''); } }>
                                     <Ctrl.Typography text= { nav.name } color= { `${isActive === nav.name ? 'primary.main' : 'text.primary'}` }
                                         sx= {{ fontSize: { xs: '.95rem', sm: '1rem', md: '1.05rem' }, paddingLeft: { xs: '15px', md: 0 }, margin: '8px 0', transition: 'all 0.2s ease-in-out',
-                                                    '&:hover': { color: 'primary.main', transition: 'all 0.2s ease-in-out' } }} />
+                                                    textOverflow: 'ellipsis', whiteSpace: 'nowrap', '&:hover': { color: 'primary.main', transition: 'all 0.2s ease-in-out' } }} />
                                 </Link>
                             ) : (
                                 <Accordion disableGutters expanded= { expand === nav.name } onChange= { () => setExpand(nav.name) } sx= {{ boxShadow: 'none', backgroundColor: 'transparent' }}>
                                     <AccordionSummary id= { `${nav.name}-header` } aria-controls= { `${nav.name}-content` }>
                                         <Ctrl.Typography text= { nav.name } color= { `${expand === nav.name ? 'primary.main' : 'text.primary'}` }
                                             sx= {{ fontSize: { xs: '.95rem', sm: '1rem', md: '1.05rem' }, paddingLeft: { xs: '15px', md: 0 }, transition: 'all 0.2s ease-in-out',
-                                                        '&:hover': { color: 'primary.main', transition: 'all 0.2s ease-in-out' } }} />
+                                                        textOverflow: 'ellipsis', whiteSpace: 'nowrap', '&:hover': { color: 'primary.main', transition: 'all 0.2s ease-in-out' } }} />
                                     </AccordionSummary>
                                     <AccordionDetails sx= {{ padding: 0 }}>
                                         {
@@ -54,7 +54,7 @@ const Nav = () => {
                                                     onClick= { () => { setIsActive(sub.name); ; localStorage.setItem('nav', sub.name) } }>
                                                     <Ctrl.Typography text= { sub.name } color= { `${isActive === sub.name ? 'primary.main' : 'text.primary'}` }
                                                         sx= {{ fontSize: { xs: '.95rem', sm: '1rem', md: '1.05rem' }, paddingLeft: { xs: '25px', md: '10px' }, margin: '8px 0', transition: 'all 0.2s ease-in-out',
-                                                                    '&:hover': { color: 'primary.main', transition: 'all 0.2s ease-in-out' } }} />
+                                                                    textOverflow: 'ellipsis', whiteSpace: 'nowrap', '&:hover': { color: 'primary.main', transition: 'all 0.2s ease-in-out' } }} />
                                                 </Link>
                                             ))
                                         }

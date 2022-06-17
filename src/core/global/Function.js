@@ -64,3 +64,7 @@ export const getDefaultValue = (name, values) => {
                     name === 'position' ? 'Zxc' : ''
     };
 }
+
+export const header = (data) => {
+    console.log(data);
+}

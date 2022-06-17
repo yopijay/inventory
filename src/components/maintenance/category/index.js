@@ -17,11 +17,13 @@ const Index = () => {
     }, []);
 
     return (
-        <Routes>
-            <Route exact path= "/" element= { <List /> } />
-            {/* <Route exact path= "/form/:type" element= { <Box marginTop= "50px"><Form /></Box> } />
-            <Route exact path= "/form/:type/:id" element= { <Box marginTop= "50px"><Form /></Box> } /> */}
-        </Routes>
+        <Box sx= {{ marginTop: { xs: '10px', sm: '15px', md: '20px' }, transition: 'all 0.2s ease-in-out' }}>
+            <Routes>
+                <Route exact path= "/" element= { <List /> } />
+                <Route exact path= "/form/:type" element= { <Form /> } />
+                <Route exact path= "/form/:type/:id" element= { <Form /> } />
+            </Routes>
+        </Box>
     );
 }
 
