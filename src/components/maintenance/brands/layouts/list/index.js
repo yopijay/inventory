@@ -23,7 +23,7 @@ const Index = () => {
     }, []);
     
     return (
-        <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
+        <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', marginBottom: '20px' }}>
             <Box sx= {{ padding: { xs: '0 14px', sm: 0 } }}>
                 <Grid container direction= "row"  justifyContent= "space-between" alignItems= "center" spacing= { 1 }>
                     <Grid item xs= { 12 } sm= { 2 }>
