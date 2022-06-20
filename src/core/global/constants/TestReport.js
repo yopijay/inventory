@@ -6,6 +6,7 @@ import BasicInformation from '../../../components/issuance/testreport/layouts/fo
 import GeneralSpecification from '../../../components/issuance/testreport/layouts/form/layouts/GeneralSpecification';
 import Components from '../../../components/issuance/testreport/layouts/form/layouts/Components';
 import ConstructionInspection from '../../../components/issuance/testreport/layouts/form/layouts/ConstructionInspection';
+import MechanicalOperation from '../../../components/issuance/testreport/layouts/form/layouts/MechanicalOperation';
 
 export const Navs = () => (
     [
@@ -32,7 +33,7 @@ export const Navs = () => (
         {
             name: 'Mechanical Operation',
             path: 'mechanical-operation',
-            component: 'MECHANICAL OPERATION'
+            component: <MechanicalOperation  />
         },
         {
             name: 'Electrical Operation',
