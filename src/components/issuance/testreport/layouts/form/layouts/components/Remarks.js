@@ -31,7 +31,7 @@ const Remarks = () => {
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '10px 0' }}>
                     <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center" sx= {{ paddingLeft: { xs: '15px', md: 0 } }}>
                         <Box>
-                            <Ctrl.Checkbox name= "remHNNChck" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                            <Ctrl.Checkbox name= "remHNNChck" radius= "5px" size= "large" checked= { false } />
                         </Box>
                         <Box sx= {{ margin: '0 10px' }}><Ctrl.Typography color= "#2c3e50" text= "Hold Notice Number" /></Box>
                         <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
@@ -40,7 +40,7 @@ const Remarks = () => {
                     </Box>
                     <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center" sx= {{ paddingLeft: { xs: '15px', md: 0 } }}>
                         <Box>
-                            <Ctrl.Checkbox name= "remLRNChck" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                            <Ctrl.Checkbox name= "remLRNChck" radius= "5px" size= "large" checked= { false } />
                         </Box>
                         <Box sx= {{ margin: '0 10px' }}><Ctrl.Typography color= "#2c3e50" text= "Lacking Report Number" /></Box>
                         <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
