@@ -37,7 +37,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 const Index = () => {
-    const [ expanded, setExpanded ] = useState('Basic Information');
+    const [ expanded, setExpanded ] = useState('Component');
 
     return (
         <Box>

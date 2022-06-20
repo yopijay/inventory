@@ -13,6 +13,7 @@ import LBS from './components/LBS';
 import MagneticSwitch from './components/MagneticSwitch';
 import Capacitor from './components/Capacitor';
 import Auxillaries from './components/auxillaries';
+import Remarks from './components/Remarks';
 
 const Components = () => {
     return (
@@ -40,6 +41,7 @@ const Components = () => {
                         </Box>
                     </Box>
                 </Box>
+                <Remarks />
             </Grid>
         </Grid>
     );
