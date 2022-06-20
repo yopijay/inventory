@@ -10,6 +10,11 @@ import Meter from './Meter';
 import ProtectiveRelays from './ProtectiveRelays';
 import LVPT from './LVPT';
 import CT from './CT';
+import HVFuse from './HVFuse';
+import LVFuse from './LVFuse';
+import LightningArrester from './LightningArrester';
+import SurgeAbsorber from './SurgeAbsorber';
+import ExhaustFan from './ExhaustFan';
 
 const Index = () => {
     return (
@@ -25,6 +30,11 @@ const Index = () => {
                 <ProtectiveRelays />
                 <LVPT />
                 <CT />
+                <HVFuse />
+                <LVFuse />
+                <LightningArrester />
+                <SurgeAbsorber />
+                <ExhaustFan />
             </Box>
         </Box>
     );
