@@ -23,7 +23,7 @@ const Components = () => {
             </Grid>
             <Grid item xs= { 12 }>
                 <Drawings />
-                <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', margin: '0 0 0 15px' }}>
+                <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', margin: '0 15px' }}>
                     <CircuitBreaker />
                     <LBS />
                     <MagneticSwitch />

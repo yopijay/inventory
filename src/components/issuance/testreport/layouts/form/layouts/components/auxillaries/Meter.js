@@ -15,25 +15,25 @@ const Meter = () => {
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "Type" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "mType" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "mType" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "Rating" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "mRating" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "mRating" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "Brand" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "mBrand" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "mBrand" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "Scale" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "mScale" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "mScale" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
         </Box>

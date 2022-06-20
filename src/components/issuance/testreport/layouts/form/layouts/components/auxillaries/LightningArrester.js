@@ -15,19 +15,19 @@ const LightningArrester = () => {
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "Type" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "laType" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "laType" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "Rating" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "laRating" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "laRating" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "Brand" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "laBrand" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "laBrand" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
         </Box>

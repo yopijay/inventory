@@ -17,31 +17,31 @@ const CircuitBreaker = () => {
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "P" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "cbP" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "cbP" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "AF" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "cbAF" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "cbAF" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "AT" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "cbAT" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "cbAT" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "KA" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "cbKA" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "cbKA" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "Brand" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "cbBrand" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "cbBrand" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
         </Box>
