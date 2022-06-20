@@ -37,7 +37,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 }));
 
 const Index = () => {
-    const [ expanded, setExpanded ] = useState('Construction Inspection');
+    const [ expanded, setExpanded ] = useState('Mechanical Operation');
 
     return (
         <Box>
