@@ -5,6 +5,7 @@ import React from 'react';
 import BasicInformation from '../../../components/issuance/testreport/layouts/form/layouts/BasicInformation';
 import GeneralSpecification from '../../../components/issuance/testreport/layouts/form/layouts/GeneralSpecification';
 import Components from '../../../components/issuance/testreport/layouts/form/layouts/Components';
+import ConstructionInspection from '../../../components/issuance/testreport/layouts/form/layouts/ConstructionInspection';
 
 export const Navs = () => (
     [
@@ -26,7 +27,7 @@ export const Navs = () => (
         {
             name: 'Construction Inspection',
             path: 'construction-inspection',
-            component: 'CONSTRUCTION INSPECTION'
+            component: <ConstructionInspection />
         },
         {
             name: 'Mechanical Operation',

@@ -15,19 +15,19 @@ const ProtectiveRelays = () => {
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "Type" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "prType" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "prType" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "Rating" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "prRating" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "prRating" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "Brand" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "prBrand" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "prBrand" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
         </Box>

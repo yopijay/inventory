@@ -17,19 +17,19 @@ const LBS = () => {
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "P" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "lbsP" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "lbsP" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "Rating" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "lbsRating" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "lbsRating" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Box><Ctrl.Typography color= "#2c3e50" text= "Fuse" /></Box>
                 <Box>
-                    <Ctrl.Checkbox name= "lbsFuse" radius= "5px" padding= "12px 15px 8px 15px" size= "large" checked= { false } />
+                    <Ctrl.Checkbox name= "lbsFuse" radius= "5px" size= "large" checked= { false } />
                 </Box>
             </Box>
         </Box>
