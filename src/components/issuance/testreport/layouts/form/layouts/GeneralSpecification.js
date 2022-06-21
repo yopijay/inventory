@@ -11,7 +11,7 @@ const GeneralSpecification = () => {
             <Grid item xs= { 12 } sm= { 6 }>
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Panel Name" color= "text-primary" /></Box>
-                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
+                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                         <Ctrl.TextField name= "panel_name" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                     </Box>
                     {/* <Box padding= "0 10px" marginTop= "5px">
@@ -22,7 +22,7 @@ const GeneralSpecification = () => {
             <Grid item xs= { 12 } sm= { 6 }>
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Voltage" color= "text-primary" /></Box>
-                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
+                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                         <Ctrl.TextField name= "voltage" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                     </Box>
                     {/* <Box padding= "0 10px" marginTop= "5px">
@@ -33,7 +33,7 @@ const GeneralSpecification = () => {
             <Grid item xs= { 12 } sm= { 6 }>
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Enlosure Type" color= "text-primary" /></Box>
-                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
+                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                         <Ctrl.TextField name= "enclosure_type" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                     </Box>
                     {/* <Box padding= "0 10px" marginTop= "5px">
@@ -44,7 +44,7 @@ const GeneralSpecification = () => {
             <Grid item xs= { 12 } sm= { 6 }>
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Phase / Wire" color= "text-primary" /></Box>
-                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
+                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                         <Ctrl.TextField name= "wire" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                     </Box>
                     {/* <Box padding= "0 10px" marginTop= "5px">
@@ -55,7 +55,7 @@ const GeneralSpecification = () => {
             <Grid item xs= { 12 } sm= { 6 }>
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Color" color= "text-primary" /></Box>
-                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
+                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                         <Ctrl.TextField name= "color" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                     </Box>
                     {/* <Box padding= "0 10px" marginTop= "5px">

@@ -39,50 +39,50 @@ const IRTable = () => {
                             <TableCell align= "center">1</TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irBeforeVDC" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_before_vdc" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irBeforeRSTGN" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_before_rstgn" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irBeforeSRTGN" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_before_srtgn" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irBeforeTRSGN" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_before_trsgn" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irBeforeRSTNG" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_before_rstng" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irBeforeNG" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_before_ng" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irBeforeRremarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_before_remarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
@@ -92,50 +92,50 @@ const IRTable = () => {
                             <TableCell align= "center">1</TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irAfterVDC" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_after_vdc" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irAfterRSTGN" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_after_rstgn" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irAfterSRTGN" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_after_srtgn" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irAfterTRSGN" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_after_trsgn" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irAfterRSTNG" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_after_rstng" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irAfterNG" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_after_ng" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "irAfterRremarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ir_after_rremarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>

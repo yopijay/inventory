@@ -44,57 +44,57 @@ const IRTable = () => {
                             <TableCell align= "center">1</TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "dsCloseVACKV" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ds_close_vackv" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "dsCloseRSTG" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ds_close_rstg" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "dsCloseSRTG" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ds_close_srtg" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "dsCloseTRSG" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ds_close_trsg" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "dsCloseRSTG" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ds_close_rst_g" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "dsCloseRSTN" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ds_close_rst_n" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "dsCloseNG" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ds_close_ng" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "dsCloseRremarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ds_close_remarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>

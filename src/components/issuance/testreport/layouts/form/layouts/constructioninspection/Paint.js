@@ -9,37 +9,27 @@ const Paint = () => {
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
-                <Ctrl.Typography text= "c.2"
-                    sx= {{ paddingLeft: { xs: '15px', md: 0 }, margin: '0 5px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
-                <Ctrl.Typography text= "Paint according to specification"
-                    sx= {{ minWidth: '200px', paddingLeft: { xs: '15px', md: 0 }, transition: 'all 0.2s ease-in-out' }} />
-                <Ctrl.Checkbox name= "paint" radius= "5px" size= "large" checked= { false } />
+                <Ctrl.Typography text= "c.2" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
+                <Ctrl.Typography text= "Paint according to specification" sx= {{ minWidth: '230px', transition: 'all 0.2s ease-in-out' }} />
+                <Ctrl.Checkbox name= "ci_paint" size= "large" checked= { false } />
             </Box>
-            <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' }, padding: '0 20px' }}>
-                <Ctrl.Typography text= "c.21"
-                    sx= {{ paddingLeft: { xs: '15px', md: 0 }, margin: '0 5px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
-                <Ctrl.Typography text= "Color"
-                    sx= {{ minWidth: '200px', paddingLeft: { xs: '15px', md: 0 }, transition: 'all 0.2s ease-in-out' }} />
-                <Ctrl.Checkbox name= "color" radius= "5px" size= "large" checked= { false } />
+            <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' }, paddingLeft: '10px' }}>
+                <Ctrl.Typography text= "c.21" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
+                <Ctrl.Typography text= "Color" sx= {{ minWidth: '180px', transition: 'all 0.2s ease-in-out' }} />
+                <Ctrl.Checkbox name= "ci_paint_color" size= "large" checked= { false } />
                 <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center" margin= "0 20px">
-                    <Box><Ctrl.Typography color= "#2c3e50" text= "Gloss" /></Box>
-                    <Box>
-                        <Ctrl.Checkbox name= "gloss" radius= "5px" size= "large" checked= { false } />
-                    </Box>
+                    <Ctrl.Typography sx= {{ minWidth: '180px', transition: 'all 0.2s ease-in-out' }} color= "#2c3e50" text= "Gloss" />
+                    <Ctrl.Checkbox name= "ci_paint_gloss" size= "large" checked= { false } />
                 </Box>
                 <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
-                    <Box><Ctrl.Typography color= "#2c3e50" text= "Paint Thickness" /></Box>
-                    <Box>
-                        <Ctrl.Checkbox name= "thickness" radius= "5px" size= "large" checked= { false } />
-                    </Box>
+                    <Ctrl.Typography sx= {{ minWidth: '180px', transition: 'all 0.2s ease-in-out' }} color= "#2c3e50" text= "Paint Thickness" />
+                    <Ctrl.Checkbox name= "ci_paint_thickness" size= "large" checked= { false } />
                 </Box>
             </Box>
-            <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' }, padding: '0 20px' }}>
-                <Ctrl.Typography text= "c.21"
-                    sx= {{ paddingLeft: { xs: '15px', md: 0 }, margin: '0 5px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
-                <Ctrl.Typography text= "Scratches / Dent Marks"
-                    sx= {{ minWidth: '200px', paddingLeft: { xs: '15px', md: 0 }, transition: 'all 0.2s ease-in-out' }} />
-                <Ctrl.Checkbox name= "scratch" radius= "5px" size= "large" checked= { false } />
+            <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' }, padding: '0 10px' }}>
+                <Ctrl.Typography text= "c.22" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
+                <Ctrl.Typography text= "Scratches / Dent Marks" sx= {{ minWidth: '180px', transition: 'all 0.2s ease-in-out' }} />
+                <Ctrl.Checkbox name= "ci_paint_scratch" size= "large" checked= { false } />
             </Box>
         </Box>
     );

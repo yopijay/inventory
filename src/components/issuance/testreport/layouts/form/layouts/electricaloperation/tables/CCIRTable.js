@@ -36,15 +36,15 @@ const CCIRTable = () => {
                             <TableCell align= "center">500</TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "ccirBeforeLG" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ccir_before_lg" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "ccirBeforeRremarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ccir_before_remarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
@@ -55,15 +55,15 @@ const CCIRTable = () => {
                             <TableCell align= "center">500</TableCell>
                             <TableCell align= "center">
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "ccirAfterLG" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ccir_after_lg" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell align= "center">
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "ccirAfterRremarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ccir_after_remarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>

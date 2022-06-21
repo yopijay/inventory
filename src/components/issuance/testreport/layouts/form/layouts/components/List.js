@@ -39,8 +39,8 @@ const List = () => {
                             <TableCell align= "center">1</TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "device" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Device" />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "comp_device" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Device" />
                                     </Box>
                                     {/* <Box padding= "0 10px" marginTop= "5px">
                                         <Ctrl.Typography className= "f-14" text= { errors.name === undefined ? '' : errors.name.message } color= "red" />
@@ -49,8 +49,8 @@ const List = () => {
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 5px' }}>
-                                        <Ctrl.Select name= "symbol_id" fullWidth variant= "standard" InputProps= {{ disableUnderline: true }} defaultValue= "" options= { [] } />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 5px' }}>
+                                        <Ctrl.Select name= "comp_symbol_id" fullWidth variant= "standard" InputProps= {{ disableUnderline: true }} defaultValue= "" options= { [] } />
                                     </Box>
                                     {/* <Box padding= "0 10px" marginTop= "5px">
                                         <Ctrl.Typography className= "f-14" text= { errors.name === undefined ? '' : errors.name.message } color= "red" />
@@ -59,8 +59,8 @@ const List = () => {
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 5px' }}>
-                                        <Ctrl.Select name= "description_id" fullWidth variant= "standard" InputProps= {{ disableUnderline: true }} defaultValue= "" options= { [] } />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 5px' }}>
+                                        <Ctrl.Select name= "comp_description_id" fullWidth variant= "standard" InputProps= {{ disableUnderline: true }} defaultValue= "" options= { [] } />
                                     </Box>
                                     {/* <Box padding= "0 10px" marginTop= "5px">
                                         <Ctrl.Typography className= "f-14" text= { errors.name === undefined ? '' : errors.name.message } color= "red" />
@@ -69,8 +69,8 @@ const List = () => {
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "quantity" type= "number" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Quantity" />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "comp_quantity" type= "number" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Quantity" />
                                     </Box>
                                     {/* <Box padding= "0 10px" marginTop= "5px">
                                         <Ctrl.Typography className= "f-14" text= { errors.name === undefined ? '' : errors.name.message } color= "red" />

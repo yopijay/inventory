@@ -35,22 +35,22 @@ const CCDSTable = () => {
                             <TableCell align= "center">1</TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "ccdsCloseVACKV" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ccds_close_vackv" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "ccdsCloseLG" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ccds_close_lg" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">
-                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                                        <Ctrl.TextField name= "ccdsCloseRremarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                    <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                                        <Ctrl.TextField name= "eo_ccds_close_remarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>

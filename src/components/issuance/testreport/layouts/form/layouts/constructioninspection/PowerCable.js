@@ -12,11 +12,9 @@ const PowerCable = () => {
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
-                <Ctrl.Typography text= "c.4"
-                    sx= {{ paddingLeft: { xs: '15px', md: 0 }, margin: '0 5px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
-                <Ctrl.Typography text= "Power cable ampacity conform to PEC"
-                    sx= {{ minWidth: '200px', paddingLeft: { xs: '15px', md: 0 }, transition: 'all 0.2s ease-in-out' }} />
-                <Ctrl.Checkbox name= "cable" radius= "5px" size= "large" checked= { false } />
+                <Ctrl.Typography text= "c.4" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
+                <Ctrl.Typography text= "Power cable ampacity conform to PEC" sx= {{ minWidth: '200px', transition: 'all 0.2s ease-in-out' }} />
+                <Ctrl.Checkbox name= "ci_pc_cable" size= "large" checked= { false } />
             </Box>
             <Box sx= {{ display: 'flex', flexDirection: "column", justifyContent: 'flex-start', alignItems: 'flex-start', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
                 <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
@@ -26,11 +24,10 @@ const PowerCable = () => {
                                 {
                                     index.map(index => (
                                         <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '5px 10px' }} key= { index }>
-                                            <Ctrl.Checkbox name= { `cable${index}Chck` } radius= "5px" size= "large" checked= { false } />
-                                            <Ctrl.Typography text= { index }
-                                                sx= {{ paddingLeft: { xs: '15px', md: 0 }, transition: 'all 0.2s ease-in-out' }} />
-                                            <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px', margin: '0 10px' }}>
-                                                <Ctrl.TextField name= { `cable${index}Txt` } type= "number" sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" 
+                                            <Ctrl.Checkbox name= { `ci_pc_cable${index}_chck` } size= "large" checked= { false } />
+                                            <Ctrl.Typography text= { index } sx= {{ transition: 'all 0.2s ease-in-out' }} />
+                                            <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px', margin: '0 10px' }}>
+                                                <Ctrl.TextField name= { `ci_pc_cable${index}_txt` } type= "number" sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" 
                                                     InputProps= {{ disableUnderline: true, endAdornment: <InputAdornment position="end">mm<sup>2</sup></InputAdornment> }} />
                                             </Box>
                                         </Box>
