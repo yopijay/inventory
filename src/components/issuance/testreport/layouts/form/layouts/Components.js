@@ -23,21 +23,19 @@ const Components = () => {
             </Grid>
             <Grid item xs= { 12 }>
                 <Drawings />
-                <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', margin: '0 15px' }}>
+                <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
                     <CircuitBreaker />
                     <LBS />
                     <MagneticSwitch />
                     <Capacitor />
                     <Auxillaries />
-                    <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
+                    <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" padding= "0 10px">
                         <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
-                            <Ctrl.Typography text= "b.16"
-                                sx= {{ paddingLeft: { xs: '15px', md: 0 }, margin: '8px 5px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
-                            <Ctrl.Typography text= "Other"
-                                sx= {{ minWidth: '200px', paddingLeft: { xs: '15px', md: 0 }, margin: '8px 0', transition: 'all 0.2s ease-in-out' }} />
+                            <Ctrl.Typography text= "b.16" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
+                            <Ctrl.Typography text= "Other" sx= {{ minWidth: '230px', transition: 'all 0.2s ease-in-out' }} />
                         </Box>
-                        <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px' }}>
-                            <Ctrl.TextField name= "comOthers" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Others..." />
+                        <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
+                            <Ctrl.TextField name= "comp_others" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Others..." />
                         </Box>
                     </Box>
                 </Box>

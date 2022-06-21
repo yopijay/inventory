@@ -14,10 +14,8 @@ const Drawings = () => {
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
-                <Ctrl.Typography text= "c.1"
-                    sx= {{ paddingLeft: { xs: '15px', md: 0 }, margin: '8px 5px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
-                <Ctrl.Typography text= "Enclosure dimensions correspond to approver drawings"
-                    sx= {{ minWidth: '200px', paddingLeft: { xs: '15px', md: 0 }, margin: '8px 0', transition: 'all 0.2s ease-in-out' }} />
+                <Ctrl.Typography text= "c.1" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
+                <Ctrl.Typography text= "Enclosure dimensions correspond to approver drawings" sx= {{ minWidth: '230px', transition: 'all 0.2s ease-in-out' }} />
             </Box>
             <FreeStanding />
             <WallMounted />

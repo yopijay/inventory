@@ -20,7 +20,7 @@ const Accordion = styled((props) => (<MuiAccordion disableGutters elevation={0} 
     },
 }));
 
-const AccordionSummary = styled((props) => (<MuiAccordionSummary expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}{...props}/>))(({ theme }) => ({
+const AccordionSummary = styled((props) => (<MuiAccordionSummary expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}{...props}/>))(({
     backgroundColor:'rgba(0, 0, 0, .03)',
     flexDirection: 'row-reverse',
         '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
@@ -31,13 +31,13 @@ const AccordionSummary = styled((props) => (<MuiAccordionSummary expandIcon={<Ar
     },
 }));
 
-const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+const AccordionDetails = styled(MuiAccordionDetails)(({
     padding: '10px',
     borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
 
 const Index = () => {
-    const [ expanded, setExpanded ] = useState('Mechanical Operation');
+    const [ expanded, setExpanded ] = useState('Basic Information');
 
     return (
         <Box>
