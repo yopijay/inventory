@@ -22,9 +22,8 @@ const Index = (props) => {
             return;
         }
 
-        setIsMobile({ isMobile, left: open });
+        setIsMobile({ left: open });
     }
-
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
@@ -33,7 +32,7 @@ const Index = (props) => {
             <Box sx= {{ display: 'flex', width: '100%' }}>
                 <Container fixed sx= {{ padding: 0}}>
                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
-                        <Sidebar isMobile= { isMobile } container= { container } drawerToggle= { drawerToggle } />
+                        <Sidebar isMobile= { isMobile } container= { container } drawerToggle= { drawerToggle } setIsMobile= { setIsMobile } />
                         <Box sx= {{ width: '100%', height: '100vh', overflowY: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
                             <Toolbar />
                             <Routes>

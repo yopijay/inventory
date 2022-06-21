@@ -10,7 +10,7 @@ import Profile from './layouts/Profile';
 import Nav from './layouts/Nav';
 
 const Index = (props) => {
-    const { isMobile, container, drawerToggle } = props;
+    const { isMobile, container, drawerToggle, setIsMobile } = props;
     const [ screen, setScreen ] = useState(window.innerWidth);
 
     const setScreensize = () => setScreen(window.innerWidth);
@@ -32,7 +32,7 @@ const Index = (props) => {
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" 
                                     sx= {{ height: '100%', overflowY: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
                                     <Profile />
-                                    <Nav />
+                                    <Nav setIsMobile= { setIsMobile }/>
                                 </Box>
                                 <Box sx= {{ padding: '5px' }}>
                                     <Ctrl.Button text= "Logout" variant= "contained" />
@@ -47,7 +47,7 @@ const Index = (props) => {
                             <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" 
                                 sx= {{ height: '100%', overflowY: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
                                 <Profile />
-                                <Nav />
+                                <Nav setIsMobile= { setIsMobile }/>
                             </Box>
                             <Ctrl.Button text= "Logout" variant= "contained" />
                         </Box>

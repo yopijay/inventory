@@ -13,7 +13,8 @@ import { Navs } from '../../../../core/global/constants/Navs';
 // Context
 import { NavContext } from '../../../../core/context/NavContext';
 
-const Nav = () => {
+const Nav = (props) => {
+    const { setIsMobile } = props;
     const [ isActive, setIsActive, expand, setExpand ] = useContext(NavContext);
 
     const Accordion = styled(MuiAccordion)(({
@@ -35,7 +36,8 @@ const Nav = () => {
                     <Box key= { index }>
                         {
                             nav.subNav.length === 0 ? (
-                                <Link to= { nav.path } style= {{ textDecoration: 'none' }} onClick= { () => { setIsActive(nav.name); localStorage.setItem('nav', nav.name); setExpand(''); } }>
+                                <Link to= { nav.path } style= {{ textDecoration: 'none' }} 
+                                    onClick= { () => { setIsActive(nav.name); localStorage.setItem('nav', nav.name); setExpand(''); setIsMobile({ left: false }); } }>
                                     <Ctrl.Typography text= { nav.name } color= { `${isActive === nav.name ? 'primary.main' : 'text.primary'}` }
                                         sx= {{ fontSize: { xs: '.95rem', sm: '1rem', md: '1.05rem' }, paddingLeft: { xs: '15px', md: 0 }, margin: '8px 0', transition: 'all 0.2s ease-in-out',
                                                     textOverflow: 'ellipsis', whiteSpace: 'nowrap', '&:hover': { color: 'primary.main', transition: 'all 0.2s ease-in-out' } }} />
@@ -51,7 +53,7 @@ const Nav = () => {
                                         {
                                             (nav.subNav).map((sub, index) => (
                                                 <Link to= { sub.path } style= {{ textDecoration: 'none' }} key= { index } 
-                                                    onClick= { () => { setIsActive(sub.name); ; localStorage.setItem('nav', sub.name) } }>
+                                                    onClick= { () => { setIsActive(sub.name); localStorage.setItem('nav', sub.name); setIsMobile({ left: false }); } }>
                                                     <Ctrl.Typography text= { sub.name } color= { `${isActive === sub.name ? 'primary.main' : 'text.primary'}` }
                                                         sx= {{ fontSize: { xs: '.95rem', sm: '1rem', md: '1.05rem' }, paddingLeft: { xs: '25px', md: '10px' }, margin: '8px 0', transition: 'all 0.2s ease-in-out',
                                                                     textOverflow: 'ellipsis', whiteSpace: 'nowrap', '&:hover': { color: 'primary.main', transition: 'all 0.2s ease-in-out' } }} />
