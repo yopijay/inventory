@@ -15,11 +15,13 @@ import Capacitor from './components/Capacitor';
 import Auxillaries from './components/auxillaries';
 import Remarks from './components/Remarks';
 
-const Components = () => {
+const Components = (props) => {
+    const { register, fields, append, remove } = props;
+
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" sx= {{ paddingBottom: '20px' }} spacing= { 1 }>
             <Grid item xs= { 12 }>
-                <List />
+                <List register= { register } fields= { fields } append= { append } remove= { remove } />
             </Grid>
             <Grid item xs= { 12 }>
                 <Drawings />

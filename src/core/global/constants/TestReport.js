@@ -9,22 +9,22 @@ import ConstructionInspection from '../../../components/issuance/testreport/layo
 import MechanicalOperation from '../../../components/issuance/testreport/layouts/form/layouts/MechanicalOperation';
 import ElectricalOperation from '../../../components/issuance/testreport/layouts/form/layouts/ElectricalOperation';
 
-export const Navs = () => (
+export const Navs = (register, fields, append, remove) => (
     [
         {
             name: 'Basic Information',
             path: 'basic-information',
-            component: <BasicInformation />
+            component: <BasicInformation register= { register } />
         },
         {
             name: 'General Specification',
             path: 'general-specification',
-            component: <GeneralSpecification />
+            component: <GeneralSpecification register= { register } />
         },
         {
             name: 'Component',
             path: 'component',
-            component: <Components />
+            component: <Components register= { register } fields= { fields } append= { append } remove= { remove } />
         },
         {
             name: 'Construction Inspection',

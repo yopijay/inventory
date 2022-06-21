@@ -6,7 +6,8 @@ import { Box, Grid } from '@mui/material';
 // Core
 import Ctrl from '../../../../../../core/global/controls/Controls';
 
-const BasicInformation = () => {
+const BasicInformation = (props) => {
+    const { register } = props;
     // eslint-disable-next-line
     // const { id } = useParams();
     // const [ isLoad, setIsLoad ] = useState(true);
@@ -17,7 +18,7 @@ const BasicInformation = () => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Project" color= "text-primary" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                        <Ctrl.TextField name= "project" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                        <Ctrl.TextField name= "project" register= { register('project') } variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                     </Box>
                     {/* <Box padding= "0 10px" marginTop= "5px">
                         <Ctrl.Typography className= "f-14" text= { errors.name === undefined ? '' : errors.name.message } color= "red" />
@@ -28,7 +29,7 @@ const BasicInformation = () => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Serial No." color= "text-primary" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                        <Ctrl.TextField name= "serial_no" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                        <Ctrl.TextField name= "serial_no" register= { register('serial_no') } variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                     </Box>
                     {/* <Box padding= "0 10px" marginTop= "5px">
                         <Ctrl.Typography className= "f-14" text= { errors.name === undefined ? '' : errors.name.message } color= "red" />
@@ -39,7 +40,7 @@ const BasicInformation = () => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Customer" color= "text-primary" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 5px' }}>
-                        <Ctrl.Select name= "customer_id" fullWidth variant= "standard" InputProps= {{ disableUnderline: true }} defaultValue= ""
+                        <Ctrl.Select name= "customer_id" register= { register('customer_id') } fullWidth variant= "standard" InputProps= {{ disableUnderline: true }} defaultValue= ""
                             options= { [] } />
                     </Box>
                     {/* <Box padding= "0 10px" marginTop= "5px">
@@ -51,7 +52,7 @@ const BasicInformation = () => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Date Performed" color= "text-primary" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                        <Ctrl.TextField name= "date_performed" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                        <Ctrl.TextField name= "date_performed" register= { register('date_performed') } variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                     </Box>
                     {/* <Box padding= "0 10px" marginTop= "5px">
                         <Ctrl.Typography className= "f-14" text= { errors.name === undefined ? '' : errors.name.message } color= "red" />
