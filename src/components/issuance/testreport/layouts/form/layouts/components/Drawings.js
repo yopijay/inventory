@@ -1,25 +1,35 @@
 // Libraries
-import React from 'react';
+import React, { useState } from 'react';
 import { Box } from '@mui/material';
 
 // Core
 import Ctrl from '../../../../../../../core/global/controls/Controls';
 
-const Drawings = () => {
+const Drawings = (props) => {
+    const { register, getValues } = props;
+    const defaultVal = getValues().component;
+    
+    const [ isDrawing, setIsDrawing ] = useState(false);
+    const [ isSO, setIsSO ] = useState(false);
+    const [ isPO, setIsPO ] = useState(false);
+
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
                 <Ctrl.Typography text= "b.1" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
                 <Ctrl.Typography text= "Device specification conform to final approved drawings" sx= {{ minWidth: '230px', transition: 'all 0.2s ease-in-out' }} />
             </Box>
-            <Ctrl.Checkbox name= "comp_drawing" size= "large" checked= { false } />
+            <Ctrl.Checkbox name= "component.draw.drawing" checked= { defaultVal !== undefined ? defaultVal.draw.drawing > 0 ? true : isDrawing : isDrawing }
+                register= { register('component.draw.drawing', { onChange: () => setIsDrawing(!isDrawing) }) } size= "large" />
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Ctrl.Typography color= "#2c3e50" text= "S.O." />
-                <Ctrl.Checkbox name= "comp_drawing_so" size= "large" checked= { false } />
+                <Ctrl.Checkbox name= "component.draw.so" checked= { defaultVal !== undefined ? defaultVal.draw.so > 0 ? true : isSO : isSO }
+                    register= { register('component.draw.so', { onChange: () => setIsSO(!isSO) }) } size= "large" />
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Ctrl.Typography color= "#2c3e50" text= "P.O." />
-                <Ctrl.Checkbox name= "comp_drawing_po" size= "large" checked= { false } />
+                <Ctrl.Checkbox name= "component.draw.po" checked= { defaultVal !== undefined ? defaultVal.draw.po > 0 ? true : isPO : isPO }
+                    register= { register('component.draw.po', { onChange: () => setIsPO(!isPO) }) } size= "large" />
             </Box>
         </Box>
     );

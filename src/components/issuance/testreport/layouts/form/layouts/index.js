@@ -37,13 +37,13 @@ const AccordionDetails = styled(MuiAccordionDetails)(({
 }));
 
 const Index = (props) => {
-    const { register, fields, append, remove } = props;
-    const [ expanded, setExpanded ] = useState('Basic Information');
+    const { register, control, getValues, errors } = props;
+    const [ expanded, setExpanded ] = useState('Construction Inspection');
 
     return (
         <Box>
             {
-                Navs(register, fields, append, remove).map((test, index) => (
+                Navs(register, control, getValues, errors).map((test, index) => (
                     <Accordion expanded={expanded === test.name} onChange={() => setExpanded(test.name)} key= { index }>
                         <AccordionSummary aria-controls={ `panel${index}d-content` } id={ `panel${index}d-header` }>{ test.name }</AccordionSummary>
                         <AccordionDetails>{ test.component }</AccordionDetails>

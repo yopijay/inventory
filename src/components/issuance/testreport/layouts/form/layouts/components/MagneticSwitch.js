@@ -1,11 +1,18 @@
 // Libraries
-import React from 'react';
+import React, { useState } from 'react';
 import { Box } from '@mui/material';
 
 // Core
 import Ctrl from '../../../../../../../core/global/controls/Controls';
 
-const MagneticSwitch = () => {
+const MagneticSwitch = (props) => {
+    const { register, getValues } = props;
+    const defaultVal = getValues().component;
+
+    const [ isAF, setIsAF ] = useState(false);
+    const [ isOLR, setIsOLR ] = useState(false);
+    const [ isBrand, setIsBrand ] = useState(false);
+
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' }, paddingLeft: '10px' }}>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
@@ -14,15 +21,24 @@ const MagneticSwitch = () => {
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Ctrl.Typography color= "#2c3e50" text= "AF" />
-                <Ctrl.Checkbox name= "comp_ms_af" size= "large" checked= { false } />
+                <Ctrl.Checkbox name= "component.magnetic_switch.af" size= "large" checked= { defaultVal !== undefined ? defaultVal.magnetic_switch.af > 0 ? true : isAF : isAF }
+                    register= { register('component.magnetic_switch.af', {
+                        onChange: () => setIsAF(!isAF)
+                    }) } />
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Ctrl.Typography color= "#2c3e50" text= "OLR" />
-                <Ctrl.Checkbox name= "comp_ms_olr" size= "large" checked= { false } />
+                <Ctrl.Checkbox name= "component.magnetic_switch.olr" size= "large" checked= { defaultVal !== undefined ? defaultVal.magnetic_switch.olr > 0 ? true : isOLR : isOLR }
+                    register= { register('component.magnetic_switch.olr', {
+                        onChange: () => setIsOLR(!isOLR)
+                    }) } />
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                 <Ctrl.Typography color= "#2c3e50" text= "Brand" />
-                <Ctrl.Checkbox name= "comp_ms_brand" size= "large" checked= { false } />
+                <Ctrl.Checkbox name= "component.magnetic_switch.brand" size= "large" checked= { defaultVal !== undefined ? defaultVal.magnetic_switch.brand > 0 ? true : isBrand : isBrand }
+                    register= { register('component.magnetic_switch.brand', {
+                        onChange: () => setIsBrand(!isBrand)
+                    }) } />
             </Box>
         </Box>
     );
