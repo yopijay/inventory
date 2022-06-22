@@ -38,7 +38,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({
 
 const Index = (props) => {
     const { register, control, getValues, errors } = props;
-    const [ expanded, setExpanded ] = useState('Construction Inspection');
+    const [ expanded, setExpanded ] = useState('Basic Information');
 
     return (
         <Box>
