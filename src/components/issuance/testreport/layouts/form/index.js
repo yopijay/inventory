@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Box, Grid } from '@mui/material';
 import { Link, useParams } from 'react-router-dom';
-import { useFieldArray, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 
 // Core
 import Ctrl from '../../../../../core/global/controls/Controls';
@@ -17,11 +17,7 @@ const Index = () => {
     const { type } = useParams();
     // eslint-disable-next-line
     const [ isLoad, setIsLoad ] = useState(type !== 'new');
-    const { register, handleSubmit, control } = useForm();
-    const { fields, append, remove } = useFieldArray({
-        control,
-        name: 'components'
-    });
+    const { register, handleSubmit, control, getValues, formState: { errors } } = useForm();
 
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', marginBottom: '20px' }}>
@@ -36,7 +32,7 @@ const Index = () => {
                             {
                                 !isLoad ? (
                                     <Box sx= {{ width: '100%', marginTop: '20px' }}>
-                                        <Forms register= { register } fields= { fields } append= { append } remove= { remove } />
+                                        <Forms register= { register } control= { control } getValues= { getValues } errors= { errors } />
                                         {/* <Form fields= { Fields } register= { register } setValue= { setValue } errors= { errors } getValues= { getValues } disabled= { type === 'view' } /> */}
                                     </Box>
                                 ) : (

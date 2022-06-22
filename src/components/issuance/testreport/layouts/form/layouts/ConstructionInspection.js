@@ -11,13 +11,15 @@ import Paint from './constructioninspection/Paint';
 import Busbar from './constructioninspection/Busbar';
 import PowerCable from './constructioninspection/PowerCable';
 
-const ConstructionInspection = () => {
+const ConstructionInspection = (props) => {
+    const { register, getValues } = props;
+
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" sx= {{ paddingBottom: '20px' }}>
             <Grid item xs= { 12 }>
-                <Drawings />
-                <Paint />
-                <Busbar />
+                <Drawings register= { register } getValues= { getValues } />
+                <Paint register= { register } getValues= { getValues } />
+                <Busbar register= { register } getValues= { getValues } />
                 <PowerCable />
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>

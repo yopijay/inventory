@@ -1,11 +1,17 @@
 // Libraries
-import React from 'react';
+import React, { useState } from 'react';
 import { Box } from '@mui/material';
 
 // Core
 import Ctrl from '../../../../../../../core/global/controls/Controls';
 
-const Remarks = () => {
+const Remarks = (props) => {
+    const { register, getValues } = props;
+    const defaultVal = getValues().component;
+
+    const [ isHNN, setIsHNN ] = useState(false);
+    const [ isLRN, setIsLRN ] = useState(false);
+
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', marginTop: '15px' }}>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start', marginBottom: '10px' }}>
@@ -15,37 +21,48 @@ const Remarks = () => {
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
                     <Box sx= {{ display: 'flex', flexStart: 'row', justifyContent: 'flex-start', alignItems: 'center', marginRight: '25px' }}>
                         <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 20px' }}>
-                            <Ctrl.TextField name= "comp_quantity" sx= {{ minWidth: '70px', maxWidth: '50px' }} type= "number" variant= "standard" InputProps= {{ disableUnderline: true }} />
+                            <Ctrl.TextField name= { `component.quantity` } sx= {{ minWidth: '70px', maxWidth: '50px' }} register= { register(`component.quantity`) } 
+                                type= "number" variant= "standard" InputProps= {{ disableUnderline: true }} />
                         </Box>
                         <Box sx= {{ marginLeft: '10px', minWidth: '200px' }}><Ctrl.Typography color= "#2c3e50" text= "Quantity" /></Box>
                     </Box>
                     <Box sx= {{ display: 'flex', flexStart: 'row', justifyContent: 'flex-start', alignItems: 'center', marginRight: '25px' }}>
                         <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                            <Ctrl.TextField name= "comp_jo_number" sx= {{ minWidth: '70px', maxWidth: '50px' }} type= "number" variant= "standard" InputProps= {{ disableUnderline: true }} />
+                            <Ctrl.TextField name= { `component.jo_number` } sx= {{ minWidth: '70px', maxWidth: '50px' }} register= { register(`component.jo_number`) } 
+                                type= "number" variant= "standard" InputProps= {{ disableUnderline: true }} />
                         </Box>
                         <Box sx= {{ marginLeft: '10px', minWidth: '200px' }}><Ctrl.Typography color= "#2c3e50" text= "J.O. Number" /></Box>
                     </Box>
                 </Box>
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', marginTop: '10px' }}>
                     <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center" marginRight= "25px">
-                        <Ctrl.Checkbox name= "comp_hnn_check" size= "large" checked= { false } />
+                        <Ctrl.Checkbox name= { `component.hnn_chck` } size= "large" checked= { defaultVal !== undefined ? defaultVal.hnn_chck > 0 ? true : isHNN : isHNN }
+                            register= { register('component.hnn_chck', {
+                                onChange: () => setIsHNN(!isHNN)
+                            }) } />
                         <Box sx= {{ margin: '0 10px', minWidth: '200px' }}><Ctrl.Typography color= "#2c3e50" text= "Hold Notice Number" /></Box>
                         <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                            <Ctrl.TextField name= "comp_hnn_txt" sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" InputProps= {{ disableUnderline: true }} />
+                            <Ctrl.TextField name= { `component.hnn_txt` } sx= {{ minWidth: '70px', maxWidth: '50px' }} register= { register(`component.hnn_txt`) } 
+                                variant= "standard" InputProps= {{ disableUnderline: true }} />
                         </Box>
                     </Box>
                     <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
-                        <Ctrl.Checkbox name= "remLRNChck" size= "large" checked= { false } />
+                        <Ctrl.Checkbox name= { `component.lrn_chck` } size= "large" checked= { defaultVal !== undefined ? defaultVal.lrn_chck > 0 ? true : isLRN : isLRN }
+                            register= { register('component.lrn_chck', {
+                                onChange: () => setIsLRN(!isLRN)
+                            }) } />
                         <Box sx= {{ margin: '0 10px', minWidth: '200px' }}><Ctrl.Typography color= "#2c3e50" text= "Lacking Report Number" /></Box>
                         <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                            <Ctrl.TextField name= "remLRNTxt" sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" InputProps= {{ disableUnderline: true }} />
+                            <Ctrl.TextField name= { `component.lrn_txt` } sx= {{ minWidth: '70px', maxWidth: '50px' }} register= { register(`component.lrn_txt`) } 
+                                variant= "standard" InputProps= {{ disableUnderline: true }} />
                         </Box>
                     </Box>
                 </Box>
             </Box>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', marginTop: '10px' }}>
                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px', width: '100%' }}>
-                    <Ctrl.TextField name= "comRemarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Remarks..." />
+                    <Ctrl.TextField name= { `component.remarks` } variant= "standard" fullWidth register= { register(`component.remarks`) } 
+                        InputProps= {{ disableUnderline: true }} placeholder= "Remarks..." />
                 </Box>
             </Box>
         </Box>

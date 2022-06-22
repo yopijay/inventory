@@ -1,27 +1,46 @@
 // Libraries
-import React from 'react';
+import React, { useState } from 'react';
 import { Box } from '@mui/material';
 
 // Core
 import Ctrl from '../../../../../../../../core/global/controls/Controls';
 
-const ExhaustFan = () => {
+const ExhaustFan = (props) => {
+    const { register, getValues } = props;
+    const defaultVal = getValues().component;
+
+    const [ isType, setIsType ] = useState(false);
+    const [ isRating, setIsRating ] = useState(false);
+    const [ isBrand, setIsBrand ] = useState(false);
+
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' }, paddingLeft: '10px' }}>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
                 <Ctrl.Typography text= "Exhaust Fan" sx= {{ minWidth: '230px', transition: 'all 0.2s ease-in-out' }} />
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
-                <Box><Ctrl.Typography color= "#2c3e50" text= "Type" /></Box>
-                <Box><Ctrl.Checkbox name= "comp_aux_ef_type" size= "large" checked= { false } /></Box>
+                <Ctrl.Typography color= "#2c3e50" text= "Type" />
+                <Ctrl.Checkbox name= "component.auxillary.exhaust_fan.type" size= "large" 
+                    checked= { defaultVal !== undefined ? defaultVal.auxillary.exhaust_fan.type > 0 ? true : isType : isType }
+                    register= { register('component.auxillary.exhaust_fan.type', {
+                        onChange: () => setIsType(!isType)
+                    }) } />
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
-                <Box><Ctrl.Typography color= "#2c3e50" text= "Rating" /></Box>
-                <Box><Ctrl.Checkbox name= "comp_aux_ef_rating" size= "large" checked= { false } /></Box>
+                <Ctrl.Typography color= "#2c3e50" text= "Rating" />
+                <Ctrl.Checkbox name= "component.auxillary.exhaust_fan.rating" size= "large" 
+                    checked= { defaultVal !== undefined ? defaultVal.auxillary.exhaust_fan.rating > 0 ? true : isRating : isRating }
+                    register= { register('component.auxillary.exhaust_fan.rating', {
+                        onChange: () => setIsRating(!isRating)
+                    }) } />
             </Box>
             <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
-                <Box><Ctrl.Typography color= "#2c3e50" text= "Brand" /></Box>
-                <Box><Ctrl.Checkbox name= "comp_aux_ef_brand" size= "large" checked= { false } /></Box>
+                <Ctrl.Typography color= "#2c3e50" text= "Brand" />
+                <Ctrl.Checkbox name= "component.auxillary.exhaust_fan.brand" size= "large" 
+                    checked= { defaultVal !== undefined ? defaultVal.auxillary.exhaust_fan.brand > 0 ? true : isBrand : isBrand }
+                    register= { register('component.auxillary.exhaust_fan.brand', {
+                        onChange: () => setIsBrand(!isBrand)
+                    }) } />
             </Box>
         </Box>
     );
