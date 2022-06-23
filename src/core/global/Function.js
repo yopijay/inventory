@@ -68,3 +68,15 @@ export const getDefaultValue = (name, values) => {
 export const header = (data) => {
     console.log(data);
 }
+
+export const getDate = (date, set) => {
+    const year = date.getFullYear();
+    const month = `${ (date.getMonth() + 1) >= 10 ? '' : '0' }${ date.getMonth() + 1 }`;
+    const day = date.getDate();
+    const hr = `${ (date.getHours()) >= 10 ? '' : '0' }${ date.getHours() % 12 }`;
+    const min = `${ (date.getMinutes()) >= 10 ? '' : '0' }${date.getMinutes()}`;
+
+    return `${year}-${month}-${day}T${hr}:${min}`;
+
+    // return `${year}-${month}-${day}T${hr}:${sec}`;
+}

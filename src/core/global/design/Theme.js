@@ -5,10 +5,10 @@ export const pageTheme = createTheme({
     breakpoints: {
         values: {
             xs: 0,
-            sm: 768,
-            md: 1024,
-            lg: 1440,
-            xl: 2560
+            sm: 600,
+            md: 900,
+            lg: 1200,
+            xl: 1536
         }
     },
     palette: {
@@ -54,7 +54,7 @@ export const pageTheme = createTheme({
         text: {
             primary: '#353b48',
             secondary: '#2f3640',
-            disabled: '#dcdde1'
+            disabled: '#b2bec3'
         },
     },
     typography: {

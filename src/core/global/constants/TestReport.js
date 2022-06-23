@@ -5,7 +5,7 @@ import React from 'react';
 import BasicInformation from '../../../components/issuance/testreport/layouts/form/layouts/BasicInformation';
 import GeneralSpecification from '../../../components/issuance/testreport/layouts/form/layouts/GeneralSpecification';
 import Components from '../../../components/issuance/testreport/layouts/form/layouts/Components';
-// import ConstructionInspection from '../../../components/issuance/testreport/layouts/form/layouts/ConstructionInspection';
+import ConstructionInspection from '../../../components/issuance/testreport/layouts/form/layouts/ConstructionInspection';
 import MechanicalOperation from '../../../components/issuance/testreport/layouts/form/layouts/MechanicalOperation';
 import ElectricalOperation from '../../../components/issuance/testreport/layouts/form/layouts/ElectricalOperation';
 
@@ -29,7 +29,7 @@ export const Navs = () => (
         {
             name: 'Construction Inspection',
             path: 'construction-inspection',
-            component: "CONSTRUCTION INSPECTION" //<ConstructionInspection register= { register } getValues= { getValues } />
+            component: <ConstructionInspection />
         },
         {
             name: 'Mechanical Operation',

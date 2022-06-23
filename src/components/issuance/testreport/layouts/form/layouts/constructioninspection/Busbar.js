@@ -1,5 +1,5 @@
 // Libraries
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Box } from '@mui/material';
 
 // Core
@@ -11,8 +11,11 @@ import CrimpingLugs from './CrimpingLugs';
 import MCM from './busbar/MCM';
 import PEC from './PEC';
 
-const Busbar = (props) => {
-    const { register, getValues } = props;
+// Context
+import { TestReportContext } from '../../../../../../../core/context/TestReportContext';
+
+const Busbar = () => {
+    const { register, getValues } = useContext(TestReportContext);
     const defaultVal = getValues().construction_inspection;
 
     const [ isBusbar, setIsBusbar ] = useState(false);
@@ -28,7 +31,7 @@ const Busbar = (props) => {
                         onChange: () => setIsBusbar(!isBusbar)
                     }) } />
             </Box>
-            <Options register= { register } getValues= { getValues } />
+            <Options />
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' }, padding: '0 10px' }}>
                 <Ctrl.Typography text= "c.31" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
                 <Ctrl.Typography text= "Grounding" sx= {{ minWidth: '200px', transition: 'all 0.2s ease-in-out' }} />

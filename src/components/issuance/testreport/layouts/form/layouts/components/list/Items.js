@@ -22,7 +22,7 @@ const Items = (props) => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box sx= {{ border: `solid 1px ${ error !== undefined ? error[index] !== undefined ? error[index].device !== undefined ? '#e84118' : '#dcdde1' : '#dcdde1' : '#dcdde1'}`, 
                                         borderRadius: '5px', padding: '5px 15px' }}>
-                        <Ctrl.TextField name= { `items[${index}].device` } register= { register(`items[${index}].device`, { required: 'This field is required!' }) } 
+                        <Ctrl.TextField name= { `items[${index}].device` } register= { register(`items[${index}].device`) } 
                             variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Device" />
                     </Box>
                 </Box>
@@ -49,7 +49,7 @@ const Items = (props) => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box sx= {{ border: `solid 1px ${ error !== undefined ? error[index] !== undefined ? error[index].quantity !== undefined ? '#e84118' : '#dcdde1' : '#dcdde1' : '#dcdde1'}`, 
                                         borderRadius: '5px', padding: '5px 15px' }}>
-                        <Ctrl.TextField name= { `items[${index}].quantity` } type= "number" register= { register(`items[${index}].quantity`, { required: 'This field is required!' }) } 
+                        <Ctrl.TextField name= { `items[${index}].quantity` } type= "number" register= { register(`items[${index}].quantity`) } 
                             variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Quantity" />
                     </Box>
                 </Box>
