@@ -9,27 +9,27 @@ import ConstructionInspection from '../../../components/issuance/testreport/layo
 import MechanicalOperation from '../../../components/issuance/testreport/layouts/form/layouts/MechanicalOperation';
 import ElectricalOperation from '../../../components/issuance/testreport/layouts/form/layouts/ElectricalOperation';
 
-export const Navs = (register, control, getValues, errors ) => (
+export const Navs = () => (
     [
         {
             name: 'Basic Information',
             path: 'basic-information',
-            component: <BasicInformation register= { register } getValues= { getValues } errors= { errors } />
+            component: <BasicInformation />
         },
         {
             name: 'General Specification',
             path: 'general-specification',
-            component: <GeneralSpecification register= { register } getValues= { getValues } errors= { errors } />
+            component:<GeneralSpecification />
         },
         {
             name: 'Component',
             path: 'component',
-            component: <Components register= { register } control= { control } getValues= { getValues } errors= { errors } />
+            component: <Components />
         },
         {
             name: 'Construction Inspection',
             path: 'construction-inspection',
-            component: <ConstructionInspection register= { register } getValues= { getValues } />
+            component: <ConstructionInspection />
         },
         {
             name: 'Mechanical Operation',

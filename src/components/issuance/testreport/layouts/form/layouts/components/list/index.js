@@ -1,5 +1,5 @@
 // Libraries
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Box, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow } from '@mui/material';
 import { styled } from '@mui/styles';
 import { useParams } from 'react-router';
@@ -7,6 +7,9 @@ import { useParams } from 'react-router';
 // Layouts
 import Items from './Items';
 import { useFieldArray } from 'react-hook-form';
+
+// Context
+import { TestReportContext } from '../../../../../../../../core/context/TestReportContext';
 
 const StyledTableCell = styled(TableCell)(({
     [`&.${tableCellClasses.head}`]: {
@@ -17,9 +20,9 @@ const StyledTableCell = styled(TableCell)(({
     }
 }));
 
-const Index = (props) => {
+const Index = () => {
     const { type } = useParams();
-    const { register, control, getValues, errors } = props;
+    const { register, control, getValues, errors } = useContext(TestReportContext);
     const { fields, append, remove } = useFieldArray({ control, name: 'items' });
 
     useEffect(() => {

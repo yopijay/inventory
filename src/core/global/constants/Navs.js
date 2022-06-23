@@ -30,6 +30,10 @@ export const Navs = () => (
                     path: '/maintenance/category',
                 },
                 {
+                    name: 'Colors',
+                    path: '/maintenance/color',
+                },
+                {
                     name: 'Brands',
                     path: '/maintenance/brand',
                 },
@@ -40,6 +44,10 @@ export const Navs = () => (
                 {
                     name: 'Assets',
                     path: '/maintenance/assets',
+                },
+                {
+                    name: 'Customer',
+                    path: '/maintenance/customer',
                 }
             ]
         },
@@ -96,6 +104,11 @@ export const Layouts = () => (
         },
         {
             name: 'Maintenance',
+            path: '/maintenance/color',
+            component: "COLORS"
+        },
+        {
+            name: 'Maintenance',
             path: '/maintenance/brand',
             component: <Brands />
         },
@@ -108,6 +121,11 @@ export const Layouts = () => (
             name: 'Maintenance',
             path: '/maintenance/assets',
             component: <Assets />
+        },
+        {
+            name: 'Maintenance',
+            path: '/maintenance/customer',
+            component: "Customer"
         },
         {
             name: 'Issuance',

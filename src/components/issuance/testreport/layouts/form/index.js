@@ -1,8 +1,7 @@
 // Libraries
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Box, Grid } from '@mui/material';
 import { Link, useParams } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
 
 // Core
 import Ctrl from '../../../../../core/global/controls/Controls';
@@ -13,11 +12,14 @@ import { SnakeLoader } from '../../../../../core/loader/Loader';
 // Layouts
 import Forms from './layouts';
 
+// Context
+import { TestReportContext } from '../../../../../core/context/TestReportContext';
+
 const Index = () => {
     const { type } = useParams();
     // eslint-disable-next-line
     const [ isLoad, setIsLoad ] = useState(type !== 'new');
-    const { register, handleSubmit, control, getValues, formState: { errors } } = useForm();
+    const { handleSubmit } = useContext(TestReportContext);
 
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', marginBottom: '20px' }}>
@@ -32,8 +34,7 @@ const Index = () => {
                             {
                                 !isLoad ? (
                                     <Box sx= {{ width: '100%', marginTop: '20px' }}>
-                                        <Forms register= { register } control= { control } getValues= { getValues } errors= { errors } />
-                                        {/* <Form fields= { Fields } register= { register } setValue= { setValue } errors= { errors } getValues= { getValues } disabled= { type === 'view' } /> */}
+                                        <Forms />
                                     </Box>
                                 ) : (
                                     <Grid container direction= "row" justifyContent= "center" alignItems= "center">
@@ -51,7 +52,7 @@ const Index = () => {
                                         <Ctrl.Button color= "primary" text= {
                                             <Ctrl.Typography color= "#ffffff" text= "Save" 
                                                 sx= {{ padding: { xs: '4px 0' }, fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained"
-                                                onClick= { /*handleSubmit(data => save(id, data, type, 'category', '/issuance/test-report') )*/handleSubmit(data => console.log(data) ) }/>
+                                                onClick= { /*handleSubmit(data => save(id, data, type, 'category', '/issuance/test-report') ) */handleSubmit(data => console.log(data) ) }/>
                                     </Box>
                                 ) : '' }
                             </Box>

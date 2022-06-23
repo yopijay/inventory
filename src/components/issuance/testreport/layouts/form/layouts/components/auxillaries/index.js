@@ -16,8 +16,7 @@ import LightningArrester from './LightningArrester';
 import SurgeAbsorber from './SurgeAbsorber';
 import ExhaustFan from './ExhaustFan';
 
-const Index = (props) => {
-    const { register, getValues } = props;
+const Index = () => {
 
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', paddingLeft: '10px' }}>
@@ -26,15 +25,15 @@ const Index = (props) => {
                 <Ctrl.Typography text= "Auxillaries" sx= {{ minWidth: '230px', transition: 'all 0.2s ease-in-out' }} />
             </Box>
             <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
-                <Meter register= { register } getValues= { getValues } />
-                <ProtectiveRelays register= { register } getValues= { getValues } />
-                <LVPT register= { register } getValues= { getValues } />
-                <CT register= { register } getValues= { getValues } />
-                <HVFuse register= { register } getValues= { getValues } />
-                <LVFuse register= { register } getValues= { getValues } />
-                <LightningArrester register= { register } getValues= { getValues } />
-                <SurgeAbsorber register= { register } getValues= { getValues } />
-                <ExhaustFan register= { register } getValues= { getValues } />
+                <Meter />
+                <ProtectiveRelays />
+                <LVPT />
+                <CT />
+                <HVFuse />
+                <LVFuse />
+                <LightningArrester />
+                <SurgeAbsorber />
+                <ExhaustFan />
             </Box>
         </Box>
     );

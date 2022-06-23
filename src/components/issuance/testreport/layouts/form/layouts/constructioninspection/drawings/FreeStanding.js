@@ -1,12 +1,15 @@
 // Libraries
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Box, InputAdornment } from '@mui/material';
 
 // Core
 import Ctrl from '../../../../../../../../core/global/controls/Controls';
 
-const FreeStanding = (props) => {
-    const { register, getValues } = props;
+// Context
+import { TestReportContext } from '../../../../../../../../core/context/TestReportContext';
+
+const FreeStanding = () => {
+    const { register, getValues } = useContext(TestReportContext);
     const defaultVal = getValues().construction_inspection;
 
     const [ isFS, setIsFS ] = useState(false); 
