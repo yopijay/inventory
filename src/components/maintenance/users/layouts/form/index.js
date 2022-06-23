@@ -41,7 +41,7 @@ const Index = () => {
             </Box>
             <Box sx= {{ padding: { xs: '0 14px', sm: 0 } }}>
                 <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start">
-                    <Grid item xs= { 12 } md= { 8 } lg= { 6 }>
+                    <Grid item xs= { 12 }>
                         {
                             !isLoad ? (
                                 <Box sx= {{ width: '100%', marginTop: '20px' }}>

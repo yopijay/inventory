@@ -18,7 +18,7 @@ const BasicInformation = () => {
     const [ isToday, setIsToday ] = useState();
 
     const updateTime = () => {
-        setIsToday(getDate(new Date()));
+        setIsToday(getDate(new Date()).date);
     }
 
     useEffect(() => {

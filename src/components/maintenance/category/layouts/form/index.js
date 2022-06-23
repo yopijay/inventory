@@ -24,7 +24,7 @@ const Index = () => {
     // eslint-disable-next-line
     const [ values, setValues ] = useState();
     const [ isLoad, setIsLoad ] = useState(type !== 'new');
-    const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm({
+    const { register, handleSubmit, formState: { errors }, setValue, getValues, setError } = useForm({
         resolver: yupResolver(Category())
     });
     
@@ -41,7 +41,7 @@ const Index = () => {
             </Box>
             <Box sx= {{ padding: { xs: '0 14px', sm: 0 } }}>
                 <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start">
-                    <Grid item xs= { 12 } md= { 8 } lg= { 6 }>
+                    <Grid item xs= { 12 }>
                         {
                             !isLoad ? (
                                 <Box sx= {{ width: '100%', marginTop: '20px' }}>
@@ -68,7 +68,7 @@ const Index = () => {
                                         <Ctrl.Typography color= "#ffffff" text= "Save" 
                                             sx= {{ padding: { xs: '4px 0' },
                                                         fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained"
-                                        onClick= { handleSubmit(data => save(id, data, type, 'category', '/maintenance/category') ) }/>
+                                        onClick= { handleSubmit(data => save(id, data, type, 'category', '/maintenance/category', setError) ) }/>
                                 </Box>
                             ) : '' }
                         </Box>

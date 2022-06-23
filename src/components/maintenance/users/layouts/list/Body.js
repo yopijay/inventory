@@ -5,12 +5,16 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/styles';
 
+// Core
+import { getDate } from '../../../../../core/global/Function';
+
 // Icons
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 
 // Loader
 import { SnakeLoader } from '../../../../../core/loader/Loader';
+
 
 const Body = (props) => {
     const { data } = props;
@@ -32,10 +36,8 @@ const Body = (props) => {
                                 <StyledTableCell>{ `${rows.lname}, ${rows.fname} ${rows.mname}` }</StyledTableCell>
                                 <StyledTableCell>{ rows.position_id }</StyledTableCell>
                                 <StyledTableCell align= "center">{ rows.status === 1 ? 'Active' : 'Inactive' }</StyledTableCell>
-                                <StyledTableCell align= "center">{ `${ new Date(rows.date_created).toLocaleString('default', { month: 'long' }) }
-                                                                ${ new Date(rows.date_created).getDate() }, ${ new Date(rows.date_created).getFullYear() } 
-                                                                ${ new Date(rows.date_created).getHours() % 12 }:${ new Date(rows.date_created).getMinutes() }
-                                                                ${ new Date(rows.date_created).getHours() >= 12 ? 'PM' : 'AM' }` } </StyledTableCell>
+                                <StyledTableCell align= "center">{ `${ getDate(new Date(rows.date_created)).formatted } 
+                                                                                        ${ new Date(rows.date_created).getHours() >= 12 ? 'PM' : 'AM' }` }</StyledTableCell>
                                 <StyledTableCell align= "center">
                                     <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                         <Box sx= {{ margin: '5px' }}>

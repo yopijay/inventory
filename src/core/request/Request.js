@@ -23,9 +23,14 @@ export const count = async (set, table) => {
     set(count[0].count);
 }
 
-export const save = async (id, data, type, table, redirect) => {
+export const save = async (id, data, type, table, redirect, setError) => {
     let save = await _axios(`${Env[env].url}/${type}/${table}${id !== undefined ? `/${id}` : ''}`, 'post', data);
-    if(save === 'success') window.location.href = `${redirect}`;
+    if(save.result === 'error') {
+        setError( 'name', { type: 'focus', message: save.message }, { shouldFocus: true } );
+    }
+    else {
+        window.location.href = `${redirect}`
+    }
 }
 
 export const get = async (id, table, set, setValues, loader) => {
