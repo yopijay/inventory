@@ -12,6 +12,7 @@ import { TestReportContext } from '../../../../../../../../core/context/TestRepo
 
 const Options = () => {
     const { register, getValues } = useContext(TestReportContext);
+    // eslint-disable-next-line
     const defaultVal = getValues().construction_inspection;
 
     return (
@@ -22,13 +23,13 @@ const Options = () => {
                         <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }} key= { index }>
                             {
                                 index.map(index => (
-                                    <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '5px 10px' }} key= { index }>
+                                    <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '5px 10px', width: '200px' }} key= { index }>
                                         <Ctrl.Checkbox name= { `construction_inspection.busbar.options.mm_${index}.chck` } register= { register(`construction_inspection.busbar.options.mm_${index}.chck`) }
                                             size= "large" />
                                         <Ctrl.Typography text= { index } sx= {{ transition: 'all 0.2s ease-in-out' }} />
-                                        <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px', margin: '0 10px' }}>
+                                        <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px', marginLeft: '10px', width: '100%' }}>
                                             <Ctrl.TextField name= { `construction_inspection.busbar.options.mm_${index}.txt` } register= { register(`construction_inspection.busbar.options.mm_${index}.txt`) }
-                                                type= "number" sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" 
+                                                type= "number" sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" fullWidth
                                                 InputProps= {{ disableUnderline: true, endAdornment: <InputAdornment position="end">mm</InputAdornment> }} />
                                         </Box>
                                     </Box>

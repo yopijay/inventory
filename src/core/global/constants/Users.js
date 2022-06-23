@@ -1,8 +1,9 @@
 import { days, months, years } from "./Date";
+import { civil_status } from "./Status";
 
 export const Users = () => ({
     fname: {
-        label: 'First name',
+        label: '*First name',
         grid: {
             xs: 12,
             sm: 4
@@ -25,7 +26,7 @@ export const Users = () => ({
         type: 'textfield'
     },
     lname: {
-        label: 'Last name',
+        label: '*Last name',
         grid: {
             xs: 12,
             sm: 4
@@ -70,6 +71,42 @@ export const Users = () => ({
         },
         type: 'select',
         option: years()
+    },
+    civil_status: {
+        label: '*Civil Status',
+        grid: {
+            xs: 12,
+            sm: 4
+        },
+        props: {
+            name: "civil_status", 
+        },
+        type: 'select',
+        option: civil_status()
+    },
+    position: {
+        label: '*Position',
+        grid: {
+            xs: 12,
+            sm: 4
+        },
+        props: {
+            name: "position_id", 
+        },
+        type: 'select',
+        option: []
+    },
+    department: {
+        label: '*Department',
+        grid: {
+            xs: 12,
+            sm: 4
+        },
+        props: {
+            name: "department_id", 
+        },
+        type: 'select',
+        option: []
     },
     address: {
         label: 'Address',

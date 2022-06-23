@@ -23,11 +23,11 @@ const PowerCable = () => {
                             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }} key= { index }>
                                 {
                                     index.map(index => (
-                                        <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '5px 10px' }} key= { index }>
+                                        <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '5px 10px', width: '200px' }} key= { index }>
                                             <Ctrl.Checkbox name= { `ci_pc_cable${index}_chck` } size= "large" checked= { false } />
                                             <Ctrl.Typography text= { index } sx= {{ transition: 'all 0.2s ease-in-out' }} />
-                                            <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px', margin: '0 10px' }}>
-                                                <Ctrl.TextField name= { `ci_pc_cable${index}_txt` } type= "number" sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" 
+                                            <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px', marginLeft: '10px', width: '100%' }}>
+                                                <Ctrl.TextField name= { `ci_pc_cable${index}_txt` } type= "number" sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" fullWidth
                                                     InputProps= {{ disableUnderline: true, endAdornment: <InputAdornment position="end">mm<sup>2</sup></InputAdornment> }} />
                                             </Box>
                                         </Box>

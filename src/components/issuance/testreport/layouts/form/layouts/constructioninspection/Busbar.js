@@ -36,7 +36,7 @@ const Busbar = () => {
                 <Ctrl.Typography text= "c.31" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
                 <Ctrl.Typography text= "Grounding" sx= {{ minWidth: '200px', transition: 'all 0.2s ease-in-out' }} />
                 <Ctrl.Checkbox name= "ci_busbar_rounding" size= "large" checked= { false } />
-                <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center" margin= "0 20px">
+                <Box display= "flex" flexDirection= "row" justifyContent= "flex-end" alignItems= "center" margin= "0 20px" width= "150px">
                     <Ctrl.Typography color= "#2c3e50" text= "Neutral" />
                     <Ctrl.Checkbox name= "ci_busbar_neutral" size= "large" checked= { false } />
                 </Box>

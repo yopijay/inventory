@@ -15,7 +15,7 @@ import Header from './Header';
 import Body from './Body';
 
 const Index = () => {
-    const [ assets, setAssets ] = useState();
+    const [ assets, setAssets ] = useState([]);
     const [ isLoad, setIsLoad ] = useState(true);
 
     useEffect(() => {
@@ -42,14 +42,14 @@ const Index = () => {
                             </Grid>
                             <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
                                 <Export element= {
-                                    <Ctrl.Button color= "excel" text= {
+                                    <Ctrl.Button color= "excel" disabled= { !(Object.keys(assets)).length !== 0 } text= {
                                         <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
                                             sx= {{ padding: { xs: '4px 0' },
                                                         fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained" />
                                     } 
                                     filename= "Brand List"
                                     data= { assets }
-                                    column= { assets !== undefined ? Object.keys(assets[0]) : [] } />
+                                    column= { assets !== undefined ? (Object.keys(assets)).length !== 0 ? Object.keys(assets[0]) : [] : [] } />
                             </Grid>
                         </Grid>
                     </Grid>
