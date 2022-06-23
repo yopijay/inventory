@@ -15,6 +15,7 @@ import PowerCable from './constructioninspection/PowerCable';
 import { TestReportContext } from '../../../../../../core/context/TestReportContext';
 
 const ConstructionInspection = () => {
+    // eslint-disable-next-line
     const { register, getValues } = useContext(TestReportContext);
 
     return (

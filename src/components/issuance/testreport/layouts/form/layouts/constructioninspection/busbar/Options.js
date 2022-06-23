@@ -12,6 +12,7 @@ import { TestReportContext } from '../../../../../../../../core/context/TestRepo
 
 const Options = () => {
     const { register, getValues } = useContext(TestReportContext);
+    // eslint-disable-next-line
     const defaultVal = getValues().construction_inspection;
 
     return (

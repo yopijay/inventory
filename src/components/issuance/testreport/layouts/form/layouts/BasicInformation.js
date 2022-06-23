@@ -1,5 +1,5 @@
 // Libraries
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Box, Grid } from '@mui/material';
 // import { Link, useParams } from 'react-router-dom';
 
@@ -21,7 +21,9 @@ const BasicInformation = () => {
         setIsToday(getDate(new Date()));
     }
 
-    setInterval(updateTime, 1000);
+    useEffect(() => {
+        setInterval(updateTime, 1000);
+    }, []);
 
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" sx= {{ paddingBottom: '20px' }} spacing= { 1 }>
@@ -29,7 +31,7 @@ const BasicInformation = () => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Project" color= "text-primary" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                        <Ctrl.TextField name= { `basic_information.project` } register= { register(`basic_information.project`, { required: 'This is required!' }) } 
+                        <Ctrl.TextField name= { `basic_information.project` } register= { register(`basic_information.project`) } 
                             variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                     </Box>
                     <Box marginTop= "5px">
@@ -66,8 +68,10 @@ const BasicInformation = () => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Date Performed" color= "text-primary" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                        <Ctrl.TextField name= { `basic_information.date_performed` } register= { register('basic_information.date_performed') } 
-                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} type= "datetime-local" value= { isToday !== undefined ? isToday : '' } />
+                        <Ctrl.TextField name= { `basic_information.date_performed` } register= { register('basic_information.date_performed', {
+                            onChange: e => setIsToday(e.target.value)
+                        }) } 
+                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} type= "datetime-local" disabled= { true } value= { isToday !== undefined ? isToday : '' } />
                     </Box>
                     <Box marginTop= "5px">
                         <Ctrl.Typography text= { error !== undefined ? error.date_performed !== undefined ? error.date_performed.message : '' : '' } color= "red" />
