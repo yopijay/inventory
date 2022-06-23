@@ -1,12 +1,15 @@
 // Libraries
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Box } from '@mui/material';
 
 // Core
 import Ctrl from '../../../../../../../../core/global/controls/Controls';
 
-const SurgeAbsorber = (props) => {
-    const { register, getValues } = props;
+// Context
+import { TestReportContext } from '../../../../../../../../core/context/TestReportContext';
+
+const SurgeAbsorber = () => {
+    const { register, getValues } = useContext(TestReportContext);
     const defaultVal = getValues().component;
 
     const [ isType, setIsType ] = useState(false);

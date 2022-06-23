@@ -1,13 +1,14 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Grid } from '@mui/material';
 // import { Link, useParams } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../../../core/global/controls/Controls';
+import { TestReportContext } from '../../../../../../core/context/TestReportContext';
 
-const BasicInformation = (props) => {
-    const { register, getValues, errors } = props;
+const BasicInformation = () => {
+    const { register, getValues, errors } = useContext(TestReportContext);
     // eslint-disable-next-line
     const defaultVal = getValues().basic_information;
     const error = errors.basic_information;

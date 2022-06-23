@@ -1,12 +1,15 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Grid } from '@mui/material';
 
 // Core
 import Ctrl from '../../../../../../core/global/controls/Controls';
 
-const GeneralSpecification = (props) => {
-    const { register, getValues, errors } = props;
+// Context
+import { TestReportContext } from '../../../../../../core/context/TestReportContext';
+
+const GeneralSpecification = () => {
+    const { register, getValues, errors } = useContext(TestReportContext);
     // eslint-disable-next-line
     const defaultVal = getValues().general_specification;
     const error = errors.general_specification;

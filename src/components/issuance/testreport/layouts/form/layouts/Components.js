@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import { Grid, Box } from '@mui/material';
 
 // Core
@@ -13,24 +13,27 @@ import MagneticSwitch from './components/MagneticSwitch';
 import Capacitor from './components/Capacitor';
 import Auxillaries from './components/auxillaries';
 import Remarks from './components/Remarks';
-import List from './components/list/index'
+import List from './components/list/index';
 
-const Components = (props) => {
-    const { register, control, getValues, errors } = props;
+// Context
+import { TestReportContext } from '../../../../../../core/context/TestReportContext';
+
+const Components = () => {
+    const { register } = useContext(TestReportContext);
 
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" sx= {{ paddingBottom: '20px' }} spacing= { 1 }>
             <Grid item xs= { 12 }>
-                <List register= { register } control= { control } getValues= { getValues } errors= { errors } />
+                <List />
             </Grid>
             <Grid item xs= { 12 }>
-                <Drawings register= { register } getValues= { getValues } />
+                <Drawings />
                 <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
-                    <CircuitBreaker register= { register } getValues= { getValues } />
-                    <LBS register= { register } getValues= { getValues } />
-                    <MagneticSwitch register= { register } getValues= { getValues } />
-                    <Capacitor register= { register } getValues= { getValues } />
-                    <Auxillaries register= { register } getValues= { getValues } />
+                    <CircuitBreaker />
+                    <LBS />
+                    <MagneticSwitch />
+                    <Capacitor />
+                    <Auxillaries />
                     <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" padding= "0 10px">
                         <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
                             <Ctrl.Typography text= "b.16" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
@@ -42,7 +45,7 @@ const Components = (props) => {
                         </Box>
                     </Box>
                 </Box>
-                <Remarks register= { register } getValues= { getValues } />
+                <Remarks />
             </Grid>
         </Grid>
     );
