@@ -21,7 +21,7 @@ const ExhaustFan = () => {
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
                 <Ctrl.Typography text= "Exhaust Fan" sx= {{ minWidth: '230px', transition: 'all 0.2s ease-in-out' }} />
             </Box>
-            <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+            <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Type" />
                 <Ctrl.Checkbox name= "component.auxillary.exhaust_fan.type" size= "large" 
                     checked= { defaultVal !== undefined ? defaultVal.auxillary.exhaust_fan.type > 0 ? true : isType : isType }
@@ -29,7 +29,7 @@ const ExhaustFan = () => {
                         onChange: () => setIsType(!isType)
                     }) } />
             </Box>
-            <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+            <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Rating" />
                 <Ctrl.Checkbox name= "component.auxillary.exhaust_fan.rating" size= "large" 
                     checked= { defaultVal !== undefined ? defaultVal.auxillary.exhaust_fan.rating > 0 ? true : isRating : isRating }
@@ -37,7 +37,7 @@ const ExhaustFan = () => {
                         onChange: () => setIsRating(!isRating)
                     }) } />
             </Box>
-            <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+            <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Brand" />
                 <Ctrl.Checkbox name= "component.auxillary.exhaust_fan.brand" size= "large" 
                     checked= { defaultVal !== undefined ? defaultVal.auxillary.exhaust_fan.brand > 0 ? true : isBrand : isBrand }

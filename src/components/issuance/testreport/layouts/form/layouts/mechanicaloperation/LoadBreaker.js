@@ -10,7 +10,7 @@ const LoadBreaker = () => {
         <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' }, marginTop: '10px' }}>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
                 <Ctrl.Typography text= "d.2" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
-                <Ctrl.Typography text= "Load Breaker Switch" sx= {{ minWidth: '200px', transition: 'all 0.2s ease-in-out' }} />
+                <Ctrl.Typography text= "Load Breaker Switch" sx= {{ width: '210px', transition: 'all 0.2s ease-in-out' }} />
             </Box>
             <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-end' }}>
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '5px 0' }}>

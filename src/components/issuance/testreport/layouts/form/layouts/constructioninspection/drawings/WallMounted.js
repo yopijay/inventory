@@ -25,7 +25,7 @@ const WallMounted = () => {
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '5px 0',
                 overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' }, paddingLeft: '15px' }}>
                 <Box sx= {{ margin: '0 10px', minWidth: '200px' }}><Ctrl.Typography color= "#2c3e50" text= "Box" /></Box>
-                <Box sx= {{ margin: '0 20px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                <Box sx= {{ margin: '0 20px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', minWidth: '150px' }}>
                     <Box sx= {{ margin: '0 10px' }}><Ctrl.Typography color= "#2c3e50" text= "W:" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                         <Ctrl.TextField name= { `construction_inspection.draw.wall_mounted.box.w` } register= { register(`construction_inspection.draw.wall_mounted.box.w`) }
@@ -33,7 +33,7 @@ const WallMounted = () => {
                             InputProps= {{ disableUnderline: true, endAdornment: <InputAdornment position="end">mm</InputAdornment> }} />
                     </Box>
                 </Box>
-                <Box sx= {{ margin: '0 20px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                <Box sx= {{ margin: '0 20px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', minWidth: '150px' }}>
                     <Box sx= {{ margin: '0 10px' }}><Ctrl.Typography color= "#2c3e50" text= "H:" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                         <Ctrl.TextField name= { `construction_inspection.draw.wall_mounted.box.h` } register= { register(`construction_inspection.draw.wall_mounted.box.h`) }
@@ -41,7 +41,7 @@ const WallMounted = () => {
                             InputProps= {{ disableUnderline: true, endAdornment: <InputAdornment position="end">mm</InputAdornment> }} />
                     </Box>
                 </Box>
-                <Box sx= {{ margin: '0 20px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                <Box sx= {{ margin: '0 20px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', minWidth: '150px' }}>
                     <Box sx= {{ margin: '0 10px' }}><Ctrl.Typography color= "#2c3e50" text= "D:" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                         <Ctrl.TextField name= { `construction_inspection.draw.wall_mounted.box.d` } register= { register(`construction_inspection.draw.wall_mounted.box.d`) }
@@ -53,7 +53,7 @@ const WallMounted = () => {
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '5px 0',
                 overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' }, paddingLeft: '15px' }}>
                 <Box sx= {{ margin: '0 10px', minWidth: '200px' }}><Ctrl.Typography color= "#2c3e50" text= "Cover" /></Box>
-                <Box sx= {{ margin: '0 20px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                <Box sx= {{ margin: '0 20px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', minWidth: '150px' }}>
                     <Box sx= {{ margin: '0 10px' }}><Ctrl.Typography color= "#2c3e50" text= "W:" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                         <Ctrl.TextField name= { `construction_inspection.draw.wall_mounted.cover.w` } register= { register(`construction_inspection.draw.wall_mounted.cover.w`) }
@@ -61,7 +61,7 @@ const WallMounted = () => {
                             InputProps= {{ disableUnderline: true, endAdornment: <InputAdornment position="end">mm</InputAdornment> }} />
                     </Box>
                 </Box>
-                <Box sx= {{ margin: '0 20px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                <Box sx= {{ margin: '0 20px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', minWidth: '150px' }}>
                     <Box sx= {{ margin: '0 10px' }}><Ctrl.Typography color= "#2c3e50" text= "L:" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                         <Ctrl.TextField name= { `construction_inspection.draw.wall_mounted.cover.l` } register= { register(`construction_inspection.draw.wall_mounted.cover.l`) }

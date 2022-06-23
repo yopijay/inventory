@@ -21,7 +21,7 @@ const ProtectiveRelays = () => {
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
                 <Ctrl.Typography text= "Protective Relays" sx= {{ minWidth: '230px', transition: 'all 0.2s ease-in-out' }} />
             </Box>
-            <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+            <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Type" />
                 <Ctrl.Checkbox name= "component.auxillary.protective_relays.type" size= "large" 
                     checked= { defaultVal !== undefined ? defaultVal.auxillary.protective_relays.type > 0 ? true : isType : isType }
@@ -29,7 +29,7 @@ const ProtectiveRelays = () => {
                         onChange: () => setIsType(!isType)
                     }) } />
             </Box>
-            <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+            <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Rating" />
                 <Ctrl.Checkbox name= "component.auxillary.protective_relays.rating" size= "large" 
                     checked= { defaultVal !== undefined ? defaultVal.auxillary.protective_relays.rating > 0 ? true : isRating : isRating }
@@ -37,7 +37,7 @@ const ProtectiveRelays = () => {
                         onChange: () => setIsRating(!isRating)
                     }) } />
             </Box>
-            <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+            <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Brand" />
                 <Ctrl.Checkbox name= "component.auxillary.protective_relays.brand" size= "large" 
                     checked= { defaultVal !== undefined ? defaultVal.auxillary.protective_relays.brand > 0 ? true : isBrand : isBrand }

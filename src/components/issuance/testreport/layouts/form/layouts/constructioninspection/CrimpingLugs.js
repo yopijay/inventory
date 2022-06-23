@@ -13,12 +13,12 @@ const CrimpingLugs = () => {
                 <Ctrl.Typography text= "Correct quantity of terminal / Crimping lugs:" sx= {{ minWidth: '200px', transition: 'all 0.2s ease-in-out' }} />
             </Box>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' }, paddingLeft: '10px' }}>
-                <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
-                    <Box sx= {{ width: '150px' }}><Ctrl.Typography color= "#2c3e50" text= "Incoming / Line Bus" /></Box>
+                <Box display= "flex" flexDirection= "row" justifyContent= "flex-end" alignItems= "center" width= "200px">
+                    <Ctrl.Typography color= "#2c3e50" text= "Incoming / Line Bus" />
                     <Ctrl.Checkbox name= "ci_crimp_line_bus" size= "large" checked= { false } />
                 </Box>
-                <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
-                    <Box sx= {{ width: '150px' }}><Ctrl.Typography color= "#2c3e50" text= "Outgoing" /></Box>
+                <Box display= "flex" flexDirection= "row" justifyContent= "flex-end" alignItems= "center" width= "200px">
+                    <Ctrl.Typography color= "#2c3e50" text= "Outgoing" />
                     <Ctrl.Checkbox name= "ci_crimp_outgoing" size= "large" checked= { false } />
                 </Box>
             </Box>

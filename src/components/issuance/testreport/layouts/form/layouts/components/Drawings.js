@@ -24,12 +24,12 @@ const Drawings = () => {
             </Box>
             <Ctrl.Checkbox name= "component.draw.drawing" checked= { defaultVal !== undefined ? defaultVal.draw.drawing > 0 ? true : isDrawing : isDrawing }
                 register= { register('component.draw.drawing', { onChange: () => setIsDrawing(!isDrawing) }) } size= "large" />
-            <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+            <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "S.O." />
                 <Ctrl.Checkbox name= "component.draw.so" checked= { defaultVal !== undefined ? defaultVal.draw.so > 0 ? true : isSO : isSO }
                     register= { register('component.draw.so', { onChange: () => setIsSO(!isSO) }) } size= "large" />
             </Box>
-            <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+            <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "P.O." />
                 <Ctrl.Checkbox name= "component.draw.po" checked= { defaultVal !== undefined ? defaultVal.draw.po > 0 ? true : isPO : isPO }
                     register= { register('component.draw.po', { onChange: () => setIsPO(!isPO) }) } size= "large" />

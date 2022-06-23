@@ -21,7 +21,7 @@ const SurgeAbsorber = () => {
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start' }}>
                 <Ctrl.Typography text= "Surge Absorber" sx= {{ minWidth: '230px', transition: 'all 0.2s ease-in-out' }} />
             </Box>
-            <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+            <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Type" />
                 <Ctrl.Checkbox name= "component.auxillary.surge_absorber.type" size= "large" 
                     checked= { defaultVal !== undefined ? defaultVal.auxillary.surge_absorber.type > 0 ? true : isType : isType }
@@ -29,7 +29,7 @@ const SurgeAbsorber = () => {
                         onChange: () => setIsType(!isType)
                     }) } />
             </Box>
-            <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+            <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Rating" />
                 <Ctrl.Checkbox name= "component.auxillary.surge_absorber.rating" size= "large" 
                     checked= { defaultVal !== undefined ? defaultVal.auxillary.surge_absorber.rating > 0 ? true : isRating : isRating }
@@ -37,7 +37,7 @@ const SurgeAbsorber = () => {
                         onChange: () => setIsRating(!isRating)
                     }) } />
             </Box>
-            <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
+            <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Brand" />
                 <Ctrl.Checkbox name= "component.auxillary.surge_absorber.brand" size= "large" 
                     checked= { defaultVal !== undefined ? defaultVal.auxillary.surge_absorber.brand > 0 ? true : isBrand : isBrand }
