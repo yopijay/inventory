@@ -60,7 +60,7 @@ const Body = (props) => {
                         ))
                     ) : (
                         <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                            <StyledTableCell align= "center" colSpan= "5">No users found!</StyledTableCell>
+                            <StyledTableCell align= "center" colSpan= "6">No users found!</StyledTableCell>
                         </TableRow>
                     )
                 }
