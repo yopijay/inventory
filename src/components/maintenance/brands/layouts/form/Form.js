@@ -71,9 +71,7 @@ const Form = (props) => {
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Status" color= "#2c3e50" /></Box>
                     <Box display= "flex" flexDirection= "row" justifyContent= "flex-start" alignItems= "center">
                         <Box>
-                            <Ctrl.Checkbox name= "status" radius= "5px" padding= "12px 15px 8px 15px" size= "small"
-                                disabled= { disabled }
-                                checked= { getValues().status !== undefined ? getValues().status > 0 ? true : false : true }
+                            <Ctrl.Checkbox name= "status" disabled= { disabled } checked= { getValues().status !== undefined ? getValues().status > 0 ? true : false : true }
                                 register= { register('status', {
                                     onChange: () => setChck(!chck)
                                 }) } />

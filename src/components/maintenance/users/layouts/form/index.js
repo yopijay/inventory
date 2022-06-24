@@ -68,7 +68,7 @@ const Index = () => {
                                         <Ctrl.Typography color= "#ffffff" text= "Save" 
                                             sx= {{ padding: { xs: '4px 0' },
                                                         fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained"
-                                        onClick= { handleSubmit(data => save(id, data, type, 'category', '/maintenance/users') ) }/>
+                                        onClick= { handleSubmit(data => save(id, data, type, 'users', '/maintenance/users') ) }/>
                                 </Box>
                             ) : '' }
                         </Box>
