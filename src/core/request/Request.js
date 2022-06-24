@@ -25,11 +25,14 @@ export const count = async (set, table) => {
 
 export const save = async (id, data, type, table, redirect, setError) => {
     let save = await _axios(`${Env[env].url}/${type}/${table}${id !== undefined ? `/${id}` : ''}`, 'post', data);
+
     if(save.result === 'error') {
-        setError( 'name', { type: 'focus', message: save.message }, { shouldFocus: true } );
+        (save.error).forEach((err, index) => {
+            setError(err.name, { type: index === 0 ? 'focus' : '', message: err.message }, { shouldFocus: index === 0 });
+        });
     }
     else {
-        window.location.href = `${redirect}`
+        window.location.href = `${redirect}`;
     }
 }
 
