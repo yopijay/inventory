@@ -21,6 +21,8 @@ const Index = () => {
     useEffect(() => {
         getall(setCategory, 'category', setIsLoad);
     }, []);
+
+    console.log()
     
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', marginBottom: '20px' }}>
@@ -42,7 +44,7 @@ const Index = () => {
                             </Grid>
                             <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
                                 <Export element= {
-                                    <Ctrl.Button color= "excel" disabled= { !(Object.keys(category)).length !== 0 } text= {
+                                    <Ctrl.Button color= "excel" disabled= { !((Object.keys(category)).length !== 0) } text= {
                                         <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
                                             sx= {{ padding: { xs: '4px 0' },
                                                         fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained" />
