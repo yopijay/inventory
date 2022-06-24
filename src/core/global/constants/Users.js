@@ -84,7 +84,7 @@ export const Users = () => ({
         type: 'select',
         option: civil_status()
     },
-    position: {
+    position_id: {
         label: '*Position',
         grid: {
             xs: 12,
@@ -96,7 +96,7 @@ export const Users = () => ({
         type: 'select',
         option: []
     },
-    department: {
+    department_id: {
         label: '*Department',
         grid: {
             xs: 12,
