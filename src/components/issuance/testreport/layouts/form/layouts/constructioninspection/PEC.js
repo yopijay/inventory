@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Box } from '@mui/material';
 
 // Core
@@ -8,7 +8,16 @@ import Ctrl from '../../../../../../../core/global/controls/Controls';
 // Layouts
 import LLLG from './pec/LLLG';
 
+// Context
+import { TestReportContext } from '../../../../../../../core/context/TestReportContext';
+
 const PEC = () => {
+    const { register, getValues } = useContext(TestReportContext);
+    const defaultVal = getValues().construction_inspection;
+
+    const [ isSurface, setIsSurface ] = useState(false);
+    const [ isAir, setIsAir ] = useState(false);
+
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'flex-start', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' }, paddingLeft: '10px' }}>
@@ -17,11 +26,19 @@ const PEC = () => {
                 <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-end', width: '300px' }}>
                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                         <Ctrl.Typography text= "Mounted on the same surface"  sx= {{ minWidth: '230px', transition: 'all 0.2s ease-in-out' }} />
-                        <Ctrl.Checkbox name= "ci_pec_surface" size= "large" checked= { false } />
+                        <Ctrl.Checkbox name= { `construction_inspection.busbar.pec.surface` } size= "large" 
+                            checked= { defaultVal !== undefined ? defaultVal.busbar.pec.surface > 0 ? true : isSurface : isSurface }
+                            register= { register(`construction_inspection.busbar.pec.surface`, {
+                                onChange: () => setIsSurface(!isSurface)
+                            }) } />
                     </Box>
                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                         <Ctrl.Typography text= "Held free in air" sx= {{ minWidth: '230px', transition: 'all 0.2s ease-in-out' }} />
-                        <Ctrl.Checkbox name= "ci_pec_air" size= "large" checked= { false } />
+                        <Ctrl.Checkbox name= { `construction_inspection.busbar.pec.air` } size= "large" 
+                            checked= { defaultVal !== undefined ? defaultVal.busbar.pec.air > 0 ? true : isAir : isAir }
+                            register= { register(`construction_inspection.busbar.pec.air`, {
+                                onChange: () => setIsAir(!isAir)
+                            }) } />
                     </Box>
                 </Box>
             </Box>
