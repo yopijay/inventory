@@ -9,7 +9,7 @@ import Assets from '../../../components/maintenance/asset';
 import Categories from '../../../components/maintenance/category';
 import IssuanceAsset from '../../../components/issuance/asset';
 import TestReport from '../../../components/issuance/testreport';
-import RCategory from '../../../components/report/layouts/list/category';
+import RprtCategory from '../../../components/report/category';
 // import Reports from '../../../components/report';
 // import Logs from '../../../components/logs';
 // import Testing from '../../../components/testing';
@@ -140,7 +140,7 @@ export const Layouts = () => (
         {
             name: 'Reports',
             path: '/reports/category',
-            component: <RCategory />
+            component: <RprtCategory />
         },
         {
             name: 'Reports',

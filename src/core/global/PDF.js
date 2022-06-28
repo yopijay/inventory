@@ -3,15 +3,17 @@ import React from 'react';
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
+// Core
+import Ctrl from './controls/Controls';
+
 const PDF = (props) => {
     const { name, element, content, orientation = 'portrait', logo = null } = props;
 
     const generatePdf = () => {
         const doc = new jsPDF({ orientation: orientation });
         const totalPagesExp = '{total_pages_count_string}';
-
+        
         // Company logo
-        // addImage(src, type, x, y, width, height)
         if(logo !== null) doc.addImage(logo.img, logo.type, 15, 12, logo.w, logo.h);
 
         // Company name
@@ -109,9 +111,8 @@ const PDF = (props) => {
     }
 
     return (
-        <button style= {{ backgroundColor: 'transparent', border: 'none', fontFamily: 'Gilroy Light', margin: 0, padding: 0, cursor: 'pointer' }} onClick= { generatePdf }>
-            { element }
-        </button>
+        <Ctrl.Button color= "pdf" text= { element } 
+            variant= "contained" fullWidth onClick= { generatePdf } />
     );
 }
 

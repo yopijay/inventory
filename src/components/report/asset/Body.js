@@ -3,7 +3,7 @@ import React from 'react';
 import { Box, Grid } from '@mui/material';
 
 // Core
-import Ctrl from '../../../../../core/global/controls/Controls';
+import Ctrl from '../../../core/global/controls/Controls';
 
 const Body = (props) => {
     const { data } = props;

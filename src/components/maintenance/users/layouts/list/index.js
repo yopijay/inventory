@@ -41,12 +41,9 @@ const List = () => {
                                 </Link>
                             </Grid>
                             <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
-                                <Export element= {
-                                    <Ctrl.Button color= "excel" disabled= { !((Object.keys(users)).length !== 0) } text= {
-                                        <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
-                                            sx= {{ padding: { xs: '4px 0' },
-                                                        fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained" />
-                                    } 
+                                <Export element= { <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
+                                                                    sx= {{ padding: { xs: '4px 0' },
+                                                                                fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } 
                                     filename= "User List"
                                     data= { users }
                                     column= { users !== undefined ? (Object.keys(users)).length !== 0 ? Object.keys(users[0]) : [] : [] } />
@@ -64,7 +61,7 @@ const List = () => {
                 <Box sx= {{ boxShadow: 2, borderRadius: '5px', overflow: 'hidden' }}>
                     <Paper elevation= { 0 }>
                         <TableContainer>
-                            <Table aria-label= "Brand" size= "small" sx= {{ minWidth: 650 }} stickyHeader>
+                            <Table aria-label= "Brand" size= "small" sx= {{ minWidth: 650, maxHeight: 500 }} stickyHeader>
                                 <Header />
                                 <Body data= { !isLoad ? users : [] } />
                             </Table>
