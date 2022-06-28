@@ -44,7 +44,7 @@ const List = () => {
                                 <Export element= { <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
                                                                     sx= {{ padding: { xs: '4px 0' },
                                                                                 fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } 
-                                    filename= "User List"
+                                    filename= "Users List"
                                     data= { users }
                                     column= { users !== undefined ? (Object.keys(users)).length !== 0 ? Object.keys(users[0]) : [] : [] } />
                             </Grid>

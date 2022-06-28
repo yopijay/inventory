@@ -44,7 +44,7 @@ const Index = () => {
                                 <Export element= { <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
                                                                     sx= {{ padding: { xs: '4px 0' },
                                                                                 fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } 
-                                    filename= "Brand List"
+                                    filename= "Assets List"
                                     data= { assets }
                                     column= { assets !== undefined ? (Object.keys(assets)).length !== 0 ? Object.keys(assets[0]) : [] : [] } />
                             </Grid>

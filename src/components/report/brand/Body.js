@@ -37,7 +37,7 @@ const Body = (props) => {
                                 <StyledTableCell>{ rows.series_no }</StyledTableCell>
                                 <StyledTableCell>{ rows.category_name }</StyledTableCell>
                                 <StyledTableCell>{ rows.name }</StyledTableCell>
-                                <StyledTableCell align= "center">{ rows.total } </StyledTableCell>
+                                <StyledTableCell align= "center">{ rows.total_no_of_assets } </StyledTableCell>
                                 <StyledTableCell align= "center">
                                     <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                         <Box sx= {{ margin: '5px' }}>
