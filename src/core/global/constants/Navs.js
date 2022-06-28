@@ -28,26 +28,32 @@ export const Navs = () => (
                 {
                     name: 'Categories',
                     path: '/maintenance/category',
+                    label: 'Category'
                 },
                 {
                     name: 'Colors',
                     path: '/maintenance/color',
+                    label: 'Color'
                 },
                 {
                     name: 'Brands',
                     path: '/maintenance/brand',
+                    label: 'Brand'
                 },
                 {
                     name: 'Users',
                     path: '/maintenance/users',
+                    label: 'User'
                 },
                 {
                     name: 'Assets',
                     path: '/maintenance/assets',
+                    label: 'Asset'
                 },
                 {
                     name: 'Customer',
                     path: '/maintenance/customer',
+                    label: 'Customer'
                 }
             ]
         },
@@ -58,10 +64,12 @@ export const Navs = () => (
                 {
                     name: 'Assign Assets',
                     path: '/issuance/assets',
+                    label: 'Assign Asset'
                 },
                 {
                     name: 'Test Report',
                     path: '/issuance/test-report',
+                    label: 'Test Report'
                 }
             ]
         },
@@ -72,18 +80,22 @@ export const Navs = () => (
                 {
                     name: 'Categories Report',
                     path: '/reports/category',
+                    label: 'Category'
                 },
                 {
                     name: 'Brands Report',
                     path: '/reports/brand',
+                    label: 'Brand'
                 },
                 {
                     name: 'Users Report',
                     path: '/reports/users',
+                    label: 'User'
                 },
                 {
                     name: 'Assets Report',
                     path: '/reports/assets',
+                    label: 'Asset'
                 }
             ]
         },
