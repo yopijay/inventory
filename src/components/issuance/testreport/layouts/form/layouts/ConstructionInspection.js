@@ -17,7 +17,7 @@ import { TestReportContext } from '../../../../../../core/context/TestReportCont
 const ConstructionInspection = () => {
     const { register, getValues } = useContext(TestReportContext);
     // eslint-disable-next-line
-    const defaultVal = getValues().basic_information;
+    const defaultVal = getValues().construction_inspection;
 
     const [ isNameplate, setIsNameplate ] = useState(false);
     const [ isDevicenos, setIsDevicenos ] = useState(false);
