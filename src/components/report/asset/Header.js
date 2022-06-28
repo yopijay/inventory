@@ -1,41 +1,30 @@
 // Libraries
 import React from 'react';
-import { Grid } from '@mui/material';
-
-// Core
-import Ctrl from '../../../core/global/controls/Controls';
+import { TableCell, tableCellClasses, TableHead, TableRow } from '@mui/material';
+import { styled } from '@mui/styles';
 
 const Header = () => {
+
+    const StyledTableCell = styled(TableCell)(({
+        [`&.${tableCellClasses.head}`]: {
+            backgroundColor: '#487eb0',
+            color: '#e6f3f8',
+            fontSize: 15,
+            fontWeight: 'bold'
+        }
+    }));
+
     return (
-        <Grid container direction= "row" justifyContent= "flex-start" alignItems= "center" spacing= { 2 } style= {{ backgroundColor: '#ecf0f1', borderRadius: '10px', padding: '0 0 15px 0' }}>
-            <Grid item md= { 2 }>
-                <Ctrl.Typography text= "Series no." color= "#34495e" style= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-            </Grid>
-            <Grid item md= { 3 }>
-                <Ctrl.Typography text= "Asset" color= "#34495e" style= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-            </Grid>
-            <Grid item md= { 1 }>
-                <Ctrl.Typography text= "Total Asset" color= "#34495e" style= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-            </Grid>
-            <Grid item md= { 1 }>
-                <Ctrl.Typography text= "No. of Assigned asset" color= "#34495e" style= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-            </Grid>
-            <Grid item md= { 1 }>
-                <Ctrl.Typography text= "No. of Unassigned asset" color= "#34495e" style= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-            </Grid>
-            <Grid item md= { 1 }>
-                <Ctrl.Typography text= "Created by" color= "#34495e" style= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-            </Grid>
-            <Grid item md= { 1 }>
-                <Ctrl.Typography text= "Date created" color= "#34495e" style= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-            </Grid>
-            <Grid item md= { 1 }>
-                <Ctrl.Typography text= "Updated by" color= "#34495e" style= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-            </Grid>
-            <Grid item md= { 1 }>
-                <Ctrl.Typography text= "Date updated" color= "#34495e" style= {{ fontWeight: 'bold', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', width: '100%' }} />
-            </Grid>
-        </Grid>
+        <TableHead>
+            <TableRow>
+                <StyledTableCell>Series No.</StyledTableCell>
+                <StyledTableCell>Asset</StyledTableCell>
+                <StyledTableCell align= "center">Total Asset</StyledTableCell>
+                <StyledTableCell align= "center">No. of Assigned Assets</StyledTableCell>
+                <StyledTableCell align= "center">No. of Unassigned Assets</StyledTableCell>
+                <StyledTableCell align= "center">Action</StyledTableCell>
+            </TableRow>
+        </TableHead>
     );
 }
 

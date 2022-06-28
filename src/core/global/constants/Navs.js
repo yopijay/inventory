@@ -11,7 +11,8 @@ import IssuanceAsset from '../../../components/issuance/asset';
 import TestReport from '../../../components/issuance/testreport';
 import RprtCategory from '../../../components/report/category';
 import RprtBrand from '../../../components/report/brand';
-import Rprtusers from '../../../components/report/users';
+import RprtUsers from '../../../components/report/users';
+import RprtAssets from '../../../components/report/asset';
 
 export const Navs = () => (
     [
@@ -161,12 +162,12 @@ export const Layouts = () => (
         {
             name: 'Reports',
             path: '/reports/users',
-            component: <Rprtusers />
+            component: <RprtUsers />
         },
         {
             name: 'Reports',
             path: '/reports/assets',
-            component: "assets"
+            component: <RprtAssets />
         }
     ]
 )
