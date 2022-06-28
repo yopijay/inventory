@@ -33,7 +33,7 @@ const PDF = (props) => {
             let body = [];
     
             for (let count = 0; count < keys.length; count++) {
-                headers[keys[count]] = keys[count].replace('_', ' ').charAt(0).toUpperCase() + keys[count].replace('_', ' ').slice(1);
+                headers[keys[count]] = keys[count].replaceAll('_', ' ').charAt(0).toUpperCase() + keys[count].replaceAll('_', ' ').slice(1);
             }
             
             for (let count = 0; count < rows.length; count++) {
@@ -75,16 +75,19 @@ const PDF = (props) => {
                     cellWidth: 'auto'
                 },
                 columnStyles: {
-                    total: {
+                    total_no_of_brands: {
+                        halign: 'center'
+                    },
+                    total_no_of_assets: {
                         halign: 'center'
                     },
                     total_asset: {
                         halign: 'center'
                     },
-                    assigned_quantity: {
+                    assigned_assets: {
                         halign: 'center'
                     },
-                    unassigned_quantity: {
+                    unassigned_assets: {
                         halign: 'center'
                     }
                 },

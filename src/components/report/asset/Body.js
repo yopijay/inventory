@@ -37,8 +37,8 @@ const Body = (props) => {
                                 <StyledTableCell>{ rows.series_no }</StyledTableCell>
                                 <StyledTableCell>{ rows.name }</StyledTableCell>
                                 <StyledTableCell align= "center">{ rows.total_asset }</StyledTableCell>
-                                <StyledTableCell align= "center">{ rows.assigned_quantity } </StyledTableCell>
-                                <StyledTableCell align= "center">{ rows.unassigned_quantity } </StyledTableCell>
+                                <StyledTableCell align= "center">{ rows.assigned_assets } </StyledTableCell>
+                                <StyledTableCell align= "center">{ rows.unassigned_assets } </StyledTableCell>
                                 <StyledTableCell align= "center">
                                     <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                         <Box sx= {{ margin: '5px' }}>

@@ -36,7 +36,7 @@ const Body = (props) => {
                             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }} key= { index }>
                                 <StyledTableCell>{ rows.series_no }</StyledTableCell>
                                 <StyledTableCell>{ rows.name }</StyledTableCell>
-                                <StyledTableCell align= "center">{ rows.total } </StyledTableCell>
+                                <StyledTableCell align= "center">{ rows.total_no_of_brands } </StyledTableCell>
                                 <StyledTableCell align= "center">
                                     <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                         <Box sx= {{ margin: '5px' }}>

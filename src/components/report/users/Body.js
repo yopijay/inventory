@@ -36,8 +36,8 @@ const Body = (props) => {
                             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }} key= { index }>
                                 <StyledTableCell>{ rows.series_no }</StyledTableCell>
                                 <StyledTableCell>{ rows.fullname }</StyledTableCell>
-                                <StyledTableCell>{ rows.department_name }</StyledTableCell>
-                                <StyledTableCell>{ rows.position_name }</StyledTableCell>
+                                <StyledTableCell>{ rows.department }</StyledTableCell>
+                                <StyledTableCell>{ rows.position }</StyledTableCell>
                                 <StyledTableCell>{ rows.birthdate }</StyledTableCell>
                                 <StyledTableCell align= "center">{ rows.total_asset } </StyledTableCell>
                                 <StyledTableCell align= "center">
