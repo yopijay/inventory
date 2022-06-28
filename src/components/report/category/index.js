@@ -1,52 +1,60 @@
 // Libraries
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Box, Grid, Paper, Table, TableContainer } from '@mui/material';
-import { Link } from 'react-router-dom';
 
 // Core
-import Ctrl from '../../../../../core/global/controls/Controls';
-import Export from '../../../../../core/global/Export';
+import Ctrl from '../../../core/global/controls/Controls';
+import Export from '../../../core/global/Export';
+import Print from '../../../core/global/Print';
+import PDF from '../../../core/global/PDF';
 
-// Request
-import { getall } from '../../../../../core/request/Request';
-
-// Layout
+// Layouts
 import Header from './Header';
 import Body from './Body';
 
+// Request
+import { reports } from '../../../core/request/Request';
+
+// Assets
+import Logo from '../../../assets/images/profile.jpg';
+
 const Index = () => {
-    const [ category, setCategory ] = useState([]);
+    const [ report, setReport ] = useState([]);
     const [ isLoad, setIsLoad ] = useState(true);
+    const _print = useRef();
 
     useEffect(() => {
-        getall(setCategory, 'category', setIsLoad);
+        reports(setReport, 'category', setIsLoad);
     }, []);
-    
+
     return (
-        <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', marginBottom: '20px' }}>
+        <Box sx= {{ marginTop: { xs: '10px', sm: '15px', md: '20px' }, transition: 'all 0.2s ease-in-out' }}>
             <Box sx= {{ padding: { xs: '0 14px', sm: 0 } }}>
                 <Grid container direction= "row"  justifyContent= "space-between" alignItems= "center" spacing= { 1 }>
-                    <Grid item xs= { 12 } sm= { 2 }>
+                    <Grid item xs= { 12 } lg= { 2 }>
                         <Ctrl.Typography text= "Category List" 
                             sx= {{ fontSize: { xs: '1.2rem', md: '1.3rem' }, fontWeight: 'bold', transition: 'all 0.2s ease-in-out', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} />
                     </Grid>
-                    <Grid item xs= { 12 } sm= { 10 }>
+                    <Grid item xs= { 12 } lg= { 10 }>
                         <Grid container direction= "row" justifyContent= "flex-end" alignItems= "center" spacing= { 1 }>
                             <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
-                                <Link to= "/maintenance/category/form/new" style= {{ textDecoration: 'none' }}>
-                                    <Ctrl.Button color= "primary" text= {
-                                        <Ctrl.Typography color= "#ffffff" text= "New Category" 
-                                            sx= {{ padding: { xs: '4px 0' },
-                                                        fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained" />
-                                </Link>
+                                <PDF name= "Category report" content= { report } logo= {{ img: Logo, w: 10, h: 10, type: 'JPEG' }} 
+                                        element= { <Ctrl.Typography color= "#ffffff" text= "Export to PDF" 
+                                            sx= {{ padding: { xs: '4px 0' }, fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } />
+                            </Grid>
+                            <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
+                                <Print name= "Category report" content= { () => _print.current } 
+                                    element= { <Ctrl.Typography color= "#ffffff" text= "Print" 
+                                                        sx= {{ padding: { xs: '4px 0' },
+                                                            fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } />
                             </Grid>
                             <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
                                 <Export element= { <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
                                                                     sx= {{ padding: { xs: '4px 0' },
                                                                                 fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } 
-                                    filename= "Category List"
-                                    data= { category }
-                                    column= { category !== undefined ? (Object.keys(category)).length !== 0 ? Object.keys(category[0]) : [] : [] } />
+                                    filename= "Category Report"
+                                    data= { report }
+                                    column= { report !== undefined ? (Object.keys(report)).length !== 0 ? Object.keys(report[0]) : [] : [] } />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -60,10 +68,10 @@ const Index = () => {
             <Box sx= {{ padding: { xs: '0 14px', sm: '0' } }}>
                 <Box sx= {{ boxShadow: 2, borderRadius: '5px', overflow: 'hidden' }}>
                     <Paper elevation= { 0 }>
-                        <TableContainer>
+                        <TableContainer ref= { _print }>
                             <Table aria-label= "Category" size= "small" sx= {{ minWidth: 650, maxHeight: 500 }} stickyHeader>
                                 <Header />
-                                <Body data= { !isLoad ? category : [] } />
+                                <Body data= { !isLoad ? report : [] } />
                             </Table>
                         </TableContainer>
                     </Paper>

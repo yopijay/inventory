@@ -28,7 +28,8 @@ const Form = (props) => {
         options('category', ['id', 'name'], setCategories, setCategoryLoader);
         options('users', ['id', "CONCAT(lname, ', ', fname, ' ', mname) as name"], setUsers, setUsersLoader);
         optionsPer('brand', ['id', 'name'], setBrands, getValues().category_id !== undefined ? getValues().category_id : '1', setBrandLoader);
-        optionsPer('assets', ['id', 'name'], setAssets, getValues().brand_id, setAssetLoader);
+        setAssetLoader(false);
+        if(getValues().brand_id !== undefined) optionsPer('assets', ['id', 'name'], setAssets, getValues().brand_id, setAssetLoader);
     }, []);
 
     return (
@@ -81,7 +82,7 @@ const Form = (props) => {
                                     value= { getValues().asset_id !== undefined ? getValues().asset_id : '' } disabled= { disabled } 
                                     register= { register('asset_id', {
                                         onChange: e => setAsst(e.target.value)
-                                    }) } options= { assets } />
+                                    }) } options= { assets !== undefined ? assets : [] } />
                             ) : ( <Skeleton variant= "rectangular" width= "100%" height= "45px" sx= {{ backgroundColor: '#dfe6e9', borderRadius: '5px' }} /> )
                         }
                     </Box>

@@ -51,6 +51,9 @@ export const pageTheme = createTheme({
         excel: {
             main: '#1b8a0d'
         },
+        pdf: {
+            main: '#e17055'
+        },
         text: {
             primary: '#353b48',
             secondary: '#2f3640',

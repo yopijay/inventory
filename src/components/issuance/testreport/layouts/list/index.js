@@ -32,12 +32,9 @@ const Index = () => {
                                 </Link>
                             </Grid>
                             <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
-                                <Export element= {
-                                    <Ctrl.Button color= "excel" text= {
-                                        <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
-                                            sx= {{ padding: { xs: '4px 0' },
-                                                        fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained" />
-                                    } 
+                                <Export element= { <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
+                                                                    sx= {{ padding: { xs: '4px 0' },
+                                                                                fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } 
                                     filename= "Test Report List"
                                     data= { [] }
                                     column= { [] } />
@@ -55,7 +52,7 @@ const Index = () => {
                 <Box sx= {{ boxShadow: 2, borderRadius: '5px', overflow: 'hidden' }}>
                     <Paper elevation= { 0 }>
                         <TableContainer>
-                            <Table aria-label= "Assets Issued" size= "small" sx= {{ minWidth: 650 }} stickyHeader>
+                            <Table aria-label= "Assets Issued" size= "small" sx= {{ minWidth: 650, maxHeight: 500 }} stickyHeader>
                                 <Header />
                                 {/* <Body data= { !isLoad ? assignAssets : [] } /> */}
                             </Table>
