@@ -54,7 +54,7 @@ const Nav = (props) => {
                                             (nav.subNav).map((sub, index) => (
                                                 <Link to= { sub.path } style= {{ textDecoration: 'none' }} key= { index } 
                                                     onClick= { () => { setIsActive(sub.name); localStorage.setItem('nav', sub.name); setIsMobile({ left: false }); } }>
-                                                    <Ctrl.Typography text= { sub.name } color= { `${isActive === sub.name ? 'primary.main' : 'text.primary'}` }
+                                                    <Ctrl.Typography text= { sub.label } color= { `${isActive === sub.name ? 'primary.main' : 'text.primary'}` }
                                                         sx= {{ fontSize: { xs: '.95rem', sm: '1rem', md: '1.05rem' }, paddingLeft: { xs: '25px', md: '10px' }, margin: '8px 0', transition: 'all 0.2s ease-in-out',
                                                                     textOverflow: 'ellipsis', whiteSpace: 'nowrap', '&:hover': { color: 'primary.main', transition: 'all 0.2s ease-in-out' } }} />
                                                 </Link>
