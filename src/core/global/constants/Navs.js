@@ -10,9 +10,8 @@ import Categories from '../../../components/maintenance/category';
 import IssuanceAsset from '../../../components/issuance/asset';
 import TestReport from '../../../components/issuance/testreport';
 import RprtCategory from '../../../components/report/category';
-// import Reports from '../../../components/report';
-// import Logs from '../../../components/logs';
-// import Testing from '../../../components/testing';
+import RprtBrand from '../../../components/report/brand';
+import Rprtusers from '../../../components/report/users';
 
 export const Navs = () => (
     [
@@ -157,12 +156,12 @@ export const Layouts = () => (
         {
             name: 'Reports',
             path: '/reports/brand',
-            component: "brand"
+            component: <RprtBrand />
         },
         {
             name: 'Reports',
             path: '/reports/users',
-            component: "users"
+            component: <Rprtusers />
         },
         {
             name: 'Reports',
