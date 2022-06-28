@@ -12,6 +12,9 @@ export const _axios = (url, method, data = null) => {
             url: url,
             headers: {
                 'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Credentials': true,
+                'Access-Control-Allow-Methods': 'GET, POST'
               },
             data: data
         }
