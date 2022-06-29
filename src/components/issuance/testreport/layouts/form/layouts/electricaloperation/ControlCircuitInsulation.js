@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, InputAdornment } from '@mui/material';
 
 // Core
@@ -8,7 +8,14 @@ import Ctrl from '../../../../../../../core/global/controls/Controls';
 // Layouts
 import CCIRTable from './tables/CCIRTable';
 
+// Context
+import { TestReportContext } from '../../../../../../../core/context/TestReportContext';
+
 const ControlCircuitInsulation = () => {
+    const { register, getValues } = useContext(TestReportContext);
+    // eslint-disable-next-line
+    const defaultVal = getValues().electrical_operation;
+
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', margin: '10px 0' }}>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
@@ -19,7 +26,8 @@ const ControlCircuitInsulation = () => {
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
                     <Ctrl.Typography text= "Equipment No.:" sx= {{ minWidth: '150px', transition: 'all 0.2s ease-in-out', textTransform: 'uppercase' }} />
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                        <Ctrl.TextField name= "eo_ccir_equipno" sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" InputProps= {{ disableUnderline: true }} />
+                        <Ctrl.TextField name= { `electrical_operation.ccirt.equipno` } register= { register(`electrical_operation.ccirt.equipno`) }
+                            sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" InputProps= {{ disableUnderline: true }} />
                     </Box>
                 </Box>
             </Box>
@@ -32,7 +40,8 @@ const ControlCircuitInsulation = () => {
                         <Ctrl.Typography text= "Amb. Temp."
                             sx= {{ minWidth: '150px', transition: 'all 0.2s ease-in-out' }} />
                         <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px', margin: '0 10px' }}>
-                            <Ctrl.TextField name= "eo_ccir_ambtemp" sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" 
+                            <Ctrl.TextField name= { `electrical_operation.ccirt.ambtemp` } register= { register(`electrical_operation.ccirt.ambtemp`) }
+                                sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" 
                                 InputProps= {{ disableUnderline: true, endAdornment: <InputAdornment position="end">℃</InputAdornment> }} />
                         </Box>
                     </Box>
@@ -40,7 +49,8 @@ const ControlCircuitInsulation = () => {
                         <Ctrl.Typography text= "Humidity"
                             sx= {{ minWidth: '150px', transition: 'all 0.2s ease-in-out' }} />
                         <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px', margin: '0 10px' }}>
-                            <Ctrl.TextField name= "eo_ccir_humidity" sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" 
+                            <Ctrl.TextField name= { `electrical_operation.ccirt.humidity` } register= { register(`electrical_operation.ccirt.humidity`) }
+                                sx= {{ minWidth: '70px', maxWidth: '50px' }} variant= "standard" 
                                 InputProps= {{ disableUnderline: true, endAdornment: <InputAdornment position="end">%</InputAdornment> }} />
                         </Box>
                     </Box>

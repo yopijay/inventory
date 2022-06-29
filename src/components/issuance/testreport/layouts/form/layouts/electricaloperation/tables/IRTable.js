@@ -1,10 +1,13 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow } from '@mui/material';
 import { styled } from '@mui/styles';
 
 // Core
 import Ctrl from '../../../../../../../../core/global/controls/Controls';
+
+// Context
+import { TestReportContext } from '../../../../../../../../core/context/TestReportContext';
 
 const StyledTableCell = styled(TableCell)(({
     [`&.${tableCellClasses.head}`]: {
@@ -16,6 +19,10 @@ const StyledTableCell = styled(TableCell)(({
 }));
 
 const IRTable = () => {
+    const { register, getValues } = useContext(TestReportContext);
+    // eslint-disable-next-line
+    const defaultVal = getValues().electrical_operation;
+
     return (
         <Box sx= {{ boxShadow: 2, borderRadius: '5px', overflow: 'hidden', marginTop: '10px' }}>
             <TableContainer sx= {{ maxHeight: '200px' }}>
@@ -40,49 +47,56 @@ const IRTable = () => {
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_before_vdc" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.before.vdc` } register= { register(`electrical_operation.irt.before.vdc`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_before_rstgn" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.before.r_stg_n` } register= { register(`electrical_operation.irt.before.r_stg_n`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_before_srtgn" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.before.s_rtg_n` } register= { register(`electrical_operation.irt.before.s_rtg_n`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_before_trsgn" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.before.t_rsg_n` } register= { register(`electrical_operation.irt.before.t_rsg_n`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_before_rstng" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.before.rstn_g` } register= { register(`electrical_operation.irt.before.rstn_g`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_before_ng" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.before.n_g` } register= { register(`electrical_operation.irt.before.n_g`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_before_remarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.before.remarks` } register= { register(`electrical_operation.irt.before.remarks`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
@@ -93,49 +107,56 @@ const IRTable = () => {
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_after_vdc" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.after.vdc` } register= { register(`electrical_operation.irt.after.vdc`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_after_rstgn" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.after.r_stg_n` } register= { register(`electrical_operation.irt.after.r_stg_n`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_after_srtgn" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.after.s_rtg_n` } register= { register(`electrical_operation.irt.after.s_rtg_n`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_after_trsgn" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.after.t_rsg_n` } register= { register(`electrical_operation.irt.after.t_rsg_n`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_after_rstng" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.after.rstn_g` } register= { register(`electrical_operation.irt.after.rstn_g`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_after_ng" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.after.n_g` } register= { register(`electrical_operation.irt.after.n_g`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ir_after_rremarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= {`electrical_operation.irt.after.remarks` } register= { register(`electrical_operation.irt.after.remarks`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>

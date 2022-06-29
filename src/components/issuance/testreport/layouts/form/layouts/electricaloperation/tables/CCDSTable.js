@@ -1,10 +1,13 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow } from '@mui/material';
 import { styled } from '@mui/styles';
 
 // Core
 import Ctrl from '../../../../../../../../core/global/controls/Controls';
+
+// Context
+import { TestReportContext } from '../../../../../../../../core/context/TestReportContext';
 
 const StyledTableCell = styled(TableCell)(({
     [`&.${tableCellClasses.head}`]: {
@@ -16,6 +19,10 @@ const StyledTableCell = styled(TableCell)(({
 }));
 
 const CCDSTable = () => {
+    const { register, getValues } = useContext(TestReportContext);
+    // eslint-disable-next-line
+    const defaultVal = getValues().electrical_operation;
+
     return (
         <Box sx= {{ boxShadow: 2, borderRadius: '5px', overflow: 'hidden', marginTop: '10px' }}>
             <TableContainer sx= {{ maxHeight: '200px' }}>
@@ -36,21 +43,24 @@ const CCDSTable = () => {
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ccds_close_vackv" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ccds.close.vackv` } register= { register(`electrical_operation.ccds.close.vackv`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ccds_close_lg" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ccds.close.lg` } register= { register(`electrical_operation.ccds.close.lg`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ccds_close_remarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ccds.close.remarks` } register= { register(`electrical_operation.ccds.close.remarks`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
