@@ -22,6 +22,8 @@ const ElectricalOperation = () => {
     const defaultVal = getValues().electrical_operation;
 
     const [ isPst, setIsPst ] = useState(false);
+    const [ isEt, setIsEt ] = useState(false);
+    const [ isCt, setIsCt ] = useState(false);
 
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" sx= {{ paddingBottom: '20px' }}>
@@ -41,6 +43,23 @@ const ElectricalOperation = () => {
                             register= { register(`electrical_operation.pst`, {
                                 onChange: () => setIsPst(!isPst)
                             }) } />
+                    </Box>
+                </Box>
+                <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
+                    <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                        <Ctrl.Typography text= "e.7" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
+                        <Ctrl.Typography text= "Electrical Tip" sx= {{ minWidth: '200px', transition: 'all 0.2s ease-in-out', textTransform: 'uppercase' }} />
+                        <Ctrl.Checkbox name= { `electrical_operation.et` } size= "large" 
+                            checked= { defaultVal !== undefined ? defaultVal.et > 0 ? true : isEt : isEt }
+                            register= { register(`electrical_operation.et`, {
+                                onChange: () => setIsEt(!isEt)
+                            }) } />
+                            <Ctrl.Typography text= "Continuity Test" sx= {{ minWidth: '200px', transition: 'all 0.2s ease-in-out', textTransform: 'uppercase' }} />
+                            <Ctrl.Checkbox name= { `electrical_operation.ct` } size= "large" 
+                                checked= { defaultVal !== undefined ? defaultVal.ct > 0 ? true : isCt : isCt }
+                                register= { register(`electrical_operation.ct`, {
+                                    onChange: () => setIsCt(!isCt)
+                                }) } />
                     </Box>
                 </Box>
                 <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>

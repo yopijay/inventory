@@ -25,14 +25,14 @@ const Remarks = () => {
                     <Box sx= {{ display: 'flex', flexStart: 'row', justifyContent: 'flex-start', alignItems: 'center', marginRight: '25px' }}>
                         <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 20px' }}>
                             <Ctrl.TextField name= { `component.quantity` } sx= {{ minWidth: '70px', maxWidth: '50px' }} register= { register(`component.quantity`) } 
-                                type= "number" variant= "standard" InputProps= {{ disableUnderline: true }} />
+                                variant= "standard" InputProps= {{ disableUnderline: true }} />
                         </Box>
                         <Box sx= {{ marginLeft: '10px', minWidth: '200px' }}><Ctrl.Typography color= "#2c3e50" text= "Quantity" /></Box>
                     </Box>
                     <Box sx= {{ display: 'flex', flexStart: 'row', justifyContent: 'flex-start', alignItems: 'center', marginRight: '25px' }}>
                         <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                             <Ctrl.TextField name= { `component.jo_number` } sx= {{ minWidth: '70px', maxWidth: '50px' }} register= { register(`component.jo_number`) } 
-                                type= "number" variant= "standard" InputProps= {{ disableUnderline: true }} />
+                                variant= "standard" InputProps= {{ disableUnderline: true }} />
                         </Box>
                         <Box sx= {{ marginLeft: '10px', minWidth: '200px' }}><Ctrl.Typography color= "#2c3e50" text= "J.O. Number" /></Box>
                     </Box>

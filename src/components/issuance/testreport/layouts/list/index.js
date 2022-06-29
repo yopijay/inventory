@@ -1,17 +1,24 @@
 // Libraries
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Box, Grid, Paper, Table, TableContainer } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../../core/global/controls/Controls';
 import Export from '../../../../../core/global/Export';
+import { getall } from '../../../../../core/request/Request';
 
 // Layouts
 import Header from './Header';
+import Body from './Body';
 
 const Index = () => {
-    // const [ isLoad, setIsLoad ] = useState(true);
+    const [ testreport, setTestreport ] = useState([]);
+    const [ isLoad, setIsLoad ] = useState(true);
+
+    useEffect(() => {
+        getall(setTestreport, 'test_report', setIsLoad);
+    }, []);
     
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', marginBottom: '20px' }}>
@@ -54,7 +61,7 @@ const Index = () => {
                         <TableContainer>
                             <Table aria-label= "Assets Issued" size= "small" sx= {{ minWidth: 650, maxHeight: 500 }} stickyHeader>
                                 <Header />
-                                {/* <Body data= { !isLoad ? assignAssets : [] } /> */}
+                                <Body data= { !isLoad ? testreport : [] } />
                             </Table>
                         </TableContainer>
                     </Paper>

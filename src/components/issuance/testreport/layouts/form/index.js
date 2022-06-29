@@ -14,9 +14,10 @@ import Forms from './layouts';
 
 // Context
 import { TestReportContext } from '../../../../../core/context/TestReportContext';
+import { save } from '../../../../../core/request/Request';
 
 const Index = () => {
-    const { type } = useParams();
+    const { type, id } = useParams();
     // eslint-disable-next-line
     const [ isLoad, setIsLoad ] = useState(type !== 'new');
     const { handleSubmit } = useContext(TestReportContext);
@@ -52,7 +53,7 @@ const Index = () => {
                                         <Ctrl.Button color= "primary" text= {
                                             <Ctrl.Typography color= "#ffffff" text= "Save" 
                                                 sx= {{ padding: { xs: '4px 0' }, fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained"
-                                                onClick= { /*handleSubmit(data => save(id, data, type, 'category', '/issuance/test-report') ) */handleSubmit(data => console.log(data) ) }/>
+                                                onClick= { handleSubmit(data => save(id, data, type, 'test_report', '/issuance/test-report') ) }/>
                                     </Box>
                                 ) : '' }
                             </Box>
