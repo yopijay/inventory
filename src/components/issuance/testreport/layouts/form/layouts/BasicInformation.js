@@ -1,11 +1,12 @@
 // Libraries
 import React, { useContext, useEffect, useState } from 'react';
-import { Box, Grid } from '@mui/material';
+import { Box, Grid, Skeleton } from '@mui/material';
 // import { Link, useParams } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../../../core/global/controls/Controls';
 import { getDate } from '../../../../../../core/global/Function';
+import { options } from '../../../../../../core/request/Request';
 
 // Context
 import { TestReportContext } from '../../../../../../core/context/TestReportContext';
@@ -15,13 +16,18 @@ const BasicInformation = () => {
     // eslint-disable-next-line
     const defaultVal = getValues().basic_information;
     const error = errors.basic_information;
+    const [ isLoad, setIsLoad ] = useState(true);
     const [ isToday, setIsToday ] = useState();
+    // eslint-disable-next-line
+    const [ customerId, setCustomerId ] = useState();
+    const [ customer, setCustomer ] = useState();
 
     const updateTime = () => {
         setIsToday(getDate(new Date()).date);
     }
 
     useEffect(() => {
+        options('customer', ['id', 'name'], setCustomer, setIsLoad);
         setInterval(updateTime, 1000);
     }, []);
 
@@ -55,9 +61,16 @@ const BasicInformation = () => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Customer" color= "text-primary" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 5px' }}>
-                        <Ctrl.Select name= { `basic_information.customer_id` } register= { register('basic_information.customer_id', {  }) } 
-                            fullWidth variant= "standard" InputProps= {{ disableUnderline: true }} defaultValue= ""
-                            options= { [] } />
+                        {
+                            !isLoad ? (
+                                <Ctrl.Select name= { `basic_information.customer_id` } register= { register('basic_information.customer_id', {
+                                        onChange: e => setCustomerId(e.target.value)
+                                    }) } fullWidth variant= "standard" InputProps= {{ disableUnderline: true }} value= { defaultVal.customer_id !== undefined ? defaultVal.customer_id : '' }
+                                    options= { customer } />
+                            ) : (
+                                <Skeleton variant= "rectangular" width= "100%" height= "30px" sx= {{ backgroundColor: '#dfe6e9', borderRadius: '5px' }} />
+                            )
+                        }
                     </Box>
                     <Box marginTop= "5px">
                         <Ctrl.Typography text= { error !== undefined ? error.customer_id !== undefined ? error.customer_id.message : '' : '' } color= "red" />
