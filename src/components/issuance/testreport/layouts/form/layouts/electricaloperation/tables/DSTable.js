@@ -1,10 +1,13 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow } from '@mui/material';
 import { styled } from '@mui/styles';
 
 // Core
 import Ctrl from '../../../../../../../../core/global/controls/Controls';
+
+// Context
+import { TestReportContext } from '../../../../../../../../core/context/TestReportContext';
 
 const StyledTableCell = styled(TableCell)(({
     [`&.${tableCellClasses.head}`]: {
@@ -16,6 +19,10 @@ const StyledTableCell = styled(TableCell)(({
 }));
 
 const IRTable = () => {
+    const { register, getValues } = useContext(TestReportContext);
+    // eslint-disable-next-line
+    const defaultVal = getValues().electrical_operation;
+
     return (
         <Box sx= {{ boxShadow: 2, borderRadius: '5px', overflow: 'hidden', marginTop: '10px' }}>
             <TableContainer sx= {{ maxHeight: '200px' }}>
@@ -45,56 +52,64 @@ const IRTable = () => {
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ds_close_vackv" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ds.close.vackv` } register= { register(`electrical_operation.ds.close.vackv`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ds_close_rstg" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ds.close.r_stg` } register= { register(`electrical_operation.ds.close.r_stg`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ds_close_srtg" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ds.close.s_rtg` } register= { register(`electrical_operation.ds.close.s_rtg`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ds_close_trsg" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ds.close.t_rsg` } register= { register(`electrical_operation.ds.close.t_rsg`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ds_close_rst_g" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ds.close.rst_g` } register= { register(`electrical_operation.ds.close.rst_g`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ds_close_rst_n" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ds.close.rst_n` } register= { register(`electrical_operation.ds.close.rst_n`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ds_close_ng" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ds.close.ng` } register= { register(`electrical_operation.ds.close.ng`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100px">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ds_close_remarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ds.close.remarks` } register= { register(`electrical_operation.ds.close.remarks`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>

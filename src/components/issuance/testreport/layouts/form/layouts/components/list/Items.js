@@ -29,19 +29,19 @@ const Items = (props) => {
             </TableCell>
             <TableCell>
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
-                    <Box sx= {{ border: `solid 1px ${ error !== undefined ? error[index] !== undefined ? error[index].symbol_id !== undefined ? '#e84118' : '#dcdde1' : '#dcdde1' : '#dcdde1'}`, 
-                                        borderRadius: '5px', padding: '5px 5px' }}>
-                        <Ctrl.Select name= { `items[${index}].symbol_id` } fullWidth register= { register(`items[${index}].symbol_id`) } 
-                            variant= "standard" InputProps= {{ disableUnderline: true }} defaultValue= "" options= { [] } />
+                    <Box sx= {{ border: `solid 1px ${ error !== undefined ? error[index] !== undefined ? error[index].quantity !== undefined ? '#e84118' : '#dcdde1' : '#dcdde1' : '#dcdde1'}`, 
+                                        borderRadius: '5px', padding: '5px 15px' }}>
+                        <Ctrl.TextField name= { `items[${index}].symbol` } register= { register(`items[${index}].symbol`) } 
+                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Symbol" />
                     </Box>
                 </Box>
             </TableCell>
             <TableCell>
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
-                    <Box sx= {{ border: `solid 1px ${ error !== undefined ? error[index] !== undefined ? error[index].description_id !== undefined ? '#e84118' : '#dcdde1' : '#dcdde1' : '#dcdde1'}`, 
-                                        borderRadius: '5px', padding: '5px 5px' }}>
-                        <Ctrl.Select name= { `items[${index}].description_id` } fullWidth register= { register(`items[${index}].description_id`) } 
-                            variant= "standard" InputProps= {{ disableUnderline: true }} defaultValue= "" options= { [] } />
+                    <Box sx= {{ border: `solid 1px ${ error !== undefined ? error[index] !== undefined ? error[index].quantity !== undefined ? '#e84118' : '#dcdde1' : '#dcdde1' : '#dcdde1'}`, 
+                                        borderRadius: '5px', padding: '5px 15px' }}>
+                        <Ctrl.TextField name= { `items[${index}].description` } register= { register(`items[${index}].description`) } 
+                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Description" />
                     </Box>
                 </Box>
             </TableCell>
@@ -61,11 +61,17 @@ const Items = (props) => {
                             borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center"
                             onClick= { () => append({}) }><AddIcon style= {{ fontSize: '110%' }} /></Box>
                     </Box>
-                    <Box sx= {{ margin: '5px' }}>
-                        <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#487eb0" 
-                            borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center"
-                            onClick= { () => remove(index) }><RemoveIcon style= {{ fontSize: '110%' }} /></Box>
-                    </Box>
+                    {
+                        defaultVal.length === 1 ? (
+                            ''
+                        ) : (
+                            <Box sx= {{ margin: '5px' }}>
+                                <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#487eb0" 
+                                    borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center"
+                                    onClick= { () => remove(index) }><RemoveIcon style= {{ fontSize: '110%' }} /></Box>
+                            </Box>
+                        )
+                    }
                 </Box>    
             </TableCell>
         </TableRow>

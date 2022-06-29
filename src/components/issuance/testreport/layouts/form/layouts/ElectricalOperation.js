@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Box, Grid } from '@mui/material';
 
 // Core
@@ -13,7 +13,18 @@ import ControlCircuitDielectric from './electricaloperation/ControlCircuitDielec
 import Polarity from './electricaloperation/Polarity';
 import Simulation from './electricaloperation/Simulation';
 
+// Context
+import { TestReportContext } from '../../../../../../core/context/TestReportContext';
+
 const ElectricalOperation = () => {
+    const { register, getValues } = useContext(TestReportContext);
+    // eslint-disable-next-line
+    const defaultVal = getValues().electrical_operation;
+
+    const [ isPst, setIsPst ] = useState(false);
+    const [ isEt, setIsEt ] = useState(false);
+    const [ isCt, setIsCt ] = useState(false);
+
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" sx= {{ paddingBottom: '20px' }}>
             <Grid item xs= { 12 }>
@@ -27,7 +38,28 @@ const ElectricalOperation = () => {
                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
                         <Ctrl.Typography text= "e.7" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
                         <Ctrl.Typography text= "Phase Sequence Test" sx= {{ minWidth: '200px', transition: 'all 0.2s ease-in-out', textTransform: 'uppercase' }} />
-                        <Ctrl.Checkbox name= "eo_pst" size= "large" checked= { false } />
+                        <Ctrl.Checkbox name= { `electrical_operation.pst` } size= "large" 
+                            checked= { defaultVal !== undefined ? defaultVal.pst > 0 ? true : isPst : isPst }
+                            register= { register(`electrical_operation.pst`, {
+                                onChange: () => setIsPst(!isPst)
+                            }) } />
+                    </Box>
+                </Box>
+                <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', overflowX: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
+                    <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
+                        <Ctrl.Typography text= "e.7" sx= {{ margin: '0 15px 0 0', transition: 'all 0.2s ease-in-out', whiteSpace: 'normal' }} />
+                        <Ctrl.Typography text= "Electrical Tip" sx= {{ minWidth: '200px', transition: 'all 0.2s ease-in-out', textTransform: 'uppercase' }} />
+                        <Ctrl.Checkbox name= { `electrical_operation.et` } size= "large" 
+                            checked= { defaultVal !== undefined ? defaultVal.et > 0 ? true : isEt : isEt }
+                            register= { register(`electrical_operation.et`, {
+                                onChange: () => setIsEt(!isEt)
+                            }) } />
+                            <Ctrl.Typography text= "Continuity Test" sx= {{ minWidth: '200px', transition: 'all 0.2s ease-in-out', textTransform: 'uppercase' }} />
+                            <Ctrl.Checkbox name= { `electrical_operation.ct` } size= "large" 
+                                checked= { defaultVal !== undefined ? defaultVal.ct > 0 ? true : isCt : isCt }
+                                register= { register(`electrical_operation.ct`, {
+                                    onChange: () => setIsCt(!isCt)
+                                }) } />
                     </Box>
                 </Box>
                 <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
@@ -35,7 +67,8 @@ const ElectricalOperation = () => {
                         <Ctrl.Typography text= "Remarks" sx= {{ transition: 'all 0.2s ease-in-out', textTransform: 'uppercase', whiteSpace: 'normal', fontWeight: 'bold' }} />
                     </Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '10px 15px', width: '100%' }}>
-                        <Ctrl.TextField name= "eo_remarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Remarks..." />
+                        <Ctrl.TextField name= { `electrical_operation.remarks` } register= { register(`electrical_operation.remarks`) }
+                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Remarks..." />
                     </Box>
                 </Box>
             </Grid>

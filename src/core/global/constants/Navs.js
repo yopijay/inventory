@@ -7,6 +7,7 @@ import Brands from '../../../components/maintenance/brands';
 import Users from '../../../components/maintenance/users';
 import Assets from '../../../components/maintenance/asset';
 import Categories from '../../../components/maintenance/category';
+import Customer from '../../../components/maintenance/customer';
 import IssuanceAsset from '../../../components/issuance/asset';
 import TestReport from '../../../components/issuance/testreport';
 import RprtCategory from '../../../components/report/category';
@@ -29,11 +30,6 @@ export const Navs = () => (
                     name: 'Categories',
                     path: '/maintenance/category',
                     label: 'Category'
-                },
-                {
-                    name: 'Colors',
-                    path: '/maintenance/color',
-                    label: 'Color'
                 },
                 {
                     name: 'Brands',
@@ -116,11 +112,6 @@ export const Layouts = () => (
         },
         {
             name: 'Maintenance',
-            path: '/maintenance/color',
-            component: "COLORS"
-        },
-        {
-            name: 'Maintenance',
             path: '/maintenance/brand',
             component: <Brands />
         },
@@ -137,7 +128,7 @@ export const Layouts = () => (
         {
             name: 'Maintenance',
             path: '/maintenance/customer',
-            component: "Customer"
+            component: <Customer />
         },
         {
             name: 'Issuance',

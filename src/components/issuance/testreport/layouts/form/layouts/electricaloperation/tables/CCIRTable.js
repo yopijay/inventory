@@ -1,10 +1,13 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow } from '@mui/material';
 import { styled } from '@mui/styles';
 
 // Core
 import Ctrl from '../../../../../../../../core/global/controls/Controls';
+
+// Context
+import { TestReportContext } from '../../../../../../../../core/context/TestReportContext';
 
 const StyledTableCell = styled(TableCell)(({
     [`&.${tableCellClasses.head}`]: {
@@ -16,6 +19,10 @@ const StyledTableCell = styled(TableCell)(({
 }));
 
 const CCIRTable = () => {
+    const { register, getValues } = useContext(TestReportContext);
+    // eslint-disable-next-line
+    const defaultVal = getValues().electrical_operation;
+
     return (
         <Box sx= {{ boxShadow: 2, borderRadius: '5px', overflow: 'hidden', marginTop: '10px' }}>
             <TableContainer sx= {{ maxHeight: '200px' }}>
@@ -37,14 +44,16 @@ const CCIRTable = () => {
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ccir_before_lg" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ccirt.before.lg` } register= { register(`electrical_operation.ccirt.before.lg`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell>
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ccir_before_remarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ccirt.before.remarks` } register= { register(`electrical_operation.ccirt.before.remarks`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
@@ -56,14 +65,16 @@ const CCIRTable = () => {
                             <TableCell align= "center">
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ccir_after_lg" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ccirt.after.lg` } register= { register(`electrical_operation.ccirt.after.lg`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>
                             <TableCell align= "center">
                                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch" width= "100%">
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                        <Ctrl.TextField name= "eo_ccir_after_remarks" variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        <Ctrl.TextField name= { `electrical_operation.ccirt.after.remarks` } register= { register(`electrical_operation.ccirt.after.remarks`) }
+                                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                     </Box>
                                 </Box>
                             </TableCell>

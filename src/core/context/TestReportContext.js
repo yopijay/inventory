@@ -5,10 +5,10 @@ import { useForm } from 'react-hook-form';
 export const TestReportContext = createContext();
 
 export const TestReportProvider = (props) => {
-    const { register, handleSubmit, control, getValues, formState: { errors } } = useForm();
+    const { register, handleSubmit, control, getValues, formState: { errors }, setValue } = useForm();
 
     return (
-        <TestReportContext.Provider value= {{ register, handleSubmit, control, getValues, errors }}>
+        <TestReportContext.Provider value= {{ register, handleSubmit, control, getValues, errors, setValue }}>
             { props.children }
         </TestReportContext.Provider>
     )

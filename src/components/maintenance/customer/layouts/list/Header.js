@@ -17,10 +17,9 @@ const Header = () => {
     return (
         <TableHead>
             <TableRow>
-                <StyledTableCell>Serial No.</StyledTableCell>
-                <StyledTableCell>Project</StyledTableCell>
-                <StyledTableCell>Customer</StyledTableCell>
-                <StyledTableCell>Tested By</StyledTableCell>
+                <StyledTableCell>Series No.</StyledTableCell>
+                <StyledTableCell>Name</StyledTableCell>
+                <StyledTableCell align= "center">Status</StyledTableCell>
                 <StyledTableCell align= "center">Date Created</StyledTableCell>
                 <StyledTableCell align= "center">Action</StyledTableCell>
             </TableRow>

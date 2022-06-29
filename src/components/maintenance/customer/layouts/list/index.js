@@ -6,18 +6,20 @@ import { Link } from 'react-router-dom';
 // Core
 import Ctrl from '../../../../../core/global/controls/Controls';
 import Export from '../../../../../core/global/Export';
+
+// Request
 import { getall } from '../../../../../core/request/Request';
 
-// Layouts
+// Layout
 import Header from './Header';
 import Body from './Body';
 
 const Index = () => {
-    const [ testreport, setTestreport ] = useState([]);
+    const [ customer, setCustomer ] = useState([]);
     const [ isLoad, setIsLoad ] = useState(true);
 
     useEffect(() => {
-        getall(setTestreport, 'test_report', setIsLoad);
+        getall(setCustomer, 'customer', setIsLoad);
     }, []);
     
     return (
@@ -25,15 +27,15 @@ const Index = () => {
             <Box sx= {{ padding: { xs: '0 14px', sm: 0 } }}>
                 <Grid container direction= "row"  justifyContent= "space-between" alignItems= "center" spacing= { 1 }>
                     <Grid item xs= { 12 } sm= { 2 }>
-                        <Ctrl.Typography text= "Test Report List" 
+                        <Ctrl.Typography text= "Customer List" 
                             sx= {{ fontSize: { xs: '1.2rem', md: '1.3rem' }, fontWeight: 'bold', transition: 'all 0.2s ease-in-out', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} />
                     </Grid>
                     <Grid item xs= { 12 } sm= { 10 }>
                         <Grid container direction= "row" justifyContent= "flex-end" alignItems= "center" spacing= { 1 }>
                             <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
-                                <Link to= "/issuance/test-report/form/new" style= {{ textDecoration: 'none' }}>
+                                <Link to= "/maintenance/customer/form/new" style= {{ textDecoration: 'none' }}>
                                     <Ctrl.Button color= "primary" text= {
-                                        <Ctrl.Typography color= "#ffffff" text= "New Test Report" 
+                                        <Ctrl.Typography color= "#ffffff" text= "New Customer" 
                                             sx= {{ padding: { xs: '4px 0' },
                                                         fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained" />
                                 </Link>
@@ -42,9 +44,9 @@ const Index = () => {
                                 <Export element= { <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
                                                                     sx= {{ padding: { xs: '4px 0' },
                                                                                 fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } 
-                                    filename= "Test Report List"
-                                    data= { [] }
-                                    column= { [] } />
+                                    filename= "Customer List"
+                                    data= { customer }
+                                    column= { customer !== undefined ? (Object.keys(customer)).length !== 0 ? Object.keys(customer[0]) : [] : [] } />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -59,9 +61,9 @@ const Index = () => {
                 <Box sx= {{ boxShadow: 2, borderRadius: '5px', overflow: 'hidden' }}>
                     <Paper elevation= { 0 }>
                         <TableContainer>
-                            <Table aria-label= "Assets Issued" size= "small" sx= {{ minWidth: 650, maxHeight: 500 }} stickyHeader>
+                            <Table aria-label= "Customer" size= "small" sx= {{ minWidth: 650, maxHeight: 500 }} stickyHeader>
                                 <Header />
-                                <Body data= { !isLoad ? testreport : [] } />
+                                <Body data= { !isLoad ? customer : [] } />
                             </Table>
                         </TableContainer>
                     </Paper>
