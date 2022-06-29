@@ -27,7 +27,7 @@ const Index = () => {
 
     useEffect(() => {
         append({});
-        if (type === 'new') remove(2);
+        // if (type === 'new') remove(1);
     }, []);
     
     return (
