@@ -80,10 +80,13 @@ const BasicInformation = () => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Date Performed" color= "text-primary" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                        <Ctrl.TextField name= { `basic_information.date_performed` } register= { register('basic_information.date_performed', {
-                            onChange: e => setIsToday(e.target.value)
-                        }) } 
-                            variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} type= "datetime-local" disabled= { true } value= { isToday !== undefined ? isToday : '' } />
+                        {
+                            isToday !== undefined ? (
+                                <Ctrl.TextField name= { `basic_information.date_performed` } register= { register('basic_information.date_performed', {
+                                        onChange: e => setIsToday(e.target.value)
+                                    }) } variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} type= "datetime-local" value= { isToday } />
+                            ) : ( <Skeleton variant= "rectangular" width= "100%" height= "30px" sx= {{ backgroundColor: '#dfe6e9', borderRadius: '5px' }} /> )
+                        }
                     </Box>
                     <Box marginTop= "5px">
                         <Ctrl.Typography text= { error !== undefined ? error.date_performed !== undefined ? error.date_performed.message : '' : '' } color= "red" />
