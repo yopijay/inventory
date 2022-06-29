@@ -26,7 +26,7 @@ const Index = () => {
     const { fields, append, remove } = useFieldArray({ control, name: 'items' });
 
     useEffect(() => {
-        append({});
+        append();
         // if (type === 'new') remove(1);
     }, []);
     
