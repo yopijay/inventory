@@ -13,7 +13,6 @@ import { TestReportContext } from '../../../../../../core/context/TestReportCont
 
 const BasicInformation = () => {
     const { register, getValues, errors } = useContext(TestReportContext);
-    // eslint-disable-next-line
     const defaultVal = getValues().basic_information;
     const error = errors.basic_information;
     const [ isLoad, setIsLoad ] = useState(true);
