@@ -25,11 +25,9 @@ const Index = () => {
     const { register, handleSubmit, formState: { errors }, setValue, getValues, setError } = useForm({
         resolver: yupResolver(Asset())
     });
-    // eslint-disable-next-line
-    const [ values, setValues ] = useState(getValues());
 
     useEffect(() => {
-        if(id !== undefined) get(id, 'assets', setValue, setValues, setIsLoad);
+        if(id !== undefined) get(id, 'assets', setValue, setIsLoad);
     }, []);
     
     return (

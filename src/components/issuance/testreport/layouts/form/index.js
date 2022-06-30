@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../../core/global/controls/Controls';
+import { save } from '../../../../../core/request/Request';
 
 // Loader
 import { SnakeLoader } from '../../../../../core/loader/Loader';
@@ -14,12 +15,10 @@ import Forms from './layouts';
 
 // Context
 import { TestReportContext } from '../../../../../core/context/TestReportContext';
-import { save } from '../../../../../core/request/Request';
 
 const Index = () => {
     const { type, id } = useParams();
     // eslint-disable-next-line
-    const [ isLoad, setIsLoad ] = useState(type !== 'new');
     const [ loader, setLoader ] = useState(false);
     const { handleSubmit, setError } = useContext(TestReportContext);
 
@@ -33,17 +32,7 @@ const Index = () => {
             <Box sx= {{ padding: { xs: '0 14px', sm: 0 } }}>
                 <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start">
                         <Grid item xs= { 12 }>
-                            {
-                                !isLoad ? (
-                                    <Box sx= {{ width: '100%', marginTop: '20px' }}>
-                                        <Forms />
-                                    </Box>
-                                ) : (
-                                    <Grid container direction= "row" justifyContent= "center" alignItems= "center">
-                                        <Grid item sx= {{ marginTop: '10px' }}><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></Grid>
-                                    </Grid>
-                                )
-                            }
+                            <Box sx= {{ width: '100%', marginTop: '20px' }}><Forms /></Box>
                             <Box width= "100%" marginTop= "30px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">
                                 <Link to= "/issuance/test-report" style= {{ textDecoration: 'none', width: '100px' }}>
                                     <Ctrl.Button color= "error" text= { <Ctrl.Typography color= "#ffffff" text= "Cancel" 

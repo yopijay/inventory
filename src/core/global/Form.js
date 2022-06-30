@@ -39,10 +39,10 @@ const Form = (props) => {
                                                 fullWidth
                                                 variant= "standard"
                                                 InputProps= {{ disableUnderline: true }}
-                                                value= { getValues()[field] !== undefined ? getValues()[field] : 
+                                                value= { getValues()[field] !== undefined || getValues()[field] !== null ? getValues()[field] !== null ? getValues()[field] : 
                                                                 field === 'bmonth' ? new Date().getMonth() + 1 :
                                                                 field === 'bday' ? new Date().getDate() :
-                                                                field === 'byear' ? new Date().getFullYear() : '' }
+                                                                field === 'byear' ? new Date().getFullYear() : '' : '' }
                                                 register= { register(field, {
                                                     onChange: e => setOpt(e.target.value)
                                                 }) } options= { fields()[field].option } />

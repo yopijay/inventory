@@ -39,7 +39,7 @@ const Body = (props) => {
                                 <StyledTableCell align= "center">
                                     <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                         <Box sx= {{ margin: '5px' }}>
-                                            <Link to= { `/maintenance/brand/form/update/${rows.id}` } style= {{ textDecoration: 'none' }}>
+                                            <Link to= { `/issuance/test-report/form/update/${rows.id}` } style= {{ textDecoration: 'none' }}>
                                                 <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#487eb0" 
                                                     borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                     <ModeEditOutlineIcon style= {{ fontSize: '110%' }} />
@@ -47,7 +47,7 @@ const Body = (props) => {
                                             </Link>
                                         </Box>
                                         <Box sx= {{ margin: '5px' }}>
-                                            <Link to= { `/maintenance/brand/form/view/${rows.id}` } style= {{ textDecoration: 'none' }}>
+                                            <Link to= { `/issuance/test-report/form/view/${rows.id}` } style= {{ textDecoration: 'none' }}>
                                                 <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#487eb0" 
                                                     borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                     <VisibilityIcon style= {{ fontSize: '110%' }} />

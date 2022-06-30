@@ -21,8 +21,6 @@ import { SnakeLoader } from '../../../../../core/loader/Loader';
 
 const Index = () => {
     const { type, id } = useParams();
-    // eslint-disable-next-line
-    const [ values, setValues ] = useState();
     const [ loader, setLoader ] = useState(false);
     const [ isLoad, setIsLoad ] = useState(type !== 'new');
     const { register, handleSubmit, formState: { errors }, setValue, getValues, setError } = useForm({
@@ -30,7 +28,7 @@ const Index = () => {
     });
     
     useEffect(() => {
-        if(id !== undefined) get(id, 'category', setValue, setValues, setIsLoad);
+        if(id !== undefined) get(id, 'category', setValue, setIsLoad);
     }, []);
     
     return (

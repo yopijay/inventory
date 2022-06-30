@@ -55,13 +55,11 @@ export const save = async (id, data, type, table, redirect, setError, loader) =>
     });
 }
 
-export const get = async (id, table, set, setValues, loader) => {
-    let data = await _axios(`${Env[env].url}/get/${table}/${id}`, 'get').then(res => {
-        setValues(data);
-        
-        for(let count = 0; count < Object.keys(data[0]).length; count++) {
-            let _name = Object.keys(data[0])[count];
-            set(_name, data[0][_name]);
+export const get = async (id, table, set, loader) => {
+    await _axios(`${Env[env].url}/get/${table}/${id}`, 'get').then(res => {
+        for(let count = 0; count < Object.keys(res[0]).length; count++) {
+            let _name = Object.keys(res[0])[count];
+            set(_name, res[0][_name]);
         }
     
         loader(false);

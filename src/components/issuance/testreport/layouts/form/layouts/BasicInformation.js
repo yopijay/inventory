@@ -1,21 +1,23 @@
 // Libraries
 import React, { useContext, useEffect, useState } from 'react';
 import { Box, Grid, Skeleton } from '@mui/material';
-// import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../../../core/global/controls/Controls';
 import { getDate } from '../../../../../../core/global/Function';
-import { options } from '../../../../../../core/request/Request';
+import { get, options } from '../../../../../../core/request/Request';
 
 // Context
 import { TestReportContext } from '../../../../../../core/context/TestReportContext';
 
 const BasicInformation = () => {
-    const { register, getValues, errors } = useContext(TestReportContext);
+    const { id } = useParams();
+    const { register, getValues, errors, setValue } = useContext(TestReportContext);
     const defaultVal = getValues().basic_information;
     const error = errors.basic_information;
-    const [ isLoad, setIsLoad ] = useState(true);
+    const [ isLoad, setIsLoad ] = useState()
+    const [ loadDropdown, setLoaddropdown ] = useState(true);
     const [ isToday, setIsToday ] = useState();
     // eslint-disable-next-line
     const [ customerId, setCustomerId ] = useState();
@@ -26,8 +28,9 @@ const BasicInformation = () => {
     }
 
     useEffect(() => {
-        options('customer', ['id', 'name'], setCustomer, setIsLoad);
+        options('customer', ['id', 'name'], setCustomer, setLoaddropdown);
         setInterval(updateTime, 1000);
+        if(id !== undefined) get(id, 'test_report', setValue, )
     }, []);
 
     return (
@@ -61,7 +64,7 @@ const BasicInformation = () => {
                     <Box marginBottom= "5px"><Ctrl.Typography text= "Customer" color= "text-primary" /></Box>
                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 5px' }}>
                         {
-                            !isLoad ? (
+                            !loadDropdown ? (
                                 <Ctrl.Select name= { `basic_information.customer_id` } register= { register('basic_information.customer_id', {
                                         onChange: e => setCustomerId(e.target.value)
                                     }) } fullWidth variant= "standard" InputProps= {{ disableUnderline: true }} value= { defaultVal.customer_id !== undefined ? defaultVal.customer_id : '' }

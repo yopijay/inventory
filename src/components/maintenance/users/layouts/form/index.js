@@ -23,14 +23,12 @@ const Index = () => {
     const { type, id } = useParams();
     const [ loader, setLoader ] = useState(false);
     const [ isLoad, setIsLoad ] = useState(type !== 'new');
-    // eslint-disable-next-line
-    const [ values, setValues ] = useState();
     const { register, handleSubmit, formState: { errors }, setValue, getValues, setError } = useForm({
         resolver: yupResolver(Users())
     });
 
     useEffect(() => {
-        if(id !== undefined) get(id, 'users', setValue, setValues, setIsLoad);
+        if(id !== undefined) get(id, 'users', setValue, setIsLoad);
     }, []);
 
     return (

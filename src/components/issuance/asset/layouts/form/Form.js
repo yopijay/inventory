@@ -41,7 +41,7 @@ const Form = (props) => {
                         {
                             !categoryLoader ? (
                                 <Ctrl.Select name= "category_id" fullWidth variant= "standard" InputProps= {{ disableUnderline: true }}
-                                    value= { getValues().category_id !== undefined ? getValues().category_id : '1' } disabled= { disabled } 
+                                    value= { getValues().category_id !== undefined ? getValues().category_id : '' } disabled= { disabled } 
                                     register= { register('category_id', {
                                         onChange: e => { optionsPer('brand', ['id', 'name'], setBrands, e.target.value, setBrandLoader); setValue('brand_id', '') }
                                     }) } options= { categories } />
@@ -79,7 +79,7 @@ const Form = (props) => {
                         {
                             !assetLoader ? (
                                 <Ctrl.Select name= "asset_id" fullWidth variant= "standard" InputProps= {{ disableUnderline: true }}
-                                    value= { getValues().asset_id !== undefined ? getValues().asset_id : '' } disabled= { disabled } 
+                                    value= { getValues().asset_id !== undefined ? assets !== undefined ? getValues().asset_id : '' : '' } disabled= { disabled } 
                                     register= { register('asset_id', {
                                         onChange: e => setAsst(e.target.value)
                                     }) } options= { assets !== undefined ? assets : [] } />
