@@ -1,11 +1,11 @@
 // Libraries
+import { toast } from "react-toastify";
 
 // Global
 import { _axios } from "../global/Function";
 import Env from '../global/constants/Env.json';
 
 let env = 'prod';
-
 export const getall = async (set, table, loader) => {
     let all = await _axios(`${Env[env].url}/getall/${table}`, 'get');
     set(all);
@@ -23,17 +23,45 @@ export const count = async (set, table) => {
     set(count[0].count);
 }
 
-export const save = async (id, data, type, table, redirect, setError) => {
-    let save = await _axios(`${Env[env].url}/${type}/${table}${id !== undefined ? `/${id}` : ''}`, 'post', data);
-
-    if(save.result === 'error') {
-        (save.error).forEach((err, index) => {
-            setError(err.name, { type: index === 0 ? 'focus' : '', message: err.message }, { shouldFocus: index === 0 });
+export const save = async (id, data, type, table, redirect, setError, loader) => {
+    loader(true);
+    await _axios(`${Env[env].url}/${type}/${table}${id !== undefined ? `/${id}` : ''}`, 'post', data).then(res => {
+        loader(false);
+        if(res.result === 'error') {
+            (res.error).forEach((err, index) => {
+                setError(err.name, { type: index === 0 ? 'focus' : '', message: err.message }, { shouldFocus: index === 0 });
+            });
+        }
+        else {
+            toast.success(res.message, {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: false,
+                progress: undefined,
+                theme: 'colored',
+                onClose: () => {
+                    setTimeout(() => {
+                        window.location.href = `${redirect}`
+                    }, 4000);
+                }
+            });
+        }
+    }).catch(err => {
+        loader(false);
+        toast.error('Something went wrong!', {
+            position: 'top-right',
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: false,
+            progress: undefined,
+            theme: 'colored'
         });
-    }
-    else {
-        window.location.href = `${redirect}`;
-    }
+    });
 }
 
 export const get = async (id, table, set, setValues, loader) => {

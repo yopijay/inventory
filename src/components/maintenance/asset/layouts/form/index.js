@@ -20,6 +20,7 @@ import { SnakeLoader } from '../../../../../core/loader/Loader';
 
 const Index = () => {
     const { type, id } = useParams();
+    const [ loader, setLoader ] = useState(false);
     const [ isLoad, setIsLoad ] = useState(type !== 'new');
     const { register, handleSubmit, formState: { errors }, setValue, getValues, setError } = useForm({
         resolver: yupResolver(Asset())
@@ -64,10 +65,12 @@ const Index = () => {
                             { type !== 'view' ? (
                                 <Box marginLeft= "10px">
                                     <Ctrl.Button color= "primary" text= {
-                                        <Ctrl.Typography color= "#ffffff" text= "Save" 
-                                            sx= {{ padding: { xs: '4px 0' },
-                                                        fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained"
-                                        onClick= { handleSubmit(data => save(id, data, type, 'assets', '/maintenance/assets', setError) ) }/>
+                                        loader ? ( <Box sx= {{ padding: { xs: '10.5px 0' } }}><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></Box> ) : (
+                                            <Ctrl.Typography color= "#ffffff" text= "Save" 
+                                                sx= {{ padding: { xs: '4px 0' },
+                                                            fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} />
+                                        ) } variant= "contained"
+                                        onClick= { handleSubmit(data => save(id, data, type, 'assets', '/maintenance/assets', setError, setLoader) ) }/>
                                 </Box>
                             ) : '' }
                         </Box>
