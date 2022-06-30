@@ -63,7 +63,7 @@ const List = () => {
                         <TableContainer>
                             <Table aria-label= "Brand" size= "small" sx= {{ minWidth: 650, maxHeight: 500 }} stickyHeader>
                                 <Header />
-                                <Body data= { !isLoad ? users : [] } />
+                                <Body data= { users } isLoad= { isLoad } />
                             </Table>
                         </TableContainer>
                     </Paper>

@@ -63,7 +63,7 @@ const Index = () => {
                         <TableContainer>
                             <Table aria-label= "Assets Issued" size= "small" sx= {{ minWidth: 650, maxHeight: 500 }} stickyHeader>
                                 <Header />
-                                <Body data= { !isLoad ? assignAssets : [] } />
+                                <Body data= { assignAssets } isLoad= { isLoad } />
                             </Table>
                         </TableContainer>
                     </Paper>

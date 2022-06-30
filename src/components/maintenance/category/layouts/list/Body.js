@@ -13,7 +13,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { SnakeLoader } from '../../../../../core/loader/Loader';
 
 const Body = (props) => {
-    const { data } = props;
+    const { data, isLoad } = props;
 
     const StyledTableCell = styled(TableCell)(({
         [`&.${tableCellClasses.body}`]: {
@@ -21,10 +21,10 @@ const Body = (props) => {
         }
     }));
 
-    try {
-        return (
-            <TableBody>
-                {
+    return (
+        <TableBody>
+            {
+                !isLoad ? (
                     data.length !== 0 ? (
                         data.map((rows, index) => (
                             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }} key= { index }>
@@ -62,12 +62,18 @@ const Body = (props) => {
                             <StyledTableCell align= "center" colSpan= "5">No categories found!</StyledTableCell>
                         </TableRow>
                     )
-                }
-            </TableBody>
-        );
-    } catch (error) {
-        return ( <TableBody><TableRow><StyledTableCell><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></StyledTableCell></TableRow></TableBody> )
-    }
+                ) : (
+                    <TableRow>
+                        <StyledTableCell align= "center" colSpan= "5">
+                            <Box sx= {{ display: 'flex' , flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                                <SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" />
+                            </Box>
+                        </StyledTableCell>
+                    </TableRow>
+                )
+            }
+        </TableBody>
+    );
 }
 
 Body.propTypes = {
