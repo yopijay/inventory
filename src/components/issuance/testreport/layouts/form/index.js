@@ -20,7 +20,8 @@ const Index = () => {
     const { type, id } = useParams();
     // eslint-disable-next-line
     const [ isLoad, setIsLoad ] = useState(type !== 'new');
-    const { handleSubmit } = useContext(TestReportContext);
+    const [ loader, setLoader ] = useState(false);
+    const { handleSubmit, setError } = useContext(TestReportContext);
 
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', marginBottom: '20px' }}>
@@ -44,16 +45,18 @@ const Index = () => {
                                 )
                             }
                             <Box width= "100%" marginTop= "30px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">
-                                <Link to= "/issuance/test-report" style= {{ textDecoration: 'none' }}>
+                                <Link to= "/issuance/test-report" style= {{ textDecoration: 'none', width: '100px' }}>
                                     <Ctrl.Button color= "error" text= { <Ctrl.Typography color= "#ffffff" text= "Cancel" 
                                                     sx= {{ padding: { xs: '4px 0' }, fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained" />
                                 </Link>
                                 { type !== 'view' ? (
-                                    <Box marginLeft= "10px">
+                                    <Box marginLeft= "10px" width= "100px">
                                         <Ctrl.Button color= "primary" text= {
-                                            <Ctrl.Typography color= "#ffffff" text= "Save" 
-                                                sx= {{ padding: { xs: '4px 0' }, fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained"
-                                                onClick= { handleSubmit(data => save(id, data, type, 'test_report', '/issuance/test-report') ) }/>
+                                            loader ? ( <Box sx= {{ padding: { xs: '10.5px 0' } }}><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></Box> ) : (
+                                                <Ctrl.Typography color= "#ffffff" text= "Save" 
+                                                    sx= {{ padding: { xs: '4px 0' },
+                                                                fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} />
+                                            ) } variant= "contained" onClick= { handleSubmit(data => save(id, data, type, 'test_report', '/issuance/test-report', setError, setLoader) ) }/>
                                     </Box>
                                 ) : '' }
                             </Box>

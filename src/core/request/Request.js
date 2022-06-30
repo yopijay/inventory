@@ -56,7 +56,6 @@ export const save = async (id, data, type, table, redirect, setError, loader) =>
             autoClose: 3000,
             hideProgressBar: false,
             closeOnClick: true,
-            transition: 'slide',
             pauseOnHover: true,
             draggable: false,
             progress: undefined,

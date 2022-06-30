@@ -56,21 +56,20 @@ const Index = () => {
                             )
                         }
                         <Box width= "100%" marginTop= "30px" display= "flex" flexDirection= "row" justifyContent= "flex-end" aligItems= "center">
-                            <Link to= "/maintenance/brand" style= {{ textDecoration: 'none' }}>
+                            <Link to= "/maintenance/brand" style= {{ textDecoration: 'none', width: '100px' }}>
                                 <Ctrl.Button color= "error" text= {
                                             <Ctrl.Typography color= "#ffffff" text= "Cancel" 
                                                 sx= {{ padding: { xs: '4px 0' },
                                                             fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained" />
                             </Link>
                             { type !== 'view' ? (
-                                <Box marginLeft= "10px">
+                                <Box marginLeft= "10px" width= "100px">
                                     <Ctrl.Button color= "primary" text= {
                                         loader ? ( <Box sx= {{ padding: { xs: '10.5px 0' } }}><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></Box> ) : (
                                             <Ctrl.Typography color= "#ffffff" text= "Save" 
                                                 sx= {{ padding: { xs: '4px 0' },
                                                             fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} />
-                                        ) } variant= "contained"
-                                        onClick= { handleSubmit(data => save(id, data, type, 'brand', '/maintenance/brand', setError, setLoader) ) }/>
+                                        ) } variant= "contained" onClick= { handleSubmit(data => save(id, data, type, 'brand', '/maintenance/brand', setError, setLoader) ) }/>
                                 </Box>
                             ) : '' }
                         </Box>
