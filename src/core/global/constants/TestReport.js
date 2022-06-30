@@ -16,30 +16,30 @@ export const Navs = () => (
             path: 'basic-information',
             component: <BasicInformation />
         },
-        // {
-        //     name: 'General Specification',
-        //     path: 'general-specification',
-        //     component:<GeneralSpecification />
-        // },
-        // {
-        //     name: 'Component',
-        //     path: 'component',
-        //     component: <Components />
-        // },
-        // {
-        //     name: 'Construction Inspection',
-        //     path: 'construction-inspection',
-        //     component: <ConstructionInspection />
-        // },
-        // {
-        //     name: 'Mechanical Operation',
-        //     path: 'mechanical-operation',
-        //     component: <MechanicalOperation  />
-        // },
-        // {
-        //     name: 'Electrical Operation',
-        //     path: 'electrical-operation',
-        //     component: <ElectricalOperation  />
-        // }
+        {
+            name: 'General Specification',
+            path: 'general-specification',
+            component:<GeneralSpecification />
+        },
+        {
+            name: 'Component',
+            path: 'component',
+            component: <Components />
+        },
+        {
+            name: 'Construction Inspection',
+            path: 'construction-inspection',
+            component: <ConstructionInspection />
+        },
+        {
+            name: 'Mechanical Operation',
+            path: 'mechanical-operation',
+            component: <MechanicalOperation  />
+        },
+        {
+            name: 'Electrical Operation',
+            path: 'electrical-operation',
+            component: <ElectricalOperation  />
+        }
     ]
 )

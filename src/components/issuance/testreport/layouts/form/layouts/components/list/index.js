@@ -2,6 +2,7 @@
 import React, { useContext, useEffect } from 'react';
 import { Box, Table, TableBody, TableCell, tableCellClasses, TableContainer, TableHead, TableRow } from '@mui/material';
 import { styled } from '@mui/styles';
+import { useParams } from 'react-router-dom';
 
 // Layouts
 import Items from './Items';
@@ -20,11 +21,12 @@ const StyledTableCell = styled(TableCell)(({
 }));
 
 const Index = () => {
+    const { type } = useParams();
     const { register, control, getValues, errors } = useContext(TestReportContext);
     const { fields, append, remove } = useFieldArray({ control, name: 'items' });
 
     useEffect(() => {
-        append();
+        if(type === 'new') append();
     }, []);
     
     return (
