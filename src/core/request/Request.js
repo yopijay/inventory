@@ -36,7 +36,6 @@ export const save = async (id, data, type, table, redirect, setError, loader) =>
             toast.success(res.message, {
                 position: 'top-right',
                 autoClose: 3000,
-                transition: 'slide',
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
