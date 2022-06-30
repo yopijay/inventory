@@ -60,7 +60,7 @@ export const get = async (id, table, set, loader, obj) => {
         for(let count = 0; count < Object.keys(res[0]).length; count++) {
             let _name = Object.keys(res[0])[count];
 
-            if(obj !== null || obj !== undefined) {
+            if(obj !== undefined) {
                 if(_name !== 'id') {
                     if(res.length > 1) {
                         for(let count = 0; count < res.length; count++) {
