@@ -7,20 +7,11 @@ import Env from '../global/constants/Env.json';
 
 let env = 'prod';
 export const getall = async (set, table, loader) => {
-    let all = await _axios(`${Env[env].url}/getall/${table}`, 'get');
-    set(all);
-    loader(false);
+    await _axios(`${Env[env].url}/getall/${table}`, 'get').then(res => { set(res); loader(false); }).catch(err => { console.log(err); loader(false); });
 }
 
 export const reports = async (set, table, loader) => {
-    let reports = await _axios(`${Env[env].url}/report/${table}`, 'get');
-    set(reports);
-    loader(false);
-}
-
-export const count = async (set, table) => {
-    let count = await _axios(`${Env[env].url}/count/${table}`, 'get');
-    set(count[0].count);
+    await _axios(`${Env[env].url}/report/${table}`, 'get').then(res => { set(res); loader(false); }).catch(err => { console.log(err); loader(false); });
 }
 
 export const save = async (id, data, type, table, redirect, setError, loader) => {
@@ -65,32 +56,26 @@ export const save = async (id, data, type, table, redirect, setError, loader) =>
 }
 
 export const get = async (id, table, set, setValues, loader) => {
-    let data = await _axios(`${Env[env].url}/get/${table}/${id}`, 'get');
-    setValues(data);
+    let data = await _axios(`${Env[env].url}/get/${table}/${id}`, 'get').then(res => {
+        setValues(data);
+        
+        for(let count = 0; count < Object.keys(data[0]).length; count++) {
+            let _name = Object.keys(data[0])[count];
+            set(_name, data[0][_name]);
+        }
     
-    for(let count = 0; count < Object.keys(data[0]).length; count++) {
-        let _name = Object.keys(data[0])[count];
-        set(_name, data[0][_name]);
-    }
-
-    loader(false);
-}
-
-export const sum = async(set, table, col) => {
-    let sum = await _axios(`${Env[env].url}/sum/${table}/${col}`, 'get');
-    set(sum);
+        loader(false);
+    }).catch(err => { console.log(err); loader(false) });
 }
 
 export const options = async(table, cols, set, loader) => {
-    let options = await _axios(`${Env[env].url}/option/${table}/${cols}`, 'get');
-    set(options);
-
-    loader(false);
+    await _axios(`${Env[env].url}/option/${table}/${cols}`, 'get').then(res => { set(res); loader(false); }).catch(err => { console.log(err); loader(false); });
 }
 
 export const optionsPer = async(table, cols, set, id = null, loader) => {
-    let options = await _axios(`${Env[env].url}/option/per/${table}/${cols}/${id !== undefined ? id : '1'}`, 'get');
-    set(options);
+    await _axios(`${Env[env].url}/option/per/${table}/${cols}/${id !== undefined ? id : '1'}`, 'get').then(res => { set(res); loader(false); }).catch(err => { console.log(err); loader(false); });
+}
 
-    loader(false);
+export const excel = async(set, table, loader) => {
+    await _axios(`${Env[env].url}/excel/${table}`, 'get').then(res => { set(res); loader(false); }).catch(err => { console.log(err); loader(false); });
 }

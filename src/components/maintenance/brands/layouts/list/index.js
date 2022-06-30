@@ -8,7 +8,7 @@ import Ctrl from '../../../../../core/global/controls/Controls';
 import Export from '../../../../../core/global/Export';
 
 // Request
-import { getall } from '../../../../../core/request/Request';
+import { excel, getall } from '../../../../../core/request/Request';
 
 // Layout
 import Header from './Header';
@@ -16,9 +16,11 @@ import Body from './Body';
 
 const Index = () => {
     const [ brands, setBrands ] = useState([]);
+    const [ xlsx, setXlsx ] = useState([]);
     const [ isLoad, setIsLoad ] = useState(true);
 
     useEffect(() => {
+        excel(setXlsx, 'brand', setIsLoad);
         getall(setBrands, 'brand', setIsLoad);
     }, []);
     
@@ -45,8 +47,8 @@ const Index = () => {
                                                                     sx= {{ padding: { xs: '4px 0' },
                                                                                 fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } 
                                     filename= "Brand List"
-                                    data= { brands }
-                                    column= { brands !== undefined ? (Object.keys(brands)).length !== 0 ? Object.keys(brands[0]) : [] : [] } />
+                                    data= { xlsx }
+                                    column= { xlsx !== undefined ? (Object.keys(xlsx)).length !== 0 ? Object.keys(xlsx[0]) : [] : [] } />
                             </Grid>
                         </Grid>
                     </Grid>
