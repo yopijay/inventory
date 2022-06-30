@@ -8,7 +8,7 @@ import Ctrl from '../../../../../core/global/controls/Controls';
 import Export from '../../../../../core/global/Export';
 
 // Request
-import { getall } from '../../../../../core/request/Request';
+import { excel, getall } from '../../../../../core/request/Request';
 
 // Layout
 import Header from './Header';
@@ -16,9 +16,11 @@ import Body from './Body';
 
 const Index = () => {
     const [ assets, setAssets ] = useState([]);
+    const [ xlsx, setXlsx ] = useState([]);
     const [ isLoad, setIsLoad ] = useState(true);
 
     useEffect(() => {
+        excel(setXlsx, 'assets', setIsLoad);
         getall(setAssets, 'assets', setIsLoad);
     }, []);
 
@@ -45,8 +47,8 @@ const Index = () => {
                                                                     sx= {{ padding: { xs: '4px 0' },
                                                                                 fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } 
                                     filename= "Assets List"
-                                    data= { assets }
-                                    column= { assets !== undefined ? (Object.keys(assets)).length !== 0 ? Object.keys(assets[0]) : [] : [] } />
+                                    data= { xlsx }
+                                    column= { xlsx !== undefined ? (Object.keys(xlsx)).length !== 0 ? Object.keys(xlsx[0]) : [] : [] } />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -63,7 +65,7 @@ const Index = () => {
                         <TableContainer>
                             <Table aria-label= "Assets" size= "small" sx= {{ minWidth: 650, maxHeight: 500 }} stickyHeader>
                                 <Header />
-                                <Body data= { !isLoad ? assets : [] } />
+                                <Body data= { assets } isLoad= { isLoad } />
                             </Table>
                         </TableContainer>
                     </Paper>

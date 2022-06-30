@@ -19,6 +19,8 @@ const Items = (props) => {
         <TableRow>
             <TableCell align= "center">{ parseInt(index) + 1 }</TableCell>
             <TableCell>
+                <Ctrl.TextField name= { `items[${index}].id` } register= { register(`items[${index}].id`) } sx= {{ display: 'none' }}
+                    variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box sx= {{ border: `solid 1px ${ error !== undefined ? error[index] !== undefined ? error[index].device !== undefined ? '#e84118' : '#dcdde1' : '#dcdde1' : '#dcdde1'}`, 
                                         borderRadius: '5px', padding: '5px 15px' }}>

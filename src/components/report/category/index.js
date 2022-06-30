@@ -71,7 +71,7 @@ const Index = () => {
                         <TableContainer ref= { _print }>
                             <Table aria-label= "Category" size= "small" sx= {{ minWidth: 650, maxHeight: 500 }} stickyHeader>
                                 <Header />
-                                <Body data= { !isLoad ? report : [] } />
+                                <Body data= { report } isLoad= { isLoad } />
                             </Table>
                         </TableContainer>
                     </Paper>

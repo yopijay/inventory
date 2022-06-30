@@ -13,7 +13,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 import { SnakeLoader } from '../../../../../core/loader/Loader';
 
 const Body = (props) => {
-    const { data } = props;
+    const { data, isLoad } = props;
 
     const StyledTableCell = styled(TableCell)(({
         [`&.${tableCellClasses.body}`]: {
@@ -21,10 +21,10 @@ const Body = (props) => {
         }
     }));
 
-    try {
-        return (
-            <TableBody>
-                {
+    return (
+        <TableBody>
+            {
+                !isLoad ? (
                     data.length !== 0 ? (
                         data.map((rows, index) => (
                             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }} key= { index }>
@@ -39,7 +39,7 @@ const Body = (props) => {
                                 <StyledTableCell align= "center">
                                     <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                         <Box sx= {{ margin: '5px' }}>
-                                            <Link to= { `/maintenance/brand/form/update/${rows.id}` } style= {{ textDecoration: 'none' }}>
+                                            <Link to= { `/issuance/test-report/form/update/${rows.id}` } style= {{ textDecoration: 'none' }}>
                                                 <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#487eb0" 
                                                     borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                     <ModeEditOutlineIcon style= {{ fontSize: '110%' }} />
@@ -47,7 +47,7 @@ const Body = (props) => {
                                             </Link>
                                         </Box>
                                         <Box sx= {{ margin: '5px' }}>
-                                            <Link to= { `/maintenance/brand/form/view/${rows.id}` } style= {{ textDecoration: 'none' }}>
+                                            <Link to= { `/issuance/test-report/form/view/${rows.id}` } style= {{ textDecoration: 'none' }}>
                                                 <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#487eb0" 
                                                     borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                     <VisibilityIcon style= {{ fontSize: '110%' }} />
@@ -63,12 +63,18 @@ const Body = (props) => {
                             <StyledTableCell align= "center" colSpan= "6">No test reports found!</StyledTableCell>
                         </TableRow>
                     )
-                }
-            </TableBody>
-        );
-    } catch (error) {
-        return ( <TableBody><TableRow><StyledTableCell><SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" /></StyledTableCell></TableRow></TableBody> )
-    }
+                ) : (
+                    <TableRow>
+                        <StyledTableCell align= "center" colSpan= "6">
+                            <Box sx= {{ display: 'flex' , flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
+                                <SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" />
+                            </Box>
+                        </StyledTableCell>
+                    </TableRow>
+                )
+            }
+        </TableBody>
+    );
 }
 
 Body.propTypes = {
