@@ -11,7 +11,6 @@ import RemoveIcon from '@mui/icons-material/Remove';
 
 const Items = (props) => {
     const { register, index, append, remove, getValues, errors } = props;
-    // eslint-disable-next-line
     const defaultVal = getValues().items;
     const error = errors.items;
 
