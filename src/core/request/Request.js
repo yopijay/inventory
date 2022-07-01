@@ -14,7 +14,7 @@ export const reports = async (set, table, loader) => {
     await _axios(`${Env[env].url}/report/${table}`, 'get').then(res => { set(res); loader(false); }).catch(err => { console.log(err); loader(false); });
 }
 
-export const save = async (id, data, type, table, redirect, setError, loader) => {
+export const save = async (id, data, type, table, redirect, setError, loader, navigate) => {
     loader(true);
     await _axios(`${Env[env].url}/${type}/${table}${id !== undefined ? `/${id}` : ''}`, 'post', data).then(res => {
         loader(false);
@@ -33,15 +33,12 @@ export const save = async (id, data, type, table, redirect, setError, loader) =>
                 draggable: false,
                 progress: undefined,
                 theme: 'colored',
-                onClose: () => {
-                    setTimeout(() => {
-                        window.location.href = `${redirect}`
-                    }, 4000);
-                }
+                onClose: () => navigate(`${redirect}`, { replace: true })
             });
         }
     }).catch(err => {
         loader(false);
+        console.log(err);
         toast.error('Something went wrong!', {
             position: 'top-right',
             autoClose: 3000,

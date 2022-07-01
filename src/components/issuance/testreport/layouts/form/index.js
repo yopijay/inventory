@@ -1,7 +1,7 @@
 // Libraries
 import React, { useContext, useState } from 'react';
 import { Box, Grid } from '@mui/material';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../../core/global/controls/Controls';
@@ -18,7 +18,7 @@ import { TestReportContext } from '../../../../../core/context/TestReportContext
 
 const Index = () => {
     const { type, id } = useParams();
-    // eslint-disable-next-line
+    const navigate = useNavigate();
     const [ loader, setLoader ] = useState(false);
     const { handleSubmit, setError } = useContext(TestReportContext);
 
@@ -45,7 +45,7 @@ const Index = () => {
                                                 <Ctrl.Typography color= "#ffffff" text= "Save" 
                                                     sx= {{ padding: { xs: '4px 0' },
                                                                 fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} />
-                                            ) } variant= "contained" onClick= { handleSubmit(data => save(id, data, type, 'test_report', '/issuance/test-report', setError, setLoader) ) }/>
+                                            ) } variant= "contained" onClick= { handleSubmit(data => save(id, data, type, 'test_report', '/issuance/test-report', setError, setLoader, navigate) ) }/>
                                     </Box>
                                 ) : '' }
                             </Box>

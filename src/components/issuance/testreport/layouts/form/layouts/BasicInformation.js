@@ -94,7 +94,7 @@ const BasicInformation = () => {
                                             <Ctrl.TextField name= { `basic_information.date_performed` } register= { register('basic_information.date_performed', {
                                                     onChange: e => setIsToday(e.target.value)
                                                 }) } variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} type= "datetime-local" disabled= { type !== 'new' }
-                                                value= { type !== 'new' ? getDate(new Date(getValues().basic_information.date_performed)).date : isToday } />
+                                                value= { type !== 'new' ? defaultVal !== undefined ? getDate(new Date(defaultVal.date_performed)).date : isToday : isToday } />
                                         ) : ( <Skeleton variant= "rectangular" width= "100%" height= "30px" sx= {{ backgroundColor: '#dfe6e9', borderRadius: '5px' }} /> )
                                     }
                                 </Box>
