@@ -24,6 +24,7 @@ export const save = async (id, data, type, table, redirect, setError, loader, na
             });
         }
         else {
+            toast.dismiss();
             toast.success(res.message, {
                 position: 'top-right',
                 autoClose: 3000,
@@ -59,7 +60,7 @@ export const get = async (id, table, set, loader, obj) => {
 
             if(obj !== undefined) {
                 if(_name !== 'id') {
-                    if(res.length > 1) {
+                    if(table === 'component_items') {
                         for(let count = 0; count < res.length; count++) {
                             for(let _items = 0; _items < Object.keys(res[count]).length; _items++) {
                                 let _name = Object.keys(res[count])[_items];
