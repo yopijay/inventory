@@ -1,7 +1,7 @@
 // Libaries
 import React, { useEffect, useState } from 'react';
 import { Box, Grid } from '@mui/material';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -20,6 +20,7 @@ import { SnakeLoader } from '../../../../../core/loader/Loader';
 
 const Index = () => {
     const { type, id } = useParams();
+    const navigate = useNavigate();
     const [ loader, setLoader ] = useState(false);
     const [ isLoad, setIsLoad ] = useState(type !== 'new');
     const { register, handleSubmit, formState: { errors }, setValue, getValues, setError } = useForm({
@@ -67,7 +68,7 @@ const Index = () => {
                                             <Ctrl.Typography color= "#ffffff" text= "Save" 
                                                 sx= {{ padding: { xs: '4px 0' },
                                                             fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} />
-                                        ) } variant= "contained" onClick= { handleSubmit(data => save(id, data, type, 'assets', '/maintenance/assets', setError, setLoader) ) }/>
+                                        ) } variant= "contained" onClick= { handleSubmit(data => save(id, data, type, 'assets', '/maintenance/assets', setError, setLoader, navigate) ) }/>
                                 </Box>
                             ) : '' }
                         </Box>
