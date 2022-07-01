@@ -23,7 +23,6 @@ const Header = () => {
                 <StyledTableCell>Position</StyledTableCell>
                 <StyledTableCell>Birthdate</StyledTableCell>
                 <StyledTableCell align= "center">No. of Assigned Assets</StyledTableCell>
-                <StyledTableCell align= "center">Action</StyledTableCell>
             </TableRow>
         </TableHead>
     );

@@ -24,7 +24,6 @@ export const save = async (id, data, type, table, redirect, setError, loader, na
             });
         }
         else {
-            toast.dismiss();
             toast.success(res.message, {
                 position: 'top-right',
                 autoClose: 3000,

@@ -16,7 +16,7 @@ import Body from './Body';
 import { reports } from '../../../core/request/Request';
 
 // Assets
-import Logo from '../../../assets/images/profile.jpg';
+import Logo from '../../../assets/images/logo.png';
 
 const Index = () => {
     const [ report, setReport ] = useState([]);
@@ -38,7 +38,7 @@ const Index = () => {
                     <Grid item xs= { 12 } lg= { 10 }>
                         <Grid container direction= "row" justifyContent= "flex-end" alignItems= "center" spacing= { 1 }>
                             <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
-                                <PDF name= "Assets report" content= { report } logo= {{ img: Logo, w: 10, h: 10, type: 'JPEG' }} 
+                                <PDF name= "Assets report" content= { report } logo= {{ img: Logo, w: 13, h: 10, type: 'PNG' }} type= "report"
                                         element= { <Ctrl.Typography color= "#ffffff" text= "Export to PDF" 
                                             sx= {{ padding: { xs: '4px 0' }, fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } />
                             </Grid>
