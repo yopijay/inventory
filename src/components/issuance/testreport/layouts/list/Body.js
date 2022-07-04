@@ -64,7 +64,7 @@ const Body = (props) => {
                                         </Box>
                                         <Box sx= {{ margin: '5px' }}>
                                             <PDF name= { `${rows.project} - Test Report` } logo= {{ img: Logo, w: 13, h: 10, type: 'PNG' }} type= "test-report"
-                                                    element= { <PictureAsPdfIcon style= {{ fontSize: '150%', color: '#ffffff', padding: '-4px -10px' }} /> } />
+                                                    element= { <PictureAsPdfIcon style= {{ fontSize: '110%' }} /> } />
                                         </Box>
                                     </Box>    
                                 </StyledTableCell>

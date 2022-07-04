@@ -14,6 +14,9 @@ import { excel, getall } from '../../../../../core/request/Request';
 import Header from './Header';
 import Body from './Body';
 
+// Assets
+import ArticleIcon from '@mui/icons-material/Article';
+
 const List = () => {
     const [ users, setUsers ] = useState([]);
     const [ xlsx, setXlsx ] = useState([]);
@@ -34,18 +37,16 @@ const List = () => {
                     </Grid>
                     <Grid item xs= { 12 } sm= { 10 }>
                         <Grid container direction= "row" justifyContent= "flex-end" alignItems= "center" spacing= { 1 }>
-                            <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
+                            <Grid item xs= { 6 } sm= { 4 } md= { 5 } lg= { 3 }>
                                 <Link to= "/maintenance/users/form/new" style= {{ textDecoration: 'none' }}>
                                     <Ctrl.Button color= "primary" text= {
                                         <Ctrl.Typography color= "#ffffff" text= "New User" 
-                                            sx= {{ padding: { xs: '4px 0' },
+                                            sx= {{ padding: { xs: '1.9px 0' },
                                                         fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained" />
                                 </Link>
                             </Grid>
-                            <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
-                                <Export element= { <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
-                                                                    sx= {{ padding: { xs: '4px 0' },
-                                                                                fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } 
+                            <Grid item xs= { 2 } sm= { 1 }>
+                                <Export element= { <ArticleIcon sx= {{ fontSize: { xs: '130%' } }} /> } 
                                     filename= "Users List"
                                     data= { xlsx }
                                     column= { xlsx !== undefined ? (Object.keys(xlsx)).length !== 0 ? Object.keys(xlsx[0]) : [] : [] } />
