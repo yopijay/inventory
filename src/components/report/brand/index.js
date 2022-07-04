@@ -17,6 +17,9 @@ import { reports } from '../../../core/request/Request';
 
 // Assets
 import Logo from '../../../assets/images/logo.png';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
+import ArticleIcon from '@mui/icons-material/Article';
 
 const Index = () => {
     const [ report, setReport ] = useState([]);
@@ -37,21 +40,16 @@ const Index = () => {
                     </Grid>
                     <Grid item xs= { 12 } lg= { 10 }>
                         <Grid container direction= "row" justifyContent= "flex-end" alignItems= "center" spacing= { 1 }>
-                            <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
+                            <Grid item xs= { 2 } sm= { 1 }>
                                 <PDF name= "Brand report" content= { report } logo= {{ img: Logo, w: 13, h: 10, type: 'PNG' }} type= "report"
-                                        element= { <Ctrl.Typography color= "#ffffff" text= "Export to PDF" 
-                                            sx= {{ padding: { xs: '4px 0' }, fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } />
+                                        element= { <PictureAsPdfIcon sx= {{ fontSize: { xs: '130%' } }} /> } />
                             </Grid>
-                            <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
+                            <Grid item xs= { 2 } sm= { 1 }>
                                 <Print name= "Brand report" content= { () => _print.current } 
-                                    element= { <Ctrl.Typography color= "#ffffff" text= "Print" 
-                                                        sx= {{ padding: { xs: '4px 0' },
-                                                            fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } />
+                                    element= { <LocalPrintshopIcon sx= {{ fontSize: { xs: '130%' } }} /> } />
                             </Grid>
-                            <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
-                                <Export element= { <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
-                                                                    sx= {{ padding: { xs: '4px 0' },
-                                                                                fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } 
+                            <Grid item xs= { 2 } sm= { 1 }>
+                                <Export element= { <ArticleIcon sx= {{ fontSize: { xs: '130%' } }} /> } 
                                     filename= "Brand Report"
                                     data= { report }
                                     column= { report !== undefined ? (Object.keys(report)).length !== 0 ? Object.keys(report[0]) : [] : [] } />

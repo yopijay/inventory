@@ -4,7 +4,7 @@ import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
 // Core
-import Ctrl from './controls/Controls';
+import { Box } from '@mui/material';
 
 const PDF = (props) => {
     const { name, element, content, orientation = 'portrait', logo = null, type } = props;
@@ -30,6 +30,38 @@ const PDF = (props) => {
             let keys = Object.keys(content[0]);
             let headers = {};
             let body = [];
+    
+            for (let count = 0; count < keys.length; count++) {
+                headers[keys[count]] = keys[count].replaceAll('_', ' ').charAt(0).toUpperCase() + keys[count].replaceAll('_', ' ').slice(1);
+            }
+
+            for (let count = 0; count < rows.length; count++) {
+                let _row = content[count];
+                let _key = Object.keys(content[count]);
+                let _value = [];
+            
+                for(let item = 0; item < _key.length; item++) {
+                    let _val = '';
+    
+                    switch(_key[item]) {
+                        case 'status':
+                            _val = _row[_key[item]] === 1 ? 'Active' : 'Inactive';
+                            break;
+                        case 'created_by':
+                            _val = _row[_key[item]] !== ',  '  ? _row[_key[item]] : ' '
+                            break;
+                        case 'updated_by':
+                            _val = _row[_key[item]] !== ',  '  ? _row[_key[item]] : ' '
+                            break;
+                        default:
+                            _val = _row[_key[item]];
+                            break;
+                    }
+    
+                    _value.push((_row[_key[item]] !== null ? _val : ' ').toString());
+                }
+                body.push(_value);
+            }
 
             switch(type) {
                 case 'report':
@@ -37,38 +69,6 @@ const PDF = (props) => {
                         doc.setFontSize(12);
                         doc.setTextColor('#636e72');
                         doc.text(`${name} list`, 14, 30);
-    
-                        for (let count = 0; count < keys.length; count++) {
-                            headers[keys[count]] = keys[count].replaceAll('_', ' ').charAt(0).toUpperCase() + keys[count].replaceAll('_', ' ').slice(1);
-                        }
-            
-                        for (let count = 0; count < rows.length; count++) {
-                            let _row = content[count];
-                            let _key = Object.keys(content[count]);
-                            let _value = [];
-                        
-                            for(let item = 0; item < _key.length; item++) {
-                                let _val = '';
-                
-                                switch(_key[item]) {
-                                    case 'status':
-                                        _val = _row[_key[item]] === 1 ? 'Active' : 'Inactive';
-                                        break;
-                                    case 'created_by':
-                                        _val = _row[_key[item]] !== ',  '  ? _row[_key[item]] : ' '
-                                        break;
-                                    case 'updated_by':
-                                        _val = _row[_key[item]] !== ',  '  ? _row[_key[item]] : ' '
-                                        break;
-                                    default:
-                                        _val = _row[_key[item]];
-                                        break;
-                                }
-                
-                                _value.push((_row[_key[item]] !== null ? _val : ' ').toString());
-                            }
-                            body.push(_value);
-                        }
     
                         autoTable(doc, {
                             theme: 'grid',
@@ -109,6 +109,12 @@ const PDF = (props) => {
                         });
                     break;
 
+                case 'test-report':
+                        doc.setFontSize(14);
+                        doc.setTextColor('#636e72');
+                        doc.text(`TEST REPORT`, 14, 30);
+                    break;
+
                 default: console.log('KC Industrial Corp.')
             }
     
@@ -121,8 +127,10 @@ const PDF = (props) => {
     }
 
     return (
-        <Ctrl.Button color= "pdf" text= { element } 
-            variant= "contained" fullWidth onClick= { generatePdf } />
+        <Box sx= {{ padding: '8px 10px', color: "#FFFFFF", backgroundColor: "#e17055",
+                            borderRadius: '4px', display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', cursor: 'pointer' }} onClick= { generatePdf }>
+            { element }
+        </Box>
     );
 }
 
