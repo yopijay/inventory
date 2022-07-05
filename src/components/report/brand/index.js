@@ -1,27 +1,29 @@
 // Libraries
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Box, Grid, Paper, Table, TableContainer } from '@mui/material';
 
 // Core
 import Ctrl from '../../../core/global/controls/Controls';
-import Export from '../../../core/global/Export';
-import Print from '../../../core/global/Print';
-import PDF from '../../../core/global/PDF';
 
 // Layouts
 import Header from './Header';
 import Body from './Body';
+import Dialog from '../../../core/global/forms/Dialog';
+import Preview from '../../../core/global/forms/preview/report';
 
 // Request
 import { reports } from '../../../core/request/Request';
 
 // Assets
-import Logo from '../../../assets/images/logo.png';
+import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
+
+// Context
+import { DialogContext } from '../../../core/context/DialogContext';
 
 const Index = () => {
     const [ report, setReport ] = useState([]);
     const [ isLoad, setIsLoad ] = useState(true);
-    const _print = useRef();
+    const { setIsOpen } = useContext(DialogContext);
 
     useEffect(() => {
         reports(setReport, 'brand', setIsLoad);
@@ -37,24 +39,11 @@ const Index = () => {
                     </Grid>
                     <Grid item xs= { 12 } lg= { 10 }>
                         <Grid container direction= "row" justifyContent= "flex-end" alignItems= "center" spacing= { 1 }>
-                            <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
-                                <PDF name= "Brand report" content= { report } logo= {{ img: Logo, w: 13, h: 10, type: 'PNG' }} type= "report"
-                                        element= { <Ctrl.Typography color= "#ffffff" text= "Export to PDF" 
-                                            sx= {{ padding: { xs: '4px 0' }, fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } />
-                            </Grid>
-                            <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
-                                <Print name= "Brand report" content= { () => _print.current } 
-                                    element= { <Ctrl.Typography color= "#ffffff" text= "Print" 
-                                                        sx= {{ padding: { xs: '4px 0' },
-                                                            fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } />
-                            </Grid>
-                            <Grid item xs= { 12 } sm= { 4 } lg= { 3 }>
-                                <Export element= { <Ctrl.Typography color= "#ffffff" text= "Export to Excel" 
-                                                                    sx= {{ padding: { xs: '4px 0' },
-                                                                                fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } 
-                                    filename= "Brand Report"
-                                    data= { report }
-                                    column= { report !== undefined ? (Object.keys(report)).length !== 0 ? Object.keys(report[0]) : [] : [] } />
+                            <Grid item xs= { 2 } sm= { 1 }>
+                                <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#487eb0" 
+                                    borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center" onClick= { () => setIsOpen(true) }>
+                                    <LocalPrintshopIcon style= {{ fontSize: '110%' }} />
+                                </Box>
                             </Grid>
                         </Grid>
                     </Grid>
@@ -68,7 +57,7 @@ const Index = () => {
             <Box sx= {{ padding: { xs: '0 14px', sm: '0' } }}>
                 <Box sx= {{ boxShadow: 2, borderRadius: '5px', overflow: 'hidden' }}>
                     <Paper elevation= { 0 }>
-                        <TableContainer ref= { _print }>
+                        <TableContainer>
                             <Table aria-label= "Brand" size= "small" sx= {{ minWidth: 650, maxHeight: 500 }} stickyHeader>
                                 <Header />
                                 <Body data= { report } isLoad= { isLoad } />
@@ -77,6 +66,7 @@ const Index = () => {
                     </Paper>
                 </Box>
             </Box>
+            <Dialog name= "brand" content= { <Preview name= "brand" data= { report } /> } />
         </Box>
     );
 }

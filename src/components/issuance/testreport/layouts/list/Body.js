@@ -12,6 +12,7 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 // Loader
 import { SnakeLoader } from '../../../../../core/loader/Loader';
 
+
 const Body = (props) => {
     const { data, isLoad } = props;
 

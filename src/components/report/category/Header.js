@@ -20,6 +20,7 @@ const Header = () => {
                 <StyledTableCell>Series No.</StyledTableCell>
                 <StyledTableCell>Name</StyledTableCell>
                 <StyledTableCell align= "center">No. of Brands</StyledTableCell>
+                <StyledTableCell align= "center">Status</StyledTableCell>
             </TableRow>
         </TableHead>
     );

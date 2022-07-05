@@ -15,6 +15,9 @@ import RprtBrand from '../../../components/report/brand';
 import RprtUsers from '../../../components/report/users';
 import RprtAssets from '../../../components/report/asset';
 
+// Context
+import { DialogProvider } from '../../context/DialogContext';
+
 export const Navs = () => (
     [
         {
@@ -143,22 +146,22 @@ export const Layouts = () => (
         {
             name: 'Reports',
             path: '/reports/category',
-            component: <RprtCategory />
+            component: <DialogProvider><RprtCategory /></DialogProvider>
         },
         {
             name: 'Reports',
             path: '/reports/brand',
-            component: <RprtBrand />
+            component: <DialogProvider><RprtBrand /></DialogProvider>
         },
         {
             name: 'Reports',
             path: '/reports/users',
-            component: <RprtUsers />
+            component: <DialogProvider><RprtUsers /></DialogProvider>
         },
         {
             name: 'Reports',
             path: '/reports/assets',
-            component: <RprtAssets />
+            component: <DialogProvider><RprtAssets /></DialogProvider>
         }
     ]
 )

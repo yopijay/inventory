@@ -7,7 +7,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../../core/global/controls/Controls';
-import Form from '../../../../../core/global/Form';
+import Form from '../../../../../core/global/forms/Form';
 import { Users } from '../../../../../core/global/validation/Users';
 
 // Constants
