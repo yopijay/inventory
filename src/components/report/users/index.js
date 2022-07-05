@@ -41,7 +41,7 @@ const Index = () => {
                     <Grid item xs= { 12 } lg= { 10 }>
                         <Grid container direction= "row" justifyContent= "flex-end" alignItems= "center" spacing= { 1 }>
                             <Grid item xs= { 2 } sm= { 1 }>
-                                <PDF name= "User report" content= { report } logo= {{ img: Logo, w: 13, h: 10, type: 'PNG' }} type= "report"
+                                <PDF name= "User report" content= { report } logo= {{ img: Logo, w: 20, h: 20, type: 'PNG' }} type= "report"
                                         element= { <PictureAsPdfIcon sx= {{ fontSize: { xs: '130%' } }} /> } />
                             </Grid>
                             <Grid item xs= { 2 } sm= { 1 }>

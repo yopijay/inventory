@@ -1,6 +1,7 @@
 // Libraries
 import axios from 'axios';
 import { options } from '../request/Request';
+import autoTable from 'jspdf-autotable';
 
 // Constants
 import { days, months, years } from "./constants/Date";
@@ -68,8 +69,90 @@ export const getDefaultValue = (name, values) => {
     };
 }
 
-export const header = (data) => {
-    console.log(data);
+export const header = (data, isItem = false) => {
+    let keys = Array.isArray(data) ? Object.keys(data[0]) : Object.keys(data);
+    let headers = {};
+    for(let count = 0; count < keys.length; count++) {
+        if(keys[count] !== 'id') {
+            headers[keys[count]] = `${keys[count].charAt(0).toUpperCase()}${keys[count].replaceAll('_', ' ').slice(1)}`;
+        }
+        else {
+            headers[keys[count]] = isItem ? 'No.' : keys[count];
+        }
+    }
+
+    return headers;
+}
+
+export const body = (data, isEven = false) => {
+    let body = [];
+
+    for(let count = 0; count < data.length; count++) {
+        let _row = data[count];
+        let _key = Object.keys(data[count]);
+        let _value = [];
+
+        for(let item = 0; item < _key.length; item++) {
+            let _val = '';
+
+            switch(_key[item]) {
+                case 'status':
+                    _val = _row[_key[item]] === 1 ? 'Active' : 'Inactive';
+                    break;
+                case 'created_by':
+                    _val = _row[_key[item]] !== ',  '  ? _row[_key[item]] : ' '
+                    break;
+                case 'updated_by':
+                    _val = _row[_key[item]] !== ',  '  ? _row[_key[item]] : ' '
+                    break;
+                case 'id': 
+                    _val = isEven ? (count + 1) * 2 : (count + 1);
+                    break;
+                default:
+                    _val = _row[_key[item]] === null ? '' : _row[_key[item]];
+                    break;
+            }
+            _value.push((_val).toString());
+        }
+        body.push(_value);
+    }
+
+    return body;
+}
+
+export const table = (doc, _header, _body, top = 0, right = 0, bottom = 0, left = 0) => {
+    
+    return autoTable(doc, {
+        theme: 'grid',
+        head: [_header],
+        body: _body,
+        startY: top,
+        rowPageBreak: 'auto',
+        showHead: 'firstPage',
+        margin: { top: top, right: right, bottom: bottom, left: left },
+        headStyles: { textColor: '#ecf0f1', fillColor: '#487eb0', cellWidth: 'auto' },
+        bodyStyles: { valign: 'top' },
+        columnStyles: {
+            text: { cellWidth: 'wrap' },
+            quantity: { halign: 'center' },
+            total_no_of_brands: { halign: 'center' },
+            total_no_of_assets: { halign: 'center' },
+            total_asset: { halign: 'center' },
+            assigned_assets: { halign: 'center' },
+            unassigned_assets: { halign: 'center' },
+            status: { halign: 'center' },
+            id: { halign: "center" }
+        },
+        didParseCell: (hook) => {
+            if (hook.section === 'head') {
+                if (hook.column.dataKey === 'id' || hook.column.dataKey === 'total_no_of_brands' || hook.column.dataKey === 'total_no_of_assets'
+                || hook.column.dataKey === 'total_asset' || hook.column.dataKey === 'assigned_assets' || hook.column.dataKey === 'unassigned_assets' 
+                || hook.column.dataKey === 'quantity'|| hook.column.dataKey === 'status') {
+                    hook.cell.styles.halign = 'center';
+                }
+            }
+        }
+    });
 }
 
 export const getDate = (date) => {
@@ -81,6 +164,6 @@ export const getDate = (date) => {
 
     return {
         date: `${year}-${month}-${day}T${hr}:${min}`,
-        formatted: `${date.toLocaleString('default', { month: 'long' })} ${day}, ${year} ${ (date.getHours() % 12) >= 10 ? '' : '0' }${ date.getHours() % 12 }:${min}`
+        formatted: `${date.toLocaleString('default', { month: 'long' })} ${day}, ${year} ${ (date.getHours() % 12) >= 10 ? '' : '0' }${ date.getHours() % 12 }:${min} ${hr > 12 ? 'PM' : 'AM'}`
     }
 }

@@ -5,16 +5,9 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/styles';
 
-// Core
-import PDF from '../../../../../core/global/PDF';
-
-// Assets
-import Logo from '../../../../../assets/images/logo.png';
-
 // Icons
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
 // Loader
 import { SnakeLoader } from '../../../../../core/loader/Loader';
@@ -61,10 +54,6 @@ const Body = (props) => {
                                                     <VisibilityIcon style= {{ fontSize: '110%' }} />
                                                 </Box>
                                             </Link>
-                                        </Box>
-                                        <Box sx= {{ margin: '5px' }}>
-                                            <PDF name= { `${rows.project} - Test Report` } logo= {{ img: Logo, w: 13, h: 10, type: 'PNG' }} type= "test-report"
-                                                    element= { <PictureAsPdfIcon style= {{ fontSize: '110%' }} /> } />
                                         </Box>
                                     </Box>    
                                 </StyledTableCell>

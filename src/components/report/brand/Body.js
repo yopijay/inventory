@@ -26,7 +26,8 @@ const Body = (props) => {
                                 <StyledTableCell>{ rows.series_no }</StyledTableCell>
                                 <StyledTableCell>{ rows.category_name }</StyledTableCell>
                                 <StyledTableCell>{ rows.name }</StyledTableCell>
-                                <StyledTableCell align= "center">{ rows.total_no_of_assets } </StyledTableCell>
+                                <StyledTableCell align= "center">{ rows.total_no_of_assets }</StyledTableCell>
+                                <StyledTableCell align= "center">{ rows.status === 1 ? 'Active' : 'Inactive' }</StyledTableCell>
                             </TableRow>
                         ))
                     ) : (
@@ -36,7 +37,7 @@ const Body = (props) => {
                     )
                 ) : (
                     <TableRow>
-                        <StyledTableCell align= "center" colSpan= "4">
+                        <StyledTableCell align= "center" colSpan= "5">
                             <Box sx= {{ display: 'flex' , flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                 <SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" />
                             </Box>

@@ -28,17 +28,18 @@ const Body = (props) => {
                                 <StyledTableCell>{ rows.department }</StyledTableCell>
                                 <StyledTableCell>{ rows.position }</StyledTableCell>
                                 <StyledTableCell>{ rows.birthdate }</StyledTableCell>
-                                <StyledTableCell align= "center">{ rows.total_asset } </StyledTableCell>
+                                <StyledTableCell align= "center">{ rows.total_asset }</StyledTableCell>
+                                <StyledTableCell align= "center">{ rows.status === 1 ? 'Active' : 'Inactive' }</StyledTableCell>
                             </TableRow>
                         ))
                     ) : (
                         <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                            <StyledTableCell align= "center" colSpan= "5">No users found!</StyledTableCell>
+                            <StyledTableCell align= "center" colSpan= "7">No users found!</StyledTableCell>
                         </TableRow>
                     )
                 ) : (
                     <TableRow>
-                        <StyledTableCell align= "center" colSpan= "6">
+                        <StyledTableCell align= "center" colSpan= "7">
                             <Box sx= {{ display: 'flex' , flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                 <SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" />
                             </Box>
