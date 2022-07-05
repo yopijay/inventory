@@ -151,17 +151,17 @@ export const Layouts = () => (
         {
             name: 'Reports',
             path: '/reports/brand',
-            component: <RprtBrand />
+            component: <DialogProvider><RprtBrand /></DialogProvider>
         },
         {
             name: 'Reports',
             path: '/reports/users',
-            component: <RprtUsers />
+            component: <DialogProvider><RprtUsers /></DialogProvider>
         },
         {
             name: 'Reports',
             path: '/reports/assets',
-            component: <RprtAssets />
+            component: <DialogProvider><RprtAssets /></DialogProvider>
         }
     ]
 )

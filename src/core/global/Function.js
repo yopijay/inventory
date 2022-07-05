@@ -69,7 +69,7 @@ export const getDefaultValue = (name, values) => {
     };
 }
 
-export const header = (data, isItem = false) => {
+export const header = (data) => {
     let keys = Array.isArray(data) ? Object.keys(data[0]) : Object.keys(data);
     let headers = {};
     for(let count = 0; count < keys.length; count++) {
@@ -77,7 +77,7 @@ export const header = (data, isItem = false) => {
             headers[keys[count]] = `${keys[count].charAt(0).toUpperCase()}${keys[count].replaceAll('_', ' ').slice(1)}`;
         }
         else {
-            headers[keys[count]] = isItem ? 'No.' : keys[count];
+            headers[keys[count]] = keys[count];
         }
     }
 

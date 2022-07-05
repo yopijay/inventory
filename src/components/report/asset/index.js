@@ -8,6 +8,8 @@ import Ctrl from '../../../core/global/controls/Controls';
 // Layouts
 import Header from './Header';
 import Body from './Body';
+import Dialog from '../../../core/global/forms/Dialog';
+import Preview from '../../../core/global/forms/preview/report';
 
 // Request
 import { reports } from '../../../core/request/Request';
@@ -64,6 +66,7 @@ const Index = () => {
                     </Paper>
                 </Box>
             </Box>
+            <Dialog name= "assets" content= { <Preview name= "assets" data= { report } /> } />
         </Box>
     );
 }
