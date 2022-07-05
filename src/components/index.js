@@ -36,18 +36,18 @@ const Index = (props) => {
                         <Box sx= {{ width: '100%', height: '100vh', overflowY: 'scroll', '&::-webkit-scrollbar': { display: 'none' } }}>
                             <Toolbar />
                             <Routes>
-                                {
-                                    Layouts().map((component, index) => ( <Route exact path= { component.path + '/*' } key= { index } 
-                                        element= { 
-                                            <Box sx= {{ padding: { xs: 0, md: '15px 16px 0 16px' } }}>
-                                                <Ctrl.Typography text= { component.name }
-                                                                                        sx= {{ fontSize: { xs: '1.5rem', sm: '1.65rem', md: '1.8rem' }, fontWeight: 'bold', textTransform: 'uppercase', 
-                                                                                                    transition: 'all 0.2s ease-in-out', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                                                                                                    padding: { xs: '0 14px', sm: 0 } }} />
-                                                { component.component }
-                                            </Box>
-                                        } /> ))
-                                }
+                                    {
+                                        Layouts().map((component, index) => ( <Route exact path= { component.path + '/*' } key= { index } 
+                                            element= { 
+                                                <Box sx= {{ padding: { xs: 0, md: '15px 16px 0 16px' } }}>
+                                                    <Ctrl.Typography text= { component.name }
+                                                                                            sx= {{ fontSize: { xs: '1.5rem', sm: '1.65rem', md: '1.8rem' }, fontWeight: 'bold', textTransform: 'uppercase', 
+                                                                                                        transition: 'all 0.2s ease-in-out', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                                                                                                        padding: { xs: '0 14px', sm: 0 } }} />
+                                                    { component.component }
+                                                </Box>
+                                            } /> ))
+                                    }
                             </Routes>
                         </Box>
                     </Box>

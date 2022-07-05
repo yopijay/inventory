@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../../core/global/controls/Controls';
-import Export from '../../../../../core/global/Export';
+import Export from '../../../../../core/global/forms/Export';
 import { getall } from '../../../../../core/request/Request';
 
 // Layouts

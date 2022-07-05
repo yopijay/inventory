@@ -1,30 +1,28 @@
 // Libraries
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Box, Grid, Paper, Table, TableContainer } from '@mui/material';
 
 // Core
 import Ctrl from '../../../core/global/controls/Controls';
-import Export from '../../../core/global/Export';
-import Print from '../../../core/global/Print';
-import PDF from '../../../core/global/PDF';
 
 // Layouts
 import Header from './Header';
 import Body from './Body';
+import Dialog from '../../../core/global/forms/Dialog';
 
 // Request
 import { reports } from '../../../core/request/Request';
 
 // Assets
-import Logo from '../../../assets/images/logo.png';
-import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import LocalPrintshopIcon from '@mui/icons-material/LocalPrintshop';
-import ArticleIcon from '@mui/icons-material/Article';
+
+// Context
+import { DialogContext } from '../../../core/context/DialogContext';
 
 const Index = () => {
     const [ report, setReport ] = useState([]);
     const [ isLoad, setIsLoad ] = useState(true);
-    const _print = useRef();
+    const { setIsOpen } = useContext(DialogContext);
 
     useEffect(() => {
         reports(setReport, 'category', setIsLoad);
@@ -41,18 +39,10 @@ const Index = () => {
                     <Grid item xs= { 12 } lg= { 10 }>
                         <Grid container direction= "row" justifyContent= "flex-end" alignItems= "center" spacing= { 1 }>
                             <Grid item xs= { 2 } sm= { 1 }>
-                                <PDF name= "Category report" content= { report } logo= {{ img: Logo, w: 20, h: 20, type: 'PNG' }} type= "report"
-                                        element= { <PictureAsPdfIcon sx= {{ fontSize: { xs: '130%' } }} /> } />
-                            </Grid>
-                            <Grid item xs= { 2 } sm= { 1 }>
-                                <Print name= "Category report" content= { () => _print.current } 
-                                    element= { <LocalPrintshopIcon sx= {{ fontSize: { xs: '130%' } }} /> } />
-                            </Grid>
-                            <Grid item xs= { 2 } sm= { 1 }>
-                                <Export element= { <ArticleIcon sx= {{ fontSize: { xs: '130%' } }} /> } 
-                                    filename= "Category Report"
-                                    data= { report }
-                                    column= { report !== undefined ? (Object.keys(report)).length !== 0 ? Object.keys(report[0]) : [] : [] } />
+                                <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#487eb0" 
+                                    borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center" onClick= { () => setIsOpen(true) }>
+                                    <LocalPrintshopIcon style= {{ fontSize: '110%' }} />
+                                </Box>
                             </Grid>
                         </Grid>
                     </Grid>
@@ -66,7 +56,7 @@ const Index = () => {
             <Box sx= {{ padding: { xs: '0 14px', sm: '0' } }}>
                 <Box sx= {{ boxShadow: 2, borderRadius: '5px', overflow: 'hidden' }}>
                     <Paper elevation= { 0 }>
-                        <TableContainer ref= { _print }>
+                        <TableContainer>
                             <Table aria-label= "Category" size= "small" sx= {{ minWidth: 650, maxHeight: 500 }} stickyHeader>
                                 <Header />
                                 <Body data= { report } isLoad= { isLoad } />
@@ -75,6 +65,7 @@ const Index = () => {
                     </Paper>
                 </Box>
             </Box>
+            <Dialog />
         </Box>
     );
 }

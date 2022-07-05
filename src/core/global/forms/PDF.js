@@ -1,14 +1,11 @@
 // Libraries
 import React from 'react';
 import jsPDF from 'jspdf';
-import autoTable from 'jspdf-autotable';
 
 // Core
 import { Box } from '@mui/material';
-import { body, getDate, header, table } from './Function';
 
-const PDF = (props) => {
-    const { name, element, content, orientation = 'portrait', logo = null, type } = props;
+const PDF = () => {
 
     const generatePdf = () => {
         const doc = new jsPDF({ orientation: orientation, unit: 'px', format: 'letter', putOnlyUsedFonts: true });

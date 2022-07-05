@@ -3,17 +3,13 @@ import React, { useState } from 'react';
 import { Box, Grid } from '@mui/material';
 
 // Core
-import Ctrl from '../global/controls/Controls';
+import Ctrl from '../controls/Controls';
 
 const Form = (props) => {
     const { fields, register, errors, getValues, disabled = false } = props;
     const [ chck, setChck ] = useState();
     // eslint-disable-next-line
     const [ opt, setOpt ] = useState();
-    // getValues()[field] !== undefined || getValues()[field] !== null ? getValues()[field] !== null ? getValues()[field] : 
-    // field === 'bmonth' ? new Date().getMonth() + 1 :
-    // field === 'bday' ? new Date().getDate() :
-    // field === 'byear' ? new Date().getFullYear() : '' : ''
     
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" spacing= { 1 }>
