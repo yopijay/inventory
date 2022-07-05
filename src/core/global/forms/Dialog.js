@@ -1,10 +1,12 @@
 // Libraries
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Box, Dialog as MuiDialog, DialogActions, DialogContent, DialogTitle, useMediaQuery } from '@mui/material';
 import { useTheme } from '@emotion/react';
 
 // Core
 import Ctrl from '../controls/Controls';
+import Export from './Export';
+import Print from './Print';
 
 // Context
 import { DialogContext } from '../../context/DialogContext';
@@ -14,7 +16,6 @@ import Logo from '../../../assets/images/logo.png';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import PrintIcon from '@mui/icons-material/Print';
 import ArticleIcon from '@mui/icons-material/Article';
-import Export from './Export';
 import { excel } from '../../request/Request';
 
 const Dialog = (props) => {
@@ -23,6 +24,7 @@ const Dialog = (props) => {
     const fullscreen = useMediaQuery(theme.breakpoints.down('lg'));
     const { isOpen, setIsOpen } = useContext(DialogContext);
     const [ xlsx, setXlsx ] = useState([]);
+    const _print = useRef();
     // eslint-disable-next-line
     const [ isLoad, setIsLoad ] = useState(true);
 
@@ -40,11 +42,13 @@ const Dialog = (props) => {
                         <PictureAsPdfIcon sx= {{ fontSize: '250%', padding: '6px', backgroundColor: '#e17055', color: '#FFFFFF' }} />
                         <Ctrl.Typography text= "Generate PDF" color= "#e17055" sx= {{ padding: '0 10px' }} />
                     </Box>
-                    <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '0 5px', 
-                                        overflow: 'hidden', borderRadius: '5px', border: 'solid 1px #487eb0', cursor: 'pointer' }}>
-                        <PrintIcon sx= {{ fontSize: '250%', padding: '6px', backgroundColor: '#487eb0', color: '#FFFFFF' }} />
-                        <Ctrl.Typography text= "Print" color= "#487eb0" sx= {{ padding: '0 10px' }} />
-                    </Box>
+                    <Print name= { `${name.charAt(0).toUpperCase()}${name.replaceAll('_', ' ').slice(1)}` } content= { () => _print.current }
+                        element= { 
+                            <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '0 5px', 
+                                                overflow: 'hidden', borderRadius: '5px', border: 'solid 1px #487eb0', cursor: 'pointer' }}>
+                                <PrintIcon sx= {{ fontSize: '250%', padding: '6px', backgroundColor: '#487eb0', color: '#FFFFFF' }} />
+                                <Ctrl.Typography text= "Print" color= "#487eb0" sx= {{ padding: '0 10px' }} />
+                            </Box> } />
                     <Export filename= { `${name.charAt(0).toUpperCase()}${name.replaceAll('_', ' ').slice(1)}` } data= { xlsx } 
                         column= { xlsx !== undefined ? (Object.keys(xlsx)).length !== 0 ? Object.keys(xlsx[0]) : [] : [] }
                         element= { 
@@ -54,7 +58,7 @@ const Dialog = (props) => {
                                 <Ctrl.Typography text= "Export to Excel" color= "#1b8a0d" sx= {{ padding: '0 10px' }} />
                             </Box> } />
                 </Box>
-                <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', padding: '20px 15px' }}>
+                <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', padding: '20px 15px' }} ref= { _print }>
                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', marginBottom: '25px' }}>
                         <Box sx= {{ marginRight: '20px' }}><img src= { Logo } alt= "Brand" width= "50px" height= "50px" /></Box>
                         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>

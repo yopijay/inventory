@@ -13,7 +13,7 @@ const Index = (props) => {
 
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
-            <Box sx= {{ marginBottom: '20px' }}>
+            <Box sx= {{ marginBottom: '10px' }}>
                 <Ctrl.Typography text= { `${name.replaceAll('_', ' ').charAt(0).toUpperCase()}${name.replaceAll('_', ' ').slice(1)} Report` } 
                     sx= {{ fontSize: { xs: '100%', sm: '105%', md: '120%' }, fontWeight: 'bold' }} />
             </Box>
