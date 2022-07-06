@@ -11,6 +11,8 @@ import { getall } from '../../../../../core/request/Request';
 // Layouts
 import Header from './Header';
 import Body from './Body';
+import Dialog from '../../../../../core/global/forms/Dialog';
+import Preview from '../../../../../core/global/forms/preview/testreport';
 
 // Assets
 import ArticleIcon from '@mui/icons-material/Article';
@@ -42,10 +44,12 @@ const Index = () => {
                                 </Link>
                             </Grid>
                             <Grid item xs= { 2 } sm= { 1 }>
-                                <Export element= { <ArticleIcon sx= {{ fontSize: { xs: '130%' } }} /> } 
-                                    filename= "Test Report List"
-                                    data= { [] }
-                                    column= { [] } />
+                                <Export filename= "Test Report List" data= { [] } 
+                                    column= { [] }
+                                    element= { 
+                                        <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '0 5px', cursor: 'pointer' }}>
+                                            <ArticleIcon sx= {{ fontSize: '235%', padding: '6px', backgroundColor: '#1b8a0d', borderRadius: '5px', color: '#FFFFFF' }} />
+                                        </Box> } />
                             </Grid>
                         </Grid>
                     </Grid>
@@ -68,6 +72,7 @@ const Index = () => {
                     </Paper>
                 </Box>
             </Box>
+            <Dialog name= "test_report" content= { <Preview name= "test_report" /> } />
         </Box>
     );
 }
