@@ -13,11 +13,11 @@ import { DialogContext } from '../../context/DialogContext';
 
 // Assets
 import Logo from '../../../assets/images/logo.png';
-import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 import PrintIcon from '@mui/icons-material/Print';
 import ArticleIcon from '@mui/icons-material/Article';
+
+// Request
 import { excel } from '../../request/Request';
-import PDF from './PDF';
 
 const Dialog = (props) => {
     const { content, name } = props;
@@ -37,13 +37,13 @@ const Dialog = (props) => {
         <MuiDialog open= { isOpen } fullScreen= { fullscreen } maxWidth= "lg" fullWidth>
             <DialogContent>
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
-                    <PDF name= { `${name.charAt(0).toUpperCase()}${name.replaceAll('_', ' ').slice(1)}` } content= { () => _print.current }
+                    {/* <PDF name= { `${name.charAt(0).toUpperCase()}${name.replaceAll('_', ' ').slice(1)}` } content= { () => _print.current }
                         element= { 
                             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '0 5px', 
                                                 overflow: 'hidden', borderRadius: '5px', border: 'solid 1px #e17055', cursor: 'pointer' }}>
                                 <PictureAsPdfIcon sx= {{ fontSize: '250%', padding: '6px', backgroundColor: '#e17055', color: '#FFFFFF' }} />
                                 <Ctrl.Typography text= "Generate PDF" color= "#e17055" sx= {{ padding: '0 10px', display: { xs: 'none', sm: 'block' } }} />
-                            </Box> } />
+                            </Box> } /> */}
                     <Print name= { `${name.charAt(0).toUpperCase()}${name.replaceAll('_', ' ').slice(1)}` } content= { () => _print.current }
                         element= { 
                             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '0 5px', 

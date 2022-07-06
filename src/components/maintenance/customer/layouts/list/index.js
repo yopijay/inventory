@@ -46,10 +46,12 @@ const Index = () => {
                                 </Link>
                             </Grid>
                             <Grid item xs= { 2 } sm= { 1 }>
-                                <Export element= { <ArticleIcon sx= {{ fontSize: { xs: '130%' } }} /> } 
-                                    filename= "Customer List"
-                                    data= { xlsx }
-                                    column= { xlsx !== undefined ? (Object.keys(xlsx)).length !== 0 ? Object.keys(xlsx[0]) : [] : [] } />
+                                <Export filename= "Customer List" data= { xlsx } 
+                                    column= { xlsx !== undefined ? (Object.keys(xlsx)).length !== 0 ? Object.keys(xlsx[0]) : [] : [] }
+                                    element= { 
+                                        <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '0 5px', cursor: 'pointer' }}>
+                                            <ArticleIcon sx= {{ fontSize: '235%', padding: '6px', backgroundColor: '#1b8a0d', borderRadius: '5px', color: '#FFFFFF' }} />
+                                        </Box> } />
                             </Grid>
                         </Grid>
                     </Grid>
