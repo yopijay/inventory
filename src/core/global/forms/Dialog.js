@@ -34,7 +34,7 @@ const Dialog = (props) => {
     }, []);
 
     return (
-        <MuiDialog open= { isOpen } fullScreen= { fullscreen } maxWidth= "md" fullWidth>
+        <MuiDialog open= { isOpen } fullScreen= { fullscreen } maxWidth= "lg" fullWidth>
             <DialogContent>
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                     <PDF name= { `${name.charAt(0).toUpperCase()}${name.replaceAll('_', ' ').slice(1)}` } content= { () => _print.current }
