@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box, TableBody, TableCell, tableCellClasses, TableRow } from '@mui/material';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -8,13 +8,17 @@ import { styled } from '@mui/styles';
 // Icons
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
 import VisibilityIcon from '@mui/icons-material/Visibility';
+import PrintIcon from '@mui/icons-material/Print';
 
 // Loader
 import { SnakeLoader } from '../../../../../core/loader/Loader';
 
+// Context
+import { DialogContext } from '../../../../../core/context/DialogContext';
 
 const Body = (props) => {
     const { data, isLoad } = props;
+    const { setIsOpen, setId } = useContext(DialogContext);
 
     const StyledTableCell = styled(TableCell)(({
         [`&.${tableCellClasses.body}`]: {
@@ -54,6 +58,12 @@ const Body = (props) => {
                                                     <VisibilityIcon style= {{ fontSize: '110%' }} />
                                                 </Box>
                                             </Link>
+                                        </Box>
+                                        <Box sx= {{ margin: '5px' }}>
+                                            <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#487eb0" 
+                                                borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center" onClick= { () => { setIsOpen(true); setId(rows.id); } }>
+                                                <PrintIcon style= {{ fontSize: '110%' }} />
+                                            </Box>
                                         </Box>
                                     </Box>    
                                 </StyledTableCell>

@@ -9,12 +9,13 @@ import Form from './layouts/form';
 
 // Context
 import { TestReportProvider } from '../../../core/context/TestReportContext';
+import { DialogProvider } from '../../../core/context/DialogContext';
 
 const Index = () => {
     return (
         <Box sx= {{ marginTop: { xs: '10px', sm: '15px', md: '20px' }, transition: 'all 0.2s ease-in-out' }}>
             <Routes>
-                <Route exact path= "/" element= { <List /> } />
+                <Route exact path= "/" element= { <DialogProvider><List /></DialogProvider> } />
                 <Route exact path= "/form/:type" element= { <TestReportProvider><Form /></TestReportProvider> } />
                 <Route exact path= "/form/:type/:id" element= { <TestReportProvider><Form /></TestReportProvider> } />
             </Routes>

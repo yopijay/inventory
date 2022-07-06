@@ -60,7 +60,8 @@ const Dialog = (props) => {
                                 <Ctrl.Typography text= "Export to Excel" color= "#1b8a0d" sx= {{ padding: '0 10px', display: { xs: 'none', sm: 'block' } }} />
                             </Box> } />
                 </Box>
-                <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', padding: '20px 15px', overflow: 'hidden' }} ref= { _print }>
+                <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', overflow: 'scroll', '&::-webkit-scrollbar': { display: 'none' }, margin: '20px 0',
+                                    '@media print': { margin: '15px 0 !important', padding: '0 30px !important' } }} ref= { _print }>
                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', marginBottom: '25px' }}>
                         <Box sx= {{ marginRight: { xs: '10px', md: '20px' } }}><img src= { Logo } alt= "Brand" width= "50px" height= "50px" /></Box>
                         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
