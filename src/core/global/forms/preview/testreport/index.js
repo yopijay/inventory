@@ -14,6 +14,7 @@ import GeneralSpecification from './layouts/GeneralSpecification';
 import Component from './layouts/Component';
 import ConstructionInspection from './layouts/ConstructionInspection';
 import MechanicalOperation from './layouts/MechanicalOperation';
+import ElectricalOperation from './layouts/ElectricalOperation';
 
 const Index = (props) => {
     const { name } = props;
@@ -34,6 +35,7 @@ const Index = (props) => {
             <Component />
             <ConstructionInspection />
             <MechanicalOperation />
+            <ElectricalOperation />
         </Box>
     );
 }
