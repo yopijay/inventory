@@ -17,7 +17,7 @@ const Index = () => {
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
-                <Ctrl.Typography text= "b1. Device specification conform to final approved drawings" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
+                <Ctrl.Typography text= "b.1 Device specification conform to final approved drawings" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
                 <Ctrl.Checkbox />
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', margin: '0 10px', width: '80px' }}>
                     <Ctrl.Typography text= "S. O." sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
