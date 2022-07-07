@@ -51,7 +51,7 @@ const Dialog = (props) => {
                                 element= { 
                                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '0 5px', 
                                                         overflow: 'hidden', borderRadius: '5px', border: 'solid 1px #1b8a0d', cursor: 'pointer' }}>
-                                        <ArticleIcon sx= {{ fontSize: '250%', padding: '6px', backgroundColor: '#1b8a0d', color: '#FFFFFF' }} />
+                                        <ArticleIcon sx= {{ fontSize: '200%', padding: '6px', backgroundColor: '#1b8a0d', color: '#FFFFFF' }} />
                                         <Ctrl.Typography text= "Export to Excel" color= "#1b8a0d" sx= {{ padding: '0 10px', display: { xs: 'none', sm: 'block' } }} />
                                     </Box> } />
                         ) : ( '' )
