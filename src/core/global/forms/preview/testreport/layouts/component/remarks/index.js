@@ -18,13 +18,13 @@ const Index = () => {
                     <Box sx= {{ width: '50%', display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
                         <Box sx= {{ minWidth: '90px' }}><Ctrl.Typography text= "Quantity" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} /></Box>
                         <Box sx= {{ borderBottom: 'solid 1px #b2bec3', minWidth: '100px', textAlign: 'center' }}>
-                            <Ctrl.Typography text= "1" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' }, textTransform: 'uppercase' }} />
+                            <Ctrl.Typography text= "-" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' }, textTransform: 'uppercase' }} />
                         </Box>
                     </Box>
                     <Box sx= {{ width: '50%', display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
                         <Box sx= {{ minWidth: '90px' }}><Ctrl.Typography text= "J.O. Number" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} /></Box>
                         <Box sx= {{ borderBottom: 'solid 1px #b2bec3', minWidth: '100px', textAlign: 'center' }}>
-                            <Ctrl.Typography text= "40971" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' }, textTransform: 'uppercase' }} />
+                            <Ctrl.Typography text= "-" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' }, textTransform: 'uppercase' }} />
                         </Box>
                     </Box>
                 </Box>
