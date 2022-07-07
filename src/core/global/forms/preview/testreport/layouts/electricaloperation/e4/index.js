@@ -18,7 +18,7 @@ const Index = () => {
                     <Ctrl.Typography text= "-" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
                 </Box>
             </Box>
-            <Box sx= {{ width: '100%' }}><List data= { [] } /></Box>
+            <Box sx= {{ width: '95%' }}><List data= { [] } /></Box>
             <Ctrl.Typography text= "Note: All result value in are Mega-Ohms\Giga-Ohms." sx= {{ fontSize: { xs: '95%' } }} />
             <Box sx= {{ display: 'flex', flexDirection: "row", justifyContent: 'flex-start', alignItems: 'center', width: '100%' }}>
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', width: '40%' }}>

@@ -18,7 +18,7 @@ const Index = () => {
                     <Ctrl.Typography text= "-" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
                 </Box>
             </Box>
-            <Box sx= {{ width: '100%' }}><List data= { [] } /></Box>
+            <Box sx= {{ width: '95%' }}><List data= { [] } /></Box>
         </Box>
     );
 }
