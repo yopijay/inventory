@@ -9,6 +9,7 @@ import Ctrl from '../../../../../../../core/global/controls/Controls';
 import FreeStanding from './drawings/FreeStanding';
 import WallMounted from './drawings/WallMounted';
 import C11 from './drawings/C11';
+import C12 from './drawings/C12';
 
 const Drawings = () => {
 
@@ -21,6 +22,7 @@ const Drawings = () => {
             <FreeStanding />
             <WallMounted />
             <C11 />
+            <C12 />
         </Box>
     );
 }

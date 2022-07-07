@@ -45,7 +45,7 @@ const BasicInformation = () => {
                             <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Project" color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                    <Ctrl.TextField name= { `basic_information.project` } register= { register(`basic_information.project`) } 
+                                    <Ctrl.TextField name= { `basic_information.project` } register= { register(`basic_information.project`, { required: 'This field is required!' }) } 
                                         variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                 </Box>
                                 <Box marginTop= "5px">
@@ -57,7 +57,7 @@ const BasicInformation = () => {
                             <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Serial No." color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                    <Ctrl.TextField name= { `basic_information.serial_no` } register= { register('basic_information.serial_no') } 
+                                    <Ctrl.TextField name= { `basic_information.serial_no` } register= { register('basic_information.serial_no', { required: 'This field is required!' }) } 
                                         variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                 </Box>
                                 <Box marginTop= "5px">
@@ -72,6 +72,7 @@ const BasicInformation = () => {
                                     {
                                         !loadDropdown ? (
                                             <Ctrl.Select name= { `basic_information.customer_id` } register= { register('basic_information.customer_id', {
+                                                    required: 'This field is required!',
                                                     onChange: e => setCustomerId(e.target.value)
                                                 }) } fullWidth variant= "standard" InputProps= {{ disableUnderline: true }} value= { defaultVal.customer_id !== undefined ? defaultVal.customer_id : '' }
                                                 options= { customer } />
@@ -92,6 +93,7 @@ const BasicInformation = () => {
                                     {
                                         isToday !== undefined ? (
                                             <Ctrl.TextField name= { `basic_information.date_performed` } register= { register('basic_information.date_performed', {
+                                                    required: 'This field is required!',
                                                     onChange: e => setIsToday(e.target.value)
                                                 }) } variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} type= "datetime-local" disabled= { type !== 'new' }
                                                 value= { type !== 'new' ? defaultVal !== undefined ? getDate(new Date(defaultVal.date_performed)).date : isToday : isToday } />

@@ -23,7 +23,7 @@ const Items = (props) => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box sx= {{ border: `solid 1px ${ error !== undefined ? error[index] !== undefined ? error[index].device !== undefined ? '#e84118' : '#dcdde1' : '#dcdde1' : '#dcdde1'}`, 
                                         borderRadius: '5px', padding: '5px 15px' }}>
-                        <Ctrl.TextField name= { `items[${index}].device` } register= { register(`items[${index}].device`) } 
+                        <Ctrl.TextField name= { `items[${index}].device` } register= { register(`items[${index}].device`, { required: 'This field is required!' }) } 
                             variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Device" />
                     </Box>
                 </Box>
@@ -32,7 +32,7 @@ const Items = (props) => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box sx= {{ border: `solid 1px ${ error !== undefined ? error[index] !== undefined ? error[index].quantity !== undefined ? '#e84118' : '#dcdde1' : '#dcdde1' : '#dcdde1'}`, 
                                         borderRadius: '5px', padding: '5px 15px' }}>
-                        <Ctrl.TextField name= { `items[${index}].symbol` } register= { register(`items[${index}].symbol`) } 
+                        <Ctrl.TextField name= { `items[${index}].symbol` } register= { register(`items[${index}].symbol`, { required: 'This field is required!' }) } 
                             variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Symbol" />
                     </Box>
                 </Box>
@@ -41,7 +41,7 @@ const Items = (props) => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box sx= {{ border: `solid 1px ${ error !== undefined ? error[index] !== undefined ? error[index].quantity !== undefined ? '#e84118' : '#dcdde1' : '#dcdde1' : '#dcdde1'}`, 
                                         borderRadius: '5px', padding: '5px 15px' }}>
-                        <Ctrl.TextField name= { `items[${index}].description` } register= { register(`items[${index}].description`) } 
+                        <Ctrl.TextField name= { `items[${index}].description` } register= { register(`items[${index}].description`, { required: 'This field is required!' }) } 
                             variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Description" />
                     </Box>
                 </Box>
@@ -50,7 +50,7 @@ const Items = (props) => {
                 <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                     <Box sx= {{ border: `solid 1px ${ error !== undefined ? error[index] !== undefined ? error[index].quantity !== undefined ? '#e84118' : '#dcdde1' : '#dcdde1' : '#dcdde1'}`, 
                                         borderRadius: '5px', padding: '5px 15px' }}>
-                        <Ctrl.TextField name= { `items[${index}].quantity` } type= "number" register= { register(`items[${index}].quantity`) } 
+                        <Ctrl.TextField name= { `items[${index}].quantity` } type= "number" register= { register(`items[${index}].quantity`, { required: 'This field is required!' }) } 
                             variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Quantity" />
                     </Box>
                 </Box>
