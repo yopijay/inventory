@@ -95,3 +95,7 @@ export const optionsPer = async(table, cols, set, id = null, loader) => {
 export const excel = async(set, table, loader) => {
     await _axios(`${Env[env].url}/excel/${table}`, 'get').then(res => { set(res); loader(false); }).catch(err => { console.log(err); loader(false); });
 }
+
+export const preview = async(set, id, loader) => {
+    await _axios(`${Env[env].url}/test-report/${id}`, 'get').then(res => { set(res); loader(false); }).catch(err => { console.log(err); loader(false); });
+}

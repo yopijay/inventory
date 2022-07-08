@@ -23,7 +23,7 @@ const Header = ({ data }) => {
             if(_keys[count] !== 'id') {
                 _headers.push({ name: `${(_keys[count]).charAt(0).toUpperCase()}${(_keys[count]).replaceAll('_', ' ').slice(1)}`, 
                                             props: { align: `${_keys[count] === 'total_no_of_brands' || _keys[count] === 'status' || _keys[count] === 'total_no_of_assets'
-                                                                        || _keys[count] === 'total_asset' || _keys[count] === 'civil_status'
+                                                                        || _keys[count] === 'total_asset' || _keys[count] === 'civil_status' || _keys[count] === 'quantity'
                                                                         || _keys[count] === 'assigned_assets' || _keys[count] === 'unassigned_assets' ? 'center' : 'left'}` } });
             }
         }

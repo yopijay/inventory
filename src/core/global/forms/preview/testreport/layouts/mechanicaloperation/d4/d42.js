@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box } from '@mui/material';
 
 // Core
@@ -8,7 +8,13 @@ import Ctrl from '../../../../../../controls/Controls';
 // Constants
 import { Torque } from '../../../../../../constants/MechanicalOperation';
 
+// Context
+import { DialogContext } from '../../../../../../../context/DialogContext';
+
 const Index = () => {
+    const { data } = useContext(DialogContext);
+    const mo = data.mechanical_operation;
+
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', paddingLeft: '20px' }}>
@@ -21,13 +27,11 @@ const Index = () => {
                             {
                                 (row.item).map((items, index) => (
                                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', width: '200px' }} key= { index }>
-                                        <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', border: 'solid 1px #b2bec3', 
-                                                            borderRadius: '5px', width: '30px', height: '30px' }}>
-                                            <Ctrl.Typography text= "-" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
-                                        </Box>
+                                        <Ctrl.Checkbox checked= { mo !== undefined ? mo.screw_tightening.torque[`nm_${items.name}`].chck : false } />
                                         <Ctrl.Typography text= { `~${items.label}` } sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%', width: '50px' } }} />
                                         <Box sx= {{ borderBottom: 'solid 1px #b2bec3', width: '50px', textAlign: 'center', margin: '0 5px' }}>
-                                            <Ctrl.Typography text= "-" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' }, textTransform: 'uppercase' }} />
+                                            <Ctrl.Typography text={ `${mo !== undefined ? mo.screw_tightening.torque[`nm_${items.name}`].txt !== '' ? 
+                                                                                        mo.screw_tightening.torque[`nm_${items.name}`].txt : '-' : '-' }` } sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
                                         </Box>
                                         <Ctrl.Typography text= "N-m" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
                                     </Box>
@@ -42,24 +46,22 @@ const Index = () => {
                     <Ctrl.Typography text= "Other Bolt Sizes" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
                 </Box>
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', width: '200px' }}>
-                    <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', border: 'solid 1px #b2bec3', 
-                                        borderRadius: '5px', width: '30px', height: '30px' }}>
-                        <Ctrl.Typography text= "-" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
-                    </Box>
-                    <Ctrl.Typography text= "~" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%', width: '50px' } }} />
+                    <Ctrl.Checkbox checked= { mo !== undefined ? mo.screw_tightening.torque.nm_other1.chck : false } />
+                    <Ctrl.Typography text= { `~${mo !== undefined ? mo.screw_tightening.torque.nm_other1.num !== '' ? mo.screw_tightening.torque.nm_other1.num : '' : ''}` } 
+                        sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%', width: '50px' } }} />
                     <Box sx= {{ borderBottom: 'solid 1px #b2bec3', width: '50px', textAlign: 'center', margin: '0 5px' }}>
-                        <Ctrl.Typography text= "-" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' }, textTransform: 'uppercase' }} />
+                        <Ctrl.Typography text= { `${mo !== undefined ? mo.screw_tightening.torque.nm_other1.txt !== '' ? mo.screw_tightening.torque.nm_other1.txt : '-' : '-'}` } 
+                        sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' }, textTransform: 'uppercase' }} />
                     </Box>
                     <Ctrl.Typography text= "N-m" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
                 </Box>
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', width: '200px' }}>
-                    <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center', border: 'solid 1px #b2bec3', 
-                                        borderRadius: '5px', width: '30px', height: '30px' }}>
-                        <Ctrl.Typography text= "-" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
-                    </Box>
-                    <Ctrl.Typography text= "~" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%', width: '50px' } }} />
+                    <Ctrl.Checkbox checked= { mo !== undefined ? mo.screw_tightening.torque.nm_other2.chck : false } />
+                    <Ctrl.Typography text= { `~${mo !== undefined ? mo.screw_tightening.torque.nm_other2.num !== '' ? mo.screw_tightening.torque.nm_other2.num : '' : ''}` } 
+                        sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%', width: '50px' } }} />
                     <Box sx= {{ borderBottom: 'solid 1px #b2bec3', width: '50px', textAlign: 'center', margin: '0 5px' }}>
-                        <Ctrl.Typography text= "-" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' }, textTransform: 'uppercase' }} />
+                        <Ctrl.Typography text= { `${mo !== undefined ? mo.screw_tightening.torque.nm_other2.txt !== '' ? mo.screw_tightening.torque.nm_other2.txt : '-' : '-'}` } 
+                        sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' }, textTransform: 'uppercase' }} />
                     </Box>
                     <Ctrl.Typography text= "N-m" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
                 </Box>
