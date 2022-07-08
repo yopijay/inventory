@@ -19,7 +19,7 @@ const Header = () => {
             <TableRow>
                 <StyledTableCell>Series No.</StyledTableCell>
                 <StyledTableCell>Name</StyledTableCell>
-                <StyledTableCell>Position</StyledTableCell>
+                <StyledTableCell align= "center">Position</StyledTableCell>
                 <StyledTableCell align= "center">Status</StyledTableCell>
                 <StyledTableCell align= "center">Date Created</StyledTableCell>
                 <StyledTableCell align= "center">Action</StyledTableCell>

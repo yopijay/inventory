@@ -1,12 +1,9 @@
 // Libraries
 import React from 'react';
-import { Box, TableBody, TableCell, tableCellClasses, TableRow } from '@mui/material';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { Box, TableBody, TableCell, tableCellClasses, TableRow } from '@mui/material';
 import { styled } from '@mui/styles';
-
-// Core
-import { getDate } from '../../../../../core/global/Function';
 
 // Icons
 import ModeEditOutlineIcon from '@mui/icons-material/ModeEditOutline';
@@ -14,7 +11,6 @@ import VisibilityIcon from '@mui/icons-material/Visibility';
 
 // Loader
 import { SnakeLoader } from '../../../../../core/loader/Loader';
-
 
 const Body = (props) => {
     const { data, isLoad } = props;
@@ -24,7 +20,7 @@ const Body = (props) => {
             fontSize: 14,
         }
     }));
-    
+
     return (
         <TableBody>
             {
@@ -33,14 +29,16 @@ const Body = (props) => {
                         data.map((rows, index) => (
                             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }} key= { index }>
                                 <StyledTableCell>{ rows.series_no }</StyledTableCell>
-                                <StyledTableCell>{ `${rows.lname}, ${rows.fname} ${rows.mname}` }</StyledTableCell>
-                                <StyledTableCell align= "center">{ rows.position_id }</StyledTableCell>
+                                <StyledTableCell>{ rows.name }</StyledTableCell>
                                 <StyledTableCell align= "center">{ rows.status === 1 ? 'Active' : 'Inactive' }</StyledTableCell>
-                                <StyledTableCell align= "center">{ `${ getDate(new Date(rows.date_created)).formatted }` }</StyledTableCell>
+                                <StyledTableCell align= "center">{ `${ new Date(rows.date_created).toLocaleString('default', { month: 'long' }) }
+                                                                ${ new Date(rows.date_created).getDate() }, ${ new Date(rows.date_created).getFullYear() } 
+                                                                ${ new Date(rows.date_created).getHours() % 12 }:${ new Date(rows.date_created).getMinutes() }
+                                                                ${ new Date(rows.date_created).getHours() >= 12 ? 'PM' : 'AM' }` } </StyledTableCell>
                                 <StyledTableCell align= "center">
                                     <Box sx= {{ display: 'flex', flexDirectin: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                         <Box sx= {{ margin: '5px' }}>
-                                            <Link to= { `/maintenance/users/form/update/${rows.id}` } style= {{ textDecoration: 'none' }}>
+                                            <Link to= { `/maintenance/department/form/update/${rows.id}` } style= {{ textDecoration: 'none' }}>
                                                 <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#487eb0" 
                                                     borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                     <ModeEditOutlineIcon style= {{ fontSize: '110%' }} />
@@ -48,7 +46,7 @@ const Body = (props) => {
                                             </Link>
                                         </Box>
                                         <Box sx= {{ margin: '5px' }}>
-                                            <Link to= { `/maintenance/users/form/view/${rows.id}` } style= {{ textDecoration: 'none' }}>
+                                            <Link to= { `/maintenance/department/form/view/${rows.id}` } style= {{ textDecoration: 'none' }}>
                                                 <Box padding= "8px 10px" color= "#ffffff" bgcolor= "#487eb0" 
                                                     borderRadius= "4px" display= "flex" flexDirection= "row" justifyContent= "center" alignItems= "center">
                                                     <VisibilityIcon style= {{ fontSize: '110%' }} />
@@ -61,12 +59,12 @@ const Body = (props) => {
                         ))
                     ) : (
                         <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
-                            <StyledTableCell align= "center" colSpan= "6">No users found!</StyledTableCell>
+                            <StyledTableCell align= "center" colSpan= "5">No departments found!</StyledTableCell>
                         </TableRow>
                     )
                 ) : (
                     <TableRow>
-                        <StyledTableCell align= "center" colSpan= "6">
+                        <StyledTableCell align= "center" colSpan= "5">
                             <Box sx= {{ display: 'flex' , flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
                                 <SnakeLoader bg= "#b2bec3" size= "7px" distance= "7px" />
                             </Box>

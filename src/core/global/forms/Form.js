@@ -1,15 +1,16 @@
 // Libraries
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { Box, Grid } from '@mui/material';
 
 // Core
 import Ctrl from '../controls/Controls';
 
+// Context
+import { FormContext } from '../../context/FormContext';
+
 const Form = (props) => {
     const { fields, register, errors, getValues, disabled = false } = props;
-    const [ chck, setChck ] = useState();
-    // eslint-disable-next-line
-    const [ opt, setOpt ] = useState();
+    const { chck, setChck, setOpt } = useContext(FormContext);
     
     return (
         <Grid container direction= "row" justifyContent= "flex-start" alignItems= "flex-start" spacing= { 1 }>

@@ -1,14 +1,19 @@
 // Libraries
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box } from '@mui/material';
 import { Route, Routes } from 'react-router-dom';
 
 // Layouts
 import List from './layouts/list';
 import Form from './layouts/form';
-import { FormProvider } from 'react-hook-form';
+import { FormProvider } from '../../../core/context/FormContext';
 
 const Index = () => {
+
+    useEffect(() => {
+        localStorage.setItem('nav', 'Position');
+    }, []);
+
     return (
         <Box sx= {{ marginTop: { xs: '10px', sm: '15px', md: '20px' }, transition: 'all 0.2s ease-in-out' }}>
             <Routes>

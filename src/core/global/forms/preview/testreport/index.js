@@ -22,7 +22,7 @@ const Index = (props) => {
     const { id } = useContext(DialogContext);
     
     useEffect(() => {
-        console.log();
+        console.log(id);
     }, []);
 
     return (

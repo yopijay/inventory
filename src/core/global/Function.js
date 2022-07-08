@@ -4,7 +4,7 @@ import { options } from '../request/Request';
 import autoTable from 'jspdf-autotable';
 
 // Constants
-import { days, months, years } from "./constants/Date";
+import { days, months, years } from "./constants/Options";
 
 export const _axios = (url, method, data = null) => {
     return new Promise(resolve => {

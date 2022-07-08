@@ -24,9 +24,9 @@ const Brand = (props) => {
             </IconButton>
             <Link to= "/" style= {{ textDecoration: 'none' }} onClick= { () => {setIsActive('Home'); localStorage.setItem('nav', 'Home'); setExpand('') } }>
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
-                    <Ctrl.Typography text= "IN" color= "primary.main" 
-                        sx= {{ fontFamily: 'Boldstrom', fontSize: { xs: '1.75rem', sm: '1.90rem', md: '2rem' }, transition: 'all 0.2s ease-in-out', textOverflow: 'ellipsis', whiteSpace: 'nowrap',  }} />
-                    <Ctrl.Typography text= "VENTORY" color= "text.primary" 
+                    <Ctrl.Typography text= "KC" color= "primary.main" 
+                        sx= {{ fontFamily: 'Boldstrom', fontSize: { xs: '1.75rem', sm: '1.90rem', md: '2rem' }, transition: 'all 0.2s ease-in-out', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} />
+                    <Ctrl.Typography text= "IC" color= "text.primary" 
                         sx= {{ fontFamily: 'Boldstrom', fontSize: { xs: '1.75rem', sm: '1.90rem', md: '2rem' }, transition: 'all 0.2s ease-in-out', textOverflow: 'ellipsis', whiteSpace: 'nowrap',  }} />
                 </Box>
             </Link>
