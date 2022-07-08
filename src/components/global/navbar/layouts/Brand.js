@@ -13,8 +13,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { NavContext } from '../../../../core/context/NavContext';
 
 const Brand = (props) => {
-    // eslint-disable-next-line
-    const [ isActive, setIsActive, expand, setExpand ] = useContext(NavContext);
+    const { setIsActive, setExpand } = useContext(NavContext);
     const { drawerToggle, isMobile } = props;
 
     return (

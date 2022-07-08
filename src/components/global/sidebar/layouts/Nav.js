@@ -15,7 +15,7 @@ import { NavContext } from '../../../../core/context/NavContext';
 
 const Nav = (props) => {
     const { setIsMobile } = props;
-    const [ isActive, setIsActive, expand, setExpand ] = useContext(NavContext);
+    const { isActive, setIsActive, expand, setExpand } = useContext(NavContext);
 
     const Accordion = styled(MuiAccordion)(({
         '& .css-1pvvkxv-MuiButtonBase-root-MuiAccordionSummary-root, .css-1uaukoe': {
