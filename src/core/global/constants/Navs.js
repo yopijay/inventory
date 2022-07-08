@@ -6,6 +6,7 @@ import Dashboard from '../../../components/dashboard';
 import Brands from '../../../components/maintenance/brands';
 import Users from '../../../components/maintenance/users';
 import Department from '../../../components/maintenance/department';
+import Position from '../../../components/maintenance/position';
 import Assets from '../../../components/maintenance/asset';
 import Categories from '../../../components/maintenance/category';
 import Customer from '../../../components/maintenance/customer';
@@ -46,9 +47,14 @@ export const Navs = () => (
                     label: 'User'
                 },
                 {
-                    name: 'Departments',
+                    name: 'Department',
                     path: '/maintenance/department',
                     label: 'Department'
+                },
+                {
+                    name: 'Position',
+                    path: '/maintenance/position',
+                    label: 'Position'
                 },
                 {
                     name: 'Assets',
@@ -133,6 +139,11 @@ export const Layouts = () => (
             name: 'Maintenance',
             path: '/maintenance/department',
             component: <Department />
+        },
+        {
+            name: 'Maintenance',
+            path: '/maintenance/position',
+            component: <Position />
         },
         {
             name: 'Maintenance',

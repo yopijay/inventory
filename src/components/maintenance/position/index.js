@@ -10,7 +10,7 @@ import Form from './layouts/form';
 const Index = () => {
 
     useEffect(() => {
-        localStorage.setItem('nav', 'Department');
+        localStorage.setItem('nav', 'Position');
     }, []);
 
     return (
