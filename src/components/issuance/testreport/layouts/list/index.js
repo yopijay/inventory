@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../../core/global/controls/Controls';
-import Export from '../../../../../core/global/forms/Export';
+// import Export from '../../../../../core/global/forms/Export';
 import { getall } from '../../../../../core/request/Request';
 
 // Layouts
@@ -15,7 +15,7 @@ import Dialog from '../../../../../core/global/forms/Dialog';
 import Preview from '../../../../../core/global/forms/preview/testreport';
 
 // Assets
-import ArticleIcon from '@mui/icons-material/Article';
+// import ArticleIcon from '@mui/icons-material/Article';
 
 const Index = () => {
     const [ testreport, setTestreport ] = useState([]);
@@ -43,14 +43,14 @@ const Index = () => {
                                                         fontSize: { xs: '90%', sm: '95%', md: '100%' }, borderRadius: '4px', width: '100%', textAlign: 'center' }} /> } variant= "contained" />
                                 </Link>
                             </Grid>
-                            <Grid item xs= { 2 } sm= { 1 }>
+                            {/* <Grid item xs= { 2 } sm= { 1 }>
                                 <Export filename= "Test Report List" data= { [] } 
                                     column= { [] }
                                     element= { 
                                         <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', margin: '0 5px', cursor: 'pointer' }}>
                                             <ArticleIcon sx= {{ fontSize: '235%', padding: '6px', backgroundColor: '#1b8a0d', borderRadius: '5px', color: '#FFFFFF' }} />
                                         </Box> } />
-                            </Grid>
+                            </Grid> */}
                         </Grid>
                     </Grid>
                 </Grid>
