@@ -14,7 +14,7 @@ export const NavProvider = (props) => {
                                                                     localStorage.getItem('nav') === 'Users Report' || localStorage.getItem('nav') === 'Assets Report' ? 'Reports' : '' : '');
 
     return (
-        <NavContext.Provider value= {[ isActive, setIsActive, expand, setExpand ]}>
+        <NavContext.Provider value= {{ isActive, setIsActive, expand, setExpand }}>
             { props.children }
         </NavContext.Provider>
     );
