@@ -17,11 +17,11 @@ const Header = () => {
     return (
         <TableHead>
             <TableRow>
-                <StyledTableCell align= "center">No.</StyledTableCell>
                 <StyledTableCell>Series No.</StyledTableCell>
-                <StyledTableCell>Category</StyledTableCell>
-                <StyledTableCell>Brand</StyledTableCell>
-                <StyledTableCell align= "center">No. of Assets</StyledTableCell>
+                <StyledTableCell>Name</StyledTableCell>
+                <StyledTableCell align= "center">Status</StyledTableCell>
+                <StyledTableCell align= "center">Date Created</StyledTableCell>
+                <StyledTableCell align= "center">Action</StyledTableCell>
             </TableRow>
         </TableHead>
     );

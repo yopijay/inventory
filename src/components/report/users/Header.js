@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <TableHead>
             <TableRow>
-                <StyledTableCell>No.</StyledTableCell>
+                <StyledTableCell align= "center">No.</StyledTableCell>
                 <StyledTableCell>Series No.</StyledTableCell>
                 <StyledTableCell>Fullname</StyledTableCell>
                 <StyledTableCell align= "center">No. of Assigned Assets</StyledTableCell>
