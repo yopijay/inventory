@@ -32,7 +32,7 @@ const GeneralSpecification = () => {
                             <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Panel Name" color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                    <Ctrl.TextField name= { `general_specification.panel_name` } register= { register(`general_specification.panel_name`) } 
+                                    <Ctrl.TextField name= { `general_specification.panel_name` } register= { register(`general_specification.panel_name`, { required: 'This field is required!' }) } 
                                         variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                 </Box>
                                 <Box padding= "0 10px" marginTop= "5px">
@@ -44,7 +44,7 @@ const GeneralSpecification = () => {
                             <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Voltage" color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                    <Ctrl.TextField name= { `general_specification.voltage` } register= { register(`general_specification.voltage`) } 
+                                    <Ctrl.TextField name= { `general_specification.voltage` } register= { register(`general_specification.voltage`, { required: 'This field is required!' }) } 
                                         variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                 </Box>
                                 <Box padding= "0 10px" marginTop= "5px">
@@ -56,7 +56,7 @@ const GeneralSpecification = () => {
                             <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Enlosure Type" color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                    <Ctrl.TextField name= { `general_specification.enclosure_type` } register= { register(`general_specification.enclosure_type`) } 
+                                    <Ctrl.TextField name= { `general_specification.enclosure_type` } register= { register(`general_specification.enclosure_type`, { required: 'This field is required!' }) } 
                                         variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                 </Box>
                                 <Box padding= "0 10px" marginTop= "5px">
@@ -68,7 +68,7 @@ const GeneralSpecification = () => {
                             <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Phase / Wire" color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                    <Ctrl.TextField name= { `general_specification.wire` } register= { register(`general_specification.wire`) } 
+                                    <Ctrl.TextField name= { `general_specification.wire` } register= { register(`general_specification.wire`, { required: 'This field is required!' }) } 
                                         variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                 </Box>
                                 <Box padding= "0 10px" marginTop= "5px">
@@ -80,7 +80,7 @@ const GeneralSpecification = () => {
                             <Box display= "flex" flexDirection= "column" justifyContent= "flex-start" alignItems= "stretch">
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Color" color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
-                                    <Ctrl.TextField name= { `general_specification.color` } register= { register(`general_specification.color`) } 
+                                    <Ctrl.TextField name= { `general_specification.color` } register= { register(`general_specification.color`, { required: 'This field is required!' }) } 
                                         variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
                                 </Box>
                                 <Box padding= "0 10px" marginTop= "5px">

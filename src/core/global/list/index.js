@@ -13,7 +13,7 @@ const Index = (props) => {
         <Box sx= {{ boxShadow: 2, borderRadius: '5px', overflow: 'hidden' }}>
             <Paper elevation= { 0 }>
                 <TableContainer>
-                    <Table size= "small" sx= {{ minWidth: 650 }} stickyHeader>
+                    <Table size= "small" stickyHeader>
                         <Header data= { data } />
                         <Body data= { data }/>
                     </Table>

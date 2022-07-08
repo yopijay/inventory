@@ -13,6 +13,9 @@ import BasicInformation from './layouts/BasicInformation';
 import GeneralSpecification from './layouts/GeneralSpecification';
 import Component from './layouts/Component';
 import ConstructionInspection from './layouts/ConstructionInspection';
+import MechanicalOperation from './layouts/MechanicalOperation';
+import ElectricalOperation from './layouts/ElectricalOperation';
+import Signature from './layouts/Signature';
 
 const Index = (props) => {
     const { name } = props;
@@ -31,7 +34,10 @@ const Index = (props) => {
             <BasicInformation />
             <GeneralSpecification />
             <Component />
-            {/* <ConstructionInspection /> */}
+            <ConstructionInspection />
+            <MechanicalOperation />
+            <ElectricalOperation />
+            <Signature />
         </Box>
     );
 }
