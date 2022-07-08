@@ -1,5 +1,5 @@
 // Libraries
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Box, Grid } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -11,7 +11,7 @@ import Form from '../../../../../core/global/forms/Form';
 import { Position } from '../../../../../core/global/validation/Position';
 
 // Constants
-import { Position as Fields } from '../../../../../core/global/constants/Position';
+import { Position as Fields } from '../../../../../core/global/constants/Fields';
 
 // Request
 import { get, save } from '../../../../../core/request/Request';
@@ -19,17 +19,19 @@ import { get, save } from '../../../../../core/request/Request';
 // Loader
 import { SnakeLoader } from '../../../../../core/loader/Loader';
 
+// Context
+import { FormContext } from '../../../../../core/context/FormContext';
+
 const Index = () => {
     const { type, id } = useParams();
     const navigate = useNavigate();
-    const [ loader, setLoader ] = useState(false);
-    const [ isLoad, setIsLoad ] = useState(type !== 'new');
+    const { loader, setLoader, isLoad, setIsload } = useContext(FormContext);
     const { register, handleSubmit, formState: { errors }, setValue, getValues, setError } = useForm({
         resolver: yupResolver(Position())
     });
     
     useEffect(() => {
-        if(id !== undefined) get(id, 'position', setValue, setIsLoad);
+        if(id !== undefined) get(id, 'position', setValue, setIsload);
     }, []);
     
     return (

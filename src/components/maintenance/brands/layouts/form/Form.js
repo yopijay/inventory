@@ -1,5 +1,5 @@
 // Libraries
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Grid, Skeleton } from '@mui/material';
 import { Box } from '@mui/system';
 
@@ -9,16 +9,16 @@ import Ctrl from '../../../../../core/global/controls/Controls';
 //Request
 import { options } from '../../../../../core/request/Request';
 
+// Context
+import { FormContext } from '../../../../../core/context/FormContext';
+
 const Form = (props) => {
     const { register, errors, getValues, disabled= false } = props;
+    const { isLoad, setIsload, chck, setChck, setOpt } = useContext(FormContext);
     const [ categories, setCategories ] = useState();
-    const [ isLoad, setIsLoad ] = useState(true);
-    // eslint-disable-next-line
-    const [ categoryId, setCategoryId ] = useState();
-    const [ chck, setChck ] = useState();
 
     useEffect(() => {
-        options('category', ['id', 'name'], setCategories, setIsLoad);
+        options('category', ['id', 'name'], setCategories, setIsload);
     }, []);
 
     return (
@@ -30,10 +30,10 @@ const Form = (props) => {
                         {
                             !isLoad ? (
                                 <Ctrl.Select name= "category_id" disabled= { disabled } fullWidth variant= "standard" InputProps= {{ disableUnderline: true }}
-                                    value= { getValues().category_id !== undefined ? getValues().category_id : '' }
+                                    value= { getValues().category_id !== undefined ? categories !== undefined ? getValues().category_id : '' : '' }
                                     register= { register('category_id', {
-                                        onChange: e => setCategoryId(e.target.value)
-                                    }) } options= { categories } />
+                                        onChange: e => setOpt(e.target.value)
+                                    }) } options= { categories !== undefined ? categories : [] } />
                             ) : (
                                 <Skeleton variant= "rectangular" width= "100%" height= "45px" sx= {{ backgroundColor: '#dfe6e9', borderRadius: '5px' }} />
                             )

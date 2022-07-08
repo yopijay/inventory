@@ -1,5 +1,5 @@
 // Libraries
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Box, Grid } from '@mui/material';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -18,17 +18,19 @@ import Form from './Form';
 // Loader
 import { SnakeLoader } from '../../../../../core/loader/Loader';
 
+// Context
+import { FormContext } from '../../../../../core/context/FormContext';
+
 const Index = () => {
     let { type, id } = useParams();
     const navigate = useNavigate();
-    const [ loader, setLoader ] = useState(false);
-    const [ isLoad, setIsLoad ] = useState(type !== 'new');
+    const { loader, setLoader, isLoad, setIsload } = useContext(FormContext);
     const { register, handleSubmit, formState: { errors }, setValue, getValues, setError } = useForm({
         resolver: yupResolver(Brand())
     });
-
+    
     useEffect(() => {
-        if(id !== undefined) get(id, 'brand', setValue, setIsLoad);
+        if(id !== undefined) get(id, 'brand', setValue, setIsload);
     }, []);
     
     return (

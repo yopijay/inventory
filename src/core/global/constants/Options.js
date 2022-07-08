@@ -36,3 +36,9 @@ export const years = () => {
     _year.sort()
     return _year.reverse();
 }
+
+export const status = () => ([
+    { id: 'single', name: 'Single' },
+    { id: 'married', name: 'Married' },
+    { id: 'widow', name: 'Widow' }
+]);
