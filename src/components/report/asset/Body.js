@@ -23,12 +23,12 @@ const Body = (props) => {
                     data.length !== 0 ? (
                         data.map((rows, index) => (
                             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }} key= { index }>
+                                <StyledTableCell>{ (index + 1) }</StyledTableCell>
                                 <StyledTableCell>{ rows.series_no }</StyledTableCell>
                                 <StyledTableCell>{ rows.name }</StyledTableCell>
                                 <StyledTableCell align= "center">{ rows.total_asset }</StyledTableCell>
                                 <StyledTableCell align= "center">{ rows.assigned_assets } </StyledTableCell>
                                 <StyledTableCell align= "center">{ rows.unassigned_assets } </StyledTableCell>
-                                <StyledTableCell align= "center">{ rows.status === 1 ? 'Active' : 'Inactive' }</StyledTableCell>
                             </TableRow>
                         ))
                     ) : (

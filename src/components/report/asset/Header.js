@@ -17,12 +17,12 @@ const Header = () => {
     return (
         <TableHead>
             <TableRow>
+                <StyledTableCell>No.</StyledTableCell>
                 <StyledTableCell>Series No.</StyledTableCell>
                 <StyledTableCell>Asset</StyledTableCell>
                 <StyledTableCell align= "center">Total Asset</StyledTableCell>
                 <StyledTableCell align= "center">No. of Assigned Assets</StyledTableCell>
                 <StyledTableCell align= "center">No. of Unassigned Assets</StyledTableCell>
-                <StyledTableCell align= "center">Status</StyledTableCell>
             </TableRow>
         </TableHead>
     );
