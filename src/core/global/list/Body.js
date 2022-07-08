@@ -23,7 +23,7 @@ const Body = ({ data }) => {
                     _row.push({ value: _keys[item] === 'status' ? data[count][_keys[item]] > 0 ? 'Active' : 'Inactive' : 
                                         _keys[item] === 'civil_status' ? `${(data[count][_keys[item]]).charAt(0).toUpperCase()}${(data[count][_keys[item]]).slice(1)}` : data[count][_keys[item]], 
                                         props: { align: `${_keys[item] === 'total_no_of_brands' || _keys[item] === 'status' || _keys[item] === 'total_no_of_assets'
-                                                                    || _keys[item] === 'total_asset' || _keys[item] === 'civil_status'
+                                                                    || _keys[item] === 'total_asset' || _keys[item] === 'civil_status' || _keys[item] === 'quantity'
                                                                     || _keys[item] === 'assigned_assets' || _keys[item] === 'unassigned_assets' ? 'center' : 'left'}` } });
                 }
             }
@@ -33,8 +33,6 @@ const Body = ({ data }) => {
 
         setCols(_body);
     }, [data]);
-
-    // data.length > 0 ? Object.keys(data[0]).length : Object.keys(data).length
 
     return (
         <TableBody>

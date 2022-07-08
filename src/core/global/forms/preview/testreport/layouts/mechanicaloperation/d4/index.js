@@ -1,5 +1,5 @@
 // Libraries
-import React from 'react';
+import React, { useContext } from 'react';
 import { Box } from '@mui/material';
 
 // Core
@@ -9,7 +9,13 @@ import Ctrl from '../../../../../../controls/Controls';
 import D41 from './d41';
 import D42 from './d42';
 
+// Context
+import { DialogContext } from '../../../../../../../context/DialogContext';
+
 const Index = () => {
+    const { data } = useContext(DialogContext);
+    const mo = data.mechanical_operation;
+
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch' }}>
             <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
@@ -17,11 +23,11 @@ const Index = () => {
                 <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center', minWidth: '98%' }}>
                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', margin: '0 10px', minWidth: '90px' }}>
                         <Ctrl.Typography text= "Bolt/Screw tightening" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
-                        <Ctrl.Checkbox />
+                        <Ctrl.Checkbox checked= { mo !== undefined ? mo.screw_tightening.screw : false } />
                     </Box>
                     <Box sx= {{ display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', margin: '0 10px', minWidth: '90px' }}>
                         <Ctrl.Typography text= "Bolt marking" sx= {{ fontSize: { xs: '95%', sm: '100%', md: '110%' } }} />
-                        <Ctrl.Checkbox />
+                        <Ctrl.Checkbox checked= { mo !== undefined ? mo.screw_tightening.bolt : false } />
                     </Box>
                 </Box>
             </Box>

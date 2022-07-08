@@ -17,12 +17,15 @@ import MechanicalOperation from './layouts/MechanicalOperation';
 import ElectricalOperation from './layouts/ElectricalOperation';
 import Signature from './layouts/Signature';
 
+// Request
+import { preview } from '../../../../request/Request';
+
 const Index = (props) => {
     const { name } = props;
-    const { id } = useContext(DialogContext);
+    const { id, setData, setIsload } = useContext(DialogContext);
     
     useEffect(() => {
-        console.log(id);
+        preview(setData, id, setIsload);
     }, []);
 
     return (
