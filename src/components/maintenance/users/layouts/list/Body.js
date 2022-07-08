@@ -34,7 +34,7 @@ const Body = (props) => {
                             <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }} key= { index }>
                                 <StyledTableCell>{ rows.series_no }</StyledTableCell>
                                 <StyledTableCell>{ `${rows.lname}, ${rows.fname} ${rows.mname}` }</StyledTableCell>
-                                <StyledTableCell align= "center">{ rows.position_id }</StyledTableCell>
+                                <StyledTableCell align= "center">{ rows.position }</StyledTableCell>
                                 <StyledTableCell align= "center">{ rows.status === 1 ? 'Active' : 'Inactive' }</StyledTableCell>
                                 <StyledTableCell align= "center">{ `${ getDate(new Date(rows.date_created)).formatted }` }</StyledTableCell>
                                 <StyledTableCell align= "center">
