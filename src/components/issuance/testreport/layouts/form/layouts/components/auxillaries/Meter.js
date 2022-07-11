@@ -1,6 +1,7 @@
 // Libraries
 import React, { useContext, useState } from 'react';
 import { Box } from '@mui/material';
+import { useParams } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../../../../../core/global/controls/Controls';
@@ -9,6 +10,7 @@ import Ctrl from '../../../../../../../../core/global/controls/Controls';
 import { TestReportContext } from '../../../../../../../../core/context/TestReportContext';
 
 const Meter = () => {
+    const { type } = useParams();
     const { register, getValues } = useContext(TestReportContext);
     const defaultVal = getValues().component;
 
@@ -27,28 +29,28 @@ const Meter = () => {
                 <Ctrl.Checkbox name= "component.auxillary.meter.type" size= "large" checked= { defaultVal !== undefined ? defaultVal.auxillary.meter.type > 0 ? true : isType : isType }
                     register= { register('component.auxillary.meter.type', {
                         onChange: () => setIsType(!isType)
-                    }) } />
+                    }) } disabled= { type === 'view' } />
             </Box>
             <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Rating" />
                 <Ctrl.Checkbox name= "component.auxillary.meter.rating" size= "large" checked= { defaultVal !== undefined ? defaultVal.auxillary.meter.rating > 0 ? true : isRating : isRating }
                     register= { register('component.auxillary.meter.rating', {
                         onChange: () => setIsRating(!isRating)
-                    }) } />
+                    }) } disabled= { type === 'view' } />
             </Box>
             <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Brand" />
                 <Ctrl.Checkbox name= "component.auxillary.meter.brand" size= "large" checked= { defaultVal !== undefined ? defaultVal.auxillary.meter.brand > 0 ? true : isBrand : isBrand }
                     register= { register('component.auxillary.meter.brand', {
                         onChange: () => setIsBrand(!isBrand)
-                    }) } />
+                    }) } disabled= { type === 'view' } />
             </Box>
             <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Scale" />
                 <Ctrl.Checkbox name= "component.auxillary.meter.scale" size= "large" checked= { defaultVal !== undefined ? defaultVal.auxillary.meter.scale > 0 ? true : isScale : isScale }
                     register= { register('component.auxillary.meter.scale', {
                         onChange: () => setIsScale(!isScale)
-                    }) } />
+                    }) } disabled= { type === 'view' } />
             </Box>
         </Box>
     );

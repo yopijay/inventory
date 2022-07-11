@@ -1,6 +1,7 @@
 // Libraries
 import React, { useContext, useState } from 'react';
 import { Box } from '@mui/material';
+import { useParams } from 'react-router-dom';
 
 // Core
 import Ctrl from '../../../../../../../../core/global/controls/Controls';
@@ -9,6 +10,7 @@ import Ctrl from '../../../../../../../../core/global/controls/Controls';
 import { TestReportContext } from '../../../../../../../../core/context/TestReportContext';
 
 const HVFuse = () => {
+    const { type } = useParams();
     const { register, getValues } = useContext(TestReportContext);
     const defaultVal = getValues().component;
 
@@ -27,7 +29,7 @@ const HVFuse = () => {
                     checked= { defaultVal !== undefined ? defaultVal.auxillary.hv_fuse.type > 0 ? true : isType : isType }
                     register= { register('component.auxillary.hv_fuse.type', {
                         onChange: () => setIsType(!isType)
-                    }) } />
+                    }) } disabled= { type === 'view' } />
             </Box>
             <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Rating" />
@@ -35,7 +37,7 @@ const HVFuse = () => {
                     checked= { defaultVal !== undefined ? defaultVal.auxillary.hv_fuse.rating > 0 ? true : isRating : isRating }
                     register= { register('component.auxillary.hv_fuse.rating', {
                         onChange: () => setIsRating(!isRating)
-                    }) } />
+                    }) } disabled= { type === 'view' } />
             </Box>
             <Box sx= {{ minWidth: '100px', display: 'flex', flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center' }}>
                 <Ctrl.Typography color= "#2c3e50" text= "Brand" />
@@ -43,7 +45,7 @@ const HVFuse = () => {
                     checked= { defaultVal !== undefined ? defaultVal.auxillary.hv_fuse.brand > 0 ? true : isBrand : isBrand }
                     register= { register('component.auxillary.hv_fuse.brand', {
                         onChange: () => setIsBrand(!isBrand)
-                    }) } />
+                    }) } disabled= { type === 'view' } />
             </Box>
         </Box>
     );

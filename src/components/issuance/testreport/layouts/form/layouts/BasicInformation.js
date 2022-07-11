@@ -46,7 +46,7 @@ const BasicInformation = () => {
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Project" color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                                     <Ctrl.TextField name= { `basic_information.project` } register= { register(`basic_information.project`, { required: 'This field is required!' }) } 
-                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} disabled= { type === 'view' } />
                                 </Box>
                                 <Box marginTop= "5px">
                                     <Ctrl.Typography text= { error !== undefined ? error.project !== undefined ? error.project.message : '' : '' } color= "red" />
@@ -58,7 +58,7 @@ const BasicInformation = () => {
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Serial No." color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                                     <Ctrl.TextField name= { `basic_information.serial_no` } register= { register('basic_information.serial_no', { required: 'This field is required!' }) } 
-                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} disabled= { type === 'view' } />
                                 </Box>
                                 <Box marginTop= "5px">
                                     <Ctrl.Typography text= { error !== undefined ? error.serial_no !== undefined ? error.serial_no.message : '' : '' } color= "red" />
@@ -75,7 +75,7 @@ const BasicInformation = () => {
                                                     required: 'This field is required!',
                                                     onChange: e => setCustomerId(e.target.value)
                                                 }) } fullWidth variant= "standard" InputProps= {{ disableUnderline: true }} value= { defaultVal.customer_id !== undefined ? defaultVal.customer_id : '' }
-                                                options= { customer } />
+                                                options= { customer } disabled= { type === 'view' } />
                                         ) : (
                                             <Skeleton variant= "rectangular" width= "100%" height= "30px" sx= {{ backgroundColor: '#dfe6e9', borderRadius: '5px' }} />
                                         )
@@ -95,7 +95,7 @@ const BasicInformation = () => {
                                             <Ctrl.TextField name= { `basic_information.date_performed` } register= { register('basic_information.date_performed', {
                                                     required: 'This field is required!',
                                                     onChange: e => setIsToday(e.target.value)
-                                                }) } variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} type= "datetime-local" disabled= { type !== 'new' }
+                                                }) } variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} type= "datetime-local" disabled= { type === 'view' }
                                                 value= { type !== 'new' ? defaultVal !== undefined ? getDate(new Date(defaultVal.date_performed)).date : isToday : isToday } />
                                         ) : ( <Skeleton variant= "rectangular" width= "100%" height= "30px" sx= {{ backgroundColor: '#dfe6e9', borderRadius: '5px' }} /> )
                                     }
