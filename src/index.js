@@ -6,7 +6,6 @@ import { ThemeProvider } from '@emotion/react';
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-
 // Assets
 import './assets/font/font.css';
 import './assets/css/global.css';
