@@ -30,14 +30,14 @@ const Index = () => {
     return (
         <Box sx= {{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'stretch', marginBottom: '20px' }}>
             <Box sx= {{ padding: { xs: '0 14px', sm: 0 } }}>
-                <Grid container direction= "row"  justifyContent= "space-between" alignItems= "center" spacing= { 1 }>
+                <Grid container direction= "row"  justifyContent= "space-between" alignItems= "center">
                     <Grid item xs= { 12 } sm= { 2 }>
                         <Ctrl.Typography text= "Position List" 
                             sx= {{ fontSize: { xs: '1.2rem', md: '1.3rem' }, fontWeight: 'bold', transition: 'all 0.2s ease-in-out', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }} />
                     </Grid>
                     <Grid item xs= { 12 } sm= { 10 }>
-                        <Grid container direction= "row" justifyContent= "flex-end" alignItems= "center" spacing= { 1 }>
-                            <Grid item xs= { 6 } sm= { 4 } md= { 5 } lg= { 3 }>
+                        <Grid container direction= "row" justifyContent= "flex-end" alignItems= "center">
+                            <Grid item xs= { 4 } md= { 5 } lg= { 3 }>
                                 <Link to= "/maintenance/position/form/new" style= {{ textDecoration: 'none' }}>
                                     <Ctrl.Button color= "primary" text= {
                                         <Ctrl.Typography color= "#ffffff" text= "New Position" 
@@ -47,7 +47,7 @@ const Index = () => {
                             </Grid>
                             {
                                 xlsx.length > 0 ? (
-                                    <Grid item xs= { 2 } sm= { 1 }>
+                                    <Grid item xs= { 1 }>
                                         <Export filename= "Position List" data= { xlsx } 
                                             column= { xlsx !== undefined ? (Object.keys(xlsx)).length !== 0 ? Object.keys(xlsx[0]) : [] : [] }
                                             element= { 

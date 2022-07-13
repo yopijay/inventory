@@ -40,7 +40,7 @@ const Index = () => {
                             <StyledTableCell>Symbol</StyledTableCell>
                             <StyledTableCell>Description</StyledTableCell>
                             <StyledTableCell align= "center">Quantity</StyledTableCell>
-                            <StyledTableCell align= "center">Action</StyledTableCell>
+                            { type !== 'view' ? <StyledTableCell align= "center">Action</StyledTableCell> : '' }
                         </TableRow>
                     </TableHead>
                     <TableBody>

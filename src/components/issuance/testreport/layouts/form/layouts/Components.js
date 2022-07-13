@@ -58,7 +58,7 @@ const Components = () => {
                                     </Box>
                                     <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                                         <Ctrl.TextField name= { `component.others` } register= { register(`component.others`) } variant= "standard" 
-                                            fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Others..." />
+                                            fullWidth InputProps= {{ disableUnderline: true }} placeholder= "Others..." disabled= { type === 'view' } />
                                     </Box>
                                 </Box>
                             </Box>

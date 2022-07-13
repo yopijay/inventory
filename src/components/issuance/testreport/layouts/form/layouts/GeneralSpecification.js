@@ -33,7 +33,7 @@ const GeneralSpecification = () => {
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Panel Name" color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                                     <Ctrl.TextField name= { `general_specification.panel_name` } register= { register(`general_specification.panel_name`, { required: 'This field is required!' }) } 
-                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} disabled= { type === 'view' } />
                                 </Box>
                                 <Box padding= "0 10px" marginTop= "5px">
                                     <Ctrl.Typography className= "f-14" text= { error !== undefined ? error.panel_name !== undefined ? error.panel_name.message : '' : '' } color= "red" />
@@ -45,7 +45,7 @@ const GeneralSpecification = () => {
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Voltage" color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                                     <Ctrl.TextField name= { `general_specification.voltage` } register= { register(`general_specification.voltage`, { required: 'This field is required!' }) } 
-                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} disabled= { type === 'view' } />
                                 </Box>
                                 <Box padding= "0 10px" marginTop= "5px">
                                     <Ctrl.Typography className= "f-14" text= { error !== undefined ? error.voltage !== undefined ? error.voltage.message : '' : '' } color= "red" />
@@ -57,7 +57,7 @@ const GeneralSpecification = () => {
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Enlosure Type" color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                                     <Ctrl.TextField name= { `general_specification.enclosure_type` } register= { register(`general_specification.enclosure_type`, { required: 'This field is required!' }) } 
-                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} disabled= { type === 'view' } />
                                 </Box>
                                 <Box padding= "0 10px" marginTop= "5px">
                                     <Ctrl.Typography className= "f-14" text= { error !== undefined ? error.enclosure_type !== undefined ? error.enclosure_type.message : '' : '' } color= "red" />
@@ -69,7 +69,7 @@ const GeneralSpecification = () => {
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Phase / Wire" color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                                     <Ctrl.TextField name= { `general_specification.wire` } register= { register(`general_specification.wire`, { required: 'This field is required!' }) } 
-                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} disabled= { type === 'view' } />
                                 </Box>
                                 <Box padding= "0 10px" marginTop= "5px">
                                     <Ctrl.Typography className= "f-14" text= { error !== undefined ? error.wire !== undefined ? error.wire.message : '' : '' } color= "red" />
@@ -81,7 +81,7 @@ const GeneralSpecification = () => {
                                 <Box marginBottom= "5px"><Ctrl.Typography text= "Color" color= "text-primary" /></Box>
                                 <Box sx= {{ border: 'solid 1px #dcdde1', borderRadius: '5px', padding: '5px 15px' }}>
                                     <Ctrl.TextField name= { `general_specification.color` } register= { register(`general_specification.color`, { required: 'This field is required!' }) } 
-                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} />
+                                        variant= "standard" fullWidth InputProps= {{ disableUnderline: true }} disabled= { type === 'view' } />
                                 </Box>
                                 <Box padding= "0 10px" marginTop= "5px">
                                     <Ctrl.Typography className= "f-14" text= { error !== undefined ? error.color !== undefined ? error.color.message : '' : '' } color= "red" />
