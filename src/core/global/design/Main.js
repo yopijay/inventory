@@ -12,5 +12,5 @@ export const Main = makeStyles(({
             backgroundColor: '#27ae60',
             transition: 'all 0.3s ease-in-out'
         }
-    }
+    }   
 }));
